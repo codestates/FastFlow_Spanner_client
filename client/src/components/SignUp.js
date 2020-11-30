@@ -64,6 +64,7 @@ const SignUp = () => {
     <center>
       <div className="SignUps">
         <div className="SignUps__body">
+          <div className="SignUps__title">회원가입 입니다.</div>
           <div className="SignUps__name SignUp">
             <input className="SignUps__input" type="text" placeholder="사용자 이름" onChange={onChangeUserName}></input>
           </div>
