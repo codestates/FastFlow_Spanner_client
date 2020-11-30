@@ -10,7 +10,7 @@ const Mypage = () => {
     const [email, setEmail] = useState('');
     const [profilePhoto, setProfilePhoto] = useState('');
 
-    useEffect(async() => {
+    useEffect(async () => {
         await axios.get(localUrl + 'mypage')
         .then((res) => {
             const { username, email, profilePhoto} = res.data;
