@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useState } from 'react';
+import { Switch, Route, withRouter } from "react-router-dom";
+import SignUp from "./components/SignUp"
 
-class App extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {}
-  }
-  render() {
-    return (
-      <div>시작해봅시다.</div>
-    )
-  }
-}
 
-export default App;
+const App = () => {
+  
+  return (
+    <div>
+      <Switch>
+      <Route exact path='/signup' render={() => <SignUp />} />
+      </Switch>
+    </div>
+  );
+};
+
+export default withRouter(App);
