@@ -3,6 +3,10 @@ import { useState } from "react";
 import { Link, withRouter } from "react-router-dom";
 import axios from "axios";
 
+import { ip, port } from "../url";
+
+axios.defaults.withCredentials = true;
+
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -11,11 +15,16 @@ const SignIn = () => {
     if (!email || !password) {
       setErrMessage("이메일과 비밀번호를 입력해주세요");
     } else {
-      	await axios.post('url/signin', {
+      	await axios.post(ip+port+'/user/signin', {
           email: email,
           password: password
       	})
-      .then((res) => this.props.handleResponseSuccess(res.id))
+			.then((res) => {
+				const { accessToken } = res.data
+				axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
+				localStorage.setItem('token', res.data.accessToken)
+				return this.PaymentResponse.handleResponseSuccess(res.data.id)
+			});
     }
   }
   return (
