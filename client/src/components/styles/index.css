@@ -1,7 +1,10 @@
 @import 'SignUp.css';
 @import 'Footer.css';
 @import 'Detail.css';
+@import 'MainPage.css';
+@import './MainInventions/FistAxe.css';
 @import "Mypage.css";
+
 
 
 body {
