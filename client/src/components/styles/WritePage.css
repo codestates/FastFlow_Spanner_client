@@ -1,0 +1,53 @@
+* {
+  box-sizing : border-box;
+}
+
+.WritePages {
+  width : 100%;
+  height : 2000px;
+  background-color: rgb(170, 156, 156);
+}
+.submitArea__inventionArea {
+  width : 70%;
+  height : 200px;  
+  margin-left: auto;
+  margin-right: auto;
+  background-color: red;
+}
+.inventionArea__selectInvention {
+  margin-left : 10%;
+}
+.inventionArea__fileSelect {
+  margin-right : 10%;
+}
+.inventionArea__pic {
+  width : 200px;
+}
+
+.submitArea__writingArea {
+  width : 70%;
+  height : 200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: black;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.writingArea__title {
+  width : 70%;
+}
+.title__inputBox {
+  width : 70%;
+  padding-top : 10px;
+  padding-bottom : 10px;
+}
+.writingArea__text {
+  width : 70%;
+}
+.text__inputBox {
+  width : 70%;
+  padding-top : 10px;
+  padding-bottom : 10px;
+}
