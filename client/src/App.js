@@ -3,6 +3,7 @@ import { Switch, Route, withRouter } from 'react-router-dom';
 import SignUp from './components/SignUp';
 import Footer from './components/Footer';
 import FistAxe from './components/Detail/FistAxe';
+import Mypage from "./components/Pages/Mypage"
 
 const App = () => {
   return (
@@ -15,5 +16,6 @@ const App = () => {
     </div>
   );
 };
+
 
 export default withRouter(App);

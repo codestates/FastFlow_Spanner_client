@@ -1,6 +1,8 @@
 @import 'SignUp.css';
 @import 'Footer.css';
 @import 'Detail.css';
+@import "Mypage.css";
+
 
 body {
   height: 100%;
