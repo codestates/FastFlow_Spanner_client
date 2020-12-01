@@ -1,15 +1,21 @@
-import React from "react";
+// import React, { useState } from 'react';
+import { Switch, Route, withRouter } from 'react-router-dom';
+import SignUp from './components/SignUp';
+import Footer from './components/Footer';
+import FistAxe from './components/Detail/FistAxe';
+import Mypage from "./components/Pages/Mypage"
 
-class App extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {}
-  }
-  render() {
-    return (
-      <div>시작해봅시다.</div>
-    )
-  }
-}
+const App = () => {
+  return (
+    <div>
+      <Switch>
+        <Route exact path="/signup" render={() => <SignUp />} />
+        <Route exact path="/fistaxe" render={() => <FistAxe />} />
+      </Switch>
+      <Footer />
+    </div>
+  );
+};
 
-export default App;
+
+export default withRouter(App);
