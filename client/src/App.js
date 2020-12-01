@@ -4,6 +4,8 @@ import SignUp from './components/SignUp';
 import Footer from './components/Footer';
 import FistAxe from './components/Detail/FistAxe';
 import MainPage from './components/Pages/MainPage';
+import Mypage from "./components/Pages/Mypage"
+
 
 const App = () => {
   return (
@@ -17,5 +19,6 @@ const App = () => {
     </div>
   );
 };
+
 
 export default withRouter(App);

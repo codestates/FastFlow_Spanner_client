@@ -3,6 +3,9 @@
 @import 'Detail.css';
 @import 'MainPage.css';
 @import './MainInventions/FistAxe.css';
+@import "Mypage.css";
+
+
 
 body {
   height: 100%;
