@@ -79,7 +79,7 @@ const Mypage = () => {
 			setProfilePicView(reader.result)
 		};
 		reader.readAsDataURL(file);
-		setProfilePic(file);
+		setProfilePic(file);		
 	}
 
 	return (
