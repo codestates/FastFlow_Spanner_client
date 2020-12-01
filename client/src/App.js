@@ -4,6 +4,7 @@ import SignUp from './components/SignUp';
 import Footer from './components/Footer';
 import FistAxe from './components/Detail/FistAxe';
 import Mypage from "./components/Pages/Mypage"
+import WritePage from "./components/Pages/WritePage"
 
 const App = () => {
   return (
@@ -11,6 +12,8 @@ const App = () => {
       <Switch>
         <Route exact path="/signup" render={() => <SignUp />} />
         <Route exact path="/fistaxe" render={() => <FistAxe />} />
+        <Route exact path="/mypage" render={() => <Mypage />} />
+        <Route exact path="/writepage" render={() => <WritePage />} />
       </Switch>
       <Footer />
     </div>

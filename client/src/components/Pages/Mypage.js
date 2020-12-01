@@ -10,50 +10,6 @@ const localUrl = 'http://localhost:3000';
 const Mypage = () => {
 	const [username, setUsername] = useState('');
 	const [email, setEmail] = useState('');
-<<<<<<< HEAD
-	const [profilePhoto, setProfilePhoto] = useState('');
-
-	useEffect(async () => {
-		await axios.get(localUrl + 'mypage')
-			.then((res) => {
-				const { username, email, profilePhoto } = res.data;
-				setUsername(username);
-				setEmail(email);
-				setProfilePhoto(profilePhoto);
-			})
-	})
-
-	const onChangeProfilePhoto = () => {
-		const formData = new FormData();
-		formData.append('file', profilePhoto);
-
-		return axios.post(localUrl + "....")
-	}
-
-	const onDeleteProfilePhoto = () => {
-		const formData = new FormData();
-		formData.append('file', profilePhoto);
-
-		return axios.post(localUrl + "....")
-	}
-
-	const onChangeFile = (e) => {
-		setProfilePhoto(e.target.value)
-	}
-	return (
-		<div>
-			<div className="title"> {username} 님의 Profile </div>
-			<div className="email"> {email} </div>
-			<div className="profilePhoto">
-				<div className="profilePhoto__photo"></div>
-				<form onSubmit={onChangeProfilePhoto}>
-					<h1>File Upload</h1>
-					<input type="file" name="img" onChange={onChangeFile} />
-					<button type="submit">Upload</button>
-					<button type="submit">Delete</button>
-				</form>
-				{profilePhoto}
-=======
 	const [profilePicView, setProfilePicView] = useState(basicProfilePic);
 	const [profilePic, setProfilePic] = useState('');
 
@@ -123,7 +79,7 @@ const Mypage = () => {
 			setProfilePicView(reader.result)
 		};
 		reader.readAsDataURL(file);
-		setProfilePic(file);
+		setProfilePic(file);		
 	}
 
 	return (
@@ -151,7 +107,6 @@ const Mypage = () => {
 						<button className="profileDetermine__cancelBtn" >취소</button>
 					</form>
 				</div> */}
->>>>>>> 8e166b0383fddc3c68ef8e5d51dc650cfb45375e
 			</div>
 		</div>
 	)

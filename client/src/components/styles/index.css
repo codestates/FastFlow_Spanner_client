@@ -1,12 +1,9 @@
-<<<<<<< HEAD
-@import "WritePage.css";
-=======
 @import 'SignUp.css';
 @import 'Footer.css';
 @import 'Detail.css';
 @import "Mypage.css";
+@import "WritePage.css";
 
->>>>>>> 8e166b0383fddc3c68ef8e5d51dc650cfb45375e
 
 body {
   height: 100%;
