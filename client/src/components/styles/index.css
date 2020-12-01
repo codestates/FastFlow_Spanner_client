@@ -1,6 +1,8 @@
 @import 'SignUp.css';
 @import 'Footer.css';
 @import 'Detail.css';
+@import 'MainPage.css';
+@import './MainInventions/FistAxe.css';
 
 body {
   height: 100%;
