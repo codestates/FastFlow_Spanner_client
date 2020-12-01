@@ -1,5 +1,5 @@
 import React from "react";
-
+import Mypage from "./components/Pages/Mypage"
 class App extends React.Component {
   constructor(props){
     super(props);
@@ -7,7 +7,10 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div>시작해봅시다.</div>
+      <div>
+        <div>시작해봅시다.</div>
+      </div>
+      
     )
   }
 }
