@@ -86,21 +86,62 @@ const Mypage = () => {
 		<div>
 			<div className="Mypages">
 				<div className="profileTitle">
-					<div className="profileTitle__title">{username} 님의 프로필 페이지</div>
+					<div className="profileTitle__title">
+						<span className="profileTitle__username">
+							{`${username} `}
+						</span>
+						님의 프로필 페이지</div>
 					<div className="profileTitle__desc">이곳에서 회원님의 정보를 변경할 수 있습니다.</div>
 					{/* <div> {profilePicView}</div> */}
-				</div>
-				<div className="profilePic">
-					<img className="profilePicView__pic" src={profilePicView} alt=""></img>					
-					<form onSubmit={onChangeProfilePic}>
-					  <input type="file" name='image' onChange={onChangeFile} />
-						<button type="submit">사진변경</button>
-						<button type="submit" onClick={onDeleteprofilePic}>사진삭제</button>
-					</form>
-				</div>
-				<div className="profileInfo">
-					<div className="profileInfo__email"> {email} </div>
-				</div>
+				</div>						
+				<table className="table">
+					<tbody >
+						<tr>
+							<th scope="row">
+								프로필 사진				
+							</th>
+							<td>
+								<form onSubmit={onChangeProfilePic}>
+									<div className="profilePicView">
+										<img className="profilePicView__pic" src={profilePicView} alt=""></img>
+									</div>
+									<div className="profilePicBtns">
+										<div className="profilePicBtns__fileSearch">
+											<label for="ex-file">찾아보기</label>
+										  <input type="file" id="ex-file" name='image' onChange={onChangeFile} />
+										</div>
+										<div className="profilePicBtns__etc">
+											<button className="changeBtn" type="submit">사진변경</button>
+											<button className="deleteBtn" type="submit" onClick={onDeleteprofilePic}>사진삭제</button>
+										</div>										
+									</div>
+									
+								</form>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">
+								이메일 주소								
+							</th>
+							<td>
+								<div className="profileInfo">
+									<div className="profileInfo__email"> {email} </div>									
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">
+								별명								
+							</th>
+							<td>
+								<div className="profileInfo">									
+									<div className="profileInfo__username"> {username} </div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>						
+
 				{/* <div className="profileDetermine">
 					<form onSubmit={onChangeprofilePic}>
 						<button className="profileDetermine__applyBtn" type="submit">적용</button>
