@@ -8,6 +8,7 @@
   position: fixed;
   display: flex;
   flex-direction: column;
+  z-index: 4;
 }
 
 .nav__main {
@@ -44,7 +45,6 @@
 
 .nav__year {
   display: flex;
-  justify-content: center;
 }
 
 .nav__scrollTracerContainer {
