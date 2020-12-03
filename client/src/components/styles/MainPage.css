@@ -16,3 +16,10 @@
   text-align: center;
   margin-top: 350px;
 }
+
+.scroll__tracker {
+  border: 1px solid red;
+  width: 600px;
+  height: 100px;
+  overflow: scroll;
+}

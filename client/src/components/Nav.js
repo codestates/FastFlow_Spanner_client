@@ -1,11 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ScrollTracker from './ScrollTracker';
+import useScrollStatus from './hooks/useScrollStatus';
 
-import SignIn from "./SignIn";
 
-export default function Nav(props) {
+
+
+export default function Nav() {
+
+  const scrollState = useScrollStatus();
+
   return (
     <header className="navs">
+      
 			<div className="nav__main">
         <div className="nav__hamburgerBtn">
           <SignIn modalOpen={props.modalOpen} modalClose={props.modalClose} modal={props.modal} onChangeEmail={props.onChangeEmail} onChangePassword={props.onChangePassword} errMessage={props.errMessage} handleSignIn={props.handleSignIn} handleResponseSuccess={props.handleResponseSuccess} />
@@ -18,8 +25,8 @@ export default function Nav(props) {
           <Link to='/' className="nav__logoBtn">Main</Link>
         </div>
 			</div>
-			<div className="nav__scrollTracerContainer">
-				<div className="nav__scrollTracer">여기에 원숭이 입력</div>
+			<div className="nav__scrollTrackerContainer">			
+        <ScrollTracker position = {scrollState.position} />
 			</div>
     </header>
   )

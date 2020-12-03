@@ -8,7 +8,7 @@
   position: fixed;
   display: flex;
   flex-direction: column;
-  z-index: 4;
+  z-index: 8;
 }
 
 .nav__main {
@@ -53,14 +53,12 @@
   display: flex;
 }
 
-.nav__scrollTracerContainer {
+.nav__scrollTrackerContainer {
   display: flex;
   justify-content: center;
   margin-top: 15px;
+  background-color:white;
+  height: 60px;
   border-bottom-style: solid;
   border-bottom-color: rgb(148, 35, 0);
-}
-
-.nav__scrollTracer {
-  display: flex;
 }

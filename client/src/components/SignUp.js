@@ -30,8 +30,8 @@ const SignUp = () => {
     if (!userName || !email || !password) {
       setErrorMessage('모든 항목은 필수입니다');
     } else {
-      //    await axios.post("http://localhost:3000/user/signup", {
-      await axios.post('http://3.34.179.55:3000/user/signup', {
+         await axios.post("http://localhost:3000/user/signup", {
+      // await axios.post('http://3.34.179.55:3000/user/signup', {
         username: userName,
         email: email,
         password: password,
