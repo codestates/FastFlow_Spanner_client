@@ -35,6 +35,12 @@
   margin-left: 10px;
 }
 
+.nav__writePageBtn {
+  font-size: x-large;
+  font-weight: 800;
+  margin-left: 10px;
+}
+
 .nav__logoBtn {
   font-size: x-large;
   font-weight: 800;
@@ -45,7 +51,6 @@
 
 .nav__year {
   display: flex;
-  justify-content: center;
 }
 
 .nav__scrollTrackerContainer {
