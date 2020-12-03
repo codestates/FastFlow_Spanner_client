@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const SignIn = (props) => (
   <div>
-    <div className="signIn__btn" onClick={props.modalOpen}>Log In</div>
+    <div className="signIn__navBtn" onClick={props.modalOpen}>Log In</div>
   <center>
     <div className="signIns" style={{display: `${props.modal}`}}>
       <div className="signIn__modal">
