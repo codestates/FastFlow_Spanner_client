@@ -7,6 +7,16 @@
   z-index: 1;
 }
 
+.signIn__btn {
+  position: absolute;
+  top: 15px;
+  left: 330px;
+  cursor: pointer;
+  font-size: x-large;
+  font-weight: 800;
+  margin-left: 10px;
+}
+
 .signIn__modal {
   padding-top: 150px;
   border: 1px solid #dbdbdb;

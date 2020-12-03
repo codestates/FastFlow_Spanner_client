@@ -11,7 +11,7 @@ export default function Nav(props) {
           <SignIn modalOpen={props.modalOpen} modalClose={props.modalClose} modal={props.modal} onChangeEmail={props.onChangeEmail} onChangePassword={props.onChangePassword} errMessage={props.errMessage} handleSignIn={props.handleSignIn} handleResponseSuccess={props.handleResponseSuccess} />
           <Link to='/SignUp' className="nav__signUpBtn">Sign up</Link>
 					<Link to='/Mypage' className="nav__myPageBtn">My page</Link>
-					<Link to='/WritePage'>write page</Link>
+					<Link to='/WritePage' className="nav__writePageBtn">write page</Link>
         </div>
 			  <div className="nav__year">여기에 년도 입력</div>
         <div>
