@@ -61,7 +61,7 @@ const SignUp = () => {
   };
 
   return (
-    <center>
+    <center className="SignUps__area">
       <div className="SignUps">
         <div className="SignUps__body">
           <div className="SignUps__title">회원가입 입니다.</div>
