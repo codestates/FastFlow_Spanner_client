@@ -1,9 +1,32 @@
 .signIns {
-  margin-top: 150px;
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 170px;
+  left: 37%;
+  z-index: 1;
+}
+
+.signIn__modal {
+  padding-top: 150px;
   border: 1px solid #dbdbdb;
   width: 350px;
   height: 540px;
   background-color: #ffffff;
   border-radius: 15px;
-  text-align: center;
+}
+
+.signIn__modalLayer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.testBtn {
+  margin-top: 200px;
+  z-index: 5;
 }
