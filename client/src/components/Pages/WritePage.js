@@ -53,7 +53,7 @@ const WritePage = () => {
         //사진과 다른 데이터를 같이 업로드하고 싶을 때는, formdata 내부에 다른 데이터들도
         //append 형태로 붙여주면 된다.
         .then((res) => {
-          console.log("사진을 업로드 합니다.");
+          console.log("사진을 업로드 합니다.", res.data);
           const formData = new FormData();
           formData.append("image", postPic);
           formData.append("postId", res.data.id);
