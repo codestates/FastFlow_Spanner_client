@@ -30,6 +30,7 @@ import Robot from "./components/Detail/Robot";
 import SteamEngine from "./components/Detail/SteamEngine";
 import Vaccine from "./components/Detail/Vaccine";
 import Wheel from "./components/Detail/Wheel";
+import WirelessCommunication from "./components/Detail/WirelessCommunication";
 import WritingSystem from "./components/Detail/WritingSystem";
 
 axios.defaults.withCredentials = true;
@@ -143,6 +144,7 @@ const App = () => {
         <Route exact path="/SteamEngine" render={() => <SteamEngine />} />
         <Route exact path="/Vaccine" render={() => <Vaccine />} />
         <Route exact path="/Wheel" render={() => <Wheel />} />
+        <Route exact path="/WirelessCommunication" render={() => <WirelessCommunication />} />
         <Route exact path="/WritingSystem" render={() => <WritingSystem />} />
         <Route exact path="/mypage" render={() => <Mypage />} />
         <Route exact path="/writepage" render={() => <WritePage />} />
