@@ -1,18 +1,19 @@
-import axios from 'axios';
-import { withRouter, useHistory } from 'react-router-dom';
-import { useState } from 'react';
+import axios from "axios";
+import { withRouter, useHistory } from "react-router-dom";
+import { useState } from "react";
+import { ip, port } from "../url";
 
 axios.defaults.withCredentials = true;
 
 const SignUp = () => {
-  const [userName, setUserName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
-  // const [errorPassword, setErrorPassword] = useState("");
+  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
   const history = useHistory();
-  // State
+  // States 17-28
   const onChangeUserName = (e) => {
     setUserName(e.target.value);
   };
@@ -25,28 +26,27 @@ const SignUp = () => {
   const onChangeConfirmPassword = (e) => {
     setConfirmPassword(e.target.value);
   };
-
+  // 회원가입 정보 보내기
   const handleSignup = async () => {
     if (!userName || !email || !password) {
-      setErrorMessage('모든 항목은 필수입니다');
+      setErrorMessage("모든 항목은 필수입니다");
     } else {
-         await axios.post("http://localhost:3000/user/signup", {
-      // await axios.post('http://3.34.179.55:3000/user/signup', {
+      await axios.post(ip + port + "/user/signup", {
         username: userName,
         email: email,
         password: password,
       });
-      history.push('/');
+      history.push("/");
     }
   };
-
+  // 비밀번호 유효성 검사 43-61
   const doesPasswordMatch = () => {
     return password === confirmPassword;
   };
 
   const confirmPasswordClassName = () => {
     if (confirmPassword) {
-      return doesPasswordMatch() ? 'is-valid' : 'is-invalid';
+      return doesPasswordMatch() ? "is-valid" : "is-invalid";
     }
   };
 
@@ -61,7 +61,7 @@ const SignUp = () => {
   };
 
   return (
-    <center>
+    <center className="SignUps__area">
       <div className="SignUps">
         <div className="SignUps__body">
           <div className="SignUps__title">회원가입 입니다.</div>

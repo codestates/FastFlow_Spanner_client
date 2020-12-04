@@ -44,7 +44,7 @@ li {
   box-sizing: border-box;
   border: 2px solid black;
   border-radius: 10px;
-  width: 70%;
+  width: 1240px;
   text-align: left;
   padding: 30px 50px;
   margin-bottom: 300px;
@@ -57,7 +57,7 @@ li {
 }
 
 .Details__comment::after {
-  content: '';
+  content: "";
   display: block;
   width: 100%;
   border-bottom: 1px solid #bcbcbc;
@@ -69,4 +69,34 @@ li {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+}
+
+.Details__commentPic {
+  height: 150px;
+}
+
+.Details__commentTextEdit {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.Details__editAreas {
+  margin-top: 300px;
+  background-color: white;
+  height: 30%;
+  width: 40%;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.Details__editAreas__PicView {
+  height: 80px;
 }

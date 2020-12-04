@@ -1,17 +1,121 @@
-import testPic from '../../TestPic/FistAxe.jpg';
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-//import axios from 'axios';
+import testPic from "../../TestPic/FistAxe.jpg";
+import { useState, useEffect } from "react";
+//import { Link } from "react-router-dom";
+import Writepage from "../Pages/WritePage";
+import axios from "axios";
+import basicPostPic from "./../images/candlelight.jpg";
+import { ip, port } from "../../url";
 
 const FistAxe = () => {
   const [commentList, setCommentList] = useState([]);
+  const [text, setText] = useState("");
+  const [title, setTitle] = useState("");
+  const [postPicView, setPostPicView] = useState(basicPostPic);
+  const [postPic, setPostPic] = useState("");
+  const [editId, setEditId] = useState("");
+  const [modalCommentEditView, setModalCommentEditView] = useState("none");
 
   useEffect(() => {
-    //let replyData = axios.get('http://localhost:3000');
-    //replyData를 가지고 FistAxe에 해당하는 댓글 내용을 배열에 넣어서 재구성 하고
-    //배열을 setReplyList를 통해서 replyList에 상태변화한다.
-    setCommentList([{ text: '도끼는 무서워요' }, { text: '주먹과 도끼는 무슨 관계?' }, { text: '김도끼' }, { text: '우리형이 도끼다' }]);
+    // 토큰 유지
+    let accessToken = localStorage.getItem("token");
+    axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
+
+    // 댓글 작성
+    axios.get(ip + port + `/post/read`).then((res) => {
+      console.log(res.data);
+      let result = res.data;
+      let newCommentData = [];
+      for (let i = result.length - 1; i >= 0; --i) {
+        newCommentData.push(result[i]);
+      }
+      setCommentList(newCommentData);
+    });
+
+    // 상태 변화 할때 마다 리렌더링을 하려면 아래의 배열안에 commentList를 입력하면 된다.
   }, []);
+
+  const onTitleChange = (e) => {
+    setTitle(e.target.value);
+  };
+
+  const onTextChange = (e) => {
+    setText(e.target.value);
+  };
+  // 댓글 수정 삭제 기능 모달 창 열기 & 코멘트 id 넘겨주기
+  const onEditArea = (val) => {
+    setModalCommentEditView("block");
+    setEditId(val);
+  };
+  // 댓글 수정 삭세 기능 모달 창 닫기
+  const closeEditArea = (val) => {
+    setModalCommentEditView("none");
+  };
+  // 댓글 수정 사항 작성 후 게시
+  const offEditArea = () => {
+    axios
+      .put(ip + port + `/post/edit`, {
+        text: text,
+        title: title,
+        postId: editId,
+        inventionId: 1,
+      })
+      .then((res) => {
+        console.log("사진을 수정합니다.", res.data);
+        const formData = new FormData();
+        formData.append("image", postPic);
+        formData.append("postId", editId);
+        formData.append("postInfo", 1);
+        axios.put(ip + port + `/post/upload`, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        });
+      });
+    setModalCommentEditView("none");
+  };
+  // 사진 파일 적용 및 보여주기
+  const onChangeFile = (e) => {
+    e.preventDefault();
+    let reader = new FileReader();
+    let file = e.target.files[0];
+    reader.onloadend = () => {
+      setPostPicView(reader.result);
+    };
+    reader.readAsDataURL(file);
+    setPostPic(file);
+  };
+  // 댓글 삭제
+  const onDeleteComment = (val) => {
+    console.log("삭제 이벤트", val);
+    axios.delete(ip + port + `/post/delete`, {
+      data: {
+        postId: val,
+      },
+    });
+  };
+  // 댓글 수정 삭제 창 내부 컨텐츠
+  const onEditComment = () => {
+    return (
+      <div className="Details__editAreas">
+        <img className="Details__editAreas__PicView" src={postPicView} alt="" />
+        <span className="Details__editAreas__fileSelectArea">
+          <input className="Details__editAreas__fileSelect" type="file" name="image" onChange={onChangeFile} />
+        </span>
+        <div className="Details__editAreas__titles">
+          <input className="Details__editAreas__titleInput" type="text" placeholder="제목" onChange={onTitleChange} />
+          <button type="Details__editAreas__submitBtn" onClick={offEditArea}>
+            게시
+          </button>
+          <button type="Details__editAreas__submitBtn" onClick={closeEditArea}>
+            닫기
+          </button>
+        </div>
+        <div className="Details__editAreas__texts">
+          <input className="Details__editAreas__textInput" type="text" placeholder="남기실 말씀" onChange={onTextChange} />
+        </div>
+      </div>
+    );
+  };
 
   return (
     <center className="FistAxes Details">
@@ -39,15 +143,37 @@ const FistAxe = () => {
         </div>
       </div>
       <div className="FistAxes__comments Details__comments">
+        <div className={"Details__commentTextEdit"} style={{ display: modalCommentEditView }}>
+          {onEditComment()}
+        </div>
+        <div className="FistAxes__commentsWrite Details__commentsWrite">
+          <Writepage />
+        </div>
         <div className="FistAxes__commentsHead Details__commentsHead">
           <div className="FistAxes__commentsTitle Details__commentsTitle">Comments</div>
-          <Link to="/writepage" className={`FistAxes__commentsWrite Details__commentsWrite`}>
-            작성하기
-          </Link>
         </div>
         <div className="FistAxes__commentsArea Details__commentsArea">
           {commentList.map((comment) => {
-            return <li className="FistAxes__comment Details__comment">{comment.text}</li>;
+            return (
+              <li className="FistAxes__comment Details__comment" key={comment.id}>
+                <div className="Details__commentPicArea">
+                  <img className="Details__commentPic" src={ip + port + `${comment.postPhoto}`} alt="" />
+                </div>
+                <div className="Details__commentTextAreas">
+                  <div className="Details__commentTextAreas__title">{comment.title}</div>
+                  <div className="Details__commentTextAreas__text">{comment.text}</div>
+                </div>
+
+                <div className="Details__commentToolArea">
+                  <button className="Details__commentToolEdit" type="button" onClick={() => onEditArea(comment.id)}>
+                    수정
+                  </button>
+                  <button className="Details__commentToolDelete" type="button" onClick={() => onDeleteComment(comment.id)}>
+                    삭제
+                  </button>
+                </div>
+              </li>
+            );
           })}
         </div>
       </div>
