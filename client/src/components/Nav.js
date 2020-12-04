@@ -2,8 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import SignIn from "./SignIn";
+import ScrollTracker from './ScrollTracker';
+import useScrollStatus from './hooks/useScrollStatus';
 
 export default function Nav(props) {
+  const scrollState = useScrollStatus();
   return (
     <header className="navs">
 			<div className="nav__main">
@@ -18,9 +21,9 @@ export default function Nav(props) {
           <Link to='/' className="nav__logoBtn">Main</Link>
         </div>
 			</div>
-			<div className="nav__scrollTracerContainer">
-				<div className="nav__scrollTracer">여기에 원숭이 입력</div>
-			</div>
+      <div className="nav__scrollTrackerContainer">
+        <ScrollTracker position = {scrollState.position} />
+      </div>
     </header>
   )
 }
