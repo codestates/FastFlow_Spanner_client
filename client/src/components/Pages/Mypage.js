@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import basicProfilePic from '../images/anonym_user.png';
 //https://www.pngaaa.com/detail/1097555, License : non-commercial use
+import { ip, port } from "./../../../src/url";
 
 axios.defaults.withCredentials = true;
 
-const localUrl = 'http://localhost:3000';
 
 const Mypage = () => {
 	const [username, setUsername] = useState('');
@@ -15,7 +15,7 @@ const Mypage = () => {
 
 	useEffect(() => {
 		//for signin	
-		axios.post(`${localUrl}/user/signin`,
+		axios.post(`${ip}${port}/user/signin`,
 			{
 				email: "test999", password: "test999"
 			})
@@ -30,14 +30,14 @@ const Mypage = () => {
 				//jwt test end				
 			})
 			.then(() => {
-				axios.get(localUrl + '/profile/read')
+				axios.get(`${ip}${port}/profile/read`)
 				.then((res) => {
 					
 					const { username, email, userPhoto } = res.data;
 					setUsername(username);
 					setEmail(email);
 					if(userPhoto) {
-						setProfilePicView(localUrl + '/' + userPhoto);
+						setProfilePicView(`${ip}${port}/${userPhoto}` );
 					}
 				})
 			})		
@@ -58,7 +58,7 @@ const Mypage = () => {
 		const formData = new FormData();
 		formData.append('image', profilePic);
 		
-		return axios.put(localUrl + "/profile/upload", formData, {
+		return axios.put(`${ip}${port}/profile/upload`, formData, {
 			headers : {
 				'Content-Type' : 'multipart/form-data'
 			}
