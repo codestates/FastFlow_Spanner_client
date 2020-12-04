@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import ScrollTracker from "./ScrollTracker";
 import useScrollStatus from "./hooks/useScrollStatus";
 import SignIn from "./SignIn";
+import LogOut from "./LogOut";
 
 export default function Nav(props) {
   const scrollState = useScrollStatus();
@@ -21,6 +22,7 @@ export default function Nav(props) {
             handleSignIn={props.handleSignIn}
             handleResponseSuccess={props.handleResponseSuccess}
           />
+          <LogOut onLogOut={props.onLogOut} switchLogOut={props.switchLogOut} />
           <Link to="/SignUp" className="nav__signUpBtn">
             Sign up
           </Link>

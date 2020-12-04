@@ -13,7 +13,7 @@ const SignIn = (props) => (
             <input className="signIn__emailInput" type="email" placeholder="이메일" onChange={props.onChangeEmail}></input>
           </div>
           <div>
-            <input className="signIn__passwordInput" placeholder="비밀번호" onChange={props.onChangePassword}></input>
+            <input className="signIn__passwordInput" type="password" placeholder="비밀번호" onChange={props.onChangePassword}></input>
           </div>
           <div className="signIn__noId" onClick={props.modalClose}>
             <Link to="/signup">아직 아이디가 없으신가요?</Link>

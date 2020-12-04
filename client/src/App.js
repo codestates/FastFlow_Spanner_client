@@ -19,6 +19,7 @@ const App = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errMessage, setErrMessage] = useState("");
+  const [switchLogOut, setSwitchLogOut] = useState("none");
 
   const modalOpen = () => {
     setModal("block");
@@ -68,6 +69,21 @@ const App = () => {
     }
   };
 
+  const onLogOut = () => {
+    setSwitchLogOut("block");
+    // await axios.post("http://localhost:3000/user/signout")
+    axios.delete(ip + port + "/user/signout");
+    setTimeout(() => {
+      autoLogOutClose();
+    }, 2000);
+
+    localStorage.removeItem("token");
+  };
+
+  const autoLogOutClose = () => {
+    setSwitchLogOut("none");
+  };
+
   return (
     <div>
       <Nav
@@ -79,6 +95,8 @@ const App = () => {
         errMessage={errMessage}
         handleSignIn={handleSignIn}
         handleResponseSuccess={handleResponseSuccess}
+        onLogOut={onLogOut}
+        switchLogOut={switchLogOut}
       />
       <Switch>
         <Route exact path="/signup" render={() => <SignUp />} />
