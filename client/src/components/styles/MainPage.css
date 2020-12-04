@@ -1,5 +1,5 @@
 .MainPages__welcomePoint {
-  background-image: url('../../TestPic/WelcomePoint.gif');
+  background-image: url("../../TestPic/WelcomePoint.gif");
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
@@ -22,4 +22,14 @@
   width: 600px;
   height: 100px;
   overflow: scroll;
+}
+
+.LinkedDetail {
+  color: white;
+  font-size: 50px;
+  font-weight: 700;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  margin-top: 430px;
 }
