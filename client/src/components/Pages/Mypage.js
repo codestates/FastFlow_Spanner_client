@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import basicProfilePic from "../images/anonym_user.png";
-import { ip, port } from "../../url";
 //https://www.pngaaa.com/detail/1097555, License : non-commercial use
 import { ip, port } from "./../../../src/url";
 
@@ -53,17 +52,6 @@ const Mypage = () => {
     // state 값을 변경하는 메서드를 넣어주어야 적용이 된다.
   }, [setProfilePicView]);
 
-  const onChangeProfilePic = (e) => {
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append("image", profilePic);
-
-    return axios.put(ip + port + "/profile/upload", formData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    });
-  };
 
   const onDeleteprofilePic = (e) => {
     setProfilePicView(basicProfilePic);
