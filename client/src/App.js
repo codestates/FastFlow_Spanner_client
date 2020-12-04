@@ -74,6 +74,7 @@ const App = () => {
           const { accessToken } = res.data;
           axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
           localStorage.setItem("token", res.data.accessToken);
+          modalClose();
           // return this.PaymentResponse.handleResponseSuccess(res.data.id);
         });
     }
