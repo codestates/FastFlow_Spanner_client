@@ -37,7 +37,7 @@ export default function Nav(props) {
           </Link>
         </div>
       </div>
-      <div className="nav__scrollTrackerContainer">
+      <div className="nav__scrollTrackerContainer">      
         <ScrollTracker position={scrollState.position} />
       </div>
     </header>
