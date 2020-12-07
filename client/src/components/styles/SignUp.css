@@ -1,5 +1,8 @@
+.SignUps__area {
+  padding-top: 200px;
+}
+
 .SignUps {
-  margin-top: 150px;
   border: 1px solid #dbdbdb;
   width: 350px;
   height: 540px;
@@ -47,7 +50,7 @@
   padding-top: 19px;
   color: #c83c0d;
   font-weight: 500;
-  font-family: 'Jua', sans-serif;
+  font-family: "Jua", sans-serif;
 }
 
 .is-valid {
@@ -62,12 +65,12 @@
   color: #0bdd27;
   margin-top: 10px;
   padding-right: 140px;
-  font-family: 'Jua', sans-serif;
+  font-family: "Jua", sans-serif;
 }
 
 .SignUps__passwordInvalid {
   color: #c83c0d;
   margin-top: 10px;
   padding-right: 96px;
-  font-family: 'Jua', sans-serif;
+  font-family: "Jua", sans-serif;
 }

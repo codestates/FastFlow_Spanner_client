@@ -5,7 +5,27 @@
   height: 38px;
   z-index: 9;
 }
+
 .scroll-tracker__gauge {
+  position: absolute;
   height: 100%;
-  background-color: green;
+  width: 500px;
+}
+
+.scrollTracker__first_1 {
+  position: absolute;
+}
+
+.scrollTracker__first_2 {
+  position: absolute;
+  display: none;
+}
+
+.scrollTracker__second_1 {
+  position: absolute;
+  display: none;
+}
+
+.scrollTracker__second_2 {
+  position: absolute;
 }

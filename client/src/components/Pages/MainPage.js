@@ -1,4 +1,5 @@
-import MainFistAxe from '../Inventions/MainFistAxe';
+import MainFistAxe from "../Inventions/MainFistAxe";
+//import React, {useState} from 'react';
 
 const MainPage = () => {
   return (

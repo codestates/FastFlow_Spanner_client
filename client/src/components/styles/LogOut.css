@@ -1,0 +1,29 @@
+.LogOuts__navBtn {
+  cursor: pointer;
+  font-size: x-large;
+  font-weight: 800;
+  margin-left: 10px;
+}
+
+.LogOuts__modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.LogOuts__content {
+  background-color: rgb(237, 243, 149);
+  margin: 20% auto;
+  padding: 20px;
+  border: 3px solid rgb(172, 169, 169);
+  width: 30%;
+  border-radius: 10px;
+  box-shadow: 1px 1px 20px rgb(240, 233, 233);
+}
