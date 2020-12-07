@@ -6,7 +6,7 @@ import axios from "axios";
 import basicPostPic from "./../images/candlelight.jpg";
 import { ip, port } from "../../url";
 
-const FistAxe = () => {
+const Compass = () => {
   const [commentList, setCommentList] = useState([]);
   const [text, setText] = useState("");
   const [title, setTitle] = useState("");
@@ -181,4 +181,4 @@ const FistAxe = () => {
   );
 };
 
-export default FistAxe;
+export default Compass;

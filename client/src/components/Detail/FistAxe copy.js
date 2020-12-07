@@ -118,14 +118,14 @@ const FistAxe = () => {
   };
 
   return (
-    <center className="Details">
-      <div className="Details__body">
-        <div className="Details__picArea">
-          <img className="Details__pic" src={testPic} alt=""></img>
+    <center className="FistAxes Details">
+      <div className="FistAxes__body Details__body">
+        <div className="FistAxes__picArea Details__picArea">
+          <img className="FistAxes__pic Details__pic" src={testPic} alt=""></img>
         </div>
-        <div className="Details__textArea">
-          <div className="Details__textTitle">Detail</div>
-          <div className="Details__text">
+        <div className="FistAxes__textArea Details__textArea">
+          <div className="FistAxes__textTitle Details__textTitle">Detail</div>
+          <div className="FistAxes__text Details__text">
             <p>
               주먹도끼는 구석기시대에 사용된 대표적인 도구이다. 한 손에 쥐고 쓸 수 있어서 짐승을 사냥하고 가죽을 벗기며, 땅을 파서 풀이나 나무를 캐는 등 다양한 용도로 사용되었다. 즉 오늘날의 멀티툴과
               같았다고 보면된다. 한국사 등에서는 이 주먹도끼의 발견을 매우 가치있는 것으로 평가하고 있다. 한국에서 이 주먹도끼가 발굴되기 전까지는 주먹도끼는 유럽과 북아프리카 등 백인 거주지에서만[2]
@@ -142,22 +142,22 @@ const FistAxe = () => {
           </div>
         </div>
       </div>
-      <div className="Details__comments">
+      <div className="FistAxes__comments Details__comments">
         <div className={"Details__commentTextEdit"} style={{ display: modalCommentEditView }}>
           {onEditComment()}
         </div>
-        <div className="Details__commentsWrite">
+        <div className="FistAxes__commentsWrite Details__commentsWrite">
           <Writepage />
         </div>
-        <div className="Details__commentsHead">
-          <div className="Details__commentsTitle">Comments</div>
+        <div className="FistAxes__commentsHead Details__commentsHead">
+          <div className="FistAxes__commentsTitle Details__commentsTitle">Comments</div>
         </div>
-        <div className="Details__commentsArea">
+        <div className="FistAxes__commentsArea Details__commentsArea">
           {commentList.map((comment) => {
             return (
-              <li className="Details__comment" key={comment.id}>
+              <li className="FistAxes__comment Details__comment" key={comment.id}>
                 <div className="Details__commentPicArea">
-                  <img className="Details__commentPic" src={ip + port + `/${comment.postPhoto}`} alt="" />
+                  <img className="Details__commentPic" src={ip + port + `${comment.postPhoto}`} alt="" />
                 </div>
                 <div className="Details__commentTextAreas">
                   <div className="Details__commentTextAreas__title">{comment.title}</div>

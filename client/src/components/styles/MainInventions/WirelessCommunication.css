@@ -1,5 +1,5 @@
-.MainFistAxes {
-  background-image: url("../../images/MainBackGound/FistAxeBackGround.jpg");
+.MainWirelessCommunications {
+  background-color:pink;
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
@@ -7,7 +7,7 @@
   position: relative;
 }
 
-.MainFistAxes__text {
+.MainWirelessCommunications__text {
   color: white;
   font-size: 50px;
   font-weight: 700;

@@ -4,12 +4,13 @@
 @import "Footer.css";
 @import "Detail.css";
 @import "MainPage.css";
-@import "./MainInventions/FistAxe.css";
+@import "./MainInventions/InventionCssLink.css";
 @import "Mypage.css";
 @import "WritePage.css";
 @import "ScrollTracker.css";
 @import "LogOut.css";
 
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@300;700&display=swap");
 body {
   height: 100%;
   margin: 0;
