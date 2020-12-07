@@ -32,6 +32,7 @@ import Vaccine from "./components/Detail/Vaccine";
 import Wheel from "./components/Detail/Wheel";
 import WirelessCommunication from "./components/Detail/WirelessCommunication";
 import WritingSystem from "./components/Detail/WritingSystem";
+import SocialLogin from "./components/SocialLogin";
 
 axios.defaults.withCredentials = true;
 
@@ -122,6 +123,7 @@ const App = () => {
       />
       <Switch>
         <Route exact path="/signup" render={() => <SignUp />} />
+        <Route exact path="/sociallogin" render={() => <SocialLogin location={window.location} hisotry={window.history}/>} />
         <Route exact path="/signin" render={() => <SignIn handleResponseSuccess={handleResponseSuccess.bind(this)} />} />
         <Route exact path="/" render={() => <MainPage />} />
         <Route exact path="/Abacus" render={() => <Abacus />} />

@@ -12,8 +12,8 @@ const ScrollTracker = props => {
     <>      
     <div className="scroll-tracker">
       <animated.div 
-      className="scroll-tracker__gauge"
-      style={style}       
+      className= "scroll-tracker__gauge"
+      style={style}
       >         
         <img src={primitiveImg} alt="" width="30px"/> 
       </animated.div>                 

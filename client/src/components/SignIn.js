@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import githubIcon from "./images/Github_icon.png";
 
 const SignIn = (props) => (
   <div>
@@ -17,9 +18,11 @@ const SignIn = (props) => (
           </div>
           <div className="signIn__noId" onClick={props.modalClose}>
             <Link to="/signup">아직 아이디가 없으신가요?</Link>
-          </div>
+          </div>          
           <div className="signIn__gitHub" onClick={props.modalClose}>
-            <a href="https://github.com/login/oauth/authorize?client_id=6c600e12bf58f2a72319&redirect_uri=https://6a24503ce00f.ngrok.io">깃허브로 로그인</a>
+            <a href="https://github.com/login/oauth/authorize?client_id=0604c124c075b9bc4925&redirect_uri=http://localhost:3001/sociallogin">              
+              <img className="github__icon" src={githubIcon} alt="" width="60px"/>
+            </a>
           </div>
           <button className="signIn__btn" type="submit" onClick={props.handleSignIn}>
             로그인

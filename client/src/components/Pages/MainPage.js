@@ -22,7 +22,7 @@ import MainRobot from "../Inventions/MainRobot";
 import MainInternet from "../Inventions/MainInternet";
 //import React, {useState} from 'react';
 
-const MainPage = () => {
+const MainPage = () => {  
   return (
     <div className="MainPages">
       <div className="MainPages__welcomePoint">
