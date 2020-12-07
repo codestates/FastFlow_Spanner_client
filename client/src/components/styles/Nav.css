@@ -1,7 +1,7 @@
 .navs {
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
+  background-color: #ffdd93;
   box-sizing: content-box;
   width: 100%;
   border-bottom: 2px solid #ece9e5;
@@ -9,6 +9,7 @@
   display: flex;
   flex-direction: column;
   z-index: 8;
+  font-family: "Bebas Neue", cursive;
 }
 
 .nav__main {
@@ -19,7 +20,7 @@
 
 .nav__logInBtn {
   font-size: x-large;
-  font-weight: 800;
+  font-weight: 600;
   margin-left: 10px;
 }
 
