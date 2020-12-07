@@ -1,0 +1,74 @@
+.navs {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  box-sizing: content-box;
+  width: 100%;
+  border-bottom: 2px solid #ece9e5;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  z-index: 8;
+}
+
+.nav__main {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.nav__hamburgerBtn {
+  display: flex;
+}
+
+.nav__logInBtn {
+  font-size: x-large;
+  font-weight: 800;
+  margin-left: 10px;
+}
+
+.nav__signUpBtn {
+  font-size: x-large;
+  font-weight: 800;
+  margin-left: 10px;
+}
+
+.nav__myPageBtn {
+  font-size: x-large;
+  font-weight: 800;
+  margin-left: 10px;
+}
+
+.nav__signInBtn {
+  font-size: x-large;
+  font-weight: 800;
+  margin-left: 10px;
+}
+
+.nav__writePageBtn {
+  font-size: x-large;
+  font-weight: 800;
+  margin-left: 10px;
+}
+
+.nav__logoBtn {
+  font-size: x-large;
+  font-weight: 800;
+  margin-right: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav__year {
+  display: flex;
+}
+
+.nav__scrollTrackerContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  background-color: white;
+  height: 60px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(148, 35, 0);
+}

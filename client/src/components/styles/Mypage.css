@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+.Mypages {
+  width: 100%;
+  height: 1000px;
+  padding-top: 130px;
+  background-color:#fff9f7;
+  padding-left : 50px;
+}
+
+.profileTitle {
+  width: 100%;
+  height: 100px;
+  margin-top: 20px;
+}
+.profileTitle__title{
+  font-size: 32px;
+  color: #313131;
+}
+.profileTitle__username{
+  font-size: 32px;
+  color:#d87a5e;
+}
+.profileTitle__desc{
+  margin-top: 5px;
+  font-size: 18px;
+  color: #585858;
+}
+
+.table{
+  width: 95%;
+  height: 300px;
+  margin-top: 10px;
+}
+.table th, .table td{  
+  border: 0;
+  border-top: 1px solid #ebe6e5;  
+}
+.table th{
+  color:rgb(255, 255, 255);
+  background-color: #d87a5e;
+}
+.table td {
+  color: #d87a5e;
+  font-size: 18px;
+}
+.profilePicView {
+  width: 180px;
+  height: 180px;
+  border-radius: 70%;
+  margin-top: 20px;
+  margin-left: 20px;  
+  overflow: hidden;  
+}
+.profilePicView__pic {
+  width : 100%;
+  height: 100%;    
+  object-fit: cover;
+}
+.profilePicBtns {
+  margin-left: 20px;  
+}
+.profilePicBtns__fileSearch{
+  margin-top: 20px;
+}
+.profilePicBtns__fileSearch label { 
+  display: inline-block; 
+  padding: .5em .75em; 
+  color: rgb(88, 88, 88); 
+  font-size: inherit; 
+  line-height: normal; 
+  vertical-align: middle; 
+  background-color: #fdfdfd; 
+  cursor: pointer; 
+  border: 1px solid #b9763f;
+  border-radius: .25em; 
+} 
+.profilePicBtns__fileSearch input[type="file"] {
+   /* 파일 필드 숨기기 */ 
+   position: absolute; 
+   width: 1px; 
+   height: 1px; 
+   padding: 0; 
+   margin: -1px; 
+   overflow: hidden; 
+   clip:rect(0,0,0,0); 
+   border: 0; 
+  }
+
+
+.profilePicBtns__etc{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.changeBtn, .deleteBtn{
+  display: inline-block; 
+  padding: .5em .75em; 
+  color: rgb(88, 88, 88); 
+  font-size: inherit; 
+  line-height: normal; 
+  vertical-align: middle; 
+  background-color: #fdfdfd; 
+  cursor: pointer; 
+  border: 1px solid #b9763f;
+  border-radius: .25em; 
+}
+
+.deleteBtn{
+  margin-left: 20px;
+}
+.profileInfo{
+  margin-left: 20px;
+}
