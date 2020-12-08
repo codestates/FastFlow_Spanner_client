@@ -6,11 +6,7 @@
   left: 37%;
   z-index: 1;
 }
-
 .signIn__navBtn {
-  position: absolute;
-  top: 15px;
-  left: 330px;
   cursor: pointer;
   font-size: x-large;
   font-weight: 800;

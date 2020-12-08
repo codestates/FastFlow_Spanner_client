@@ -16,3 +16,11 @@
   text-align: center;
   margin-top: 350px;
 }
+
+.MainClock__time {
+  display: flex;
+  align-content: center;
+  color: white;
+  position: relative;
+  font-size: 100px;
+}
