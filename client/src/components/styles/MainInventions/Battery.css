@@ -2,17 +2,167 @@
   background-color:black;
   background-repeat: no-repeat;
   background-position: top center;
-  background-size: cover;
-  min-height: 1000px;
-  position: relative;
+  background-size: cover;  
+  min-height: 1000px;  
+  box-sizing: border-box;
 }
 
-.MainBatterys__title {
+.MainBatterys__grid {
+  display:grid;
+  /* 1fr은 남은 자유공간의 크기를 할당하는 것을 의미한다. */
+  /* 1fr 1fr 1fr 1fr 이라고 쓰면 총 4fr 중 각각을 1fr 씩 나누므로, 각각은 1/4fr이 된다. */
+  grid-template-columns: 1fr;
+  grid-template-rows: 250px 250px 250px 250px;
+  border: red solid 10px;
+}
+
+
+.MainBatterys__grid__item:nth-child(1) {
+  grid-column: 1 / 1;
+  grid-row: 1 / 2;
+  height: 250px;
+  border: white solid 7px;
+}
+.MainBatterys__grid__item:nth-child(1):hover{
+  background-color: green;
+}
+.MainBatterys__grid__item:nth-child(2) {
+  grid-column: 1 / 1;
+  grid-row: 2 / 3;
+  height: 250px;
+  border: white solid 7px;
+}
+.MainBatterys__grid__item:nth-child(2):hover{
+  background-color: green;
+}
+.MainBatterys__grid__item:nth-child(3) {
+  grid-column: 1 / 1;
+  grid-row: 3 / 4;
+  height: 250px;
+  border: white solid 7px;
+}
+.MainBatterys__grid__item:nth-child(3):hover{
+  background-color: green;
+}
+.MainBatterys__grid__item:nth-child(4) {
+  grid-column: 1 / 1;
+  grid-row: 4 / 4;
+  height: 250px;
+  border: white solid 7px;
+}
+.MainBatterys__grid__item:nth-child(4):hover{
+  background-color: green;
+}
+
+.row1__video{
+  display:flex;
+  justify-content: space-between;
+  margin-left:50px;
+  margin-right:50px;
+}
+
+.video__title {
   color: white;
   font-size: 50px;
   font-weight: 700;
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  margin-top: 350px;
+}
+
+.video__desc {
+  color:white;
+  font-size: 20px;
+  font-weight: 700;
+}
+.video__video {
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+}
+.video__video__text {
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+}
+.video__video__text__desc {
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.row2__usage {
+  display:flex;
+  justify-content: space-between;
+  margin-left:50px;
+  margin-right:50px;
+}
+.usage__image-wrapper__container{
+  display:flex;
+  justify-content: space-between;  
+  width: 500px;
+}
+.image-wrapper__text{
+  color:white;
+}
+.usage__img__phone{  
+  color:white;
+  width: 150px;
+  height: 150px;
+  border-radius: 10%;
+}
+.usage__img__notebook{
+  width: 150px;
+  height: 150px;
+  border-radius: 10%;
+}
+.usage__img__watch{
+  width: 150px;
+  height: 150px;
+  border-radius: 10%;
+}
+.usage__text{
+  color:white;
+  font-size: 20px;
+  font-weight: 700;
+}
+.usage__title{
+  color:white;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.row3__principle{
+  display:flex;
+  justify-content: space-between;
+  margin-left:50px;
+  margin-right:50px;
+}
+.principle__title{
+  color:white;
+  font-size: 50px;
+  font-weight: 700;
+}
+.principle__text{
+  color:white;
+  font-size: 20px;
+  font-weight: 700;
+}
+.principle__img{
+  width: 400px;
+  height: 200px;
+}
+
+.row4__future{
+  display:flex;
+  justify-content: space-between;
+  padding-left:50px;
+  padding-right:50px;
+}
+.future__title{
+  color:white;
+  font-size: 50px;
+  font-weight: 700;
+}
+.future__text{
+  color:white;
+  font-size: 20px;
+  font-weight: 700;
 }
