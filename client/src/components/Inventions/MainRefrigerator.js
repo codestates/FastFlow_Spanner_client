@@ -13,10 +13,12 @@ const MainRefrigerator = () => {
  
   return (
     <div className="MainRefrigerators">
+      <div className="MainRefrigerators__title">Refrigerator</div>
       <div className="MainRefrigerators__grid">
         <div className="MainRefrigerators__grid__item">
           <div className="item1__indoor">
-            <div className="item1__indoor_img-wrapper">
+            <div className="item1__indoor_img-wr0823@home
+            apper">
               <div className="item1__indoor__img"> 바나나 발견!</div>
             </div>                        
             <div className={isOpenDoor1 ? "doorOpen1" : "item1__outdoor"} onClick={() => {setIsOpenDoor1(!isOpenDoor1)}}>

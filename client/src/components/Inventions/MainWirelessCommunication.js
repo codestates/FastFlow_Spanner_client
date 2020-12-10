@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import React, { useRef, useLayoutEffect } from 'react';
+
 const MainWirelessCommunication = () => {
   return (
     <div className="MainWirelessCommunications">

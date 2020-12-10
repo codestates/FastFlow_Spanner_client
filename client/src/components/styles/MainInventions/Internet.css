@@ -1,5 +1,5 @@
 .MainInternets {
-  background-color:blue;
+  background-color:rgb(0, 0, 0);
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
@@ -7,12 +7,30 @@
   position: relative;
 }
 
-.MainInternets__text {
-  color: white;
-  font-size: 50px;
-  font-weight: 700;
-  position: absolute;
+.MainInternets__background {
+  margin-top:200px;
+  position:absolute;
   width: 100%;
-  text-align: center;
-  margin-top: 350px;
+  height: 50%;
+  border: yellow solid 10px;  
+}
+
+.MainInternets__title{
+  font-size:50px;
+  font-weight:700;
+  color:white;  
+}
+
+.MainInternets__desc{
+  margin-top: 30px;
+  font-size:30px;
+  font-weight:700;
+  color:white;  
+}
+
+.MainInternets__link{
+  margin-top: 15%;
+  font-size:30px;
+  font-weight:700;
+  color:white;  
 }

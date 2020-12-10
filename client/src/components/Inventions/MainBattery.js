@@ -7,6 +7,7 @@ import principle from "./../images/battery_principle.gif"
 const MainBattery = () => {
   return (
     <div className="MainBatterys">
+      <iframe width="400px" height="220px" src="https://www.youtube.com/embed/tRJxnxVu3C8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" long-desc="Are you live!!?" allowfullscreen></iframe>
       <div className="MainBatterys__grid">
         <div className="MainBatterys__grid__item">
           <div className="row1__video">
@@ -16,8 +17,7 @@ const MainBattery = () => {
             <div className="video__video">
               <p className="video__video__text">Are you alive!!!?
                 <span className="video__video__text__desc">(1분부터 신남)</span>
-              </p>              
-              <iframe width="400px" height="220px" src="https://www.youtube.com/embed/tRJxnxVu3C8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" long-desc="Are you live!!?" allowfullscreen></iframe>
+              </p>                            
             </div>
           </div>          
         </div>

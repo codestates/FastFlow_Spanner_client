@@ -11,9 +11,10 @@
   display:grid;
   /* 1fr은 남은 자유공간의 크기를 할당하는 것을 의미한다. */
   /* 1fr 1fr 1fr 1fr 이라고 쓰면 총 4fr 중 각각을 1fr 씩 나누므로, 각각은 1/4fr이 된다. */
+  width: 300px;
+  height: 500px;
   grid-template-columns: 1fr;
-  grid-template-rows: 250px 250px 250px 250px;
-  border: red solid 10px;
+  grid-template-rows: 250px 250px 250px 250px;  
 }
 
 

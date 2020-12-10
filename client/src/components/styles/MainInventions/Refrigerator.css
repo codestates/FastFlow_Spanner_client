@@ -6,12 +6,20 @@
   min-height: 1000px;
   position: relative;
 }
-
+.MainRefrigerators__title{ 
+  padding-top: 2%;  
+  margin-left:80%;
+  color: white;
+  font-size: 50px;
+  font-weight: 700;    
+}
 .MainRefrigerators__grid {
   display:grid;
   /* 1fr은 남은 자유공간의 크기를 할당하는 것을 의미한다. */
   /* 1fr 1fr 1fr 1fr 이라고 쓰면 총 4fr 중 각각을 1fr 씩 나누므로, 각각은 1/4fr이 된다. */
-  /* grid-auto 옵션은 columns나 rows의 갯수를 모를때 지정해준다. */
+  /* grid-auto 옵션은 columns나 rows의 갯수를 모를때 지정해준다. */  
+  width: 50%;
+  height: 80%;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
 }
