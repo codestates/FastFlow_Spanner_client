@@ -18,6 +18,10 @@
   margin-top: 15px;
 }
 
+.nav__hamburgerBtn {
+  display: flex;
+}
+
 .nav__logInBtn {
   font-size: x-large;
   font-weight: 600;
@@ -31,6 +35,12 @@
 }
 
 .nav__myPageBtn {
+  font-size: x-large;
+  font-weight: 800;
+  margin-left: 10px;
+}
+
+.nav__signInBtn {
   font-size: x-large;
   font-weight: 800;
   margin-left: 10px;

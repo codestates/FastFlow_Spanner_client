@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ScrollTracker from "./ScrollTracker";
-import useScrollStatus from "./hooks/useScrollStatus";
 import SignIn from "./SignIn";
+import ScrollTracker from './ScrollTracker';
+import useScrollStatus from './hooks/useScrollStatus';
 import LogOut from "./LogOut";
+import KakaoSignIn from "./SocialLogInKakao"
 
 export default function Nav(props) {
   const scrollState = useScrollStatus();
@@ -29,6 +30,7 @@ export default function Nav(props) {
           <Link to="/Mypage" className="nav__myPageBtn">
             My page
           </Link>
+          <Link to="/SocialLogInKakao" className="nav__myPageBtn">카카오로그인</Link>
         </div>
         <div className="nav__year">여기에 년도 입력</div>
         <div>
@@ -36,9 +38,9 @@ export default function Nav(props) {
             Main
           </Link>
         </div>
-      </div>
+			</div>
       <div className="nav__scrollTrackerContainer">
-        <ScrollTracker position={scrollState.position} />
+        <ScrollTracker position = {scrollState.position} />
       </div>
     </header>
   );

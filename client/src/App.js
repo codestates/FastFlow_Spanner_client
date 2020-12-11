@@ -27,6 +27,8 @@ import SteamEngine from "./components/Detail/SteamEngine";
 import Vaccine from "./components/Detail/Vaccine";
 import Wheel from "./components/Detail/Wheel";
 import WritingSystem from "./components/Detail/WritingSystem";
+import SocialLogInGitHub from "./components/SocialLogInGitHub";
+import SocialLogInKakao from "./components/SocialLogInKakao";
 
 axios.defaults.withCredentials = true;
 
@@ -142,6 +144,10 @@ const App = () => {
 
         <Route exact path="/writingSystem" render={() => <WritingSystem />} />
         <Route exact path="/mypage" render={() => <Mypage />} />
+
+        <Route exact path="/sociallogin" render={() => <SocialLogInGitHub location={window.location} hisotry={window.history}/>} />
+        <Route exact path="/SocialLogInKakao" render={() => <SocialLogInKakao location={window.location} hisotry={window.history}/>} />
+
       </Switch>
       <Footer />
     </div>
