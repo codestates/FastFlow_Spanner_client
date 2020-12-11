@@ -9,8 +9,21 @@
 @import "WritePage.css";
 @import "ScrollTracker.css";
 @import "LogOut.css";
-
+@import url("https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@300;700&display=swap");
+/* DetailPageFont */
+@import url("https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Stylish&display=swap");
+/* fistAxeFont */
+@import url("https://fonts.googleapis.com/css2?family=Ranchers&family=Yeon+Sung&display=swap");
+/* fireFont */
+@import url("https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Texturina:wght@900&display=swap");
+/* WritingSystemFont */
+@import url("https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap");
+/* WheelFont */
+@import url("https://fonts.googleapis.com/css2?family=Hi+Melody&family=Monoton&family=Rock+Salt&display=swap");
+/* CondomFont */
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Single+Day&display=swap");
 body {
   height: 100%;
   margin: 0;

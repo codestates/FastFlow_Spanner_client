@@ -1,9 +1,9 @@
-import testPic from "../../TestPic/FistAxe.jpg";
+import CondomDetail from "../images/DetailPic/CondomDetail.jpg";
 import { useState, useEffect } from "react";
 //import { Link } from "react-router-dom";
 import Writepage from "../Pages/WritePage";
 import axios from "axios";
-import basicPostPic from "./../images/candlelight.jpg";
+import basicPostPic from "../images/InputPic.jpg";
 import { ip, port } from "../../url";
 
 const Battery = () => {
@@ -14,14 +14,16 @@ const Battery = () => {
   const [postPic, setPostPic] = useState("");
   const [editId, setEditId] = useState("");
   const [modalCommentEditView, setModalCommentEditView] = useState("none");
+  const [inventionId, setInventionId] = useState("");
 
   useEffect(() => {
     // 토큰 유지
     let accessToken = localStorage.getItem("token");
     axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
-
+    // inventionId 보내기
+    setInventionId(12);
     // 댓글 작성
-    axios.get(ip + port + `/post/read`).then((res) => {
+    axios.get(ip + port + `/post/read/12`).then((res) => {
       console.log(res.data);
       let result = res.data;
       let newCommentData = [];
@@ -57,14 +59,14 @@ const Battery = () => {
         text: text,
         title: title,
         postId: editId,
-        inventionId: 1,
+        inventionId: inventionId,
       })
       .then((res) => {
         console.log("사진을 수정합니다.", res.data);
         const formData = new FormData();
         formData.append("image", postPic);
         formData.append("postId", editId);
-        formData.append("postInfo", 1);
+        formData.append("inventionId", inventionId);
         axios.put(ip + port + `/post/upload`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -98,20 +100,21 @@ const Battery = () => {
     return (
       <div className="Details__editAreas">
         <img className="Details__editAreas__PicView" src={postPicView} alt="" />
-        <span className="Details__editAreas__fileSelectArea">
-          <input className="Details__editAreas__fileSelect" type="file" name="image" onChange={onChangeFile} />
-        </span>
-        <div className="Details__editAreas__titles">
+        <div className="Details__editAreas__fileSearch">
+          <label for="ex-file">사진 찾아보기</label>
+          <input type="file" id="ex-file" name="image" onChange={onChangeFile} />
+        </div>
+        <div className="Details__editAreas__input">
           <input className="Details__editAreas__titleInput" type="text" placeholder="제목" onChange={onTitleChange} />
-          <button type="Details__editAreas__submitBtn" onClick={offEditArea}>
+          <input className="Details__editAreas__textInput" type="text" placeholder="남기실 말씀" onChange={onTextChange} />
+        </div>
+        <div className="Details__editAreas__btn">
+          <button className="Details__editAreas__submitBtn" onClick={offEditArea}>
             게시
           </button>
-          <button type="Details__editAreas__submitBtn" onClick={closeEditArea}>
+          <button className="Details__editAreas__submitBtnClose" onClick={closeEditArea}>
             닫기
           </button>
-        </div>
-        <div className="Details__editAreas__texts">
-          <input className="Details__editAreas__textInput" type="text" placeholder="남기실 말씀" onChange={onTextChange} />
         </div>
       </div>
     );
@@ -119,10 +122,12 @@ const Battery = () => {
 
   return (
     <center className="Details">
+      <div className="Details__title">Battery</div>
       <div className="Details__body">
         <div className="Details__picArea">
-          <img className="Details__pic" src={testPic} alt=""></img>
+          <img className="Details__pic" src={CondomDetail} alt=""></img>
         </div>
+        <div className="Details__video"></div>
         <div className="Details__textArea">
           <div className="Details__textTitle">Detail</div>
           <div className="Details__text">
@@ -147,7 +152,7 @@ const Battery = () => {
           {onEditComment()}
         </div>
         <div className="Details__commentsWrite">
-          <Writepage />
+          <Writepage inventionId={inventionId} />
         </div>
         <div className="Details__commentsHead">
           <div className="Details__commentsTitle">Comments</div>
@@ -156,11 +161,12 @@ const Battery = () => {
           {commentList.map((comment) => {
             return (
               <li className="Details__comment" key={comment.id}>
+                <div className="Details__commentTextAreas__title">{comment.title}</div>
                 <div className="Details__commentPicArea">
                   <img className="Details__commentPic" src={ip + port + `/${comment.postPhoto}`} alt="" />
                 </div>
                 <div className="Details__commentTextAreas">
-                  <div className="Details__commentTextAreas__title">{comment.title}</div>
+                  <div className="Details__commentTextAreas__username">{comment.user.username}</div>
                   <div className="Details__commentTextAreas__text">{comment.text}</div>
                 </div>
 

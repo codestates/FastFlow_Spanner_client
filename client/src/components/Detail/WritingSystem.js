@@ -1,9 +1,9 @@
-import testPic from "../../TestPic/FistAxe.jpg";
+import WritingSystemDetail from "../images/DetailPic/WritingSystemDetail.png";
 import { useState, useEffect } from "react";
 //import { Link } from "react-router-dom";
 import Writepage from "../Pages/WritePage";
 import axios from "axios";
-import basicPostPic from "./../images/candlelight.jpg";
+import basicPostPic from "../images/InputPic.jpg";
 import { ip, port } from "../../url";
 
 const WritingSystem = () => {
@@ -14,14 +14,16 @@ const WritingSystem = () => {
   const [postPic, setPostPic] = useState("");
   const [editId, setEditId] = useState("");
   const [modalCommentEditView, setModalCommentEditView] = useState("none");
+  const [inventionId, setInventionId] = useState("");
 
   useEffect(() => {
     // 토큰 유지
     let accessToken = localStorage.getItem("token");
     axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
-
+    // inventionId 보내기
+    setInventionId(3);
     // 댓글 작성
-    axios.get(ip + port + `/post/read`).then((res) => {
+    axios.get(ip + port + `/post/read/3`).then((res) => {
       console.log(res.data);
       let result = res.data;
       let newCommentData = [];
@@ -57,14 +59,14 @@ const WritingSystem = () => {
         text: text,
         title: title,
         postId: editId,
-        inventionId: 1,
+        inventionId: inventionId,
       })
       .then((res) => {
         console.log("사진을 수정합니다.", res.data);
         const formData = new FormData();
         formData.append("image", postPic);
         formData.append("postId", editId);
-        formData.append("postInfo", 1);
+        formData.append("inventionId", inventionId);
         axios.put(ip + port + `/post/upload`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -98,20 +100,21 @@ const WritingSystem = () => {
     return (
       <div className="Details__editAreas">
         <img className="Details__editAreas__PicView" src={postPicView} alt="" />
-        <span className="Details__editAreas__fileSelectArea">
-          <input className="Details__editAreas__fileSelect" type="file" name="image" onChange={onChangeFile} />
-        </span>
-        <div className="Details__editAreas__titles">
+        <div className="Details__editAreas__fileSearch">
+          <label for="ex-file">사진 찾아보기</label>
+          <input type="file" id="ex-file" name="image" onChange={onChangeFile} />
+        </div>
+        <div className="Details__editAreas__input">
           <input className="Details__editAreas__titleInput" type="text" placeholder="제목" onChange={onTitleChange} />
-          <button type="Details__editAreas__submitBtn" onClick={offEditArea}>
+          <input className="Details__editAreas__textInput" type="text" placeholder="남기실 말씀" onChange={onTextChange} />
+        </div>
+        <div className="Details__editAreas__btn">
+          <button className="Details__editAreas__submitBtn" onClick={offEditArea}>
             게시
           </button>
-          <button type="Details__editAreas__submitBtn" onClick={closeEditArea}>
+          <button className="Details__editAreas__submitBtnClose" onClick={closeEditArea}>
             닫기
           </button>
-        </div>
-        <div className="Details__editAreas__texts">
-          <input className="Details__editAreas__textInput" type="text" placeholder="남기실 말씀" onChange={onTextChange} />
         </div>
       </div>
     );
@@ -119,25 +122,50 @@ const WritingSystem = () => {
 
   return (
     <center className="Details">
+      <div className="Details__title">Writing System</div>
       <div className="Details__body">
         <div className="Details__picArea">
-          <img className="Details__pic" src={testPic} alt=""></img>
+          <img className="Details__pic" src={WritingSystemDetail} alt=""></img>
+        </div>
+        <div className="Details__video">
+          <iframe
+            alt=""
+            width="1280"
+            height="720"
+            src="https://www.youtube.com/embed/3kGuN8WIGNc"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
         </div>
         <div className="Details__textArea">
           <div className="Details__textTitle">Detail</div>
           <div className="Details__text">
+            <div className="Details__text__birth">탄생 배경</div>
             <p>
-              주먹도끼는 구석기시대에 사용된 대표적인 도구이다. 한 손에 쥐고 쓸 수 있어서 짐승을 사냥하고 가죽을 벗기며, 땅을 파서 풀이나 나무를 캐는 등 다양한 용도로 사용되었다. 즉 오늘날의 멀티툴과
-              같았다고 보면된다. 한국사 등에서는 이 주먹도끼의 발견을 매우 가치있는 것으로 평가하고 있다. 한국에서 이 주먹도끼가 발굴되기 전까지는 주먹도끼는 유럽과 북아프리카 등 백인 거주지에서만[2]
-              발굴되었고, 이 때문에 서양의 고고학자들은 '백인은 타인종에 비해 훨씬 진화된 인류'라는 뉘앙스로 타인종을 열등하게 평가했다. 이는 위에 언급된 대로 주먹도끼는 당시로서는 굉장히 진화한
-              문명의 산물이었기 때문이다. 그렇다고 아예 주먹도끼가 아시아 쪽에서 발견되지 않은 것은 아니다. 다만 위에서 언급한 지역에서는 더 발전된 형태인 날이 양쪽에 있는 아슐리안형 주먹 도끼가
-              출토된 것이고, 아시아 쪽에서는 날이 한쪽에만 있는 동아시아식 외날 주먹 도끼(찍개)가 출토되어 왔던 것. 하지만 1977년, 주한미군이자 고고학자(고고학자는 아니고 고고학과 출신)였던 '그렉
-              보웬'이 우연히 경기도 연천군에서 한국인 여자친구 이상미[3]와 산책하던 중, 이씨가 특이한 모양의 돌을 하나 발견했다. 신기하게 여겨 조사한 결과, 그것이 바로 수십만년도 더 된 주먹도끼였음이
-              밝혀졌다. 전곡리 선사유적지 참조. 덕분에 백인만이 주먹도끼 같은 고등한 물건을 지닌 것이 아니었다는 사실이 밝혀져서 고고학계에 일대의 지각변동이 일어났고, 기존의 백인만이 우월했다는
-              이론들은 자취를 감추었다. 사실 지금의 기준으로 보면, 현생인류도 아닌 호모 에렉투스의 유물로 인종의 우열을 논한 것 자체가 황당한 일이었던 셈이다. 위의 구분안에 대한 견해를 제시했던 것은
-              미국의 고고학자인 H.모비우스에 의한 것으로 소위 모비우스 라인이라고 부르며, 주먹도끼 문화와 찍개 문화의 구분하고자 하였던 목적이었다. 한국에서의 주먹도끼 발견 이전에 이미 중국에서
-              주먹도끼가 확인되었기 때문에 모비우스라인은 한반도 북쪽 위로 형성되어 있었다. 당시의 주먹도끼 문화와 찍개문화의 구분안은 지속적으로 조정되었던 학설이었다. 즉, 주먹도끼의 사용이 발전된
-              문화상을 지칭할 목적이 있을 "수" 있다손 치더라도 결코 인종에 기인한 우월성의 구분이 목적이 아니라 문화권 설정 그 자체에 보다 목적을 둔 가설이었다.
+              발화와 동시에 사라지는 구어의 한계를 보강하기 위해 문자가 만들어졌다. 문자의 발명과 함께 인류의 지식을 형태가 있는 방식으로 전할 수 있게 되었기 때문에, 불, 바퀴와 함께 인류 3대
+              발명품으로 꼽는 이들도 있다. 문자를 통해 기록을 할 수 있게 됨으로써 본격적인 역사 시대가 대두되게 한 가장 본질적인 원인이다. 위의 정의에 따르면, 문자는 언어를 표기할 수 있는 능력을 갖고
+              있어야 하며, 따라서 일반적으로 쓰이는 문장 이상의 단위를 표현할 수 있어야 한다. 일반적으로 이야기할 때에는 아래의 결승 문자 등 간결한 의사 소통 수단도 문자에 포함시켜 말하나, 위의 정의에
+              따라 엄밀하게는 결승 문자 등은 문자로 볼 수 없으며 기호(sign) 단계에 해당한다. 결승 문자는 수사(數詞) 등 한정적인 수단을 표기할 수 있을 뿐, 그 사용자들이 당연히 알고 있었을 일상 언어
+              개념도 제대로 표기할 수 없기 때문이다. 가령 아라비아 숫자와 수학 기호를 이용하더라도 결승 문자로 표기할 수 있는 개념은 물론 그 이상까지도 표기할 수 있지만, 정교하게 짜인 철학적 언어 실험
+              수준이 아닌 이상에야 수학 기호로 현실 언어에 대응할 수 있는 표기법을 갖추어 쓸 수 없기 때문에 우리는 그것을 수학 '기호'라고 하지 수학 '문자'라고 하지 않는다. 하지만 학자에 따라 문자를
+              광의의 의미로 볼 때, 언어에 직접 대응되지 않는 경우를 포함하기도 하며, 당장 나무위키에 문자로 분류되어 있는 상형문자와 표의 문자는 언어를 거치지 않고 지시체를 직접 지시하는 기호이다.
+              따라서 상형 문자와 표의 문자를 문자로 분류하려면, 문자의 정의를 바꾸던가 아니면 상형 문자와 표의 문자를 문자의 분류에서 빼던지, proto-writing system으로 재분류해야 하는 상황에 처한다.
+              언론에서 간혹 '4대 문명 이전의 문자가 발견됐다'고 하는 것들은 위의 정의 때문에 대부분 문자의 자격조차 갖추지 못한 것이 대부분이다. 오히려 교과서에 수록될 정도로 익히 알려진 인더스 문명의
+              인장 '문자'라고 불리는 것들도 길어야 20여 단위 수준의 길이로 된 것밖에 발견되지 않고 있기 때문에, 비판적으로 보는 경우에는 이것도 인장 '부호' 정도에 불과하다고 보기도 한다. 인더스 문명의
+              인장 문자의 경우에는 메소포타미아 쐐기 문자와 함께 쓰인 경우가 있다(바꾸어 말하자면, 로제타 스톤처럼 여러 가지 문자로 같은 문구를 표기한 것에 기초해 어떤 문장임을 확인할 수 있을 가능성이
+              있다)는 점, 비슷한 시대의 선형 엘람 문자나 이후 시대의 브라흐미 문자와 유사하거나 대응되는 부호가 있다는 점 등에서 문자라고 보는 의견이 꽤 있기는 하지만, 도자기 조각이나 금속 유물에
+              새겨진 무슨 그림 한두 개를 가지고 와서 '현재까지 발견되지 않은 문자' 운운하는 사람들은 얄짤없이 사짜로 보면 된다. 반대로, 가림토 같이 언어에 대한 대응 체계가 있는 기호라고 하더라도
+              실제로 문장 단위로 쓰인 사례가 없는 경우 위작된 기호에 불과함을 단번에 알 수 있다. 현재 사용되고 있는 대부분의 문자 체계는 크게 나눠 이집트 상형문자의 후손과 중국의 갑골 문자의 후손으로
+              정리할 수 있다. 자생적으로 발생한 문자는 이 외에도 고대 그리스의 선형 문자, 중앙 아메리카의 마야 문자 등 여럿 존재하지만 현재는 대부분 생명력을 잃었다. 이집트 상형문자가 상형문자에서
+              단순화되어 원시 시나이 문자(Proto-Sinaitic)가 된 후, 원시 시나이 문자에서 페니키아 문자가 탄생하였다. 이후 페니키아 문자는 그리스 문자, 아랍 문자, 브라흐미 문자로 각각 발전하였다. 그리스
+              문자는 현재 사용되는 라틴 문자 알파벳의 원조가 되었고, 아랍 문자는 아브자드의 대표이며, 브라흐미 문자는 아부기다와 브라흐미계 문자의 조상격이 된다. 따라서 히에로글리프의 후손은 현재
+              신대륙에서부터 멀리 동쪽의 동남아시아에 이르기까지 널리 사용되고 있음을 알 수 있다. 중국의 갑골 문자는 이후 한자로 발전하였으며, 일본의 가나는 한자를 간략화한 데서 출발했다. 한국에서도
+              한자를 사용하되 입말과의 큰 차이를 보강하기 위한 목적으로 이두, 향찰 등의 표기를 사용했으며, 한글 등장 이후에도 19세기 말까지 언어 권력의 중심은 한자가 차지하고 있었으나 근대화를
+              거치면서 점차 국한혼용체를 거쳐 순 한글체로 대체되었고, 현재는 한자는 한글의 보조 문자로만 사용되고 있다. 한글은 훈민정음 해례본의 설명에 따라 세종이 독자 개발했다는 것이 정설이다.
+              음운학적으로 세종이 분명히 한자와 중국어 음운학을 섭렵했음은 분명하지만 형태로든 음운 구성으로든 기존의 한자 체계와 유사점이 없으며, 오히려 파스파 문자 등 표음 문자에서 아이디어를 얻었을
+              것이라는 가설이 있으나 국내 학계에서는 비판을 받고 있다. 다만 위키백과 영문판에서는 훈민정음 해례본 외에도 한글이 파스파 문자의 영향을 받았을 것이라는 게리 레드야드의 학설도 소개하고
+              있다.
             </p>
           </div>
         </div>
@@ -147,7 +175,7 @@ const WritingSystem = () => {
           {onEditComment()}
         </div>
         <div className="Details__commentsWrite">
-          <Writepage />
+          <Writepage inventionId={inventionId} />
         </div>
         <div className="Details__commentsHead">
           <div className="Details__commentsTitle">Comments</div>
@@ -156,11 +184,12 @@ const WritingSystem = () => {
           {commentList.map((comment) => {
             return (
               <li className="Details__comment" key={comment.id}>
+                <div className="Details__commentTextAreas__title">{comment.title}</div>
                 <div className="Details__commentPicArea">
                   <img className="Details__commentPic" src={ip + port + `/${comment.postPhoto}`} alt="" />
                 </div>
                 <div className="Details__commentTextAreas">
-                  <div className="Details__commentTextAreas__title">{comment.title}</div>
+                  <div className="Details__commentTextAreas__username">{comment.user.username}</div>
                   <div className="Details__commentTextAreas__text">{comment.text}</div>
                 </div>
 

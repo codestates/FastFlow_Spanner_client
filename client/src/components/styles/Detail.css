@@ -1,45 +1,100 @@
 .Details {
+  position: relative;
   display: block;
+  background-color: white;
+}
+
+.Details__title {
+  font-size: 80px;
+  font-weight: 800;
+  padding-top: 200px;
+  letter-spacing: 2px;
+  padding-left: 40px;
+  font-family: "Stylish", sans-serif;
 }
 
 .Details__body {
-  display: flex;
+  display: block;
   justify-content: center;
-  padding-top: 50px;
-  top: 0;
-  height: 550px;
+  padding-top: 80px;
+  height: auto;
+  margin-bottom: 81px;
 }
 
 .Details__picArea {
   width: 400px;
-  margin-right: 50px;
+  margin-right: 600px;
+  margin-bottom: 94px;
 }
+
 .Details__pic {
-  width: 90%;
-  border-radius: 10px;
+  height: 360px;
+  width: 410px;
+  border-radius: 20px;
 }
+
+.Details__video {
+  position: absolute;
+  left: 47%;
+  top: 379px;
+  width: 640px;
+  height: 360px;
+}
+.Details__video iframe {
+  width: 100%;
+  height: 100%;
+}
+
 .Details__textArea {
-  width: 400px;
+  width: 100%;
 }
 
 .Details__textTitle {
-  font-size: 40px;
+  position: relative;
+  left: -541px;
+  font-size: 55px;
+  font-weight: 700;
+  color: black;
   margin-bottom: 20px;
+  font-family: "Stylish", sans-serif;
+  padding-top: 10px;
+}
+
+.Details__text__birth,
+.Details__text__make,
+.Details__text__use {
+  font-weight: 600;
+  font-size: 27px;
 }
 
 .Details__text {
-  width: 100%;
-  height: 70%;
-  overflow-y: scroll;
-  border: 2px solid black;
-  border-radius: 10px;
+  width: 1200px;
+  height: 100%;
+  border-radius: 20px;
   text-align: left;
+  font-size: 25px;
+  background-color: white;
+  left: 303px;
+  color: black;
+  font-family: "Stylish", sans-serif;
 }
 
 li {
   list-style: none;
 }
 
+.Details__commentsTitle {
+  font-size: 50px;
+  font-weight: 600;
+  margin-top: 74px;
+  margin-bottom: 20px;
+  color: black;
+  font-family: "Stylish", sans-serif;
+}
+
+.Details__comments {
+  margin-bottom: 100px;
+}
 .Details__commentsArea {
   box-sizing: border-box;
   border: 2px solid black;
@@ -47,7 +102,8 @@ li {
   width: 1240px;
   text-align: left;
   padding: 30px 50px;
-  margin-bottom: 300px;
+  margin-left: 24px;
+  margin-bottom: 97px;
 }
 
 .Details__comment {
@@ -89,14 +145,133 @@ li {
 }
 
 .Details__editAreas {
+  position: relative;
   margin-top: 300px;
   background-color: white;
-  height: 30%;
-  width: 40%;
+  height: 430px;
+  width: 1100px;
   border: 2px solid black;
   border-radius: 20px;
 }
 
 .Details__editAreas__PicView {
-  height: 80px;
+  position: absolute;
+  left: 50px;
+  top: 82px;
+  height: 278px;
+  width: 360px;
+}
+
+.Details__editAreas__fileSearch {
+  position: absolute;
+  left: 466px;
+  top: 96px;
+}
+
+.Details__editAreas__fileSearch label {
+  padding: 0.5em 0.75em;
+  color: rgb(88, 88, 88);
+  font-size: inherit;
+  line-height: normal;
+  vertical-align: middle;
+  background-color: #fdfdfd;
+  cursor: pointer;
+  border: 1px solid #b9763f;
+  border-radius: 0.25em;
+}
+
+.Details__editAreas__fileSearch input[type="file"] {
+  /* 파일 필드 숨기기 */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.Details__editAreas__input {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 30px;
+  top: 138px;
+}
+
+.Details__editAreas__titleInput,
+.Details__editAreas__textInput {
+  width: 600px;
+  height: 40px;
+  margin-bottom: 32px;
+}
+
+.Details__editAreas__btn {
+  position: absolute;
+  display: flex;
+  bottom: 84px;
+  right: 300px;
+}
+
+.Details__editAreas__submitBtn,
+.Details__editAreas__submitBtnClose {
+  padding: 0.5em 0.75em;
+  color: rgb(88, 88, 88);
+  font-size: inherit;
+  line-height: normal;
+  vertical-align: middle;
+  background-color: #fdfdfd;
+  cursor: pointer;
+  border: 1px solid #b9763f;
+  border-radius: 0.25em;
+}
+.Details__editAreas__submitBtn {
+  margin-right: 13px;
+}
+
+.Details__commentTextAreas__title {
+  font-family: "Yeon Sung", cursive;
+  font-size: 30px;
+  font-weight: 600;
+  color: #272525;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+.Details__commentPic {
+  margin-bottom: 10px;
+  height: 320px;
+}
+
+.Details__commentTextAreas__username {
+  font-family: "Yeon Sung", cursive;
+  font-weight: 600;
+  font-size: 25px;
+  color: #5f5e5e;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+.Details__commentTextAreas__text {
+  font-family: "Yeon Sung", cursive;
+  font-size: 25px;
+  color: #7c7a7a;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.Details__commentToolEdit {
+  margin-right: 9px;
+}
+
+.Details__commentToolEdit,
+.Details__commentToolDelete {
+  padding: 3px 7px;
+  color: rgb(88, 88, 88);
+  font-size: inherit;
+  line-height: normal;
+  vertical-align: middle;
+  background-color: #fdfdfd;
+  cursor: pointer;
+  border: 1px solid #b9763f;
+  border-radius: 0.25em;
 }
