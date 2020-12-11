@@ -1,9 +1,9 @@
-import testPic from "../../TestPic/FistAxe.jpg";
+import CondomDetail from "../images/DetailPic/CondomDetail.jpg";
 import { useState, useEffect } from "react";
 //import { Link } from "react-router-dom";
 import Writepage from "../Pages/WritePage";
 import axios from "axios";
-import basicPostPic from "./../images/candlelight.jpg";
+import basicPostPic from "../images/InputPic.jpg";
 import { ip, port } from "../../url";
 
 const Condom = () => {
@@ -14,14 +14,16 @@ const Condom = () => {
   const [postPic, setPostPic] = useState("");
   const [editId, setEditId] = useState("");
   const [modalCommentEditView, setModalCommentEditView] = useState("none");
+  const [inventionId, setInventionId] = useState("");
 
   useEffect(() => {
     // 토큰 유지
     let accessToken = localStorage.getItem("token");
     axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
-
+    // inventionId 보내기
+    setInventionId(5);
     // 댓글 작성
-    axios.get(ip + port + `/post/read`).then((res) => {
+    axios.get(ip + port + `/post/read/5`).then((res) => {
       console.log(res.data);
       let result = res.data;
       let newCommentData = [];
@@ -57,14 +59,14 @@ const Condom = () => {
         text: text,
         title: title,
         postId: editId,
-        inventionId: 1,
+        inventionId: inventionId,
       })
       .then((res) => {
         console.log("사진을 수정합니다.", res.data);
         const formData = new FormData();
         formData.append("image", postPic);
         formData.append("postId", editId);
-        formData.append("postInfo", 1);
+        formData.append("inventionId", inventionId);
         axios.put(ip + port + `/post/upload`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -98,20 +100,21 @@ const Condom = () => {
     return (
       <div className="Details__editAreas">
         <img className="Details__editAreas__PicView" src={postPicView} alt="" />
-        <span className="Details__editAreas__fileSelectArea">
-          <input className="Details__editAreas__fileSelect" type="file" name="image" onChange={onChangeFile} />
-        </span>
-        <div className="Details__editAreas__titles">
+        <div className="Details__editAreas__fileSearch">
+          <label for="ex-file">사진 찾아보기</label>
+          <input type="file" id="ex-file" name="image" onChange={onChangeFile} />
+        </div>
+        <div className="Details__editAreas__input">
           <input className="Details__editAreas__titleInput" type="text" placeholder="제목" onChange={onTitleChange} />
-          <button type="Details__editAreas__submitBtn" onClick={offEditArea}>
+          <input className="Details__editAreas__textInput" type="text" placeholder="남기실 말씀" onChange={onTextChange} />
+        </div>
+        <div className="Details__editAreas__btn">
+          <button className="Details__editAreas__submitBtn" onClick={offEditArea}>
             게시
           </button>
-          <button type="Details__editAreas__submitBtn" onClick={closeEditArea}>
+          <button className="Details__editAreas__submitBtnClose" onClick={closeEditArea}>
             닫기
           </button>
-        </div>
-        <div className="Details__editAreas__texts">
-          <input className="Details__editAreas__textInput" type="text" placeholder="남기실 말씀" onChange={onTextChange} />
         </div>
       </div>
     );
@@ -119,25 +122,42 @@ const Condom = () => {
 
   return (
     <center className="Details">
+      <div className="Details__title">Condom</div>
       <div className="Details__body">
         <div className="Details__picArea">
-          <img className="Details__pic" src={testPic} alt=""></img>
+          <img className="Details__pic" src={CondomDetail} alt=""></img>
+        </div>
+        <div className="Details__video">
+          <iframe
+            alt=""
+            width="1280"
+            height="720"
+            src="https://www.youtube.com/embed/qbbY6PE8W5g"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
         </div>
         <div className="Details__textArea">
           <div className="Details__textTitle">Detail</div>
           <div className="Details__text">
+            <div className="Details__text__birth">탄생 배경</div>
             <p>
-              주먹도끼는 구석기시대에 사용된 대표적인 도구이다. 한 손에 쥐고 쓸 수 있어서 짐승을 사냥하고 가죽을 벗기며, 땅을 파서 풀이나 나무를 캐는 등 다양한 용도로 사용되었다. 즉 오늘날의 멀티툴과
-              같았다고 보면된다. 한국사 등에서는 이 주먹도끼의 발견을 매우 가치있는 것으로 평가하고 있다. 한국에서 이 주먹도끼가 발굴되기 전까지는 주먹도끼는 유럽과 북아프리카 등 백인 거주지에서만[2]
-              발굴되었고, 이 때문에 서양의 고고학자들은 '백인은 타인종에 비해 훨씬 진화된 인류'라는 뉘앙스로 타인종을 열등하게 평가했다. 이는 위에 언급된 대로 주먹도끼는 당시로서는 굉장히 진화한
-              문명의 산물이었기 때문이다. 그렇다고 아예 주먹도끼가 아시아 쪽에서 발견되지 않은 것은 아니다. 다만 위에서 언급한 지역에서는 더 발전된 형태인 날이 양쪽에 있는 아슐리안형 주먹 도끼가
-              출토된 것이고, 아시아 쪽에서는 날이 한쪽에만 있는 동아시아식 외날 주먹 도끼(찍개)가 출토되어 왔던 것. 하지만 1977년, 주한미군이자 고고학자(고고학자는 아니고 고고학과 출신)였던 '그렉
-              보웬'이 우연히 경기도 연천군에서 한국인 여자친구 이상미[3]와 산책하던 중, 이씨가 특이한 모양의 돌을 하나 발견했다. 신기하게 여겨 조사한 결과, 그것이 바로 수십만년도 더 된 주먹도끼였음이
-              밝혀졌다. 전곡리 선사유적지 참조. 덕분에 백인만이 주먹도끼 같은 고등한 물건을 지닌 것이 아니었다는 사실이 밝혀져서 고고학계에 일대의 지각변동이 일어났고, 기존의 백인만이 우월했다는
-              이론들은 자취를 감추었다. 사실 지금의 기준으로 보면, 현생인류도 아닌 호모 에렉투스의 유물로 인종의 우열을 논한 것 자체가 황당한 일이었던 셈이다. 위의 구분안에 대한 견해를 제시했던 것은
-              미국의 고고학자인 H.모비우스에 의한 것으로 소위 모비우스 라인이라고 부르며, 주먹도끼 문화와 찍개 문화의 구분하고자 하였던 목적이었다. 한국에서의 주먹도끼 발견 이전에 이미 중국에서
-              주먹도끼가 확인되었기 때문에 모비우스라인은 한반도 북쪽 위로 형성되어 있었다. 당시의 주먹도끼 문화와 찍개문화의 구분안은 지속적으로 조정되었던 학설이었다. 즉, 주먹도끼의 사용이 발전된
-              문화상을 지칭할 목적이 있을 "수" 있다손 치더라도 결코 인종에 기인한 우월성의 구분이 목적이 아니라 문화권 설정 그 자체에 보다 목적을 둔 가설이었다.
+              콘돔은 대체로 기원전 3000년경 초기 이집트 왕조로 추정된다. 콘돔은 고대 이집트 벽화에 등장할 만큼 역사가 오래되었는데, 당시 콘돔은 돼지나 염소의 맹장이나 방광을 이용해서 만들어졌다.
+              이처럼 동물의 내장을 이용한 콘돔은, 고무가 발명되기 전까지 꾸준히 사용되었다. 그러나 당시 콘돔은 곤충 등으로부터 생식기를 보호하기 위한 속옷의 일종으로 지금의 콘돔과는 그 개념이 달랐다.
+              즉, 오늘날의 콘돔이 성병 예방과 피임을 위한 것이라면, 고대의 콘돔은 오히려 출산을 늘리는 것이 목적이었다.
+            </p>
+            <div className="Details__text__make">제작 방법</div>
+            <p>
+              성병 예방과 같은 오늘날의 쓰임새를 위한 콘돔은 16세기 중반부터 개발 되었다. 당시 유행하던 매독을 예방하기 위해 한해살이풀로 얇은 직물을 짜서 만든 리넨(linen) 천으로 주머니 모양의 콘돔을
+              만들었다. 그러나 이 콘돔의 개발은 성병 예방에 충분한 효과를 방휘하지 못했을 뿐만 아니라 쾌감도 감퇴시켜 많은 질타를 받았다. 후에 최초로 그럴 듯한 콘돔이 만들어 진 것은 17세기 중반이다.
+              18세기에 들어 전문 생산 업체까지 생겨났다. 양의 창자간막으로 만든 제품이나 맹장 두개를 겹쳐서 만든 제춤이 최고급으로 꼽혔다. 19세기 중반에는 고무 가고 기술이 발전하면서 마침내 솔기 없이
+              매끈한 고무 콘돔이 만들어 졌다. 고무에 황을 첨가하는 가황법의 발견으로 고무의 강도와 탄성이 향상되었고 그 결과 현대적 콘돔이 탄생하였다.
+            </p>
+            <div className="Details__text__use">시대적 용도</div>
+            <p>
+              3000년경 이집트 왕조 시절에는 동물의 생식기를 보호하는 역할로써 콘돔이 존재하였으나, 16세기 이후로 성병 예방이라는 목적을 가지고 콘돔이 생산되었으며, 현대에 와서는 다양한 성적 기능성을
+              갖춘 콘돔으로 발전하였다.
             </p>
           </div>
         </div>
@@ -147,7 +167,7 @@ const Condom = () => {
           {onEditComment()}
         </div>
         <div className="Details__commentsWrite">
-          <Writepage />
+          <Writepage inventionId={inventionId} />
         </div>
         <div className="Details__commentsHead">
           <div className="Details__commentsTitle">Comments</div>
@@ -156,11 +176,13 @@ const Condom = () => {
           {commentList.map((comment) => {
             return (
               <li className="Details__comment" key={comment.id}>
+                <div className="Details__commentTextAreas__title">{comment.title}</div>
                 <div className="Details__commentPicArea">
                   <img className="Details__commentPic" src={ip + port + `/${comment.postPhoto}`} alt="" />
                 </div>
                 <div className="Details__commentTextAreas">
-                  <div className="Details__commentTextAreas__title">{comment.title}</div>
+                  <div className="Details__commentTextAreas__username">{comment.user.username}</div>
+
                   <div className="Details__commentTextAreas__text">{comment.text}</div>
                 </div>
 
