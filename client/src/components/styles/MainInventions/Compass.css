@@ -1,8 +1,8 @@
 .MainCompasss {
-  background-color:pink;
+  background-image: url(../../../TestPic/bigdipperpolaris_cut.jpg);
   background-repeat: no-repeat;
   background-position: top center;
-  background-size: cover;
+  background-size: 1835px;
   min-height: 1000px;
   position: relative;
 }
@@ -15,4 +15,74 @@
   width: 100%;
   text-align: center;
   margin-top: 350px;
+}
+
+.mainCompass__container {
+  display: flex;
+  position: absolute;
+  top: 100px;
+  margin-left: 200px;
+  width: 100px;
+}
+
+.mainCompass__starLight {
+  position: relative;
+  top: 279px;
+}
+
+.starlight1 {
+  position: relative;
+  left: 141px;
+  width: 180px;
+  animation-name: twinkle;
+  animation-duration: 1.6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.starlight2 {
+  position: relative;
+  left: -38px;
+  width: 180px;
+  animation-name: twinkle;
+  animation-duration: 1.6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-delay: 0.8s;
+}
+
+@keyframes twinkle {
+  0% {opacity:0;}
+  50% {opacity:1;}
+  100% {opacity:0;}
+}
+
+.mainCompass__container {
+  position: absolute;
+  left: 500px;
+}
+
+.compass {
+}
+
+.compass_ {
+  position: relative;
+  left: -650px;
+  top: 55px;
+  transform: rotate(-24.4deg);
+  transition-property: transform;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  border-radius: 50%;
+}
+
+.compass_:hover {
+  position: relative;
+  left: -650px;
+  top: 55px;
+  transform: rotate(1055.6deg);
+  transition-property: transform;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  border-radius: 50%;
 }

@@ -1,11 +1,29 @@
 import { Link } from "react-router-dom";
+import img from "../../TestPic/glassesGD_cut.png";
+import useScrollStatus from '../hooks/useScrollStatus';
+import Heading from '../Heading';
+
 const MainGlasses = () => {
+  const scrollState = useScrollStatus();
+  const position = scrollState.position;
   return (
     <div className="MainGlassess">
-      <div className="MainGlassess__text">안경 페이지입니다.</div>
-      <Link to="/Glasses" className={`MainGlassess__link LinkedDetail`}>
-        클릭 시 상세 페이지로 이동합니다
-      </Link>
+      <div classNmae="mainGlasses__glassesContainer">
+        <div className={`${position}`<47.9||`${position}`>51.1?  "mainGlasses__temp_2_L":"mainGlasses__temp_L"} >
+        </div>
+        <div className={`${position}`<47.9||`${position}`>51.1?"mainGlasses__temp_2_R":"mainGlasses__temp_R"} >
+        </div>
+        <img className={`${position}`<47.9||`${position}`>51.1?"mainGlasses__glasses_2":"mainGlasses__glasses"} src={img} alt="" />
+          <div className={`${position}`<47.9||`${position}`>51.1?"mainGlasses__linkContainer_2":"mainGlasses__linkContainer"}>
+            <div className="wrapper">
+              <Link to="/Glasses">
+                <Heading text="click me!" arc={130} radius={260} />
+              </Link>
+            </div>
+          </div>
+      </div>
+      <div className="MainGlassess__text">안경</div>
+      
     </div>
   );
 };

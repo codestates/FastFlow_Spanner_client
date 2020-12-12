@@ -1,5 +1,6 @@
 .MainClocks {
-  background-color:blue;
+  display: flex;
+  background-color:rgb(20, 20, 20);
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
@@ -17,10 +18,102 @@
   margin-top: 350px;
 }
 
-.MainClock__time {
+.mainClock__clocks {
   display: flex;
-  align-content: center;
-  color: white;
+  padding-top: 240px;
+}
+
+.mainClock__sundial {
+  width: 600px;
+}
+
+.mainClock__wallClock {
   position: relative;
-  font-size: 100px;
+  left: 80px;
+  width: 560px;
+}
+
+.mainClock__smartPhone {
+  position: absolute;
+  left: 140px;
+  width: 320px;
+}
+
+.MainClock__time {
+  position: relative;
+  top: 110px;
+  left: 210px;
+  color: white;
+  font-size: 60px;
+}
+
+.mainClock__date {
+  position: relative;
+  top: 115px;
+  left: 230px;
+  color: white;
+  font-size: 30px;
+}
+
+.mainClock__phoneBG {
+  position: absolute;
+  width: 285px;
+  height: 580px;
+  top: 8px;
+  left: 155px;
+  border-radius: 40px;
+}
+
+.mainClock__sunDialContainer {
+  position: relative;
+  top: 0px;
+  transition-property: top;
+  transition-duration: 0.7s;
+}
+
+.mainClock__sunDialContainer2 {
+  position: relative;
+  top: 800px;
+  transition-property: top;
+  transition-duration: 1.05s;
+}
+
+.mainClock__wallClockContainer {
+  position: relative;
+  top: 0px;
+  transition-property: top;
+  transition-duration: 0.7s;
+}
+
+.mainClock__wallClockContainer2 {
+  position: relative;
+  top: -800px;
+  opacity: 0;
+  transition-property: top, opacity;
+  transition-duration: 1.05s;
+}
+
+.mainClock__phoneContainer {
+  position: relative;
+  top: 0px;
+  left: 73px;
+  transition-property: top;
+  transition-duration: 0.7s;
+}
+
+.mainClock__phoneContainer2 {
+  position: relative;
+  top: 800px;
+  left: 73px;
+  transition-property: top;
+  transition-duration: 1.05s;
+}
+
+.mainClock__link {
+  position: absolute;
+  color: white;
+  top: 450px;
+  left: 203px;
+  width: 200px;
+  font-size: 30px;
 }

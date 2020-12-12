@@ -1,8 +1,16 @@
 .MainGlassess {
-  background-color:yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    to right,
+    rgba(20,20,20,0) 10%,
+    rgba(20,20,20,0.2) 30%,
+    rgba(20,20,20,0.4) 60%,
+    rgba(20,20,20,0.6) 100%
+  ), url("../../../TestPic/glassesBG_blur.jpg");
   background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover;
+  background-size: 1835px;
   min-height: 1000px;
   position: relative;
 }
@@ -14,5 +22,136 @@
   position: absolute;
   width: 100%;
   text-align: center;
-  margin-top: 350px;
+  margin-top: 150px;
+}
+
+.mainGlasses__glassesContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mainGlasses__temp_L {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  position: absolute;
+  left: 123px;
+  width: 670px;
+  background: url("../../../TestPic/glassesBG.jpg") no-repeat;
+  background-size: 277%;  
+  background-position: -128px -190px;
+  border: 5px solid rgb(212, 203, 146);
+  height: 670px;
+  border-radius: 50%;
+  top: 188px;
+  transition-property: top, background-position;
+  transition-duration: 1.25s;
+}
+
+.mainGlasses__temp_2_L {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  position: absolute;
+  left: 123px;
+  width: 670px;
+  background: url("../../../TestPic/glassesBG.jpg") no-repeat;
+  background-size: 277%;  
+  background-position: -128px -900px;
+  border: 5px solid rgb(212, 203, 146);
+  min-height: 670px;
+  border-radius: 50%;
+  top: 898px;
+  transition-property: top, background-position;
+  transition-duration: 1.25s;
+}
+
+.mainGlasses__temp_R {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  position: absolute;
+  left: 1040px;
+  width: 670px;
+  background: url("../../../TestPic/glassesBG.jpg") no-repeat;
+  background-size: 277%;  
+  background-position: -1035px -190px;
+  border: 5px solid rgb(212, 203, 146);
+  height: 670px;
+  border-radius: 50%;
+  top: 188px;
+  transition-property: top, background-position;
+  transition-duration: 1.25s;
+}
+
+.mainGlasses__temp_2_R {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  position: absolute;
+  left: 1040px;
+  width: 670px;
+  background: url("../../../TestPic/glassesBG.jpg") no-repeat;
+  background-size: 277%;  
+  background-position: -1035px -900px;
+  border: 5px solid rgb(212, 203, 146);
+  min-height: 670px;
+  border-radius: 50%;
+  top: 898px;
+  transition-property: top, background-position;
+  transition-duration: 1.25s;
+}
+
+.mainGlasses__linkContainer {
+  position: absolute;
+  left: 1370px;
+  top: 230px;
+  transition-property: top;
+  transition-duration: 1.25s;
+}
+
+.mainGlasses__linkContainer_2 {
+  position: absolute;
+  left: 1370px;
+  top: 918px;
+  transition-property: top;
+  transition-duration: 1.25s;
+}
+
+.mainGlasses__glasses {
+  display: flex;
+  width: 1800px;
+  position: absolute;
+  left: 15px;
+  top: -200px;
+  transition-property: top;
+  transition-duration: 1.25s;
+}
+
+.mainGlasses__glasses_2 {
+  display: flex;
+  width: 1800px;
+  position: absolute;
+  left: 15px;
+  top: 500px;
+  transition-property: top;
+  transition-duration: 1.25s;
+}
+
+.wrapper h1 span {
+  position: absolute;
+  top: 30px;
+  font-size: 50px;
+}
+
+a
+{
+	color: black;
+	
+	transition: color 0.25s ease;
+}
+
+a:hover
+{
+	color: #fff;
 }
