@@ -35,10 +35,14 @@ const SignUp = () => {
         username: userName,
         email: email,
         password: password,
-      });
+      })
+      // .then((res) => {
+      //   console.log(res)
+      // })
       history.push("/");
     }
-  };
+  }
+  
   // 비밀번호 유효성 검사 43-61
   const doesPasswordMatch = () => {
     return password === confirmPassword;

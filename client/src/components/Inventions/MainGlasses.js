@@ -9,12 +9,12 @@ const MainGlasses = () => {
   return (
     <div className="MainGlassess">
       <div classNmae="mainGlasses__glassesContainer">
-        <div className={`${position}`<47.9||`${position}`>51.1?  "mainGlasses__temp_2_L":"mainGlasses__temp_L"} >
+        <div className={`${position}`<50.3||`${position}`>54.4?  "mainGlasses__temp_2_L":"mainGlasses__temp_L"} >
         </div>
-        <div className={`${position}`<47.9||`${position}`>51.1?"mainGlasses__temp_2_R":"mainGlasses__temp_R"} >
+        <div className={`${position}`<50.3||`${position}`>54.4?"mainGlasses__temp_2_R":"mainGlasses__temp_R"} >
         </div>
-        <img className={`${position}`<47.9||`${position}`>51.1?"mainGlasses__glasses_2":"mainGlasses__glasses"} src={img} alt="" />
-          <div className={`${position}`<47.9||`${position}`>51.1?"mainGlasses__linkContainer_2":"mainGlasses__linkContainer"}>
+        <img className={`${position}`<50.3||`${position}`>54.4?"mainGlasses__glasses_2":"mainGlasses__glasses"} src={img} alt="" />
+          <div className={`${position}`<50.3||`${position}`>54.4?"mainGlasses__linkContainer_2":"mainGlasses__linkContainer"}>
             <div className="wrapper">
               <Link to="/Glasses">
                 <Heading text="click me!" arc={130} radius={260} />

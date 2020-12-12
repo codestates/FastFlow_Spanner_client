@@ -8,11 +8,154 @@
 }
 
 .MainFires__text {
-  color: white;
-  font-size: 50px;
+  color: rgb(206, 54, 8);
+  font-size: 80px;
   font-weight: 700;
   position: absolute;
   width: 100%;
   text-align: center;
-  margin-top: 350px;
+  margin-top: 100px;
+  text-shadow: 1px 1px 10px rgb(165, 94, 73);
+  font-family: "Texturina", serif;
+  animation: burn 2s infinite ease-in-out;
+}
+
+@keyframes burn {
+  0% {
+    text-shadow: 0px 0px 15px rgb(156, 34, 3);
+  }
+  20% {
+    text-shadow: 0px 0px 14px rgb(236, 112, 10);
+  }
+  50% {
+    text-shadow: 0px 0px 15px rgb(223, 37, 12);
+  }
+  80% {
+    text-shadow: 0px 0px 14px rgb(236, 112, 10);
+  }
+  100% {
+    text-shadow: 0px 0px 15px rgb(100, 30, 8);
+  }
+}
+
+.MainFires__StartFirePic {
+  height: 10px;
+  position: absolute;
+  right: 50%;
+}
+
+@keyframes StartFire {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(160px, 300px, 0);
+    height: 500px;
+    /* visibility: hidden; */
+  }
+}
+
+.MainFires__MiddleFirePic {
+  position: absolute;
+  height: 1000px;
+  width: 100%;
+  transition-property: opacity;
+  transition-delay: 4s;
+  z-index: 0;
+}
+
+.MainFires__LastFirePic {
+  position: absolute;
+  height: 1000px;
+  z-index: 2;
+  transition-property: opacity;
+  transition-delay: 5s;
+}
+
+.MainFires__link {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 520px;
+  color: rgb(224, 116, 116);
+  text-decoration: none;
+  right: 35.8%;
+  font-size: 40px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  text-shadow: 1px 1px 60px black;
+  background: linear-gradient(to right, rgb(230, 103, 71), rgb(216, 66, 7) 50%, rgb(238, 134, 92) 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 1000ms ease;
+  overflow: hidden;
+  z-index: 3;
+  opacity: 0;
+  font-family: "Black And White Picture", sans-serif;
+}
+
+.MainFires__link:hover {
+  background-position: 0 100%;
+}
+
+@keyframes DownText {
+  0% {
+    transform: translate3d(0, -80%, 0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.MainFire__BCtext {
+  position: absolute;
+  color: white;
+  right: 42%;
+  margin-top: 270px;
+  font-size: 50px;
+  font-weight: 600;
+  text-shadow: 1px 1px 10px orangered;
+  opacity: 0;
+  font-family: "Texturina", serif;
+}
+
+.MainFire__textBody {
+  position: absolute;
+  color: white;
+  font-size: 28px;
+  margin-top: 370px;
+  font-weight: 600;
+  right: 30.8%;
+  text-shadow: 1px 1px 10px orangered;
+  opacity: 0;
+  font-family: "Black And White Picture", sans-serif;
+}
+
+@keyframes FireText {
+  0% {
+    transform: translate3d(0, -100%, 0);
+    opacity: 0;
+    color: rgb(235, 127, 55);
+  }
+
+  50% {
+    opacity: 0.4;
+    color: rgb(228, 107, 27);
+  }
+  90% {
+    opacity: 0.7;
+    color: rgb(240, 50, 16);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    color: rgb(238, 134, 92);
+  }
 }

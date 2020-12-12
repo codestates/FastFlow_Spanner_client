@@ -10,8 +10,8 @@ const MainSteamEngine = () => {
   return (
     <div className="MainSteamEngines">
       <div>
-        <img className={`${position}`<57.3||`${position}`>59.5?"mainSteamEngine__img":"mainSteamEngine__img_2"} src={train} alt="" />
-        <img className={`${position}`<57.3||`${position}`>59.5?"mainSteamEngine__smoke":"mainSteamEngine__smoke_2"} src={smoke} alt="" />
+        <img className={`${position}`<56.3||`${position}`>61.5?"mainSteamEngine__img":"mainSteamEngine__img_2"} src={train} alt="" />
+        <img className={`${position}`<56.3||`${position}`>61.5?"mainSteamEngine__smoke":"mainSteamEngine__smoke_2"} src={smoke} alt="" />
       </div>
       <div className="MainSteamEngines__text">증기 기관 페이지입니다.</div>
       <Link to="/SteamEngine" className={`MainSteamEngines__link LinkedDetail`}>

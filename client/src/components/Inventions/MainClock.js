@@ -27,9 +27,9 @@ const month = getMonthLabel();
 const MainClock = () => {
   const scrollState = useScrollStatus();
   const position = scrollState.position;
-  const clockFirst = 28.4;
-  const clockSecond = clockFirst+0.8;
-  const clockThird = clockSecond+0.8;
+  const clockFirst = 30.4;
+  const clockSecond = clockFirst+2;
+  const clockThird = clockSecond+1;
   return (
     <div className="MainClocks">
       <div className="mainClock__clocks">

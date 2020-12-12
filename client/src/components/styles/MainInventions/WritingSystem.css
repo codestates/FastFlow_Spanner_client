@@ -1,3 +1,6 @@
+.MainWritingSystemss {
+  background-color: black;
+}
 .MainWritingSystems {
   background-image: url("../../images/MainBackGound/WritingSystemBackGround.jpg");
   background-repeat: no-repeat;
@@ -5,14 +8,137 @@
   background-size: cover;
   min-height: 1000px;
   position: relative;
+  opacity: 0;
+  z-index: 1;
+}
+
+@keyframes appearBack {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .MainWritingSystems__text {
-  color: white;
+  color: rgb(29, 20, 5);
+  font-size: 59px;
+  font-weight: 800;
+  position: absolute;
+  margin-left: 130px;
+  margin-top: 170px;
+  font-family: "Homemade Apple", cursive;
+  text-shadow: 1px 1px 10px rgb(44, 42, 38);
+  opacity: 0;
+  z-index: 1;
+}
+
+.MainWritingSystems__textBodyPic {
+  position: relative;
+  margin-left: 525px;
+  background-image: url("../../images/WritingSystem/AcientPaper.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 1000px;
+  animation: revealBack 2s 1s forwards;
+}
+
+.MainWritingSystems__BCtext {
+  position: absolute;
+  color: transparent;
+  margin-left: 370px;
+  margin-top: 300px;
   font-size: 50px;
-  font-weight: 700;
+  font-weight: 600;
+  text-transform: capitalize;
+  white-space: nowrap;
+  font-family: "Homemade Apple", cursive;
+}
+
+.MainWritingSystems__BCtext::before {
+  content: "B.C 3,500";
+  white-space: pre;
+  top: 0;
+  left: 0;
   position: absolute;
   width: 100%;
-  text-align: center;
-  margin-top: 350px;
+  height: 100%;
+  color: rgb(29, 20, 5);
+  text-shadow: 1px 1px 10px rgb(44, 42, 38);
+  overflow: hidden;
+}
+
+.MainWritingSystems__textBody {
+  position: absolute;
+  color: transparent;
+  font-size: 50px;
+  margin-top: 370px;
+  font-weight: 500;
+  margin-left: 110px;
+  line-height: 100px;
+  text-transform: capitalize;
+  white-space: nowrap;
+  font-family: "East Sea Dokdo", cursive;
+}
+
+.MainWritingSystems__textBody::before {
+  content: "문자의 발명과 함께 인류의 지식을 \A형태가 있는 방식으로 전할 수 있게 \A되었다.";
+  white-space: pre;
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: rgb(29, 20, 5);
+  text-shadow: 1px 1px 10px rgb(44, 42, 38);
+  overflow: hidden;
+}
+
+@keyframes typing {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 50%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.MainWritingSystems__link {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 270px;
+  color: rgb(29, 20, 5);
+  text-decoration: none;
+  margin-left: 400px;
+  font-size: 40px;
+  font-weight: 900;
+  text-shadow: 1px 1px 30px rgb(44, 42, 38);
+  background: linear-gradient(to right, rgb(238, 198, 18), rgb(224, 112, 48) 50%, rgb(29, 20, 5) 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 1000ms ease;
+  overflow: hidden;
+  z-index: 2;
+  font-family: "Homemade Apple", cursive;
+}
+
+@keyframes linkEffect {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.MainWritingSystems__link:hover {
+  background-position: 0 100%;
 }
