@@ -10,15 +10,15 @@
   position:absolute;
   top: 2%;
   left: 2%;
-  font-size:50px;
+  font-size:5vw;
   font-weight:700;
   color:#ffdd93;  
 }
 .MainInternets__desc{
   position:absolute;
-  top: 10%;
+  top: 13%;
   left: 3%;   
-  font-size:30px;
+  font-size:2vw;
   font-weight:700;
   color:#ffdd93;  
 }
@@ -38,7 +38,7 @@
   height: 10%;
   top: 35%;
   left: 25%;
-  font-size:30px;
+  font-size: 2vw;
   font-weight:700;
   color:#ffdd93;  
 }

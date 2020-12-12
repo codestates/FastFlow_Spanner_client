@@ -1,3 +1,7 @@
+.MainFistAxess {
+  background-color: black;
+}
+
 .MainFistAxes {
   background-image: url("../../images/MainBackGound/FistAxeBackGround.jpg");
   background-repeat: no-repeat;
@@ -5,14 +9,149 @@
   background-size: cover;
   min-height: 1000px;
   position: relative;
+  transition-property: opacity;
+  transition-duration: 2s;
+  transition-timing-function: ease-in;
 }
 
 .MainFistAxes__text {
-  color: white;
-  font-size: 50px;
-  font-weight: 700;
+  color: rgb(62, 156, 82);
+  text-shadow: 1px 1px 15px black;
+  font-size: 80px;
+  font-weight: 800;
   position: absolute;
   width: 100%;
   text-align: center;
-  margin-top: 350px;
+  margin-top: 130px;
+  font-family: "Ranchers", cursive;
+  letter-spacing: 10px;
+}
+
+.MainFistAxes__FistAxePic {
+  height: 350px;
+  position: absolute;
+  margin-top: 340px;
+}
+
+@keyframes attack {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  10% {
+    transform: translate3d(50px, -130px, 0);
+  }
+  20% {
+    transform: translate3d(100px, 70px, 0);
+  }
+  30% {
+    transform: translate3d(150px, -130px, 0);
+  }
+  40% {
+    transform: translate3d(200px, 70px, 0);
+  }
+  50% {
+    transform: translate3d(250px, -130px, 0);
+  }
+  60% {
+    transform: translate3d(300px, 70px, 0);
+  }
+  70% {
+    transform: translate3d(350px, -130px, 0);
+  }
+  80% {
+    transform: translate3d(380px, 70px, 0);
+  }
+  90% {
+    transform: translate3d(420px, -130px, 0);
+  }
+  100% {
+    transform: translate3d(450px, -30px, 0);
+  }
+}
+
+.MainFistAxes__RunManPic {
+  height: 220px;
+  position: absolute;
+  margin-top: 500px;
+  margin-left: 500px;
+}
+
+@keyframes runMan {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(1060px, 0, 0);
+    visibility: hidden;
+  }
+}
+
+.MainFistAxes__link {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 400px;
+  color: rgb(224, 116, 116);
+  text-decoration: none;
+  right: 20.5%;
+  font-size: 30px;
+  font-weight: 900;
+  text-shadow: 1px 1px 7px rgb(219, 206, 133);
+  background: linear-gradient(to right, rgb(230, 35, 93), rgb(240, 17, 110) 50%, rgb(250, 250, 250) 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 1000ms ease;
+  overflow: hidden;
+  font-family: "Ranchers", cursive;
+  letter-spacing: 4px;
+}
+
+.MainFistAxes__link:hover {
+  background-position: 0 100%;
+}
+
+@keyframes link {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.MainFistAxes__BCtext {
+  position: absolute;
+  right: 29.8%;
+  top: 330px;
+  font-size: 50px;
+  font-weight: 700;
+  color: rgb(102, 189, 80);
+  text-shadow: 1px 1px 10px black;
+  font-family: "Ranchers", cursive;
+  letter-spacing: 4px;
+}
+
+@keyframes DownText {
+  0% {
+    transform: translate3d(0, -100px, 0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.MainFistAxes__textBody {
+  position: absolute;
+  color: rgb(210, 226, 192);
+  text-shadow: 1px 1px 10px black;
+  font-weight: 600;
+  font-size: 29px;
+  right: 16.8%;
+  top: 395px;
+  font-family: "Yeon Sung", cursive;
 }

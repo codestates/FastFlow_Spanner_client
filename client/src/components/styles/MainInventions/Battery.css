@@ -15,7 +15,7 @@
   padding-top: 2%;
   padding-left: 2%;    
   color:#ffdd93;
-  font-size: 50px;
+  font-size: 5vw;
   font-weight: 700;
 }
 
@@ -29,8 +29,7 @@
 .body__lightening-on{
   width:100%;
   height:100%;
-  position: absolute;
-  background-image:url("./../../images/battery_lightening1.png");
+  position: absolute;  
   animation: lightening;
   animation-duration: 1s; 
   animation-fill-mode: forwards; 
@@ -59,13 +58,13 @@
   position:absolute;  
   height:10%;
   color: #ffdd93;
-  font-size: 30px;
+  font-size: 2vw;
   font-weight: 700;
   text-align:center; 
 }
 .video__text__desc {
   color: #ffdd93;
-  font-size: 16px;
+  font-size: 1.5vw;
   font-weight: 700;
 }
 .video__iframe{
@@ -164,7 +163,7 @@
 }
 .definition__title {        
   color:#ffdd93;
-  font-size: 30px;
+  font-size: 2vw;
   font-weight: 700;
 }
 
@@ -175,7 +174,7 @@
 }
 .usage__title{
   color:#ffdd93;
-  font-size: 30px;
+  font-size: 2vw;
   font-weight: 700;  
 }
 
@@ -186,7 +185,7 @@
 }
 .principle__title{
   color:#ffdd93;
-  font-size: 30px;
+  font-size: 2vw;
   font-weight: 700;
 }
 .row4__future{    
@@ -196,7 +195,7 @@
 }
 .future__title{
   color:#ffdd93;
-  font-size: 30px;
+  font-size: 2vw;
   font-weight: 700;
 }
 .future__link-wrapper{  
@@ -208,7 +207,7 @@
 }
 .future__link{  
   color:white;  
-  font-size: 50px;
+  font-size: 3vw;
   font-weight:700;
   cursor: pointer;    
 }

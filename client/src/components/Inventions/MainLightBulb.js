@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
-import backgroundImg from "./../images/lightbulb_background.jpg";
-import backgroundBlackImg from "./../images/lightbulb_black.png";
-import switchOnImg from "./../images/light_bulb_icon_on.png";
-import switchOffImg from "./../images/light_bulb_icon_off.png";
-import colorImg from "./../images/lightbulb_color.png";
+import backgroundImg from "./../images/LightBulb/lightbulb_background.jpg";
+import backgroundBlackImg from "./../images/LightBulb/lightbulb_black.png";
+import switchOnImg from "./../images/LightBulb/light_bulb_icon_on.png";
+import switchOffImg from "./../images/LightBulb/light_bulb_icon_off.png";
+import colorImg from "./../images/LightBulb/lightbulb_color.png";
 
 const MainLightBulb = () => {
 

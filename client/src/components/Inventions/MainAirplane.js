@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import bluesky from "./../images/airplane-bluesky.jpg";
-import earth from "./../images/airplane-earth.jpg";
-import rocket from "./../images/airplane-rocket.png";
-import airplaneImg1 from "./../images/airplane1.png";
-import airplaneImg2 from "./../images/airplane2.png";
-import airplaneImg3 from "./../images/airplane3.png";
-import airplaneImg4 from "./../images/airplane4.png";
+import bluesky from "./../images/Airplane/airplane-bluesky.jpg";
+import earth from "./../images/Airplane/airplane-earth.jpg";
+import rocket from "./../images/Airplane/airplane-rocket.png";
+import airplaneImg1 from "./../images/Airplane/airplane1.png";
+import airplaneImg2 from "./../images/Airplane/airplane2.png";
+import airplaneImg3 from "./../images/Airplane/airplane3.png";
+import airplaneImg4 from "./../images/Airplane/airplane4.png";
 
 
 const MainAirplane = () => {
@@ -18,7 +18,7 @@ const MainAirplane = () => {
 
   const aniTrigger = () => {
     // console.log(window.scrollY);
-    if (window.scrollY >= 19200) {
+    if (window.scrollY >= 15500 && window.scrollY <= 16000) {
       setImg1(true);
       setImg2(true);
       setImg3(true);

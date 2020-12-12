@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
-import bananaImg from "./../images/refrigerator_banana.png";
-import squishImg from "./../images/refrigerator_squish.png";
-import verticalImg from "./../images/refrigerator_vertical.gif";
-import scenaryImg from "./../images/refrigerator_scenary.gif";
-import developerImg from "./../images/refrigerator_developer.gif";
-import errorImg from "./../images/refrigerator_404.png";
+import bananaImg from "./../images/Refrigerator/refrigerator_banana.png";
+import squishImg from "./../images/Refrigerator/refrigerator_squish.png";
+import verticalImg from "./../images/Refrigerator/refrigerator_vertical.gif";
+import scenaryImg from "./../images/Refrigerator/refrigerator_scenary.gif";
+import developerImg from "./../images/Refrigerator/refrigerator_developer.gif";
+import errorImg from "./../images/Refrigerator/refrigerator_404.png";
 
 const MainRefrigerator = () => {
   const [isOpenDoor1, setIsOpenDoor1] = useState(false);
@@ -103,7 +103,7 @@ const MainRefrigerator = () => {
                 <img className="item8__indoor__img" src={errorImg} alt=""></img>
               </div>
               <div className={isOpenDoor8 ? "doorOpen8" : "item8__outdoor"} onClick={() => { setIsOpenDoor8(!isOpenDoor8) }}>
-                <div className="outDoor8__text">.</div>
+                <div className="outDoor8__text">{"<h1>위험</h1>"}</div>
               </div>
             </div>
           </div>

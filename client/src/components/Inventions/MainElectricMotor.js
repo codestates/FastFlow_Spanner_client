@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Draggable from "react-draggable";
-import experimentImg from "./../../components/images/electricmotor-module.png";
-import principleImg from "./../../components/images/electricmotor-principle.gif";
+import experimentImg from "./../images/ElectricMotor/electricmotor-module.png";
+import principleImg from "./../images/ElectricMotor/electricmotor-principle.gif";
 
 const MainElectricMotor = () => {
   const [isDragHovered, setIsDragHovered] = useState(false);

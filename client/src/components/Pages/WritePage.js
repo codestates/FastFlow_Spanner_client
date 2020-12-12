@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
-import basicPostPic from "./../images/candlelight.jpg";
+import basicPostPic from "../images/InputPic.jpg";
 import { ip, port } from "../../url";
 
 axios.defaults.withCredentials = true;
 
-const WritePage = () => {
+const WritePage = ({ inventionId }) => {
   //const [username, setUsername] = useState('');
   //const [email, setEmail] = useState('');
   const [text, setText] = useState("");
@@ -27,6 +27,7 @@ const WritePage = () => {
   //   //   //   });
   //   //   // 뒤쪽의 배열은 Hook의 componentDidupdate 같은 부분인데, state 값을 넣는 것이 아니라,
   //   //   // state 값을 변경하는 메서드를 넣어주어야 적용이 된다.
+  //   //makeInventionId(inventionId);
   // }, [setPostPicView]);
   // const inventionItems = () => {
   // 	return items.forEach((item) => {
@@ -48,7 +49,7 @@ const WritePage = () => {
         .post(ip + port + "/post/write", {
           text: text,
           title: title,
-          postInfo: 1,
+          inventionId: inventionId,
         })
         //사진과 다른 데이터를 같이 업로드하고 싶을 때는, formdata 내부에 다른 데이터들도
         //append 형태로 붙여주면 된다.
@@ -57,7 +58,7 @@ const WritePage = () => {
           const formData = new FormData();
           formData.append("image", postPic);
           formData.append("postId", res.data.id);
-          formData.append("postInfo", res.data.inventionId);
+          formData.append("inventionId", res.data.inventionId);
           axios.put(ip + port + "/post/upload", formData, {
             headers: {
               "Content-Type": "multipart/form-data",
@@ -96,34 +97,29 @@ const WritePage = () => {
         <form className="submitArea" onSubmit={onSubmit}>
           {/* inventionArea */}
           <div className="submitArea__inventionArea">
-            {/* <발명품 선택> */}
-            {/* <select className="inventionArea__selectInvention" onChange={onInventionChange}>
-              <option value="">발명품 선택</option>
-              JSX 반복문으로 옵션 넣기
-              /* {inventionItems()}
-              <option value="1">1</option>
-              <option value="2">2</option>
-            </select> */}
             {/* <사진노출> */}
             <img className="inventionArea__pic" src={postPicView} alt="" />
             {/* <찾아보기> */}
-            <span className="inventionArea__fileSelect">
-              <input className="inventionArea__fileSelect" type="file" name="image" onChange={onChangeFile} />
-            </span>
-          </div>
-          <div className="submitArea__writingArea">
-            {/* <제목작성영역> */}
-            <div className="writingArea__title">
-              <input className="title__inputBox" type="text" placeholder="제목" onChange={onTitleChange} />
-              {/* <업로드 버튼> */}
-              <button type="submit">게시</button>
+            <div className="inventionArea__fileSearch">
+              <label for="ex-file">사진 찾아보기</label>
+              <input type="file" id="ex-file" name="image" onChange={onChangeFile} />
             </div>
-            <div className="writingArea__text">
-              <input className="text__inputBox" type="text" placeholder="남기실 말씀" onChange={onTextChange} />
+            <div className="submitArea__writingArea">
+              {/* <제목작성영역> */}
+              <div className="writingArea__title">
+                <input className="title__inputBox" type="text" placeholder="제목" onChange={onTitleChange} />
+                {/* <업로드 버튼> */}
+              </div>
+              <div className="writingArea__text">
+                <input className="text__inputBox" type="text" placeholder="남기실 말씀" onChange={onTextChange} />
+              </div>
+              <button type="submit" className="writingArea__btn">
+                글쓰기
+              </button>
             </div>
           </div>
         </form>
-        <div className="error">{errorMessage}</div>
+        <div className="WritePages__error">{errorMessage}</div>
       </div>
     </div>
   );

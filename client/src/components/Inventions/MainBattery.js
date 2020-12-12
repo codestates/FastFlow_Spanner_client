@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-
+import { useState} from "react";
+import lightening from "./../images/Battery/battery_lightening1.png"
 
 const MainBattery = () => {
 
@@ -11,17 +11,17 @@ const MainBattery = () => {
   const [grid4, setGrid4] = useState(0);
 
   const batteryRecharge = () => {
-    // console.log(window.scrollY);
-    if (window.scrollY >= 14400) {
+    
+    if (window.scrollY >= 11300 && window.scrollY <= 12500) {
       setGrid1(1);
     }
-    if (window.scrollY >= 14600) {
+    if (window.scrollY >= 11500 && window.scrollY <= 12500) {
       setGrid2(1);
     }
-    if (window.scrollY >= 14800) {
+    if (window.scrollY >= 11700 && window.scrollY <= 12500) {
       setGrid3(1);
     }
-    if (window.scrollY >= 15000) {
+    if (window.scrollY >= 11800 && window.scrollY <= 12500) {
       setGrid4(1);
     }
   }
@@ -44,7 +44,7 @@ const MainBattery = () => {
     <div className="MainBatterys">
       <div className="MainBatterys__title">Battery</div>
       <div className="MainBatterys__body">
-        <div className={isHovered ? "body__lightening-on" : null}></div>
+        <img className="body__lightening-on" src={isHovered ? lightening : null}></img>
         <div className="body__video" onMouseOver={() => { setIsHovered(!isHovered) }} onMouseDown={() => { setIsHovered(false) }}>
           <div className="video__text">Are you alive!!!?
               <span className="video__text__desc"><br></br>(1분부터 신남)</span>
@@ -69,13 +69,13 @@ const MainBattery = () => {
             </div>
             <div className="diagram__grid__item" style={{ opacity: grid3 }}>
               <div className="row3__principle">
-                <div className="principle__title">로봇 개발의 주요과제도 배터리라고 하는데요,
+                <div className="principle__title">로봇 개발의 숙제도 <br></br>배터리라고 하는데요,
             </div>
               </div>
             </div>
             <div className="diagram__grid__item" style={{ opacity: grid4 }}>
             <div className="row4__future">                
-              <div className="future__title">미래 핵심 부품, 배터리에 대해 알아보시죠</div>
+              <div className="future__title">미래 핵심 부품, <br></br>배터리에 대해 알아보시죠</div>
             </div>                       
             </div>            
           </div>

@@ -12,7 +12,7 @@
   top: 2%;    
   height: 10%;  
   color: #ffdd93;
-  font-size: 50px;
+  font-size: 5vw;
   font-weight: 700;    
 }
 
@@ -26,7 +26,7 @@
   position: absolute;
   left:60%;
   top:12%;    
-  font-size:28px;
+  font-size: 2vw;
   font-weight:700;
   color:#ffdd93;    
 }
@@ -73,7 +73,7 @@
   height:100%;
   background-color:#ffdd93;
   color: rgb(65, 65, 65) ;
-  font-size: 24px;
+  font-size: 2vw;
   font-weight:700;  
 }
 .item1__indoor__img{
@@ -122,11 +122,12 @@
 }
 .outDoor1__text{
   position:absolute;
-  left: 5%;
-  top: 15%;
+  left: 15%;
+  top: 25%;
   color:rgb(65, 65, 65);
-  font-size: 30px;
+  font-size: 2vw;
   font-weight: 700;
+  text-align:center;
 }
 
 .MainRefrigerators__grid__item:nth-child(2) {
@@ -149,7 +150,7 @@
   height:100%;
   background-color:#ffdd93; 
   color: rgb(65, 65, 65) ;
-  font-size: 18px;
+  font-size: 2vw;
   font-weight:700; 
 }
 .item2__indoor__img{
@@ -200,10 +201,10 @@
 }
 .outDoor2__text{
   position:absolute;
-  left: 20%;
+  left: 10%;
   top: 40%;
   color:rgb(31, 31, 31);
-  font-size: 26px;
+  font-size: 2vw;
   font-weight: 700;
 }
 .MainRefrigerators__grid__item:nth-child(3) {
@@ -271,11 +272,12 @@
   position:absolute;
   width:100%;
   height:100%;
-  left: 10%;
+  left: 5%;
   top: 35%;
   color:rgb(31, 31, 31);
-  font-size: 26px;
+  font-size: 1.7vw;
   font-weight: 700;
+  text-align: left;
 }
 
 .MainRefrigerators__grid__item:nth-child(4) {
@@ -331,11 +333,12 @@
 }
 .outDoor4__text{
   position:absolute;
-  left: 20%;
+  left: 10%;
   top: 35%;
   color:rgb(31, 31, 31);
-  font-size: 26px;
+  font-size: 1.7vw;
   font-weight: 700;
+  text-align: right;
 }
 
 .MainRefrigerators__grid__item:nth-child(5) {
@@ -397,12 +400,12 @@
   rotateZ(0deg);
 }
 .outDoor5__text{
-  position:absolute;
-  left: 15%;
+  position:absolute;  
   top: 35%;
   color:rgb(31, 31, 31);
-  font-size: 26px;
+  font-size: 1.6vw;
   font-weight: 700;
+  text-align:center;
 }
 
 .MainRefrigerators__grid__item:nth-child(6) {
@@ -432,7 +435,7 @@
   left:50%;
   top:80%;
   color:black;
-  font-size:16px;
+  font-size: 1.2vw;
   font-weight:700;   
 }
 .item6__outdoor {    
@@ -473,7 +476,7 @@
   left: 10%;
   top: 35%;
   color:white;
-  font-size: 26px;
+  font-size: 1.5vw;
   font-weight: 700;
 }
 
@@ -536,12 +539,12 @@
   rotateZ(0deg);
 }
 .outDoor7__text{
-  position:absolute;
-  left: 5%;
-  top:30%;
+  position:absolute;  
+  top:35%;
   color:white;
-  font-size: 26px;
+  font-size: 1.5vw;
   font-weight: 700;
+  text-align: center;
 }
 
 .MainRefrigerators__grid__item:nth-child(8) {
@@ -604,9 +607,10 @@
 }
 .outDoor8__text{
   position:absolute;
-  left: 50%;
-  top:35%;
+  left: 10%;
+  top:40%;
   color:white;
-  font-size: 26px;
+  font-size: 1.5vw;
   font-weight: 700;
+  text-align: center;
 }
