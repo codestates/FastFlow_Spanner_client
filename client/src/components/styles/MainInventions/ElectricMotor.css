@@ -7,65 +7,93 @@
   position: relative; 
 }
 .MainElectricMotors__title {
-  padding-left: 2%;
-  padding-top: 2%;
-  color: white;
+  position:absolute;
+  left: 2%;
+  top: 2%;  
+  width: 10%;
+  color: #ffdd93;
   font-size: 50px;
   font-weight: 700;
-  width: 100%;
 }
-.experiment__module{ 
-  margin-top: 3%; 
-  margin-left: 3%;
-  width:60%;  
+.MainElectricMotors__module{ 
+  position: absolute; 
+  left: 3%;
+  top:10%;
+  width: 50%;  
   height:80%;    
-  border-radius: 20%;    
-  background-image: url("./../../../../../client/src/components/images/electricmotor-module.png");  
-  background-size: cover;
-  position: absolute;  
+  border-radius: 20%;
+}
+.module__pic{
+  position: absolute;
+  left:3%;
+  top:3%;    
+  width: 100%;  
+  height:100%;    
+  opacity:80%;
+  border-radius: 20%;       
 }
 .drag{
-  width:80px;
-  height:200px;
-  background-color:red;
-  margin-left: 61%; 
+  position:absolute;
+  left:63%;
+  top:10%;
+  width:9%;
+  height:25%;     
   text-align: center; 
-  color:white;
+  color:#ffdd93;
   font-weight: 700;
 }
-.drag__spolar{
+.drag__magnet{
+  position:absolute;  
   width:100%;
-  height:75px;
-  background-color: blue;
-  color:white;
-  left: auto;
-  right: auto;
+  height:100%;
+  background-color:red;
 }
-.drag__handler{
+.magnet__spolar{
+  position:absolute;  
   width:100%;
-  height:50px;
+  height:50%;
+  background-color: blue;
+  color: #ffdd93;
+}
+.magnet__handler{
+  position:absolute;
+  top:37.5%;
+  left:0%;
+  width:100%;
+  height:25%;
   background-color:black;
-  color:white;
-  left: auto;
-  right: auto;
+  color:#ffdd93;  
+  cursor: move;
 }
 
+
 .module__touch-line {
-  width: 80px;
-  height: 20px;
-  margin-left: 61%;
-  margin-top: 20%;
   position: absolute;
+  left:61%;
+  top:53%;
+  width: 13%;
+  height: 2%;  
   background-color:transparent;
 }
-.module__light-bulb-on{
-  width: 100px;
-  height: 100px;
-  margin-left: 11%;
-  margin-top: 20%;
-  border-radius: 70%;  
+
+.module__lightBulb-off{
   position: absolute;
-  background-color: rgb(255, 251, 0);
+  left: 13%;
+  top:52%;
+  width: 12%;
+  height: 12%;      
+  opacity: 0;
+  border-radius: 70%;         
+}
+.module__lightBulb-on{
+  position: absolute;
+  left: 13%;
+  top:52%;
+  width: 12%;
+  height: 12%;      
+  border-radius: 70%;
+  opacity: 1;   
+  background-color: rgb(255, 251, 0);  
   animation-name: flickering;
   animation-duration: 1s;
   animation-fill-mode:forwards;
@@ -78,23 +106,34 @@
     opacity:0;
   }
 }
-.expriment__text{
-  color:white;
-  font-size: 30px;
-  font-weight: 700;
-  margin-left:65%;
-  padding-top:7%; 
-}
 
+
+.MainElectricMotors__text{
+  position:absolute;
+  left: 60%;
+  top: 20%;
+  color:#ffdd93;
+  font-size: 30px;
+  font-weight: 700;  
+}
 
 .MainElectricMotors__link {  
-  margin-top: 20%;
-  margin-left: 65%;  
+  position:absolute;
+  left: 60%;
+  top: 40%; 
   font-size: 30px;
   font-weight: 700;
-  position: absolute;  
+  cursor: pointer;
+}
+.MainElectricMotors__link-text{
+  color:#ffdd93;
+  cursor: pointer;
 }
 
-.link__text{
-  color:white;
+.MainElectricMotors__principle{
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  left: 55%;
+  top: 55%; 
 }

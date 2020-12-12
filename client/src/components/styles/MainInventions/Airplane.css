@@ -7,20 +7,29 @@
   position: relative;
 }
 .MainAirplanes__title{
-  display:flex;
-  justify-content: left;
+  position:absolute;
+  height:10%; 
+  width:100%; 
+  top: 2%;
+  left: 2%;
+  z-index: 1;
+  color:#ffdd93;
+  font-weight:700;
+  font-size: 50px;    
 }
-.title__text {
-  color:white;
-  font-size: 50px;
+
+.MainAirplanes__body{
+  position:absolute;
+  height:90%;
+  width:100%;
 }
-.title__img1 {
-  width: 100px;
-  height: 100px;
-  transform: rotate(40deg);
-  background-image:url("./../../images/airplane1.png");
-  background-size: cover;
-  background-repeat: no-repeat;
+.body__img1 {
+  position:absolute;  
+  width: 10%;
+  height:10%;
+  left: 10%;
+  top: 10%;
+  border:none;
   /* transform-origin은 해당 엘리먼트에 차후
   transform이 일어났을 때 기준점을 설정해줌 */
   animation-name: paperplane;
@@ -61,18 +70,13 @@
   }
 }
 
-.MainAirplanes__img2 {
-  width: 300px;
-  height: 100px;
-  margin-left: 50%;
-  margin-top: 10%;
-  background-image:url("./../../images/airplane2.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  opacity: 0;
-  transition-property: opacity;
-  transition-duration: 2s;
-  transition-timing-function: ease-out;
+.body__img2 {
+  position: absolute;  
+  width: 20%;
+  height: 20%;
+  left: 40%;
+  top: 40%;
+  opacity: 0;  
   animation: oldplane;
   animation-delay: 4s;
   animation-duration: 2s;
@@ -88,15 +92,11 @@
   }
 }
 
-.MainAirplanes__img3 {
-  width: 100%;
-  height: 100%; 
-  margin-top: -300px;
+
+.body__img3-background {
   position:absolute;
-  z-index:1; 
-  background-image:url("./../../images/airplane-bluesky.jpg");
-  background-size: cover;
-  background-repeat: no-repeat; 
+  width: 100%;
+  height: 90%;        
   opacity: 0; 
   transition-property: opacity;  
   animation: img3;
@@ -104,82 +104,65 @@
   animation-duration: 4s;  
 }
 @keyframes img3 {
-  from {    
-    margin-top: -300px; 
+  from {        
     opacity: 1;    
   }
-  to {        
-    margin-top: -300px; 
+  to {            
     opacity: 1;
   }
 }
-.img3__airliner{
+
+.body__img3-airliner{
+  position:absolute;
   width: 20%;
   height: 20%; 
-  position:absolute;
-  z-index:2;    
-  background-image:url("./../../images/airplane33.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  opacity: 0; 
-  transition-property: opacity;
-  transition-duration: 2s;
-  transition-timing-function: ease-out;
+  top:50%;
+  left:70%;
+  z-index:1;      
+  opacity: 0;     
   animation: img3-airliner;
   animation-delay: 7s;
   animation-duration: 3s;
 }
 @keyframes img3-airliner {
   from {
-    opacity: 1;
-    margin-left: 90%;
-    margin-top: 100px;
+    opacity: 1;    
   }
   to {    
-    opacity: 1;
-    margin-left: 0%;
-    margin-top: -200px;
+    opacity: 1;  
+    top:10%;
+    left:10%;  
   }
 }
-.img3__jet{
-  width: 10%;
-  height: 10%;  
+.body__img3-jet{
   position:absolute;
-  z-index:2;    
-  background-image:url("./../../images/airplane4.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  opacity: 0; 
-  transition-property: opacity;
-  transition-duration: 2s;
-  transition-timing-function: ease-out;
+  width: 15%;
+  height: 15%;  
+  top:50%;
+  left:10%;  
+  z-index:1;      
+  opacity: 0;   
   animation: img3-jet;
   animation-delay: 7s;
   animation-duration: 3s;
 }
 @keyframes img3-jet {
   from {
-    opacity: 1;
-    margin-left: 0%;
-    margin-top: 50px;
+    opacity: 1;  
   }
   to {    
-    opacity: 1;
-    margin-left: 90%;
-    margin-top: -200px;
+    opacity: 1;  
+    top:10%;
+    left:70%; 
   }
 }
 
-.MainAirplanes__img4 {
-  width: 100%;
-  height: 61%;   
+.body__img4-background {
   position:absolute;
-  z-index:1; 
-  background-image:url("./../../images/airplane-earth.jpg");
-  background-size: cover;
-  background-repeat: no-repeat; 
-  opacity: 0; 
-  transition-property: opacity;  
+  width: 100%;
+  height: 60%;   
+  top:51%;         
+  opacity: 0;   
   animation: img4;
   animation-delay: 10s;
   animation-duration: 5s; 
@@ -193,51 +176,62 @@
     opacity: 1;
   }
 }
-.img4__rocket{
-  width: 43%;
-  height: 40%; 
+.body__img4-rocket{
   position:absolute;
+  width: 10%;
+  height: 10%;
+  top:65%;
+  left: 35%;
   transform:
-  rotate(-45deg)
-  scale(0.1);
-  z-index:2;    
-  background-image:url("./../../images/airplane-rocket.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  opacity: 0; 
-  transition-property: opacity;
-  transition-duration: 2s;
-  transition-timing-function: ease-out;
-  animation: img4-rocket;
+  rotate(-80deg)
+  scale(0.1);    
+  opacity: 0;   
+  animation-name: img4-rocket;
   animation-delay: 10s;
   animation-duration: 5s;
   animation-fill-mode:forwards;
 }
 @keyframes img4-rocket {
   from {
-    opacity: 1;
-    margin-left: 40%;
-    margin-top: 0px;
+    opacity: 0;    
     transform:
-    rotate(-45deg)
-    scale(0.1);
+    rotate(-40deg)   
   }
   to {    
-    opacity: 1;
-    margin-left: 60%;
-    margin-top: -300px;
+    opacity: 1;        
     transform:
-    rotate(-35deg)
-    scale(0.3);
+    rotate(-25deg)
+    scale(1.5);
+    top:30%;
+    left:60%;
   }
 }
-.rocket__link {  
+
+.rocket__link{  
   position: absolute;
-  margin-top: 500px;
-  width: 140%;
-  font-size: 100px;  
-  color:white; 
-  opacity: 1;
-  transform: rotate(-5deg);
-  animation: img4-rocket;
+  width: 20%;
+  height: 100%;
+  top: 40%;
+  left: 72%;  
+  z-index:-1;
+  font-size: 30px;
+  color:#ffdd93; 
+  opacity: 0; 
+  transform: rotate(-25deg);
+  transition: all 5s ease-in-out;  
+  animation-name: img4-rocket-link;
+  animation-delay: 12s;
+  animation-duration: 6s;
+  animation-fill-mode:forwards;
+}
+
+@keyframes img4-rocket-link {
+  from {
+    opacity: 0;
+    z-index:-1;        
+  }
+  to {    
+    opacity: 1;            
+    z-index:0;
+  }
 }
