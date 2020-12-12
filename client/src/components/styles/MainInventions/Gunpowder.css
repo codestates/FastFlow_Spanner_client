@@ -17,10 +17,5 @@
   margin-top: 350px;
 }
 
-.static {
-  width: 100%;
-}
-
 .MainGunpowders:hover .static {
-  display: none;
 }

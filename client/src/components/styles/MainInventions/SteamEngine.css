@@ -1,8 +1,9 @@
 .MainSteamEngines {
-  background-color:yellow;
+  background-image:url("../../../TestPic/railroad_BLmod.png");
+  background-color: rgb(143, 23, 23);
   background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover;
+  background-position: 0px -159px;
+  background-size: 1840px;
   min-height: 1000px;
   position: relative;
 }
@@ -15,4 +16,41 @@
   width: 100%;
   text-align: center;
   margin-top: 350px;
+}
+
+.mainSteamEngine__img {
+  position:absolute;
+  bottom: 175px;
+  left: -100px;
+  width: 380px;
+  transition-property: width, bottom, left;
+  transition-duration: 1.25s;
+}
+
+.mainSteamEngine__img_2 {
+  position:absolute;
+  bottom: 70px;
+  left: 0px;
+  width: 1090px;
+  transition-property: width, bottom, left;
+  transition-duration: 0.25s;
+}
+
+.mainSteamEngine__smoke {
+  position:absolute;
+  bottom:780px;
+  left: 245px;
+  width: 25%;
+  opacity: 0;
+}
+
+.mainSteamEngine__smoke_2 {
+  position:absolute;
+  bottom:780px;
+  left: 245px;
+  width: 465px;
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+  transition-delay: 0.3s;
 }
