@@ -18,7 +18,7 @@ import MainInternet from "../Inventions/MainInternet";
 // 아래는 별 사진
 import MainStar from "../images/MainPage/MainStar.png";
 
-const MainPage = () => {
+const MainPage = () => {  
   return (
     <div className="MainPages">
       <div className="MainPages__welcomePoint">

@@ -8,6 +8,7 @@ import MainPage from "./components/Pages/MainPage";
 import Mypage from "./components/Pages/Mypage";
 import Nav from "./components/Nav";
 
+
 import { ip, port } from "./url";
 
 import Airplane from "./components/Detail/Airplane";
@@ -27,8 +28,8 @@ import SteamEngine from "./components/Detail/SteamEngine";
 import Vaccine from "./components/Detail/Vaccine";
 import Wheel from "./components/Detail/Wheel";
 import WritingSystem from "./components/Detail/WritingSystem";
-import SocialLogInGitHub from "./components/SocialLogInGitHub";
-import SocialLogInKakao from "./components/SocialLogInKakao";
+
+
 
 axios.defaults.withCredentials = true;
 
@@ -118,7 +119,7 @@ const App = () => {
         switchLogOut={switchLogOut}
       />
       <Switch>
-        <Route exact path="/signup" render={() => <SignUp />} />
+        <Route exact path="/signup" render={() => <SignUp />} />        
         <Route exact path="/signin" render={() => <SignIn handleResponseSuccess={handleResponseSuccess.bind(this)} />} />
         <Route exact path="/" render={() => <MainPage />} />
 
@@ -145,8 +146,8 @@ const App = () => {
         <Route exact path="/writingSystem" render={() => <WritingSystem />} />
         <Route exact path="/mypage" render={() => <Mypage />} />
 
-        <Route exact path="/sociallogin" render={() => <SocialLogInGitHub location={window.location} hisotry={window.history}/>} />
-        <Route exact path="/SocialLogInKakao" render={() => <SocialLogInKakao location={window.location} hisotry={window.history}/>} />
+        {/* <Route exact path="/sociallogin" render={() => <SocialLogInGitHub location={window.location} hisotry={window.history}/>} />
+        <Route exact path="/SocialLogInKakao" render={() => <SocialLogInKakao location={window.location} hisotry={window.history}/>} /> */}
 
       </Switch>
       <Footer />

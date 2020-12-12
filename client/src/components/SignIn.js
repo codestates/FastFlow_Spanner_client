@@ -69,10 +69,10 @@ const SignIn = (props) => (
                 <img className="github__icon" src="" alt="" width="60px"/>
               </a>
             </div>
-            <div className="signIn__kakao" onClick={props.modalClose}>
+            {/* <div className="signIn__kakao" onClick={props.modalClose}>
               카카오 로그인
                 <img className="signIn__kakaoIcon" src="" alt="" width="60px"/>
-            </div>
+            </div> */}
           </div>
           <button className="signIn__btn" type="submit" onClick={props.handleSignIn}>
             로그인

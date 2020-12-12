@@ -1,18 +1,44 @@
 .MainInternets {
-  background-color:blue;
+  background-color:rgb(0, 0, 0);
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
   min-height: 1000px;
   position: relative;
 }
+.MainInternets__title{
+  position:absolute;
+  top: 2%;
+  left: 2%;
+  font-size:5vw;
+  font-weight:700;
+  color:#ffdd93;  
+}
+.MainInternets__desc{
+  position:absolute;
+  top: 13%;
+  left: 3%;   
+  font-size:2vw;
+  font-weight:700;
+  color:#ffdd93;  
+}
 
-.MainInternets__text {
-  color: white;
-  font-size: 50px;
-  font-weight: 700;
-  position: absolute;
+.MainInternets__game {
+  position: absolute;    
   width: 100%;
-  text-align: center;
-  margin-top: 350px;
+  height: 50%;
+  top: 25%;
+  border: #ffdd93 solid 10px;  
+}
+
+
+.MainInternets__link{ 
+  position: absolute;
+  width: 50%;
+  height: 10%;
+  top: 35%;
+  left: 25%;
+  font-size: 2vw;
+  font-weight:700;
+  color:#ffdd93;  
 }
