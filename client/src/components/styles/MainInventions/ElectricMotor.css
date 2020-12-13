@@ -1,5 +1,5 @@
 .MainElectricMotors {
-  background-color:black;
+  background-color:#444444;  
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
@@ -41,7 +41,7 @@
   text-align: center; 
   color:#ffdd93;
   font-weight: 700;
-  font-size: 1.2vw;
+  font-size: 1vw;
 }
 .drag__magnet{
   position:absolute;  
@@ -114,27 +114,19 @@
   left: 60%;
   top: 20%;
   color:#ffdd93;
-  font-size: 2vw;
+  font-size: 1.9vw;
   font-weight: 700;  
 }
 
 .MainElectricMotors__link {  
   position:absolute;
   left: 60%;
-  top: 40%; 
-  font-size: 2vw;
+  top: 50%; 
+  font-size: 1.9vw;
   font-weight: 700;
   cursor: pointer;
 }
 .MainElectricMotors__link-text{
   color:#ffdd93;
   cursor: pointer;
-}
-
-.MainElectricMotors__principle{
-  position: absolute;
-  width: 40%;
-  height: 40%;
-  left: 55%;
-  top: 55%; 
 }

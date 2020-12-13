@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState} from "react";
 import lightening from "./../images/Battery/battery_lightening1.png"
-
+import battery_background from "./../images/Battery/battery_background.png"
 const MainBattery = () => {
 
   const [isHovered, setIsHovered] = useState(false);
@@ -42,9 +42,10 @@ const MainBattery = () => {
 
   return (
     <div className="MainBatterys">
+      <img className="MainBatterys__background" src={battery_background}></img>
       <div className="MainBatterys__title">Battery</div>
       <div className="MainBatterys__body">
-        <img className="body__lightening-on" src={isHovered ? lightening : null}></img>
+        <img className={isHovered ? "body__lightening-on" : "body__lightening-off"} src={isHovered ? lightening : null}></img>
         <div className="body__video" onMouseOver={() => { setIsHovered(!isHovered) }} onMouseDown={() => { setIsHovered(false) }}>
           <div className="video__text">Are you alive!!!?
               <span className="video__text__desc"><br></br>(1분부터 신남)</span>
@@ -81,7 +82,7 @@ const MainBattery = () => {
           </div>
           <div className="future__link-wrapper" >
             <Link to="/Battery" className="future__link">
-              Click Me!
+              상세 페이지
             </Link>
           </div> 
           <div className="diagram__lowerbox"></div>

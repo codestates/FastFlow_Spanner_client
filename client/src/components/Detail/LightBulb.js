@@ -1,4 +1,4 @@
-import CondomDetail from "../images/DetailPic/CondomDetail.jpg";
+import LightBulbDetail from "../images/DetailPic/LightBulbDetail.gif";
 import { useState, useEffect } from "react";
 //import { Link } from "react-router-dom";
 import Writepage from "../Pages/WritePage";
@@ -21,9 +21,9 @@ const LightBulb = () => {
     let accessToken = localStorage.getItem("token");
     axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
     // inventionId 보내기
-    setInventionId(15);
+    setInventionId(1);
     // 댓글 작성
-    axios.get(ip + port + `/post/read/15`).then((res) => {
+    axios.get(ip + port + `/post/read/1`).then((res) => {
       console.log(res.data);
       let result = res.data;
       let newCommentData = [];
@@ -122,27 +122,50 @@ const LightBulb = () => {
 
   return (
     <center className="Details">
-      <div className="Details__title">Light Bulb</div>
+      <div className="Details__title">LightBulb</div>
       <div className="Details__body">
         <div className="Details__picArea">
-          <img className="Details__pic" src={CondomDetail} alt=""></img>
+          <img className="Details__pic" src={LightBulbDetail} alt=""></img>
         </div>
-        <div className="Details__video"></div>
+        <div className="Details__video">
+          <iframe
+            alt=""
+            width="1280"
+            height="720"
+            src="https://www.youtube.com/embed/l5q-5VH4X-E"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          ></iframe>
+        </div>
+
         <div className="Details__textArea">
           <div className="Details__textTitle">Detail</div>
           <div className="Details__text">
+            <div className="Details__text__birth">역사</div>
             <p>
-              주먹도끼는 구석기시대에 사용된 대표적인 도구이다. 한 손에 쥐고 쓸 수 있어서 짐승을 사냥하고 가죽을 벗기며, 땅을 파서 풀이나 나무를 캐는 등 다양한 용도로 사용되었다. 즉 오늘날의 멀티툴과
-              같았다고 보면된다. 한국사 등에서는 이 주먹도끼의 발견을 매우 가치있는 것으로 평가하고 있다. 한국에서 이 주먹도끼가 발굴되기 전까지는 주먹도끼는 유럽과 북아프리카 등 백인 거주지에서만[2]
-              발굴되었고, 이 때문에 서양의 고고학자들은 '백인은 타인종에 비해 훨씬 진화된 인류'라는 뉘앙스로 타인종을 열등하게 평가했다. 이는 위에 언급된 대로 주먹도끼는 당시로서는 굉장히 진화한
-              문명의 산물이었기 때문이다. 그렇다고 아예 주먹도끼가 아시아 쪽에서 발견되지 않은 것은 아니다. 다만 위에서 언급한 지역에서는 더 발전된 형태인 날이 양쪽에 있는 아슐리안형 주먹 도끼가
-              출토된 것이고, 아시아 쪽에서는 날이 한쪽에만 있는 동아시아식 외날 주먹 도끼(찍개)가 출토되어 왔던 것. 하지만 1977년, 주한미군이자 고고학자(고고학자는 아니고 고고학과 출신)였던 '그렉
-              보웬'이 우연히 경기도 연천군에서 한국인 여자친구 이상미[3]와 산책하던 중, 이씨가 특이한 모양의 돌을 하나 발견했다. 신기하게 여겨 조사한 결과, 그것이 바로 수십만년도 더 된 주먹도끼였음이
-              밝혀졌다. 전곡리 선사유적지 참조. 덕분에 백인만이 주먹도끼 같은 고등한 물건을 지닌 것이 아니었다는 사실이 밝혀져서 고고학계에 일대의 지각변동이 일어났고, 기존의 백인만이 우월했다는
-              이론들은 자취를 감추었다. 사실 지금의 기준으로 보면, 현생인류도 아닌 호모 에렉투스의 유물로 인종의 우열을 논한 것 자체가 황당한 일이었던 셈이다. 위의 구분안에 대한 견해를 제시했던 것은
-              미국의 고고학자인 H.모비우스에 의한 것으로 소위 모비우스 라인이라고 부르며, 주먹도끼 문화와 찍개 문화의 구분하고자 하였던 목적이었다. 한국에서의 주먹도끼 발견 이전에 이미 중국에서
-              주먹도끼가 확인되었기 때문에 모비우스라인은 한반도 북쪽 위로 형성되어 있었다. 당시의 주먹도끼 문화와 찍개문화의 구분안은 지속적으로 조정되었던 학설이었다. 즉, 주먹도끼의 사용이 발전된
-              문화상을 지칭할 목적이 있을 "수" 있다손 치더라도 결코 인종에 기인한 우월성의 구분이 목적이 아니라 문화권 설정 그 자체에 보다 목적을 둔 가설이었다.
+            전구의 발명 전에 사람들은 어둠을 밝히기 위해 등잔, 양초, 석유 램프 등을 사용했다.
+            최초의 백열전구는 탄소로 이루어진 막대가 촛불 4000개 정도의 밝기의 빛을 내도록 만든 아크 
+            등이다. 아크 등은 1808년 영국의 화학자인 험프리 데비가 발명하였는데, 가정용으로 사용하기에
+            는 부피가 크고 밝기가 너무 밝다는 단점이 있었다. 이후 에디슨은 1879년 필라멘트가 들어있는
+            백열 전구를 발명하였다. 에디슨보다 1년 빠른 1878년 영국의 조지프 윌슨 스윈 경이 진공으로
+            된 유리구 안에 탄소 필라멘트를 넣는 전구를 발명하였으나, 에디슨은 백열전구를 사용하기 위한
+            기구들과 발전기 등을 함께 개발하였기 때문에 최초의 전구 개발자는 에디슨으로 알려져 있다.
+
+            </p>
+            <div className="Details__text__make">원리</div>
+            <p>
+            필라멘트에 전기를 흘리면, 전기가 흐르는 것을 방해하는 저항체 금속으로 이루어진 필라멘트의
+            온도가 올라가면서 빛을 내게 된다. 텅스텐으로 만든 필라멘트의 경우 3000℃까지 온도가
+            올라간다고 한다. 필라멘트를 오랫동안 사용하기 위해 백열전구의 유리속은 기체가 없는
+            진공 상태로 만들거나 아르곤, 질소와 같은 기체를 넣는다.
+            </p>
+            <div className="Details__text__use">형광등은 어떤 원리일까?</div>
+            <p>
+            형광등은 1938년에 미국의 제너럴 일렉트릭 사에서 발명한 것이다. 형광등은 기다란 유리관으로
+            되어 있고, 유리관의 양쪽에 필라멘트가 있다. 유리관 속은 진공으로 만든 후, 아르곤과 수은 
+            기체를 넣는다. 유리관 안쪽에는 형광 물질을 발라두어 양 끝의 필라멘트에서의 방전이
+            전자의 운동과 내부 아르곤, 수은 기체를 활발하게 움직이게 하여 자외선이 나오게 된다.
+            방출된 자외선이 형광 물질에 닿으면 가시광선으로 변하여 빛이 나오게 된다.
+            백열 전구와는 다르게 형광등에는 일정한 전류가 흐를 수 있게 하는 안정기가 필요하다.
             </p>
           </div>
         </div>

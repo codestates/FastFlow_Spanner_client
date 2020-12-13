@@ -6,6 +6,7 @@ import verticalImg from "./../images/Refrigerator/refrigerator_vertical.gif";
 import scenaryImg from "./../images/Refrigerator/refrigerator_scenary.gif";
 import developerImg from "./../images/Refrigerator/refrigerator_developer.gif";
 import errorImg from "./../images/Refrigerator/refrigerator_404.png";
+import refrigerator_background from "./../images/Refrigerator/refrigerator_background.jpg";
 
 const MainRefrigerator = () => {
   const [isOpenDoor1, setIsOpenDoor1] = useState(false);
@@ -19,6 +20,7 @@ const MainRefrigerator = () => {
 
   return (
     <div className="MainRefrigerators">
+      <img className="MainRefrigerators__background" src={refrigerator_background}></img>
       <div className="MainRefrigerators__title">Refrigerator</div>
       <div className="MainRefrigerators__body">
         <div className="MainRefrigerator__guide">
@@ -46,7 +48,7 @@ const MainRefrigerator = () => {
                 <div className="item2__indoor__text"> 오징어를 언제 샀었지...</div>
               </div>
               <div className={isOpenDoor2 ? "doorOpen2" : "item2__outdoor"} onClick={() => { setIsOpenDoor2(!isOpenDoor2) }}>
-                <div className="outDoor2__text">냉장고 없인 <br></br>살 수 없어!</div>
+                <div className="outDoor2__text"></div>
               </div>
             </div>
           </div>
@@ -56,13 +58,13 @@ const MainRefrigerator = () => {
               <img className="item3__indoor__img" src={scenaryImg} alt=""></img>
               </div>
               <div className={isOpenDoor3 ? "doorOpen3" : "item3__outdoor"} onClick={() => { setIsOpenDoor3(!isOpenDoor3) }}>
-                <div className="outDoor3__text">1949년에는 <br></br>양문형 냉장고가 <br></br>개발되어서</div>
+                <div className="outDoor3__text"></div>
               </div>
             </div>
           </div>
           <div className="MainRefrigerators__grid__item">
             <div className={isOpenDoor4 ? "doorOpen4" : "item4__outdoor"} onClick={() => { setIsOpenDoor4(!isOpenDoor4) }}>
-              <div className="outDoor4__text">허리를 굽힐 <br></br>필요가 <br></br>없어졌습니다.</div>
+              <div className="outDoor4__text"></div>
             </div>
           </div>
           <div className="MainRefrigerators__grid__item">
@@ -71,7 +73,7 @@ const MainRefrigerator = () => {
                 <img className="item5__indoor__img" src={verticalImg} alt=""></img>
               </div>
               <div className={isOpenDoor5 ? "doorOpen5" : "item5__outdoor"} onClick={() => { setIsOpenDoor5(!isOpenDoor5) }}>
-                <div className="outDoor5__text">냉장고는 어떻게 온도를 차갑게 <br></br>유지할까요?</div>
+                <div className="outDoor5__text"></div>
               </div>
             </div>
           </div>
@@ -83,7 +85,7 @@ const MainRefrigerator = () => {
               </Link>
               </div>
               <div className={isOpenDoor6 ? "doorOpen6" : "item6__outdoor"} onClick={() => { setIsOpenDoor6(!isOpenDoor6) }}>
-                <div className="outDoor6__text">에어컨이랑 <br></br>원리가 같다네요</div>
+                <div className="outDoor6__text"></div>
               </div>
             </div>
           </div>
@@ -93,7 +95,7 @@ const MainRefrigerator = () => {
                 <img className="item7__indoor__img" src={developerImg} alt=""></img>
               </div>
               <div className={isOpenDoor7 ? "doorOpen7" : "item7__outdoor"} onClick={() => { setIsOpenDoor7(!isOpenDoor7) }}>
-                <div className="outDoor7__text">냉장고 문은 어떻게 닫히는 걸까요?</div>
+                <div className="outDoor7__text"></div>
               </div>
             </div>
           </div>
@@ -103,7 +105,7 @@ const MainRefrigerator = () => {
                 <img className="item8__indoor__img" src={errorImg} alt=""></img>
               </div>
               <div className={isOpenDoor8 ? "doorOpen8" : "item8__outdoor"} onClick={() => { setIsOpenDoor8(!isOpenDoor8) }}>
-                <div className="outDoor8__text">{"<h1>위험</h1>"}</div>
+                <div className="outDoor8__text"></div>
               </div>
             </div>
           </div>
