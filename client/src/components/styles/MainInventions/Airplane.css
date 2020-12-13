@@ -215,9 +215,11 @@
   left: 72%;  
   z-index:-1;
   font-size: 2vw;
+  font-weight:700;
   color:#ffdd93; 
   opacity: 0; 
-  transform: rotate(-25deg);   
+  transform: rotate(-25deg);
+  transition: all 2s ease-in;  
   animation-name: img4-rocket-link;
   animation-delay: 12s;
   animation-duration: 3s;

@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Draggable from "react-draggable";
-import experimentImg from "./../images/ElectricMotor/electricmotor-module.png";
-import principleImg from "./../images/ElectricMotor/electricmotor-principle.gif";
+import experimentImg from "./../images/ElectricMotor/electricmotor-module-changed.jpg";
 
 const MainElectricMotor = () => {
   const [isDragHovered, setIsDragHovered] = useState(false);
@@ -52,8 +51,7 @@ const MainElectricMotor = () => {
           모터를 만들 수 있어요<br></br>
           :상세페이지
         </Link>
-      </div>
-      <img className="MainElectricMotors__principle" src = {principleImg} alt=""></img>
+      </div>      
     </div>
   );
 };

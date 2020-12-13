@@ -41,7 +41,7 @@ const MainAirplane = () => {
         <img className={img3 ? "body__img3-jet" : null} src= {img3 ? airplaneImg4 : null}></img>
         <img className={img4 ? "body__img4-background" : null} src= {img4 ? earth : null}></img>
         <img className={img4 ? "body__img4-rocket" : null} src= {img4 ? rocket : null}></img>
-          <Link to="/Airplane" className="rocket__link">
+          <Link to="/Airplane" className={img4 ? "rocket__link" : null}>
             종이비행기부터 로켓까지, <br></br>
             인류를 날려보낸 이야기!<br></br>
           </Link>
