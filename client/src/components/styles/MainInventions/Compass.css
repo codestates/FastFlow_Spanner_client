@@ -51,6 +51,10 @@
   animation-delay: 0.8s;
 }
 
+.starlight2:hover {
+  cursor: pointer;
+}
+
 @keyframes twinkle {
   0% {opacity:0;}
   50% {opacity:1;}
@@ -59,7 +63,7 @@
 
 .mainCompass__container {
   position: absolute;
-  left: 500px;
+  left: 800px;
 }
 
 .compass {
@@ -85,4 +89,18 @@
   transition-duration: 1s;
   transition-timing-function: ease;
   border-radius: 50%;
+}
+
+.mainCompass__linkContainer {
+  display: flex;
+  width: 100px;
+  position: relative;
+  left: 100px;
+  top: 100px;
+  color: white;
+}
+
+.mainCompass__link {
+  width: 100px;
+  font-size: 10px;
 }
