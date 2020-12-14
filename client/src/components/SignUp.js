@@ -35,14 +35,14 @@ const SignUp = () => {
         username: userName,
         email: email,
         password: password,
-      })
+      });
       // .then((res) => {
       //   console.log(res)
       // })
       history.push("/");
     }
-  }
-  
+  };
+
   // 비밀번호 유효성 검사 43-61
   const doesPasswordMatch = () => {
     return password === confirmPassword;
@@ -68,7 +68,7 @@ const SignUp = () => {
     <center className="SignUps__area">
       <div className="SignUps">
         <div className="SignUps__body">
-          <div className="SignUps__title">회원가입 입니다.</div>
+          <div className="SignUps__title">회원가입</div>
           <div className="SignUps__name SignUp">
             <input className="SignUps__input" type="text" placeholder="사용자 이름" onChange={onChangeUserName}></input>
           </div>

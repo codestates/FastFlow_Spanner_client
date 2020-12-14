@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import basicPostPic from "../images/InputPic.jpg";
 import { ip, port } from "../../url";
+import pleaseLogInPic from "../images/pleaseLogin.gif";
 
 axios.defaults.withCredentials = true;
 
@@ -14,30 +15,24 @@ const WritePage = ({ inventionId }) => {
   const [postPic, setPostPic] = useState("");
   //const [selectedInvention, setSelectedInvention] = useState('');
   const [errorMessage, setErrorMessage] = useState("");
+  const [switchGetOut, setSwitchGetOut] = useState("none");
 
-  // useEffect(() => {
-  //   //   //for signin
-  //   //   // axios.post(`${localUrl}/user`);
-  //   //   //   .then((res) => {
-  //   //   //     //jwt test start (1/2   2/2는 app의 로그아웃)
-  //   //   //     const { accessToken } = res.data;
-  //   //   //     axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
-  //   //   //     //    sessionStorage.setItem('token', res.data.accessToken)
-  //   //   //     localStorage.setItem('token', accessToken);
-  //   //   //   });
-  //   //   // 뒤쪽의 배열은 Hook의 componentDidupdate 같은 부분인데, state 값을 넣는 것이 아니라,
-  //   //   // state 값을 변경하는 메서드를 넣어주어야 적용이 된다.
-  //   //makeInventionId(inventionId);
-  // }, [setPostPicView]);
-  // const inventionItems = () => {
-  // 	return items.forEach((item) => {
-  // 		return <option value={item}>{item}</option>
-  // });
-  // }
+  useEffect(() => {
+    let accessToken = localStorage.getItem("token");
+
+    console.log("글을 작성하기 전에 우리는 토큰을 확인 할 것 이다.", accessToken);
+  });
 
   const onSubmit = (e) => {
+    let accessToken = localStorage.getItem("token");
+
     e.preventDefault();
-    if (!title) {
+    if (!accessToken) {
+      setSwitchGetOut("block");
+      setTimeout(() => {
+        setSwitchGetOut("none");
+      }, 2200);
+    } else if (!title) {
       setErrorMessage("제목을 입력해주세요.");
     } else if (!text) {
       setErrorMessage("글을 입력해주세요.");
@@ -120,6 +115,15 @@ const WritePage = ({ inventionId }) => {
           </div>
         </form>
         <div className="WritePages__error">{errorMessage}</div>
+      </div>
+      <div className="WritePages__getOutModals">
+        <div className="WritePages__getOutModal" style={{ display: switchGetOut }}>
+          <div className="WritePages__getOutContents">
+            {/* <span className="logOut__closeButton" onClick={props.modalClose}>&times;</span> */}
+            <img className="WritePages__getOutContents__Pic" src={pleaseLogInPic} />
+            <p className="WritePages__getOutContents__Massage">{`로그인하고 다시 와라`}</p>
+          </div>
+        </div>
       </div>
     </div>
   );
