@@ -14,18 +14,46 @@
 
 .scrollTracker__first_1 {
   position: absolute;
+  width: 10%;
+  top: -50px;
 }
 
 .scrollTracker__first_2 {
-  position: absolute;
   display: none;
 }
 
 .scrollTracker__second_1 {
-  position: absolute;
   display: none;
 }
 
 .scrollTracker__second_2 {
   position: absolute;
+  width: 10%;
+  top: -50px;
+  transition-property: left;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+}
+
+.scrollTracker__human5 {
+  position: absolute;
+  width: 10%;
+  top: -50px;
+  left: -7.5%;
+  transition-property: left;
+  transition-duration: 0.1s;
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.scrollTracker__deskContainer {
+  position: absolute;
+  width: 500px;
+  height: 100%;
+  left: 98%;
+}
+
+.scrollTracker__desk {
+  position: absolute;
+  width: 10%;
+  top: -50px;
 }

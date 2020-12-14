@@ -9,7 +9,7 @@
 @import "WritePage.css";
 @import "ScrollTracker.css";
 @import "LogOut.css";
-
+@import "ScrollYear.css";
 body {
   height: 100%;
   margin: 0;

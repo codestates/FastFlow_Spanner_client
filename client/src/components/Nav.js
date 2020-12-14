@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import SignIn from "./SignIn";
 import ScrollTracker from './ScrollTracker';
 import useScrollStatus from './hooks/useScrollStatus';
+import ScrollYear from './ScrollYear';
 import LogOut from "./LogOut";
 
 export default function Nav(props) {
@@ -30,7 +31,7 @@ export default function Nav(props) {
             My page
           </Link>
         </div>
-        <div className="nav__year">여기에 년도 입력</div>
+        <ScrollYear />
         <div>
           <Link to="/" className="nav__logoBtn">
             Main

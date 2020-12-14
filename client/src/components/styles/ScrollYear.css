@@ -1,0 +1,17 @@
+.scrollYears {
+  position: relative;
+  width: 500px;
+}
+
+.scrollYear_on {
+  position: absolute;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.scrollYear_off {
+  position: absolute;
+  left: 0px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
