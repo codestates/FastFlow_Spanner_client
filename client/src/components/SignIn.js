@@ -1,5 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {ip, port, port_client} from '../url';
+import github_icon from './images/Github_icon.png';
+import kakaotalk_icon from './images/kakaotalk_icon.png';
+
 // import { useState } from "react";
 // import axios from 'axios';
 
@@ -65,14 +69,15 @@ const SignIn = (props) => (
           </div>
           <div className="signIn__social">
             <div className="signIn__gitHub" onClick={props.modalClose}>
-              <a href="https://github.com/login/oauth/authorize?client_id=0604c124c075b9bc4925&redirect_uri=http://localhost:3001/sociallogin">깃허브 로그인
-                <img className="github__icon" src="" alt="" width="60px"/>
-              </a>
+            <a href={`https://github.com/login/oauth/authorize?client_id=0604c124c075b9bc4925&redirect_uri=${ip}${port_client}/sociallogin`}>
+              <img className="github__icon" src={github_icon} alt="" width="40%"/>
+            </a>
             </div>
-            {/* <div className="signIn__kakao" onClick={props.modalClose}>
-              카카오 로그인
-                <img className="signIn__kakaoIcon" src="" alt="" width="60px"/>
-            </div> */}
+            <div className="signIn__kakao" onClick={props.modalClose}>              
+            <a href={`${ip}${port_client}/SocialLogInKakao`}>
+              <img className="signIn__kakaoIcon" src={kakaotalk_icon} alt="" width="20%"/>
+            </a>              
+            </div>
           </div>
           <button className="signIn__btn" type="submit" onClick={props.handleSignIn}>
             로그인

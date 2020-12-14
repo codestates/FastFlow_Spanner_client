@@ -7,7 +7,8 @@ import Footer from "./components/Footer";
 import MainPage from "./components/Pages/MainPage";
 import Mypage from "./components/Pages/Mypage";
 import Nav from "./components/Nav";
-
+import SocialLogInGitHub from "./components/SocialLogInGitHub";
+import SocialLogInKakao from "./components/SocialLogInKakao";
 
 import { ip, port } from "./url";
 
@@ -30,6 +31,7 @@ import Wheel from "./components/Detail/Wheel";
 import WritingSystem from "./components/Detail/WritingSystem";
 
 
+const { Kakao } = window;
 
 axios.defaults.withCredentials = true;
 
@@ -39,7 +41,7 @@ const App = () => {
   const [password, setPassword] = useState("");
   const [errMessage, setErrMessage] = useState("");
   const [switchLogOut, setSwitchLogOut] = useState("none");
-
+  
   const modalOpen = () => {
     setModal("block");
   };
@@ -98,6 +100,8 @@ const App = () => {
     }, 2000);
 
     localStorage.removeItem("token");
+    //카카오 소셜로그인 토큰 제거
+    Kakao.Auth.logout();
   };
 
   const autoLogOutClose = () => {
@@ -146,8 +150,8 @@ const App = () => {
         <Route exact path="/writingSystem" render={() => <WritingSystem />} />
         <Route exact path="/mypage" render={() => <Mypage />} />
 
-        {/* <Route exact path="/sociallogin" render={() => <SocialLogInGitHub location={window.location} hisotry={window.history}/>} />
-        <Route exact path="/SocialLogInKakao" render={() => <SocialLogInKakao location={window.location} hisotry={window.history}/>} /> */}
+        <Route exact path="/sociallogin" render={() => <SocialLogInGitHub location={window.location} hisotry={window.history}/>} />
+        <Route exact path="/SocialLogInKakao" render={() => <SocialLogInKakao location={window.location} hisotry={window.history}/>} />
 
       </Switch>
       <Footer />
