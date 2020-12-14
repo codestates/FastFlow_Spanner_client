@@ -1,5 +1,6 @@
 .MainWritingSystemss {
   background-color: black;
+  width: 100%;
 }
 .MainWritingSystems {
   background-image: url("../../images/MainBackGound/WritingSystemBackGround.jpg");
@@ -10,6 +11,7 @@
   position: relative;
   opacity: 0;
   z-index: 1;
+  width: 100%;
 }
 
 @keyframes appearBack {
@@ -35,12 +37,13 @@
 }
 
 .MainWritingSystems__textBodyPic {
-  position: relative;
-  margin-left: 525px;
+  position: absolute;
+  width: 65%;
+  right: 7%;
   background-image: url("../../images/WritingSystem/AcientPaper.png");
   background-repeat: no-repeat;
   background-size: contain;
-  height: 1000px;
+  height: 100%;
   animation: revealBack 2s 1s forwards;
 }
 
@@ -80,6 +83,7 @@
   text-transform: capitalize;
   white-space: nowrap;
   font-family: "East Sea Dokdo", cursive;
+  width: 100%;
 }
 
 .MainWritingSystems__textBody::before {

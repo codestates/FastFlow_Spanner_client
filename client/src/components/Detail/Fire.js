@@ -37,7 +37,7 @@ const Fire = () => {
     axios.get(ip + port + `/user`).then((res) => {
       console.log("디테일페이지의 유저 정보이다. 이것들아.", res.data);
     });
-
+    window.scrollTo(0, 0);
     // 상태 변화 할때 마다 리렌더링을 하려면 아래의 배열안에 commentList를 입력하면 된다.
   }, []);
 

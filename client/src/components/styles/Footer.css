@@ -1,13 +1,58 @@
 .Footers {
-  background-color: black;
+  background-color: rgb(37, 36, 36);
   width: 100%;
   bottom: 0;
   height: 150px;
-  text-align: center;
+  border-top: 3px solid rgb(87, 84, 84);
+  display: flex;
 }
 
-.Footers__text {
-  color: aliceblue;
+.footers__companyName {
+  color: #fedd93;
+  position: relative;
+  top: 41px;
+  left: 38px;
+  height: 20px;
+  font-weight: 700;
+  font-size: 20px;
+  width: 12%;
+}
+
+.Footers__body {
+  position: relative;
+  color: #fedd93;
+  top: 54px;
+  left: 200px;
+  height: 20px;
+  width: 34%;
+}
+
+.teamLeader {
+  margin-bottom: 10px;
+}
+
+.footers__members {
+  display: flex;
+}
+
+.footers__member {
+  position: relative;
+  top: -12px;
+  margin-right: 6px;
+  margin-left: 2px;
   font-weight: 500;
-  font-size: 30px;
+  font-size: 17px;
+}
+
+.team__member {
+  color: #fedd93;
+}
+
+.Footers__logoPic {
+  margin-top: 1.1%;
+  margin-left: 2%;
+  height: 70%;
+  width: 6.7%;
+  border-radius: 17px;
+  border: 2px solid rgb(87, 84, 84);
 }
