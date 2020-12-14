@@ -32,6 +32,21 @@
   z-index: -1;
 }
 
+.signIn__social{
+  width:100%;
+  height:20%;
+  display:flex;  
+  align-items: center;
+}
+/* .github__icon{
+  margin:0;
+  padding:0;
+}
+.signIn__kakaoIcon{
+  margin:0;
+  padding:0;
+} */
+
 .testBtn {
   margin-top: 200px;
   z-index: 5;
