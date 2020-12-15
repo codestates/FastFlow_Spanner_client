@@ -31,6 +31,7 @@
   height: 350px;
   position: absolute;
   margin-top: 340px;
+  left: 0%;
 }
 
 @keyframes attack {
@@ -81,7 +82,7 @@
     transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translate3d(1060px, 0, 0);
+    transform: translate3d(300%, 0, 0);
     visibility: hidden;
   }
 }

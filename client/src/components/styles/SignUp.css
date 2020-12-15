@@ -23,8 +23,8 @@
 .SignUps__title {
   font-weight: 600;
   font-size: 30px;
-
-  margin: 30px 0px;
+  font-weight: 800;
+  margin: 53px 0px;
 }
 
 .SignUps__input {
@@ -42,7 +42,7 @@
 .SignUps__btn {
   width: 280px;
   height: 30px;
-  background-color: #fbd46d;
+  background-color: #fedd93;
   border: 1px solid #dbdbdb;
   border-radius: 5px;
 }
@@ -65,13 +65,13 @@
 .SignUps__passwordValid {
   color: #0bdd27;
   margin-top: 10px;
-  padding-right: 140px;
+  padding-right: 120px;
   font-family: "Jua", sans-serif;
 }
 
 .SignUps__passwordInvalid {
   color: #c83c0d;
   margin-top: 10px;
-  padding-right: 96px;
+  padding-right: 76px;
   font-family: "Jua", sans-serif;
 }

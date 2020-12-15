@@ -116,13 +116,14 @@
 .MainFire__BCtext {
   position: absolute;
   color: white;
-  right: 42%;
+  left: 41%;
   margin-top: 270px;
   font-size: 50px;
   font-weight: 600;
   text-shadow: 1px 1px 10px orangered;
   opacity: 0;
   font-family: "Texturina", serif;
+  width: 40%;
 }
 
 .MainFire__textBody {
@@ -131,7 +132,8 @@
   font-size: 28px;
   margin-top: 370px;
   font-weight: 600;
-  right: 30.8%;
+  left: 33%;
+  right: 30%;
   text-shadow: 1px 1px 10px orangered;
   opacity: 0;
   font-family: "Black And White Picture", sans-serif;

@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
+import internet_background from "./../images/Internet/internet_background.gif";
+
 const MainInternet = () => {
   return (
     <div className="MainInternets">
+      <img className="MainInternets__background" src={internet_background}>
+      </img>
       <div className="MainInternets__title">Internet
       </div>
       <div className="MainInternets__desc">크롬 브라우저 404 Error page 게임<br></br>
-      아래에서 space key로 점프!
+      아래 게임창 클릭 후 space key로 점프!
       </div>
       <iframe className="MainInternets__game" src="https://elgoog.im/t-rex/"
       scrolling="no">

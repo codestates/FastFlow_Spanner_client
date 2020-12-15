@@ -32,7 +32,7 @@ const Vaccine = () => {
       }
       setCommentList(newCommentData);
     });
-
+    window.scrollTo(0, 0);
     // 상태 변화 할때 마다 리렌더링을 하려면 아래의 배열안에 commentList를 입력하면 된다.
   }, []);
 

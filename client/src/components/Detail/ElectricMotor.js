@@ -1,4 +1,4 @@
-import CondomDetail from "../images/DetailPic/CondomDetail.jpg";
+import ElectricMotorDetail from "../images/DetailPic/ElectricMotorDetail.gif";
 import { useState, useEffect } from "react";
 //import { Link } from "react-router-dom";
 import Writepage from "../Pages/WritePage";
@@ -21,9 +21,9 @@ const ElectricMotor = () => {
     let accessToken = localStorage.getItem("token");
     axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
     // inventionId 보내기
-    setInventionId(13);
+    setInventionId(1);
     // 댓글 작성
-    axios.get(ip + port + `/post/read/13`).then((res) => {
+    axios.get(ip + port + `/post/read/1`).then((res) => {
       console.log(res.data);
       let result = res.data;
       let newCommentData = [];
@@ -32,7 +32,7 @@ const ElectricMotor = () => {
       }
       setCommentList(newCommentData);
     });
-
+    window.scrollTo(0, 0);
     // 상태 변화 할때 마다 리렌더링을 하려면 아래의 배열안에 commentList를 입력하면 된다.
   }, []);
 
@@ -125,24 +125,37 @@ const ElectricMotor = () => {
       <div className="Details__title">ElectricMotor</div>
       <div className="Details__body">
         <div className="Details__picArea">
-          <img className="Details__pic" src={CondomDetail} alt=""></img>
+          <img className="Details__pic" src={ElectricMotorDetail} alt=""></img>
         </div>
-        <div className="Details__video"></div>
+        <div className="Details__video">
+          <iframe
+            alt=""
+            width="1280"
+            height="720"
+            src="https://www.youtube.com/embed/rSAH3zSr7xY"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          ></iframe>
+        </div>
+
         <div className="Details__textArea">
           <div className="Details__textTitle">Detail</div>
           <div className="Details__text">
+            <div className="Details__text__birth">역사</div>
             <p>
-              주먹도끼는 구석기시대에 사용된 대표적인 도구이다. 한 손에 쥐고 쓸 수 있어서 짐승을 사냥하고 가죽을 벗기며, 땅을 파서 풀이나 나무를 캐는 등 다양한 용도로 사용되었다. 즉 오늘날의 멀티툴과
-              같았다고 보면된다. 한국사 등에서는 이 주먹도끼의 발견을 매우 가치있는 것으로 평가하고 있다. 한국에서 이 주먹도끼가 발굴되기 전까지는 주먹도끼는 유럽과 북아프리카 등 백인 거주지에서만[2]
-              발굴되었고, 이 때문에 서양의 고고학자들은 '백인은 타인종에 비해 훨씬 진화된 인류'라는 뉘앙스로 타인종을 열등하게 평가했다. 이는 위에 언급된 대로 주먹도끼는 당시로서는 굉장히 진화한
-              문명의 산물이었기 때문이다. 그렇다고 아예 주먹도끼가 아시아 쪽에서 발견되지 않은 것은 아니다. 다만 위에서 언급한 지역에서는 더 발전된 형태인 날이 양쪽에 있는 아슐리안형 주먹 도끼가
-              출토된 것이고, 아시아 쪽에서는 날이 한쪽에만 있는 동아시아식 외날 주먹 도끼(찍개)가 출토되어 왔던 것. 하지만 1977년, 주한미군이자 고고학자(고고학자는 아니고 고고학과 출신)였던 '그렉
-              보웬'이 우연히 경기도 연천군에서 한국인 여자친구 이상미[3]와 산책하던 중, 이씨가 특이한 모양의 돌을 하나 발견했다. 신기하게 여겨 조사한 결과, 그것이 바로 수십만년도 더 된 주먹도끼였음이
-              밝혀졌다. 전곡리 선사유적지 참조. 덕분에 백인만이 주먹도끼 같은 고등한 물건을 지닌 것이 아니었다는 사실이 밝혀져서 고고학계에 일대의 지각변동이 일어났고, 기존의 백인만이 우월했다는
-              이론들은 자취를 감추었다. 사실 지금의 기준으로 보면, 현생인류도 아닌 호모 에렉투스의 유물로 인종의 우열을 논한 것 자체가 황당한 일이었던 셈이다. 위의 구분안에 대한 견해를 제시했던 것은
-              미국의 고고학자인 H.모비우스에 의한 것으로 소위 모비우스 라인이라고 부르며, 주먹도끼 문화와 찍개 문화의 구분하고자 하였던 목적이었다. 한국에서의 주먹도끼 발견 이전에 이미 중국에서
-              주먹도끼가 확인되었기 때문에 모비우스라인은 한반도 북쪽 위로 형성되어 있었다. 당시의 주먹도끼 문화와 찍개문화의 구분안은 지속적으로 조정되었던 학설이었다. 즉, 주먹도끼의 사용이 발전된
-              문화상을 지칭할 목적이 있을 "수" 있다손 치더라도 결코 인종에 기인한 우월성의 구분이 목적이 아니라 문화권 설정 그 자체에 보다 목적을 둔 가설이었다.
+              1800년대 초, 외르스테드, 패러데이, 가우스, 암페어는 전자기 유도의 기본 이론을 정립하였다. 1821년 영국의 패러데이는 실험을 통해 전기에너지를 운동에너지로 바꿀 수 있다는 것을 실험적으로
+              증명하였다. 이후 직류전원(DC)과 정류자(Commutator)를 발명하여, 오늘날 DC모터가 필수적으로 사용하는 연속 회전 운동을 최초로 개발하게 되었다. 1870년대에 들어서는 에디슨과 테슬라 등에 의한
+              교류(AC) 모터와 삼상 교류에 의한 회전 자기장 유도 모터로 발전되었으며, 스위칭 기능, 인터버 적용 등으로 현대까지 꾸준히 발전해오고 있다.
+            </p>
+            <div className="Details__text__make">원리</div>
+            <p>
+              직류 전동기는 자석 사이에 있는 코일에 전류가 흐를 때 자석과 코일 사이에 작용하는 자기력에 의해 코일이 회전하게 되며, 코일이 회전하여 코일의 면이 자기장에 수직이 되는 순간 정류자에 의하여
+              전류의 방향이 바뀌므로 코일은 계속해서 한쪽 방향으로 회전하게 된다. 소형 장난감 및 청소기 등에 사용되는 전동기는 보통 직류 전동기이다. 교류 전동기는 이와 다르게 정류자(브러시)가 없는
+              형태이며, 이것은 주로 전동기에 인가되는 전류의 방향을 교류의 형태로 계속 바꿔주기 때문이다.
+            </p>
+            <div className="Details__text__use">왜 모터는 소음이 발생할까?</div>
+            <p>
+              모터는 왜 시끄러울까? 모터에 의한 소음은 다음과 같이 크게 전자기적 소음, 기계적 소음, 통풍 소음으로 구분할 수 있다. 전자기적 소음은 고정자, 회전자에 작용하는 전자기력에 의해 철심이
+              진동하면서 발생하는 소음이다. 기계적 소음은 베어링, 회전자, 브러시 등에 의한 기계적 오차에 의한 소음이다. 통풍 소음은 냉각팬, 덕트 등에서의 공기의 압축, 팽창에 의한 진동음이다.
             </p>
           </div>
         </div>
@@ -167,7 +180,6 @@ const ElectricMotor = () => {
                 </div>
                 <div className="Details__commentTextAreas">
                   <div className="Details__commentTextAreas__username">{comment.user.username}</div>
-
                   <div className="Details__commentTextAreas__text">{comment.text}</div>
                 </div>
 
