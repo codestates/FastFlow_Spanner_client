@@ -18,7 +18,26 @@ import MainInternet from "../Inventions/MainInternet";
 // 아래는 별 사진
 import MainStar from "../images/MainPage/MainStar.png";
 
-const MainPage = () => {  
+import { useEffect } from "react";
+import axios from "axios";
+import { ip, port, port_client } from "./../../url";
+
+const MainPage = () => {
+  const refreshToken = localStorage.getItem('refreshToken')
+  const accessToken = localStorage.getItem('token');
+
+  useEffect(() => {
+    console.log(accessToken)
+    if(refreshToken && !accessToken) {
+      
+      axios.post(`${ip}${port}/refreshToken`, {refreshToken : refreshToken})
+      .then((res) => {
+        console.log('refreshToken 받아옴!')
+        localStorage.setItem('token',res.data.accessToken);
+      })
+    }
+  })
+
   return (
     <div className="MainPages">
       <div className="MainPages__welcomePoint">

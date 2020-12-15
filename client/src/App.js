@@ -75,6 +75,9 @@ const App = () => {
           const { accessToken } = res.data;
           axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
           localStorage.setItem("token", res.data.accessToken);
+          console.log(res.data)
+          //refresh 토큰도 저장
+          localStorage.setItem("refreshToken", res.data.refreshToken);
           modalClose();
           // return this.PaymentResponse.handleResponseSuccess(res.data.id);
         });
@@ -94,14 +97,24 @@ const App = () => {
   const onLogOut = () => {
     setSwitchLogOut("block");
     // await axios.post("http://localhost:3000/user/signout")
-    axios.delete(ip + port + "/user/signout");
+    
+    if(localStorage.getItem("token") || localStorage.getItem("refreshToken")) {
+      axios.delete(ip + port + "/user/signout");
+      localStorage.removeItem("token");
+      localStorage.removeItem("refreshToken");          
     setTimeout(() => {
       autoLogOutClose();
-    }, 2000);
-
-    localStorage.removeItem("token");
-    //카카오 소셜로그인 토큰 제거
-    Kakao.Auth.logout();
+    }, 2000);            
+    }
+    if(Kakao.Auth.getAccessToken()){
+      Kakao.Auth.logout();
+      setTimeout(() => {
+        autoLogOutClose();
+      }, 2000);            
+    }  
+    setTimeout(() => {
+      autoLogOutClose();
+    }, 2000); 
   };
 
   const autoLogOutClose = () => {
@@ -151,7 +164,7 @@ const App = () => {
         <Route exact path="/mypage" render={() => <Mypage />} />
 
         <Route exact path="/sociallogin" render={() => <SocialLogInGitHub location={window.location} hisotry={window.history}/>} />
-        <Route exact path="/SocialLogInKakao" render={() => <SocialLogInKakao location={window.location} hisotry={window.history}/>} />
+        <Route exact path="/SocialLogInKakao" render={() => <SocialLogInKakao />} />
 
       </Switch>
       <Footer />

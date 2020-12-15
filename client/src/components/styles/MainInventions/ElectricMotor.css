@@ -130,3 +130,14 @@
   color:#ffdd93;
   cursor: pointer;
 }
+
+.slick{
+  position:absolute;  
+  width: 50%;
+  height: 50%;  
+}
+.slide-test{
+  position:absolute;  
+  width: 50%;
+  height: 50%;  
+}
