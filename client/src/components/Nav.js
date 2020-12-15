@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import SignIn from "./SignIn";
 import ScrollTracker from './ScrollTracker';
@@ -7,11 +7,11 @@ import ScrollYear from './ScrollYear';
 import LogOut from "./LogOut";
 
 export default function Nav(props) {
-  const [hamburgerBtn, setHamburgerBtn] = useState(false)
+  const [hamburgerBtn, setHamburgerBtn] = useState(true)
 
-  const onChangeHamburgerBtn = () => {
+  const onChangeHamburgerBtn = async () => {
     if (hamburgerBtn) {
-      setHamburgerBtn(false)
+      await setHamburgerBtn(false)
       console.log('yes')
     } else {
       setHamburgerBtn(true)
