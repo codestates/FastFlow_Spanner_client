@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SignIn from "./SignIn";
 import ScrollTracker from './ScrollTracker';
@@ -7,13 +7,33 @@ import ScrollYear from './ScrollYear';
 import LogOut from "./LogOut";
 
 export default function Nav(props) {
+  const [hamburgerBtn, setHamburgerBtn] = useState(false)
+
+  const onChangeHamburgerBtn = () => {
+    if (hamburgerBtn) {
+      setHamburgerBtn(false)
+      console.log('yes')
+    } else {
+      setHamburgerBtn(true)
+      console.log('no')
+    }
+  };
   const scrollState = useScrollStatus();
+  const hamdis = () => {
+    if (hamburgerBtn) {
+      return {display:'block'};
+    } else {
+      return {display:'none'}};
+  }
 
   return (
     <header className="navs">
       <div className="nav__main">
-        <div className="nav__hamburgerBtn">
-          <SignIn
+        <div className="nav__hamburgerBtn" onClick={onChangeHamburgerBtn} >
+          <div className="nav__hamburgerBtn1" style={hamdis()}>
+          {props.isLogIn ? 
+          <LogOut className="nav__logOutHam" onLogOut={props.onLogOut} switchLogOut={props.switchLogOut} />:
+          <SignIn className="nav__signInHam"
             modalOpen={props.modalOpen}
             modalClose={props.modalClose}
             modal={props.modal}
@@ -22,16 +42,21 @@ export default function Nav(props) {
             errMessage={props.errMessage}
             handleSignIn={props.handleSignIn}
             handleResponseSuccess={props.handleResponseSuccess}
-          />
-          <LogOut onLogOut={props.onLogOut} switchLogOut={props.switchLogOut} />
-          <Link to="/SignUp" className="nav__signUpBtn">
-            Sign up
-          </Link>
+          />}
+          </div>
+          <div className="nav__hamburgerBtn2" style={hamdis()}>
+          {props.isLogIn ?
           <Link to="/Mypage" className="nav__myPageBtn">
             My page
-          </Link>
+          </Link> : 
+          <Link to="/SignUp" className="nav__signUpBtn">
+            Sign up
+          </Link>}
+          </div>
         </div>
-        <ScrollYear />
+        <div className="nav__scrollYearContainer">
+          <ScrollYear />
+        </div>
         <div>
           <Link to="/" className="nav__logoBtn">
             Main

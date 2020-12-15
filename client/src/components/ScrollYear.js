@@ -1,46 +1,25 @@
 const ScrollYear = props => {
   const scrollTop = document.documentElement.scrollTop;
-  const scrollYear = () => {
-    if (scrollTop<500) {
-      return 'BC 16000000';
-    } else if (scrollTop>=500 && scrollTop<1500) {
-      return 'BC 600000';
-    } else if (scrollTop>=1500 && scrollTop<2500) {
-      return 'BC 3500';
-    } else if (scrollTop>=2500 && scrollTop<3500) {
-      return 'BC 3500';
-    } else if (scrollTop>=3500 && scrollTop<4500) {
-      return 'BC 3000';
-    } else if (scrollTop>=4500 && scrollTop<5500) {
-      return 'BC 1600';
-    } else if (scrollTop>=5500 && scrollTop<6500) {
-      return 'BC 850';
-    } else if (scrollTop>=6500 && scrollTop<7500) {
-      return 'BC 100';
-    } else if (scrollTop>=7500 && scrollTop<8500) {
-      return '1286';
-    } else if (scrollTop>=8500 && scrollTop<9500) {
-      return '1705';
-    } else if (scrollTop>=9500 && scrollTop<10500) {
-      return '1749';
-    } else if (scrollTop>=10500 && scrollTop<11500) {
-      return '1800';
-    } else if (scrollTop>=11500 && scrollTop<12500) {
-      return '1821';
-    } else if (scrollTop>=12500 && scrollTop<13500) {
-      return '1862';
-    } else if (scrollTop>=13500 && scrollTop<14500) {
-      return '1878';
-    } else if (scrollTop>=14500 && scrollTop<15500) {
-      return '1903';
-    } else if (scrollTop>=15500 && scrollTop<16500) {
-      return '1960';
-    }
-  }
   return (     
     <div className="scrollYears">
-      <div className={`${scrollTop}`<500?"scrollYear_on":"scrollYear_off"}> 메인페이지</div>
-      <div className={`${scrollTop}`>=500 && `${scrollTop}`<1500?"scrollYear_on":"scrollYear_off"}>BC 1600000</div>
+      <div className={`${scrollTop}`<500?"scrollYear_on":"scrollYear_out"}>메인페이지</div>
+      <div className={`${scrollTop}`>=500?( `${scrollTop}`<1500?"scrollYear_on":"scrollYear_out"):( `${scrollTop}`<1500?"scrollYear_in":"")}>BC 1600000</div>
+      <div className={`${scrollTop}`>=1500?( `${scrollTop}`<2500?"scrollYear_on":"scrollYear_out"):( `${scrollTop}`<2500?"scrollYear_in":"")}>BC 600000</div>
+      <div className={`${scrollTop}`>=2500?( `${scrollTop}`<3500?"scrollYear_on":"scrollYear_out"):( `${scrollTop}`<3500?"scrollYear_in":"")}>BC 3500</div>
+      <div className={`${scrollTop}`>=3500?( `${scrollTop}`<4500?"scrollYear_on":"scrollYear_out"):( `${scrollTop}`<4500?"scrollYear_in":"")}>BC 3500</div>
+      <div className={`${scrollTop}`>=4500?( `${scrollTop}`<5500?"scrollYear_on":"scrollYear_out"):( `${scrollTop}`<5500?"scrollYear_in":"")}>BC 3000</div>
+      <div className={`${scrollTop}`>=5500?( `${scrollTop}`<6500?"scrollYear_on":"scrollYear_out"):( `${scrollTop}`<6500?"scrollYear_in":"")}>BC 1600</div>
+      <div className={`${scrollTop}`>=6500?( `${scrollTop}`<7500?"scrollYear_on":"scrollYear_out"):( `${scrollTop}`<7500?"scrollYear_in":"")}>BC 850</div>
+      <div className={`${scrollTop}`>=7500?( `${scrollTop}`<8500?"scrollYear_on":"scrollYear_out"):( `${scrollTop}`<8500?"scrollYear_in":"")}>BC 100</div>
+      <div className={`${scrollTop}`>=8500?( `${scrollTop}`<9500?"scrollYear_on":"scrollYear_out"):( `${scrollTop}`<9500?"scrollYear_in":"")}>1286</div>
+      <div className={`${scrollTop}`>=9500?( `${scrollTop}`<10500?"scrollYear_on":"scrollYear_out"):( `${scrollTop}`<10500?"scrollYear_in":"")}>1705</div>
+      <div className={`${scrollTop}`>=10500?( `${scrollTop}`<11500?"scrollYear_on":"scrollYear_out"):( `${scrollTop}`<11500?"scrollYear_in":"")}>1749</div>
+      <div className={`${scrollTop}`>=11500?( `${scrollTop}`<12500?"scrollYear_on":"scrollYear_out"):( `${scrollTop}`<12500?"scrollYear_in":"")}>1800</div>
+      <div className={`${scrollTop}`>=12500?( `${scrollTop}`<13500?"scrollYear_on":"scrollYear_out"):( `${scrollTop}`<13500?"scrollYear_in":"")}>1821</div>
+      <div className={`${scrollTop}`>=13500?( `${scrollTop}`<14500?"scrollYear_on":"scrollYear_out"):( `${scrollTop}`<14500?"scrollYear_in":"")}>1862</div>
+      <div className={`${scrollTop}`>=14500?( `${scrollTop}`<15500?"scrollYear_on":"scrollYear_out"):( `${scrollTop}`<15500?"scrollYear_in":"")}>1878</div>
+      <div className={`${scrollTop}`>=15500?( `${scrollTop}`<16500?"scrollYear_on":"scrollYear_out"):( `${scrollTop}`<16500?"scrollYear_in":"")}>1903</div>
+      <div className={`${scrollTop}`>=16500?( `${scrollTop}`<17500?"scrollYear_on":"scrollYear_out"):( `${scrollTop}`<17500?"scrollYear_in":"")}>1960</div>
     </div>
   );
 };

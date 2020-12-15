@@ -12,8 +12,8 @@
 }
 
 .nav__main {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 400px 1fr 10px;
   margin-top: 15px;
 }
 
@@ -59,8 +59,9 @@
   justify-content: flex-end;
 }
 
-.nav__year {
+.nav__scrollYearContainer {
   display: flex;
+  justify-content: center;
 }
 
 .nav__scrollTrackerContainer {
@@ -72,3 +73,53 @@
   border-bottom-style: solid;
   border-bottom-color: rgb(148, 35, 0);
 }
+
+@media screen and (max-width: 768px) {
+
+  .nav__hamburgerBtn {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    width: 62px;
+    height: 62px;
+    background-image: url(../images/Hamburger_icon.png);
+    background-size: 62px 62px;
+  }
+
+  .nav__hamburgerBtn:hover, .nav__hamburgerBtn:active {
+    background-color: #8bb15a;
+    cursor: pointer;
+  }  
+
+  .nav__hamburgerBtn1 {
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 62px;
+    width: 160px;
+    height: 40px;
+    border: 2px solid black;
+  }
+
+  .nav__hamburgerBtn2 {
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    height: 40px;
+    border: 2px solid black;
+  }  
+
+  .nav__hamburgerBtn1:hover {
+    background-color: white;
+  }  
+
+  .nav__hamburgerBtn2:hover {
+    background-color: white;
+  }
+}
+

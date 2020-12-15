@@ -20,6 +20,7 @@ const App = () => {
   const [password, setPassword] = useState("");
   const [errMessage, setErrMessage] = useState("");
   const [switchLogOut, setSwitchLogOut] = useState("none");
+  const [isLogIn, setIsLogIn] = useState("false");
 
   const modalOpen = () => {
     setModal("block");
@@ -55,6 +56,7 @@ const App = () => {
           axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
           localStorage.setItem("token", res.data.accessToken);
           modalClose();
+          setIsLogIn("true");
           // return this.PaymentResponse.handleResponseSuccess(res.data.id);
         });
     }
@@ -94,6 +96,7 @@ const App = () => {
         onChangeEmail={onChangeEmail}
         onChangePassword={onChangePassword}
         errMessage={errMessage}
+        isLogIn={isLogIn}
         handleSignIn={handleSignIn}
         handleResponseSuccess={handleResponseSuccess}
         onLogOut={onLogOut}
