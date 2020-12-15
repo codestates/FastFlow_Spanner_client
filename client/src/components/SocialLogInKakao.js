@@ -1,17 +1,19 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ip, port } from "../url";
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 const { Kakao } = window;
 
 const SocialLogInKakao = () => {
-  const [isLogin, setIsLogIn] = useState("false");
+  const [isLogin, setIsLogIn] = useState("false");  
+  const history = useHistory();
 
   const loginWithKakao = () => {
     try {
       return new Promise((resolve, reject) => {
         // console.log(Kakao)
-        console.log(Kakao.Auth.login)
+        console.log(Kakao)
         if (!Kakao) {
           reject('Kakao 인스턴스가 존재하지 않습니다.')
         }
@@ -48,7 +50,7 @@ const SocialLogInKakao = () => {
   }
 
   const logIn = (res) => {
-    console.log(res)
+    // console.log(res)
     axios
       .post(ip + port + '/user/signin', {
         email: `Kakao_${res.data.userInfo.id}`,
@@ -56,15 +58,17 @@ const SocialLogInKakao = () => {
       })
       .then((res) => {
         const { accessToken } = res.data;
+        const { refreshToken } = res.data;
         axios
           .defaults
           .headers
           .common["Authorization"] = `Bearer ${accessToken}`;
         localStorage.setItem("token", accessToken);
+        localStorage.setItem("refreshToken", refreshToken);
       })    
     console.log('정상적으로 로그인 되었습니다.')
     setIsLogIn("true")
-    window.history.back();
+    history.push('/');
   }
   // 그냥 App.js에서 Logout 시에 Kakao.Auth.logout(); 메서드로 처리---------------
 
