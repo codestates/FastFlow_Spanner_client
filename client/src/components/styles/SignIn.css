@@ -46,7 +46,7 @@
   right: 10%;
   width: 50px;
   height: 50px;
-  background-image: url(../images/kakaotalk_icon.png);
+  background-image: url('../images/kakaotalk_icon.png');
   background-size: cover;
   background-position: center;
   border-radius: 50%;
