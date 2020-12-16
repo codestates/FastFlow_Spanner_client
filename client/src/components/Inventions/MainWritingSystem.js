@@ -1,26 +1,18 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-const MainWritingSystem = () => {
-  const [writingBack, setWritingBack] = useState("");
-  const [typingBC, setTypingBC] = useState("");
-  const [typingText, setTypingText] = useState("");
-  const [writingTitle, setWritingTitle] = useState("");
-  const [linkEffect, setLinkEffect] = useState("");
+// import { Link } from "react-router-dom";
+import mesopotamia from "../images/WritingSystem/mesopotamia.jpg";
+import uruk from "../images/WritingSystem/uruk.jpg";
+import Fade from "react-reveal/Fade";
 
-  const changeBackWriting = () => {
-    if (window.scrollY >= 2600 && window.scrollY < 2800) {
-      setWritingTitle("appearBack 3s 1s forwards");
-      setWritingBack("appearBack 4s both");
-      setTypingBC("typing 6s 2s steps(30) both");
-      setTypingText("typing 6s 4s steps(30) both");
-      setLinkEffect("linkEffect 5s 6s both");
-    }
-  };
-  window.addEventListener("scroll", changeBackWriting);
+const MainWritingSystem = () => {
   return (
     <div className="MainWritingSystemss">
-      <div className="MainWritingSystems" style={{ animation: writingBack }}>
-        <div className="MainWritingSystems__textBodyPic">
+      <Fade fraction={0.4} duration={5000}>
+        <img className="MainWritingSystems__mesopotamia" src={mesopotamia} />
+      </Fade>
+      <Fade bottom fraction={0.2} duration={3000}>
+        <img className="MainWritingSystems__uruk" src={uruk} />
+      </Fade>
+      {/* <div className="MainWritingSystems__textBodyPic">
           <div className="MainWritingSystems__text" style={{ animation: writingTitle }}>
             Writing System
           </div>
@@ -36,8 +28,7 @@ const MainWritingSystem = () => {
           <Link to="/WritingSystem" className={`MainWritingSystems__link`} style={{ animation: linkEffect }}>
             Click Me
           </Link>
-        </div>
-      </div>
+        </div> */}
     </div>
   );
 };

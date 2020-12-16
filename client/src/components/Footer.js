@@ -17,10 +17,9 @@ const Footer = () => {
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </div>
           <div className="footers__member">
-            FrontEnd:&nbsp;{" "}
             {
               <a className="team__member" href="https://github.com/yumboy8747">
-                염정헌
+                FrontEnd:&nbsp; 염정헌
               </a>
             }
             ,{" "}
