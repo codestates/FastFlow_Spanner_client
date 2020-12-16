@@ -1,5 +1,54 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {ip, port, port_client} from '../url';
+import github_icon from './images/Github_icon.png';
+import kakaotalk_icon from './images/kakaotalk_icon.png';
+
+// import { useState } from "react";
+// import axios from 'axios';
+
+// const {Kakao} = window
+
+// const [isLogin, setIsLogIn] = useState("false");
+// const loginWithKakao = () => {
+//   try {
+//     return new Promise((resolve, reject) => {
+//       console.log(Kakao)
+//       if (!Kakao) {
+//         reject('Kakao 인스턴스가 존재하지 않습니다.')
+//       }
+//       Kakao.Auth.login({
+//         success: (auth) => {
+//           console.log(`auth.access_token => ${auth.access_token}`)
+//           axios.post('http://localhost:3000/kakao/auth', {
+//             token:auth.access_token
+//           })
+//           console.log('정상적으로 로그인 되었습니다.', auth)
+//           setIsLogIn("true")
+//         },
+//         fail: (err) => {
+//           console.log(err);
+//         }
+//       })
+//     })
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
+
+// const logoutWithKakao = () => {
+//   if (Kakao.Auth.getAccessToken()) {
+//     console.log('카카오 인증 액세스 토큰이 존재합니다.', Kakao.Auth.getAccessToken())
+//     Kakao.Auth.logout(() => {
+//       console.log('로그아웃 되었습니다', Kakao.Auth.getAccessToken());
+//       this.setState({
+//         isLogin: false
+//       })
+//       console.log('카카오 인증 액세스 토큰이 존재합니다.', Kakao.Auth.getAccessToken())
+//     });
+//   }
+// }
+
 
 const SignIn = (props) => (
   <div>
@@ -18,8 +67,11 @@ const SignIn = (props) => (
           <div className="signIn__noId" onClick={props.modalClose}>
             <Link to="/signup">아직 아이디가 없으신가요?</Link>
           </div>
-          <div className="signIn__gitHub" onClick={props.modalClose}>
-            <a href="https://github.com/login/oauth/authorize?client_id=6c600e12bf58f2a72319&redirect_uri=https://6a24503ce00f.ngrok.io">깃허브로 로그인</a>
+          <div className="signIn__social">
+            <a href={`https://github.com/login/oauth/authorize?client_id=0604c124c075b9bc4925&redirect_uri=${ip}${port_client}/sociallogin`} className="signIn__gitHub" onClick={props.modalClose}>
+            </a>              
+            <a href={`${ip}${port_client}/SocialLogInKakao`} className="signIn__kakao" onClick={props.modalClose}>
+            </a>
           </div>
           <button className="signIn__btn" type="submit" onClick={props.handleSignIn}>
             로그인
