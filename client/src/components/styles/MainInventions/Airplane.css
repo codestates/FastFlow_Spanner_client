@@ -1,9 +1,5 @@
-.MainAirplanes {
-  background-color:black;
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover;
-  min-height: 1000px;
+.MainAirplanes {  
+  height: 100vh;
   position: relative;
 }
 .MainAirplanes__title{

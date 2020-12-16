@@ -49,9 +49,7 @@ const MainElectricMotor = () => {
             </div>
             <div className={lightCondition ? "module__lightBulb-on" : "module__lightBulb-off"}>              
             </div>
-          </div>
-          <div className="slide-test">            
-          </div>              
+          </div>                        
       <div className="MainElectricMotors__text">
         전자기 유도의 법칙!<br></br>
           움직이는 자석이 전류를 만듭니다.<br></br>
