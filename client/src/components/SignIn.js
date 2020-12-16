@@ -68,16 +68,10 @@ const SignIn = (props) => (
             <Link to="/signup">아직 아이디가 없으신가요?</Link>
           </div>
           <div className="signIn__social">
-            <div className="signIn__gitHub" onClick={props.modalClose}>
-            <a href={`https://github.com/login/oauth/authorize?client_id=0604c124c075b9bc4925&redirect_uri=${ip}${port_client}/sociallogin`}>
-              <img className="github__icon" src={github_icon} alt="" width="40%"/>
-            </a>
-            </div>
-            <div className="signIn__kakao" onClick={props.modalClose}>              
-            <a href={`${ip}${port_client}/SocialLogInKakao`}>
-              <img className="signIn__kakaoIcon" src={kakaotalk_icon} alt="" width="20%"/>
+            <a href={`https://github.com/login/oauth/authorize?client_id=0604c124c075b9bc4925&redirect_uri=${ip}${port_client}/sociallogin`} className="signIn__gitHub" onClick={props.modalClose}>
             </a>              
-            </div>
+            <a href={`${ip}${port_client}/SocialLogInKakao`} className="signIn__kakao" onClick={props.modalClose}>
+            </a>
           </div>
           <button className="signIn__btn" type="submit" onClick={props.handleSignIn}>
             로그인

@@ -22,6 +22,37 @@
   border-radius: 15px;
 }
 
+.signIn__social{
+  width:100%;
+  height:20%;
+  display:flex;  
+  align-items: center;
+  justify-content: space-around;
+}
+
+.signIn__gitHub{
+  position: relative;
+  left: 10%;
+  width: 50px;
+  height: 50px;
+  background-image: url(../images/Github_icon.png);
+  background-size: 130%;
+  background-position: center;
+  border-radius: 50%;
+}
+
+.signIn__kakao{
+  position: relative;
+  right: 10%;
+  width: 50px;
+  height: 50px;
+  background-image: url(../images/kakaotalk_icon.png);
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  
+}
+
 .signIn__modalLayer {
   position: fixed;
   top: 0;
@@ -30,24 +61,4 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   z-index: -1;
-}
-
-.signIn__social{
-  width:100%;
-  height:20%;
-  display:flex;  
-  align-items: center;
-}
-/* .github__icon{
-  margin:0;
-  padding:0;
-}
-.signIn__kakaoIcon{
-  margin:0;
-  padding:0;
-} */
-
-.testBtn {
-  margin-top: 200px;
-  z-index: 5;
 }
