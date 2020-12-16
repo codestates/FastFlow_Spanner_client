@@ -7,8 +7,8 @@ import starlight2 from "../../TestPic/starlight2.png";
 const MainCompass = () => {
   return (
     <div className="MainCompasss">
-      <div className="mainCompass__container" >
-        <img clasName="compass" src={compass} alt="" />
+      <div className="mainCompass__container">
+        <img className="compass" src={compass} alt="" />
         <img className="compass_" src={compass_} alt="" />
       </div>
       <div className="mainCompass__starLight">
@@ -16,9 +16,9 @@ const MainCompass = () => {
         <img className="starlight2" src={starlight2} alt="" />
       </div>
       <div className="MainCompasss__text">나침반 페이지입니다.</div>
-        <Link to="/Compass" className={`MainCompasss__link LinkedDetail`}>
-          클릭 시 상세 페이지로 이동합니다
-        </Link>
+      <Link to="/Compass" className={`MainCompasss__link LinkedDetail`}>
+        클릭 시 상세 페이지로 이동합니다
+      </Link>
     </div>
   );
 };

@@ -1,28 +1,44 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import Banana from "../images/Condom/Banana.png";
-import Condom from "../images/Condom/Condom.png";
-import WowMan from "../images/Condom/WowMan.gif";
+import Fade from "react-reveal/Fade";
+import LightSpeed from "react-reveal/LightSpeed";
+import Condom0 from "../images/Condom/Condom0.png";
+import Condom1 from "../images/Condom/Condom1.png";
+import Condom2 from "../images/Condom/Condom2.png";
+import Condom3 from "../images/Condom/Condom3.png";
+import Condom4 from "../images/Condom/Condom4.png";
+import acientSex from "../images/Condom/acientSex.jpg";
+
 const MainCondom = () => {
-  const [condom, setCondom] = useState("");
-  const changeCondom = () => {
-    console.log(window.scrollY);
-    if (window.scrollY >= 4700 && window.scrollY < 4800) {
-      setCondom("revael 7s ease-out forwards");
-    }
-  };
-  window.addEventListener("scroll", changeCondom);
   return (
     <div className="MainCondomss">
-      <div className="MainCondoms" style={{ animation: condom }}>
-        <div className="MainCondoms__text">Condom ♥</div>
-        <div className="MainCondoms__makeMotion">
-          <img className="MainCondoms__likeDik" src={Banana} />
-          <img className="MainCondoms__CondomPic" src={Condom} />
-        </div>
-        <img className="MainCondoms__WowMan" src={WowMan} />
-        <span className="MainCondoms__BCtext">B.C 3,000</span>
-        <div className="MainCondoms__textBody">고대의 콘돔은 출산을 늘리는 것이 목적이었다.</div>
+      <div className="MainCondoms">
+        <Fade top fraction={0.5} duration={3000}>
+          <div className="MainCondoms__text">Condom</div>
+        </Fade>
+        <Fade bottom fraction={0.7}>
+          <img className="MainCondoms__acientSex" src={acientSex} />
+        </Fade>
+        <LightSpeed left big fraction={1}>
+          <img className="MainCondoms__CondomPic0" src={Condom0} />
+        </LightSpeed>
+        <LightSpeed left big fraction={0.1}>
+          <img className="MainCondoms__CondomPic1" src={Condom1} />
+        </LightSpeed>
+        <LightSpeed left big fraction={0.1} delay={500}>
+          <img className="MainCondoms__CondomPic2" src={Condom2} />
+        </LightSpeed>
+        <LightSpeed left big fraction={1} delay={800}>
+          <img className="MainCondoms__CondomPic3" src={Condom3} />
+        </LightSpeed>
+        <LightSpeed left big fraction={0.1}>
+          <img className="MainCondoms__CondomPic4" src={Condom4} />
+        </LightSpeed>
+        <Fade fraction={0.5} duration={3000}>
+          <span className="MainCondoms__BCtext">B.C 3,000</span>
+        </Fade>
+        <Fade fraction={0.5} duration={3000}>
+          <div className="MainCondoms__textBody">Ancient condoms were aimed at increasing birth</div>
+        </Fade>
         <Link to="/Condom" className={`MainCondoms__link`}>
           Click Me
         </Link>

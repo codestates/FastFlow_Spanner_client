@@ -15,21 +15,18 @@ import MainRefrigerator from "../Inventions/MainRefrigerator";
 import MainLightBulb from "../Inventions/MainLightBulb";
 import MainAirplane from "../Inventions/MainAirplane";
 import MainInternet from "../Inventions/MainInternet";
-// 아래는 별 사진
-import MainStar from "../images/MainPage/MainStar.png";
 
-const MainPage = () => {  
+// 아래는 별 사진
+
+const MainPage = () => {
   return (
     <div className="MainPages">
       <div className="MainPages__welcomePoint">
-        <div className="MainPages__welcomePointText">
-          Welcome to <br />
-          My Invention's Zone
+        <div className="MainPages__welcomePointTextArea">
+          <div className="MainPages__welcomePointText">Invention History</div>
+          <div className="MainPages__welcomePointSubText">Experience the footsteps of an invention over time</div>
         </div>
-        <img src={MainStar} className="MainPages__starPic" alt="" />
         <span className="MainPages__ScrollSign">Scroll</span>
-        <div className="MainPages__underArrow"></div>
-        <div className="MainPages__secondUnderArrow"></div>
       </div>
       <MainFistAxe />
       <MainFire />

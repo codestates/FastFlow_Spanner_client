@@ -3,9 +3,9 @@ import axios from "axios";
 import basicProfilePic from "../images/anonym_user.png";
 //https://www.pngaaa.com/detail/1097555, License : non-commercial use
 import { ip, port } from "./../../../src/url";
+import Footer from "../Footer";
 
 axios.defaults.withCredentials = true;
-
 
 const Mypage = () => {
   const [username, setUsername] = useState("");
@@ -52,63 +52,61 @@ const Mypage = () => {
     // state 값을 변경하는 메서드를 넣어주어야 적용이 된다.
   }, [setProfilePicView]);
 
-
   const onDeleteprofilePic = (e) => {
     setProfilePicView(basicProfilePic);
     setProfilePic(e.target.value);
   };
 
-	useEffect(() => {
-		//for signin	
-		axios.post(`${ip}${port}/user/signin`,
-			{
-				email: "test999", password: "test999"
-			})
-			.then((res) => {
-				// console.log(res);
-				//jwt test start (1/2   2/2는 app의 로그아웃)
-				const { accessToken } = res.data;
-				axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
-				//    sessionStorage.setItem('token', res.data.accessToken)
-				localStorage.setItem('token', accessToken)
-				
-				//jwt test end				
-			})
-			.then(() => {
-				axios.get(`${ip}${port}/profile/read`)
-				.then((res) => {
-					
-					const { username, email, userPhoto } = res.data;
-					setUsername(username);
-					setEmail(email);
-					if(userPhoto) {
-						setProfilePicView(`${ip}${port}/${userPhoto}` );
-					}
-				})
-			})		
-				// , {
-				// 	headers: {
-				// 		"Authorization": `Bearer ${localStorage.getItem('token')}`
-				// 	}
-				// })
-			.catch((err) => {
-				console.log('err')
-			})
-			// 뒤쪽의 배열은 Hook의 componentDidupdate 같은 부분인데, state 값을 넣는 것이 아니라,
-			// state 값을 변경하는 메서드를 넣어주어야 적용이 된다.
-	}, [setProfilePicView]);
- 
-	const onChangeProfilePic = (e) => {
-		e.preventDefault();
-		const formData = new FormData();
-		formData.append('image', profilePic);
-		
-		return axios.put(`${ip}${port}/profile/upload`, formData, {
-			headers : {
-				'Content-Type' : 'multipart/form-data'
-			}
-		})
-	}
+  useEffect(() => {
+    //for signin
+    axios
+      .post(`${ip}${port}/user/signin`, {
+        email: "test999",
+        password: "test999",
+      })
+      .then((res) => {
+        // console.log(res);
+        //jwt test start (1/2   2/2는 app의 로그아웃)
+        const { accessToken } = res.data;
+        axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
+        //    sessionStorage.setItem('token', res.data.accessToken)
+        localStorage.setItem("token", accessToken);
+
+        //jwt test end
+      })
+      .then(() => {
+        axios.get(`${ip}${port}/profile/read`).then((res) => {
+          const { username, email, userPhoto } = res.data;
+          setUsername(username);
+          setEmail(email);
+          if (userPhoto) {
+            setProfilePicView(`${ip}${port}/${userPhoto}`);
+          }
+        });
+      })
+      // , {
+      // 	headers: {
+      // 		"Authorization": `Bearer ${localStorage.getItem('token')}`
+      // 	}
+      // })
+      .catch((err) => {
+        console.log("err");
+      });
+    // 뒤쪽의 배열은 Hook의 componentDidupdate 같은 부분인데, state 값을 넣는 것이 아니라,
+    // state 값을 변경하는 메서드를 넣어주어야 적용이 된다.
+  }, [setProfilePicView]);
+
+  const onChangeProfilePic = (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("image", profilePic);
+
+    return axios.put(`${ip}${port}/profile/upload`, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+  };
   // File reader 공부하기
   const onChangeFile = (e) => {
     e.preventDefault();
@@ -185,6 +183,7 @@ const Mypage = () => {
 					</form>
 				</div> */}
       </div>
+      <Footer />
     </div>
   );
 };

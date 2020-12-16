@@ -1,140 +1,104 @@
 .MainCondomss {
-  background-color: black;
+  background-color: #f5f3ec;
   padding: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .MainCondoms {
-  background-image: url("../../images/MainBackGound/CondomBackGround.jpg");
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover;
-  min-height: 970px;
-  position: relative;
-  opacity: 0;
-}
-
-@keyframes revael {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 
 .MainCondoms__text {
-  color: rgb(221, 41, 125);
-  font-size: 90px;
-  font-weight: 900;
+  color: rgb(0, 0, 0);
+  font-size: 5vmax;
+  font-weight: 400;
   position: absolute;
-  width: 100%;
-  text-align: center;
-  margin-top: 140px;
-  text-shadow: 1px 1px 20px rgb(172, 45, 223);
-  animation: textPop 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
-  font-family: "Permanent Marker", cursive;
+  width: 10%;
+  left: 31%;
+  top: 10%;
+  font-family: "Cormorant Garamond", serif;
   letter-spacing: 4px;
-  z-index: 2;
+  z-index: 1;
 }
 
-.MainCondoms__makeMotion {
+.MainCondoms__acientSex {
   position: absolute;
-  margin-top: 400px;
-  left: 20%;
+  height: 60%;
+  width: 50%;
+  right: 5%;
+  top: -18%;
 }
 
-.MainCondoms__likeDik {
+.MainCondoms__CondomPic0 {
   position: absolute;
-  height: 350px;
-  transform: rotate(-30deg);
+  height: 40%;
+  width: 20%;
+  left: 6%;
+  top: 23%;
 }
-
-.MainCondoms__CondomPic {
+.MainCondoms__CondomPic1 {
   position: absolute;
-  height: 310px;
-  left: 700px;
-  top: -390px;
-
-  /* left: 210px;
-  top: 1px; */
-  animation: UnionCondom 5s ease-out forwards infinite;
+  height: 19%;
+  width: 30%;
+  left: 16%;
+  bottom: 17%;
 }
-
-@keyframes UnionCondom {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(-474px, 390px, 0);
-  }
-}
-
-.MainCondoms__WowMan {
+.MainCondoms__CondomPic2 {
   position: absolute;
-  bottom: 0;
-  right: 20%;
+  height: 25%;
+  width: 30%;
+  right: 30%;
+  bottom: 30%;
+}
+.MainCondoms__CondomPic3 {
+  position: absolute;
+  height: 17%;
+  right: 4%;
+  top: 27%;
+}
+.MainCondoms__CondomPic4 {
+  position: absolute;
+  height: 34%;
+  width: 28%;
+  right: 4%;
+  bottom: 4%;
 }
 
 .MainCondoms__BCtext {
   position: absolute;
-  color: rgb(221, 41, 125);
-  right: 25%;
-  margin-top: 370px;
-  font-size: 50px;
-  font-weight: 900;
-  text-shadow: 0px 0px 12px rgb(198, 98, 238);
-  animation: textPop 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
-  font-family: "Permanent Marker", cursive;
+  color: rgb(10, 10, 10);
+  left: 37.3%;
+  top: 23%;
+  font-size: 2.3vmax;
+  font-weight: 400;
+  font-family: "Cormorant Garamond", serif;
 }
 
 .MainCondoms__textBody {
   position: absolute;
-  color: rgb(221, 41, 125);
-  font-size: 35px;
-  margin-top: 450px;
-  font-weight: 900;
-  right: 13%;
-  text-shadow: 1px 1px 14px rgb(192, 81, 236);
-  animation: textPop 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
-  font-family: "Single Day", cursive;
-}
+  color: rgb(14, 13, 13);
+  font-weight: 500;
+  font-size: 1.4vmax;
+  top: 31%;
+  left: 21%;
 
-@keyframes textPop {
-  0% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    -webkit-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-    text-shadow: none;
-  }
-  50% {
-    -webkit-transform: translateY(-10px);
-    transform: translateY(-10px);
-    -webkit-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-    text-shadow: 0 1px 0 rgb(194, 87, 236), 0 2px 0 rgb(198, 98, 238), 0 3px 0 rgb(198, 98, 238), 0 4px 0 rgb(198, 98, 238), 0 5px 0 rgb(198, 98, 238), 0 6px 0 rgb(198, 98, 238),
-      0 7px 0 rgb(198, 98, 238), 0 8px 0 rgb(105, 9, 143), 0 9px 0 rgb(105, 9, 143), 0 50px 30px rgba(0, 0, 0, 0.3);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    -webkit-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-    text-shadow: none;
-  }
+  font-family: "Cormorant Garamond", serif;
 }
 
 .MainCondoms__link {
   position: absolute;
-  bottom: 0;
-  margin-bottom: 400px;
-  color: rgb(224, 116, 116);
+  bottom: 53.4%;
+  color: rgb(0, 0, 0);
   text-decoration: none;
-  right: 18.6%;
-  font-size: 50px;
+  left: 40%;
+  font-size: 1.8vmax;
   font-weight: 900;
-  text-shadow: 1px 1px 3px rgb(146, 24, 194);
-  background: linear-gradient(to right, rgb(243, 236, 239), rgb(247, 141, 206), 50%, rgb(255, 8, 255) 50%);
+  letter-spacing: 0.1vmax;
+  background: linear-gradient(to right, rgb(243, 236, 239), rgb(247, 141, 206), 50%, rgb(7, 7, 7) 50%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -142,8 +106,8 @@
   background-position: 100%;
   transition: background-position 1000ms ease;
   overflow: hidden;
-  font-family: "Permanent Marker", cursive;
-  animation: textPop 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+  font-family: "Cormorant Garamond", serif;
+  z-index: 1;
 }
 
 .MainCondoms__link:hover {
