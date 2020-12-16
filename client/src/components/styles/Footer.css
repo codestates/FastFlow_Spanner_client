@@ -1,34 +1,35 @@
 .Footers {
   background-color: rgb(37, 36, 36);
   width: 100%;
-  bottom: 0;
-  height: 150px;
+  bottom: 0%;
+  height: 17%;
   border-top: 3px solid rgb(87, 84, 84);
   display: flex;
+  position: absolute;
 }
 
 .footers__companyName {
   color: #fedd93;
   position: relative;
-  top: 41px;
-  left: 38px;
-  height: 20px;
+  top: 27%;
+  left: 6%;
+  height: 10%;
   font-weight: 700;
-  font-size: 20px;
-  width: 12%;
+  font-size: 1vmax;
+  width: 11%;
 }
 
 .Footers__body {
   position: relative;
   color: #fedd93;
-  top: 54px;
-  left: 200px;
-  height: 20px;
-  width: 34%;
+  top: 27%;
+  left: 20.1%;
+  height: 10%;
+  width: 31%;
+  font-size: 1vmax;
 }
 
 .teamLeader {
-  margin-bottom: 10px;
 }
 
 .footers__members {
@@ -37,15 +38,15 @@
 
 .footers__member {
   position: relative;
-  top: -12px;
+
   margin-right: 6px;
   margin-left: 2px;
   font-weight: 500;
-  font-size: 17px;
 }
 
 .team__member {
   color: #fedd93;
+  font-size: 1vmax;
 }
 
 .Footers__logoPic {

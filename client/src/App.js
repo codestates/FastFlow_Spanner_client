@@ -3,7 +3,7 @@ import { Switch, Route, withRouter } from "react-router-dom";
 import axios from "axios";
 import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
-import Footer from "./components/Footer";
+
 import MainPage from "./components/Pages/MainPage";
 import Mypage from "./components/Pages/Mypage";
 import Nav from "./components/Nav";
@@ -30,7 +30,6 @@ import Vaccine from "./components/Detail/Vaccine";
 import Wheel from "./components/Detail/Wheel";
 import WritingSystem from "./components/Detail/WritingSystem";
 
-
 const { Kakao } = window;
 
 axios.defaults.withCredentials = true;
@@ -41,7 +40,7 @@ const App = () => {
   const [password, setPassword] = useState("");
   const [errMessage, setErrMessage] = useState("");
   const [switchLogOut, setSwitchLogOut] = useState("none");
-  
+
   const modalOpen = () => {
     setModal("block");
   };
@@ -122,7 +121,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className="app">
       <Nav
         modalOpen={modalOpen}
         modalClose={modalClose}
@@ -136,7 +135,7 @@ const App = () => {
         switchLogOut={switchLogOut}
       />
       <Switch>
-        <Route exact path="/signup" render={() => <SignUp />} />        
+        <Route exact path="/signup" render={() => <SignUp />} />
         <Route exact path="/signin" render={() => <SignIn handleResponseSuccess={handleResponseSuccess.bind(this)} />} />
         <Route exact path="/" render={() => <MainPage />} />
 
@@ -163,11 +162,12 @@ const App = () => {
         <Route exact path="/writingSystem" render={() => <WritingSystem />} />
         <Route exact path="/mypage" render={() => <Mypage />} />
 
+
         <Route exact path="/sociallogin" render={() => <SocialLogInGitHub location={window.location} hisotry={window.history}/>} />
         <Route exact path="/SocialLogInKakao" render={() => <SocialLogInKakao />} />
 
+
       </Switch>
-      <Footer />
     </div>
   );
 };

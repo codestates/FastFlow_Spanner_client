@@ -1,3 +1,4 @@
+
 *{
   font-weight: 700;
 }
@@ -8,17 +9,20 @@
   height: 100vh;
   box-sizing: border-box;
   /* 해당 컴포넌트에서 최상단 요소를 relative로 잡기 */
-  position:relative;
+  position: relative;
 }
+
 
 .MainBatterys__title {
   position: absolute;
   height: 10%;
+
   width: 100%;
   font-size: 5vmax;
   color: #ffdd93;
   text-shadow: 0.1vw 0.1vw 0 black;
 }
+
 
 .MainBatterys__body {
   position: absolute;
@@ -56,6 +60,7 @@
 }
 .grid__item1:hover{
   background-color: rgba(0, 0, 0, 0.05);  
+
 }
 .grid__item2{  
   position: relative;
@@ -64,6 +69,7 @@
   display: flex;    
   justify-content: center; 
 }
+
 .grid__item2:hover{
   background-color: rgba(0, 0, 0, 0.05);  
 }
@@ -259,3 +265,4 @@
   left: 10%;
   border: rgba(0, 0, 0, 0.3) 0.2px solid;
 }
+
