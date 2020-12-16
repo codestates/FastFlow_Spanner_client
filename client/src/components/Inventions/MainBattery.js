@@ -4,8 +4,6 @@ import battery_item1 from "./../images/Battery/battery_item1.jpg";
 import battery_item2 from "./../images/Battery/battery_item2.jpg";
 import battery_item3 from "./../images/Battery/battery_item3.jpg";
 import battery_item4 from "./../images/Battery/battery_item4.gif";
-import lightening from "./../images/Battery/battery_lightening1.png";
-import battery_background from "./../images/Battery/battery_background.png";
 
 const MainBattery = () => {
 
