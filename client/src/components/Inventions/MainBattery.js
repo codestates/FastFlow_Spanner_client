@@ -1,29 +1,19 @@
 import { Link } from "react-router-dom";
 import { useState} from "react";
-import lightening from "./../images/Battery/battery_lightening1.png"
-import battery_background from "./../images/Battery/battery_background.png"
+import battery_item1 from "./../images/Battery/battery_item1.jpg";
+import battery_item2 from "./../images/Battery/battery_item2.jpg";
+import battery_item3 from "./../images/Battery/battery_item3.jpg";
+import battery_item4 from "./../images/Battery/battery_item4.gif";
+import lightening from "./../images/Battery/battery_lightening1.png";
+import battery_background from "./../images/Battery/battery_background.png";
+
 const MainBattery = () => {
 
   const [isHovered, setIsHovered] = useState(false);
-  const [grid1, setGrid1] = useState(0);
-  const [grid2, setGrid2] = useState(0);
-  const [grid3, setGrid3] = useState(0);
-  const [grid4, setGrid4] = useState(0);
 
   const batteryRecharge = () => {
     
-    if (window.scrollY >= 11300 && window.scrollY <= 12500) {
-      setGrid1(1);
-    }
-    if (window.scrollY >= 11500 && window.scrollY <= 12500) {
-      setGrid2(1);
-    }
-    if (window.scrollY >= 11700 && window.scrollY <= 12500) {
-      setGrid3(1);
-    }
-    if (window.scrollY >= 11800 && window.scrollY <= 12500) {
-      setGrid4(1);
-    }
+    
   }
   function throttle(fn, delay) {
     var timer = null;
@@ -42,51 +32,66 @@ const MainBattery = () => {
 
   return (
     <div className="MainBatterys">
-      <img className="MainBatterys__background" src={battery_background}></img>
       <div className="MainBatterys__title">Battery</div>
       <div className="MainBatterys__body">
-        <img className={isHovered ? "body__lightening-on" : "body__lightening-off"} src={isHovered ? lightening : null}></img>
-        <div className="body__video" onMouseOver={() => { setIsHovered(!isHovered) }} onMouseDown={() => { setIsHovered(false) }}>
-          <div className="video__text">Are you alive!!!?
-              <span className="video__text__desc"><br></br>(1분부터 신남)</span>
+        <div className="body__contentsArea">
+          <div className="contentsArea__grid">
+            <div className="grid__item1">
+              <div className="item1__title">
+                배터리는 에너지의 상징!
+              </div>
+              <div className="item1__text">
+                여러분의 배터리는 오늘도 무사하신가요ㅠㅠ
+              </div>
+              <img className="item1__pics" src={battery_item1} alt=""></img>
+            </div>
+            <div className="grid__item2">
+              <div className="item2__title">
+                현대 사회의 에너지 저장고
+              </div>
+              <div className="item2__text">
+                언제 어디서나 에너지원을 공급받을 수 있게
+                해주는 현대인들의 필수품
+              </div>
+              <img className="item2__pics" src={battery_item2} alt=""></img>
+            </div>
+            <div className="grid__item3">
+              <div className="item3__title">
+                미래가 배터리에 달려있다!
+              </div>
+              <div className="item3__text">
+                로봇 잘 만들려면 일단 배터리 용량부터
+                확보가 되야된대요
+              </div>
+              <img className="item3__pics" src={battery_item3} alt=""></img>
+            </div>
+            <div className="grid__item4">
+              <div className="item4__title">
+                배터리에 대한 질문들
+              </div>
+              <div className="item4__text">
+                왜 리튬 이온 배터리를 쓸까요?<br></br>
+                왜 "2차" 전지라고 할까요?
+              </div>
+              <img className="item4__pics" src={battery_item4} alt=""></img>
+            </div>
           </div>
-          <iframe className="video__iframe" src="https://www.youtube.com/embed/tRJxnxVu3C8" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" long-desc="Are you live!!?" allowFullScreen></iframe>
         </div>
-        <div className="body__diagram">
-          <div className="diagram__upperbox"></div>
-          <div className="diagram__hline-upper"></div>          
-          <div className="diagram__vline"></div>
-          <div className="diagram__grid">
-            <div className="diagram__grid__item" style={{ opacity: grid1 }}>
-              <div className="row1__definition">
-                <div className="definition__title">배터리는 에너지의 상징! </div>
-              </div>
-            </div>
-            <div className="diagram__grid__item" style={{ opacity: grid2 }}>
-              <div className="row2__usage">
-                <div className="usage__title">거의 모든 전자제품이 배터리를 이용하죠
-            </div>
-              </div>
-            </div>
-            <div className="diagram__grid__item" style={{ opacity: grid3 }}>
-              <div className="row3__principle">
-                <div className="principle__title">로봇 개발의 숙제도 <br></br>배터리라고 하는데요,
-            </div>
-              </div>
-            </div>
-            <div className="diagram__grid__item" style={{ opacity: grid4 }}>
-            <div className="row4__future">                
-              <div className="future__title">미래 핵심 부품, <br></br>배터리에 대해 알아보시죠</div>
-            </div>                       
-            </div>            
+        <div className="body__videoArea">
+          <div className="videoArea__partitionLine"></div>
+          <div className="videoArea__outline">
+            <div className="outline__upper1"></div>
+            <div className="outline__upper2"></div>
+            <div className="outline__upperVert1"></div>
+            <div className="outline__upperVert2"></div>
+            <div className="outline__left"></div>
+            <div className="outline__right"></div>
+            <div className="outline__lower"></div>
           </div>
-          <div className="future__link-wrapper" >
-            <Link to="/Battery" className="future__link">
-              상세 페이지
-            </Link>
-          </div> 
-          <div className="diagram__lowerbox"></div>
-          <div className="diagram__hline-lower"></div>
+          <div className="videoArea__contents">
+            <div className="contents__text"></div>
+            <div className="contents__video"></div>
+          </div>
         </div>
       </div>
     </div>
