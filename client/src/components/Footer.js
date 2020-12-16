@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="footers__companyName">© 2020 FastFlow, Inc</div>
       <div className="Footers__body">
         <div className="footers__members">
-          <div className="footers__member teamLeader">
+          <div className="footers__teamLeader ">
             BackEnd & Team Leader:&nbsp;{" "}
             {
               <a className="team__member" href="https://github.com/doi-h">

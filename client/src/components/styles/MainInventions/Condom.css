@@ -113,3 +113,55 @@
 .MainCondoms__link:hover {
   background-position: 0 100%;
 }
+
+@media screen and (max-width: 385px) {
+  .MainCondoms__acientSex {
+    height: 30%;
+    width: 70%;
+    right: 0;
+    top: -18%;
+  }
+  .MainCondoms__text {
+    left: 4%;
+    top: 8%;
+  }
+  .MainCondoms__BCtext {
+    top: 16%;
+    left: 31%;
+  }
+  .MainCondoms__textBody {
+    top: 20.7%;
+    left: 3%;
+  }
+  .MainCondoms__link {
+    top: 27%;
+    left: 42%;
+  }
+  .MainCondoms__CondomPic0 {
+    height: 20%;
+    width: 38%;
+    top: -12%;
+    left: 3%;
+  }
+  .MainCondoms__CondomPic1 {
+    height: 12%;
+    width: 50%;
+    left: 7%;
+    bottom: 13%;
+  }
+  .MainCondoms__CondomPic2 {
+    height: 10%;
+    width: 50%;
+    top: 48%;
+    left: 15%;
+  }
+  .MainCondoms__CondomPic3 {
+    top: 30%;
+    height: 10%;
+  }
+  .MainCondoms__CondomPic4 {
+    height: 14%;
+    width: 40%;
+    bottom: 23%;
+  }
+}

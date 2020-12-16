@@ -21,7 +21,7 @@
 
 .MainPages__welcomePointText {
   color: #000000;
-  font-size: 3.3vmax;
+  font-size: 3.5vmax;
   font-weight: 900;
   position: absolute;
   width: 100%;
@@ -65,6 +65,22 @@
   }
 }
 
+@keyframes appearTitleM {
+  0% {
+    -webkit-transform: translateZ(300px);
+    transform: translateZ(300px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
 .scroll__tracker {
   border: 1px solid red;
   width: 600px;
@@ -89,7 +105,6 @@
   font-size: 2.3vmax;
   font-weight: 700;
   left: 45.6%;
-  animation: ChangeColor 0.8s infinite, revealScroll 5s 2s forwards;
   text-shadow: 0px 0px 20px white;
   font-family: "Cormorant Garamond", serif;
   background-color: rgba(255, 255, 247, 0.479);
@@ -97,27 +112,23 @@
   width: 9%;
   height: 6.2%;
   text-align: center;
-  opacity: 0;
 }
 
-@keyframes ChangeColor {
-  0% {
-    text-shadow: 0px 0px 1px rgb(116, 112, 112);
+@media screen and (max-width: 385px) {
+  .MainPages__welcomePointText {
+    top: 13%;
+    animation: appearTitleM 3s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
   }
 
-  100% {
-    text-shadow: 0px 0px 30px rgb(204, 199, 199);
-  }
-}
-
-@keyframes revealScroll {
-  0% {
-    transform: translate3d(0, -100%, 0);
-    opacity: 0;
+  .MainPages__welcomePointSubText {
+    top: 20%;
+    animation: appearTitleM 3s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
   }
 
-  100% {
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
+  .MainPages__ScrollSign {
+    width: 15%;
+    height: 4%;
+    margin-left: -11px;
+    bottom: 27%;
   }
 }

@@ -1,16 +1,18 @@
 .Details {
   position: relative;
   display: block;
+  width: 100%;
+  height: 100%;
   background-color: white;
 }
 
 .Details__title {
-  font-size: 80px;
-  font-weight: 800;
+  width: 100%;
+  font-size: 4.8vmax;
+  font-weight: 600;
   padding-top: 200px;
   letter-spacing: 2px;
-  padding-left: 40px;
-  font-family: "Stylish", sans-serif;
+  font-family: "Cormorant Garamond", serif;
 }
 
 .Details__body {
@@ -22,8 +24,9 @@
 }
 
 .Details__picArea {
-  width: 400px;
-  margin-right: 600px;
+  width: 50%;
+  height: 50%;
+  margin-right: 48%;
   margin-bottom: 94px;
 }
 
@@ -35,8 +38,8 @@
 
 .Details__video {
   position: absolute;
-  left: 47%;
-  top: 379px;
+  right: 15%;
+  top: 38.7%;
   width: 640px;
   height: 360px;
 }
@@ -45,38 +48,37 @@
   height: 100%;
 }
 
-.Details__textArea {
-  width: 100%;
+@media screen and (max-width: 1560px) {
+  .Details__pic {
+    margin-left: 35%;
+  }
+  .Details__video {
+    position: unset;
+    margin-bottom: 3%;
+  }
 }
 
-.Details__textTitle {
-  position: relative;
-  left: -541px;
-  font-size: 55px;
-  font-weight: 700;
-  color: black;
-  margin-bottom: 20px;
-  font-family: "Stylish", sans-serif;
-  padding-top: 10px;
+.Details__textArea {
+  width: 100%;
+  height: 100%;
 }
 
 .Details__text__birth,
 .Details__text__make,
 .Details__text__use {
   font-weight: 600;
-  font-size: 27px;
+  font-size: 1.6vmax;
+  font-family: "Cormorant Garamond", serif;
 }
 
 .Details__text {
-  width: 1200px;
+  width: 73%;
   height: 100%;
-  border-radius: 20px;
   text-align: left;
-  font-size: 25px;
+  font-size: 1.2vmax;
   background-color: white;
-  left: 303px;
   color: black;
-  font-family: "Stylish", sans-serif;
+  font-family: "Cormorant Garamond", serif;
 }
 
 li {
@@ -84,31 +86,31 @@ li {
 }
 
 .Details__commentsTitle {
-  font-size: 50px;
+  font-size: 3vmax;
   font-weight: 600;
-  margin-top: 74px;
-  margin-bottom: 20px;
+  margin-top: 10%;
+  margin-bottom: 1%;
   color: black;
-  font-family: "Stylish", sans-serif;
+  font-family: "Cormorant Garamond", serif;
 }
 
 .Details__comments {
-  margin-bottom: 100px;
 }
+
 .Details__commentsArea {
   box-sizing: border-box;
   border: 2px solid black;
   border-radius: 10px;
-  width: 1240px;
+  width: 70%;
+  height: 100%;
   text-align: left;
-  padding: 30px 50px;
+  padding: 3% 5%;
   margin-left: 24px;
   margin-bottom: 97px;
 }
 
 .Details__comment {
-  font-size: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 3%;
   color: rgb(59, 38, 175);
 }
 
@@ -231,32 +233,31 @@ li {
 }
 
 .Details__commentTextAreas__title {
-  font-family: "Yeon Sung", cursive;
-  font-size: 30px;
-  font-weight: 600;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.1vmax;
+  font-weight: 500;
   color: #272525;
-  margin-bottom: 20px;
-  letter-spacing: 2px;
+  margin-bottom: 1%;
 }
 .Details__commentPic {
-  margin-bottom: 10px;
-  height: 320px;
+  margin-bottom: 2%;
+  height: 20%;
+  width: 40%;
 }
 
 .Details__commentTextAreas__username {
-  font-family: "Yeon Sung", cursive;
-  font-weight: 600;
-  font-size: 25px;
-  color: #5f5e5e;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: 1.5vmax;
+  color: #474646;
   margin-bottom: 10px;
-  letter-spacing: 1px;
 }
 .Details__commentTextAreas__text {
-  font-family: "Yeon Sung", cursive;
-  font-size: 25px;
-  color: #7c7a7a;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-size: 1.3vmax;
+  color: #474646;
   margin-bottom: 30px;
-  letter-spacing: 1px;
 }
 
 .Details__commentToolEdit {
@@ -274,4 +275,51 @@ li {
   cursor: pointer;
   border: 1px solid #b9763f;
   border-radius: 0.25em;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1vmax;
+  min-width: 10px;
+  height: 2%;
+}
+
+@media screen and (max-width: 860px) {
+  .Details__pic {
+    position: relative;
+
+    left: -20%;
+  }
+
+  .Details__video iframe {
+    margin-left: 25px;
+  }
+
+  .Details__video {
+    position: unset;
+
+    width: 426px;
+    height: 240px;
+  }
+
+  .Details__title {
+    font-size: 60px;
+    margin-left: 44px;
+  }
+}
+
+@media screen and (max-width: 385px) {
+  .Details__pic {
+    position: relative;
+    width: 160%;
+    left: -9%;
+  }
+
+  .Details__title {
+    font-size: 60px;
+    margin-left: 15px;
+  }
+
+  .Details__video {
+    position: unset;
+    width: 384px;
+    height: 218px;
+  }
 }
