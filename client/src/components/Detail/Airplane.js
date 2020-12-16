@@ -53,7 +53,7 @@ const Airplane = () => {
     setModalCommentEditView("none");
   };
   // 댓글 수정 사항 작성 후 게시
-  const offEditArea = () => {
+  const offEditArea = () => {    
     axios
       .put(ip + port + `/post/edit`, {
         text: text,
