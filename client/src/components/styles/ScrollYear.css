@@ -1,8 +1,7 @@
 .scrollYears {
   display: flex;
   justify-content: center;
-  width: 300px;
-  font-size: 3vw;
+  font-size: 5vh;
   font-weight: 800;
 }
 

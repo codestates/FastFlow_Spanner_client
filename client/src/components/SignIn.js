@@ -73,13 +73,17 @@ const SignIn = (props) => (
             <a href={`${ip}${port_client}/SocialLogInKakao`} className="signIn__kakao" onClick={props.modalClose}>
             </a>
           </div>
+          <div>
           <button className="signIn__btn" type="submit" onClick={props.handleSignIn}>
             로그인
           </button>
-          <div className="signIn__errMessage">{props.errMessage}</div>
+          </div>
+          <div>
           <button type="button" className="signIn__closeBtn" onClick={props.modalClose}>
             창 닫기
           </button>
+          </div>
+          <div className="signIn__errMessage">{props.errMessage}</div>
         </div>
         <div className="signIn__modalLayer"></div>
       </div>

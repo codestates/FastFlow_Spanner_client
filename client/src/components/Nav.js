@@ -21,16 +21,40 @@ export default function Nav(props) {
   const scrollState = useScrollStatus();
   const hamdis = () => {
     if (hamburgerBtn) {
-      return {display:'block'};
+      return {visibility: 'visible'};
     } else {
-      return {display:'none'}};
+      return {visibility: 'hidden'}};
   }
 
   return (
     <header className="navs">
       <div className="nav__main">
-        <div className="nav__hamburgerBtn" onClick={onChangeHamburgerBtn} >
-          <div className="nav__hamburgerBtn1" style={hamdis()}>
+        <div className="nav__Btn1">
+        {props.isLogIn ? 
+        <LogOut  onLogOut={props.onLogOut} switchLogOut={props.switchLogOut} />:
+        <SignIn 
+          modalOpen={props.modalOpen}
+          modalClose={props.modalClose}
+          modal={props.modal}
+          onChangeEmail={props.onChangeEmail}
+          onChangePassword={props.onChangePassword}
+          errMessage={props.errMessage}
+          handleSignIn={props.handleSignIn}
+          handleResponseSuccess={props.handleResponseSuccess}
+        />}
+        </div>
+        <div>
+        {props.isLogIn ?
+        <Link to="/Mypage" className="nav__Btn2">
+          My page
+        </Link> : 
+        <Link to="/SignUp" className="nav__Btn2">
+          <div>Sign up</div>
+        </Link>}
+        </div>
+        <div className="nav__hamburgerBtn" onClick={onChangeHamburgerBtn} ></div>
+        <div className="nav__hamburgerBtn1" style={hamdis()}>
+          <div >
           {props.isLogIn ? 
           <LogOut className="nav__logOutHam" onLogOut={props.onLogOut} switchLogOut={props.switchLogOut} />:
           <SignIn className="nav__signInHam"
@@ -44,13 +68,17 @@ export default function Nav(props) {
             handleResponseSuccess={props.handleResponseSuccess}
           />}
           </div>
-          <div className="nav__hamburgerBtn2" style={hamdis()}>
+          <div>
           {props.isLogIn ?
-          <Link to="/Mypage" className="nav__myPageBtn">
-            My page
+          <Link to="/Mypage" className="nav__hamburgerBtn2">
+            <div className="nav__hamSignUp">
+              My page
+            </div>
           </Link> : 
-          <Link to="/SignUp" className="nav__signUpBtn">
-            Sign up
+          <Link to="/SignUp" className="nav__hamburgerBtn2" style={hamdis()}>
+            <div className="nav__hamSignUp" style={hamdis()}>
+              Sign up
+            </div>
           </Link>}
           </div>
         </div>
@@ -59,7 +87,6 @@ export default function Nav(props) {
         </div>
         <div>
           <Link to="/" className="nav__logoBtn">
-            Main
           </Link>
         </div>
 			</div>
