@@ -21,6 +21,20 @@
   z-index: 1;
 }
 
+@media screen and (max-width: 385px) {
+  .MainWritingSystems__mesopotamia {
+    height: 40%;
+    width: 100%;
+    top: 0;
+  }
+  .MainWritingSystems__uruk {
+    height: 48%;
+    width: 62%;
+    top: 37%;
+    right: 4%;
+  }
+}
+
 /* .MainWritingSystems__text {
   color: rgb(29, 20, 5);
   font-size: 59px;

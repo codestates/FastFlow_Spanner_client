@@ -21,7 +21,7 @@ const WritePage = ({ inventionId }) => {
     let accessToken = localStorage.getItem("token");
 
     console.log("글을 작성하기 전에 우리는 토큰을 확인 할 것 이다.", accessToken);
-  });
+  }, [setPostPicView]);
 
   const onSubmit = (e) => {
     let accessToken = localStorage.getItem("token");
@@ -68,6 +68,7 @@ const WritePage = ({ inventionId }) => {
   // };
 
   const onChangeFile = (e) => {
+    console.log("!!!!!!!!!!!!!!!!!!!!!!");
     e.preventDefault();
     let reader = new FileReader();
     let file = e.target.files[0];
@@ -87,18 +88,23 @@ const WritePage = ({ inventionId }) => {
   };
 
   return (
-    <div>
+    <center className="WritePagess">
       <div className="WritePages">
         <form className="submitArea" onSubmit={onSubmit}>
           {/* inventionArea */}
           <div className="submitArea__inventionArea">
             {/* <사진노출> */}
-            <img className="inventionArea__pic" src={postPicView} alt="" />
-            {/* <찾아보기> */}
-            <div className="inventionArea__fileSearch">
-              <label for="ex-file">사진 찾아보기</label>
-              <input type="file" id="ex-file" name="image" onChange={onChangeFile} />
+            <div>
+              <div className="WritePagesPicView">
+                <img className="WritePagesPicView__pic" src={postPicView} alt=""></img>
+              </div>
+              <div className="WritePagesPicBtns">
+                <div className="WritePagesPicBtns__fileSearch">
+                  <input type="file" id="ex-file" name="image" onChange={onChangeFile} />
+                </div>
+              </div>
             </div>
+
             <div className="submitArea__writingArea">
               {/* <제목작성영역> */}
               <div className="writingArea__title">
@@ -120,12 +126,12 @@ const WritePage = ({ inventionId }) => {
         <div className="WritePages__getOutModal" style={{ display: switchGetOut }}>
           <div className="WritePages__getOutContents">
             {/* <span className="logOut__closeButton" onClick={props.modalClose}>&times;</span> */}
-            <img className="WritePages__getOutContents__Pic" src={pleaseLogInPic} />
+            <img className="WritePages__getOutContents__Pic" src={pleaseLogInPic} alt="" />
             <p className="WritePages__getOutContents__Massage">{`로그인하고 다시 와라`}</p>
           </div>
         </div>
       </div>
-    </div>
+    </center>
   );
 };
 export default WritePage;
