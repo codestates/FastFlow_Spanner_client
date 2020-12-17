@@ -17,7 +17,7 @@ function SocialLogin({location}) {
                 console.log('서버로 github/auth요청 후 받는 데이터', accessToken.data);
                 console.log('서버로 github/auth요청 후 받는 데이터', accessToken.data.userChcek);
                 console.log('서버로 github/auth요청 후 받는 데이터', accessToken.data.userInfo);
-              if (accessToken.data.userChcek) {
+              if (accessToken.data.userCheck) {
                 axios.post(ip + port + '/user/signup', {
                   email: `Github_${accessToken.data.userInfo.id}`,
                   username: `${accessToken.data.userInfo.login}`,

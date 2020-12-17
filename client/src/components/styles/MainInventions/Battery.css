@@ -1,11 +1,7 @@
 
-*{
-  font-weight: 700;
-}
-
-
 .MainBatterys {  
-  background-size: cover;  
+  background-color: #f5f3ec; 
+  z-index: -2; 
   height: 100vh;
   box-sizing: border-box;
   /* 해당 컴포넌트에서 최상단 요소를 relative로 잡기 */
@@ -16,10 +12,10 @@
 .MainBatterys__title {
   position: absolute;
   height: 10%;
-
   width: 100%;
   font-size: 5vmax;
   color: #ffdd93;
+  font-weight: 700;
   text-shadow: 0.1vw 0.1vw 0 black;
 }
 
@@ -98,9 +94,11 @@
   position: absolute;  
   width: 100%;
   height: 20%;    
-  top: 5%;   
-  font-size: 2vmax;  
-  color: rgb(90, 90, 90);
+  top: 60%;   
+  font-size: 2.2vmax;  
+  color: black;
+  font-weight: 700;
+  font-family: "Cormorant Garamond", serif;
   text-align: center;
 }
 
@@ -108,36 +106,44 @@
   position: absolute; 
   width: 100%;
   height: 20%;   
-  top: 5%;     
-  font-size: 2vmax;  
-  color: rgb(90, 90, 90); 
+  top: 60%;     
+  font-size: 2.2vmax;  
+  color: black;
+  font-weight: 700;
+  font-family: "Cormorant Garamond", serif; 
   text-align: center;   
 }
 .item3__title {
   position: absolute; 
   width: 100%;
   height: 20%;    
-  top: 5%;    
-  font-size: 2vmax;  
-  color: rgb(90, 90, 90);
+  top: 60%;    
+  font-size: 2.2vmax;  
+  color: black;
+  font-weight: 700;
+  font-family: "Cormorant Garamond", serif;
   text-align: center;  
 }
 .item4__title {
   position:absolute;
   width: 100%;
   height: 20%;  
-  top: 5%;         
-  font-size: 2vmax;  
-  color: rgb(90, 90, 90);
+  top: 60%;         
+  font-size: 2.2vmax;  
+  color: black;
+  font-weight: 700;
+  font-family: "Cormorant Garamond", serif;
   text-align: center;  
 }
 .item1__text {  
   position: absolute;
   width: 60%;
   height: 30%;    
-  top: 20%;      
-  font-size: 1.2vw;  
-  color: rgb(175, 175, 175);  
+  top: 75%;      
+  font-size: 1.6vmax;  
+  color: rgb(90, 90, 90);
+  font-weight: 700;
+  font-family: "Cormorant Garamond", serif;  
   text-align: center;
   word-break: keep-all;    
 }
@@ -145,9 +151,11 @@
   position:absolute;
   width:60%;
   height: 30%;    
-  top: 20%;   
-  font-size: 1.2vw;  
-  color: rgb(175, 175, 175);
+  top: 75%;   
+  font-size: 1.6vmax;  
+  color: rgb(90, 90, 90);
+  font-weight: 700;
+  font-family: "Cormorant Garamond", serif;
   text-align: center;
   word-break: keep-all;
 }
@@ -155,9 +163,11 @@
   position:absolute;
   width: 60%;
   height: 30%;    
-  top: 20%;     
-  font-size: 1.2vw;  
-  color: rgb(175, 175, 175);
+  top: 75%;     
+  font-size: 1.6vmax;  
+  color: rgb(90, 90, 90);
+  font-weight: 700;
+  font-family: "Cormorant Garamond", serif;
   text-align: center;
   word-break: keep-all;
 }
@@ -165,9 +175,11 @@
   position:absolute;
   width: 60%;
   height: 30%;    
-  top: 20%;     
-  font-size: 1.2vw;  
-  color: rgb(175, 175, 175);
+  top: 75%;     
+  font-size: 1.6vmax;  
+  color: rgb(90, 90, 90);
+  font-weight: 700;
+  font-family: "Cormorant Garamond", serif;
   text-align: center;
   word-break: keep-all;
 }
@@ -175,25 +187,25 @@
   position: absolute;  
   width: 50%;
   height: 50%;        
-  top: 40%;  
+  top: 8%;  
 }
 .item2__pics {
   position:absolute;
   width: 50%;
   height: 50%;        
-  top: 40%;   
+  top: 8%;   
 }
 .item3__pics {
   position:absolute;
   width: 50%;
   height: 50%;        
-  top: 40%;    
+  top: 8%;    
 }
 .item4__pics {
   position:absolute;
   width: 50%;
   height: 50%;        
-  top: 40%;    
+  top: 8%;    
 }
 
 
@@ -204,6 +216,38 @@
   width: 40%;
   left: 60%;  
 }
+.MainBatterys__link{
+  position: absolute;
+  left: 30%;
+  top: 5%;
+  color: rgb(224, 116, 116);
+  text-decoration: none;  
+  font-size: 1.8vmax;
+  font-weight: 900;
+  background: linear-gradient(to right, rgb(230, 35, 93), rgb(240, 17, 110) 50%, rgb(5, 5, 5) 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 1000ms ease;
+  overflow: hidden;
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.1vmax;   
+}
+.MainBatterys__link:hover {
+  background-position: 0 100%;
+}
+@keyframes link {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
 .videoArea__partitionLine{
   position: absolute;
   height: 85%;
@@ -232,7 +276,7 @@
 }
 .outline__upperVert1{
   position:absolute;  
-  height: 10%;
+  height: 10%;  
   top: 4%;
   left: 45%;
   border: rgba(0, 0, 0, 0.3) 0.2px solid;
@@ -266,3 +310,125 @@
   border: rgba(0, 0, 0, 0.3) 0.2px solid;
 }
 
+.videoArea__contents{
+  position: absolute;
+  width: 80%;
+  height: 85%;
+  left: 10%;   
+  top: 8%;
+}
+.videoArea__contents::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: bottom center;
+    background:rgb(194, 0, 0);
+    z-index: -1;
+    transition: transform 3s ease-in-out;    
+}
+.videoArea__contents:hover::after{
+  transform: scaleY(1);
+  background:rgb(0, 192, 0);
+}
+.contents__text{
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  top: 15%;
+  display:flex;
+  justify-content: center;
+}
+.text__title{
+  position: absolute;
+  width: 80%;
+  height: 80%;  
+  font-size: 2.5vmax;  
+  color: black; 
+  font-weight: 700;
+  font-family: "Cormorant Garamond", serif;
+  text-align: center;  
+}
+.text__desc{
+  position: absolute;
+  width: 60%;
+  height: 20%;
+  top: 25%;
+  font-size: 1.7vw;  
+  color: rgb(90, 90, 90);
+  text-align: center;
+  font-weight: 700;
+  font-family: "Cormorant Garamond", serif;
+  word-break: keep-all;
+}
+
+.contents__video-wrapper{
+  position: absolute;
+  width: 80%;
+  height: 50%; 
+  top: 30%;
+}
+.contents__video{
+  position: absolute;
+  width: 100%;
+  height: 100%; 
+  left: 12%;
+}
+
+
+
+@media screen and (max-width: 479px) {        
+
+  .MainBatterys__body {
+    height: 40%;
+    left: 20%;   
+  }
+  .body__contentsArea{
+    width: 80%;
+    left: -12%;
+  }
+  .item1__title{
+    font-size: 16px;
+  }
+  .item2__title{
+    font-size: 16px;
+  }
+  .item3__title{
+    font-size: 16px;
+  }
+  .item4__title{
+    font-size: 16px;
+  }
+  .item1__text{
+    font-size: 12px;
+  }
+  .item2__text{
+    font-size: 12px;
+  }
+  .item3__text{
+    font-size: 12px;
+  }
+  .item4__text{
+    font-size: 12px;
+  }
+
+  .body__videoArea{
+    position: absolute;
+    height: 100%;
+    width: 70%;
+    left: -5%; 
+    top: 110%;    
+  }
+  .videoArea__partitionLine{
+    display:none;
+  }
+  .text__title{
+    font-size: 16px;
+  }
+  .text__desc{    
+    font-size: 12px;
+  }
+}
