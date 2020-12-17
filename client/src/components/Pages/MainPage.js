@@ -18,27 +18,33 @@ import MainInternet from "../Inventions/MainInternet";
 
 // 아래는 별 사진
 
-
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { ip, port, port_client } from "./../../url";
+import Fade from "react-reveal/Fade";
 
 const MainPage = () => {
-  const refreshToken = localStorage.getItem('refreshToken')
-  const accessToken = localStorage.getItem('token');
+  const refreshToken = localStorage.getItem("refreshToken");
+  const accessToken = localStorage.getItem("token");
+
+  // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    console.log(accessToken)
-    if(refreshToken && !accessToken) {
-      
-      axios.post(`${ip}${port}/refreshToken`, {refreshToken : refreshToken})
-      .then((res) => {
-        console.log('refreshToken 받아옴!')
-        localStorage.setItem('token',res.data.accessToken);
-      })
+    console.log(accessToken);
+    if (refreshToken && !accessToken) {
+      axios.post(`${ip}${port}/refreshToken`, { refreshToken: refreshToken }).then((res) => {
+        console.log("refreshToken 받아옴!");
+        localStorage.setItem("token", res.data.accessToken);
+      });
     }
-  })
+  });
 
+  // const updateMousePosition = (e) => {
+  //   e.persist();
+  //   setMousePosition((mousePosition) => ({ ...mousePosition, x: e.clientX, y: e.clientY }));
+  // };
+
+  // onMouseMove={updateMousePosition} style={{ backgroundPositionX: `${mousePosition.x}px`, backgroundPositionY: `${mousePosition.y}px` }}
   return (
     <div className="MainPages">
       <div className="MainPages__welcomePoint">
@@ -46,7 +52,11 @@ const MainPage = () => {
           <div className="MainPages__welcomePointText">Invention History</div>
           <div className="MainPages__welcomePointSubText">Experience the footsteps of an invention over time</div>
         </div>
-        <span className="MainPages__ScrollSign">Scroll</span>
+        <div className="MainPages__ScrollSignArea">
+          <Fade top fraction={0.2} duration={3000}>
+            <span className="MainPages__ScrollSign">Scroll</span>
+          </Fade>
+        </div>
       </div>
       <MainFistAxe />
       <MainFire />

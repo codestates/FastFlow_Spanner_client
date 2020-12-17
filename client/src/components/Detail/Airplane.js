@@ -53,7 +53,7 @@ const Airplane = () => {
     setModalCommentEditView("none");
   };
   // 댓글 수정 사항 작성 후 게시
-  const offEditArea = () => {    
+  const offEditArea = () => {
     axios
       .put(ip + port + `/post/edit`, {
         text: text,
@@ -92,6 +92,7 @@ const Airplane = () => {
     axios.delete(ip + port + `/post/delete`, {
       data: {
         postId: val,
+        inventionId: inventionId,
       },
     });
   };
@@ -138,7 +139,6 @@ const Airplane = () => {
         </div>
 
         <div className="Details__textArea">
-          <div className="Details__textTitle">Detail</div>
           <div className="Details__text">
             <div className="Details__text__birth">역사</div>
             <p>

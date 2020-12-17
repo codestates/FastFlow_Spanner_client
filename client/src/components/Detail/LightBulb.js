@@ -92,6 +92,7 @@ const LightBulb = () => {
     axios.delete(ip + port + `/post/delete`, {
       data: {
         postId: val,
+        inventionId: inventionId,
       },
     });
   };
@@ -138,7 +139,6 @@ const LightBulb = () => {
         </div>
 
         <div className="Details__textArea">
-          <div className="Details__textTitle">Detail</div>
           <div className="Details__text">
             <div className="Details__text__birth">역사</div>
             <p>

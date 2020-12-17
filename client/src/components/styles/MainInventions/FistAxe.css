@@ -39,7 +39,7 @@
   top: 55%;
   color: rgb(224, 116, 116);
   text-decoration: none;
-  right: 38.3%;
+  left: 28.3%;
   font-size: 1.8vmax;
   font-weight: 900;
   background: linear-gradient(to right, rgb(230, 35, 93), rgb(240, 17, 110) 50%, rgb(5, 5, 5) 50%);
@@ -91,8 +91,9 @@
 
 .MainFistAxes__FistAxePicOne {
   position: absolute;
+  width: 17%;
   height: 43%;
-  width: auto;
+
   z-index: 1;
   bottom: 5%;
   right: 17.8%;
@@ -100,7 +101,44 @@
 .MainFistAxes__FistAxePicTwo {
   position: absolute;
   height: 43%;
-  width: auto;
+  width: 17%;
   bottom: 31%;
   right: 5%;
+}
+
+@media screen and (max-width: 479px) {
+  .MainFistAxes__homoAcientPic {
+    display: none;
+  }
+
+  .MainFistAxes__text {
+    width: 40%;
+    left: 7%;
+    top: 7%;
+  }
+
+  .MainFistAxes__BCtext {
+    left: 9%;
+  }
+
+  .MainFistAxes__textBody {
+    left: 9%;
+    width: 50%;
+  }
+
+  .MainFistAxes__FistAxePicOne,
+  .MainFistAxes__FistAxePicTwo {
+    height: 30%;
+    width: 30%;
+  }
+  .MainFistAxes__FistAxePicOne {
+    top: 51%;
+  }
+  .MainFistAxes__FistAxePicTwo {
+    top: 30%;
+  }
+
+  .MainFistAxes__link {
+    top: 60%;
+  }
 }
