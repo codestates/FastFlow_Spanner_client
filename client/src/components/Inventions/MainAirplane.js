@@ -47,13 +47,9 @@ const MainAirplane = () => {
             </ul>
             <ul>
               <a className="body__link" href="https://github.com/ryhyn123">One-arm Guy</a>  
-            </ul>
-            
-          </li>          
-          
-        </div>
-        
-
+            </ul>            
+          </li>                    
+        </div>        
         <Fade top fraction={1} duration={1000}>          
           <div className="body__slider">
             <Slider {...settings} >        
