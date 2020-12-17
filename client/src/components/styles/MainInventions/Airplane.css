@@ -85,33 +85,39 @@
 
 .body__slider{  
   position:absolute;
-  left: 45%;
-  top: 5%;  
-  width: 25%;      
-  border: purple 5px solid;
-  border-radius: 35% 32% 36% 37%;    
+  left: 33%;
+  top: 11%;  
+  width: 34.5%;
+  height: 73%;        
+  border-radius: 32% 32% 36% 37%;    
 }
-.slider-wrapper{  
-   
+.slider-wrapper{
+  height: 72.5vh;    
   border-radius: 32% 32% 38% 37%;
 }
-.slider__img0{ 
-    
+.slider__img0{   
+  width: 100%;
+  height: 100%;  
   border-radius: 32% 32% 38% 37%;   
 }
 .slider__img1{  
-  
+  width: 100%;
+  height: 100%;  
   border-radius: 32% 32% 38% 37%;  
 }
 .slider__img2{  
-    
+  width: 100%;
+  height: 100%;  
   border-radius: 32% 32% 38% 37%;  
 }
 .slider__img3{
-    
+  width: 100%;
+  height: 100%;  
   border-radius: 32% 32% 38% 37%;  
 }
-.slider__img4{    
+.slider__img4{ 
+  width: 100%;
+  height: 100%;  
   border-radius: 32% 32% 38% 37%;  
 }
 
