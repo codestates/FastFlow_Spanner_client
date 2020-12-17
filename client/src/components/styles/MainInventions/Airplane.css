@@ -63,7 +63,7 @@
   top: 30%;
   left: 10%;
   width: 30%;
-  height: 30%;
+  height: 30%;  
   font-size: 1.8vmax;
   font-weight: 900;
   color:rgb(230, 35, 93);
@@ -129,17 +129,17 @@
     top: 5%;
     font-size: 3vmax;
   }
-  .body__background{
+  .body__background{    
     transform: scaleX(1.5)
   }
-  /* .body__slider{
+  .body__slider{
     left: 25%;
     width: 52vw;
-  }  */
+  } 
   .body__links{
     margin:0;
     padding:0;
-    top: 10%;
-    left: 0%;
+    top: 8%;
+    left: -5%;
   }
 }

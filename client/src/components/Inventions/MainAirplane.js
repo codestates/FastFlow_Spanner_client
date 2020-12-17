@@ -36,9 +36,11 @@ const MainAirplane = () => {
         <Link to="/Airplane" className="Airplanes__link">
           Click Me
         </Link>
-        <div className="body__links">
-          Links
+        <div className="body__links">          
           <li>
+            <ul>
+              <div>-Links-</div>
+            </ul>
             <ul>
               <a className="body__link" href="https://github.com/yumboy8747">Effel Tower Guy</a>
             </ul>
