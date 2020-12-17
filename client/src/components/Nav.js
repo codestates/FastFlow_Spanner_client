@@ -25,6 +25,12 @@ export default function Nav(props) {
     } else {
       return {visibility: 'hidden'}};
   }
+  const hamdis2 = () => {
+    if (hamburgerBtn) {
+      return {display: 'block'};
+    } else {
+      return {display: 'none'}};
+  }
 
   return (
     <header className="navs">
@@ -53,8 +59,8 @@ export default function Nav(props) {
         </Link>}
         </div>
         <div className="nav__hamburgerBtn" onClick={onChangeHamburgerBtn} ></div>
-        <div className="nav__hamburgerBtn1" style={hamdis()}>
-          <div >
+        <div>
+          <div  className="nav__hamburgerBtn1" style={hamdis()}>
           {props.isLogIn ? 
           <LogOut className="nav__logOutHam" onLogOut={props.onLogOut} switchLogOut={props.switchLogOut} />:
           <SignIn className="nav__signInHam"
@@ -70,13 +76,13 @@ export default function Nav(props) {
           </div>
           <div>
           {props.isLogIn ?
-          <Link to="/Mypage" className="nav__hamburgerBtn2">
-            <div className="nav__hamSignUp">
+          <Link to="/Mypage" className="nav__hamburgerBtn2" style={hamdis2()}>
+            <div className="nav__hamSignUp" style={hamdis2()}>
               My page
             </div>
           </Link> : 
-          <Link to="/SignUp" className="nav__hamburgerBtn2" style={hamdis()}>
-            <div className="nav__hamSignUp" style={hamdis()}>
+          <Link to="/SignUp" className="nav__hamburgerBtn2" style={hamdis2()}>
+            <div className="nav__hamSignUp" style={hamdis2()}>
               Sign up
             </div>
           </Link>}

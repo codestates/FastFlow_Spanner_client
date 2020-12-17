@@ -12,7 +12,7 @@
 
 .scrollTracker__first_1 {
   position: absolute;
-  width: 5vh;
+  width: 4vh;
   top: -5vh;
 }
 
@@ -26,7 +26,7 @@
 
 .scrollTracker__second_2 {
   position: absolute;
-  width: 5vh;
+  width: 4vh;
   top: -5vh;
   transition-property: left;
   transition-duration: 1s;
@@ -35,7 +35,7 @@
 
 .scrollTracker__human5 {
   position: absolute;
-  width: 5vh;
+  width: 4vh;
   top: -5vh;
   left: -7.5%;
   transition-property: left;
@@ -45,13 +45,13 @@
 
 .scrollTracker__deskContainer {
   position: absolute;
-  width: 50vh;
+  width: 40vh;
   height: 100%;
   left: 98%;
 }
 
 .scrollTracker__desk {
   position: absolute;
-  width: 5vh;
+  width: 4vh;
   top: -5vh;
 }

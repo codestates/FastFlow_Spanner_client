@@ -58,6 +58,7 @@ const SignIn = (props) => (
     <center>
       <div className="signIns" style={{ display: `${props.modal}` }}>
         <div className="signIn__modal">
+          <div className="signIn__title">로그인</div>
           <div className="signIn__email">
             <input className="signIn__emailInput" type="email" placeholder="이메일" onChange={props.onChangeEmail}></input>
           </div>

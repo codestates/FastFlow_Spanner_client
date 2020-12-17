@@ -1,24 +1,23 @@
 .signIn__navBtn {
+  margin-left: 2vh;
   cursor: pointer;
-  font-size: x-large;
+  font-size: 3vh;
   font-weight: 800;
-  margin-left: 2vw;
 }
 
 .signIns {
   position: absolute;
-  width: 500px;
-  height: 500px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 15%);
+  width: 100vw;
+  height: 100vh;
+  top: 10vh;
+  left: 0%;
   z-index: 100;
 }
 
 .signIn__modal {
   display: flex;
   flex-direction: column;
-  padding-top: 100px;
+  padding-top: 50px;
   border: 1px solid #dbdbdb;
   width: 350px;
   height: 540px;
@@ -26,10 +25,19 @@
   border-radius: 15px;
 }
 
+.signIn__title {
+  font-weight: 600;
+  font-size: 30px;
+  margin: 30px 0px;
+  color: black;
+}
+
 .signIn__emailInput {
   margin-bottom: 10px;
   width: 65%;
   height: 31px;
+  background-color: #fafafa;
+  border: 1px solid #dbdbdb;
   border-radius: 5px;
 }
 
@@ -37,6 +45,8 @@
   margin-bottom: 20px;
   width: 65%;
   height: 31px;
+  background-color: #fafafa;
+  border: 1px solid #dbdbdb;
   border-radius: 5px;
 }
 
@@ -90,18 +100,22 @@
 
 .signIn__btn:hover {
   cursor: pointer;
+  color: #ffdd93;;
+  background-color: black;
 }
 
 .signIn__closeBtn:hover {
   cursor: pointer;
+  color: #ffdd93;;
+  background-color: black;
 }
 
 .signIn__modalLayer {
   position: fixed;
   top: 0;
   left: 0;
-  width: 200vw;
-  height: 200vh;
+  width: 500vw;
+  height: 500vh;
   background: rgba(0, 0, 0, 0.5);
   background-size: cover;
   background-position: center;
@@ -111,8 +125,6 @@
 
 @media screen and (max-width: 768px) {
   .signIns {
-    top: 50%;
-    left: 50%;
-    transform: translate(0%, 0%);
+    top: 6vh;
   }
 }
