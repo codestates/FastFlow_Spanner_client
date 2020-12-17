@@ -1,143 +1,309 @@
 .MainElectricMotors {
-  background-color: #444444;
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover;
-
+  background-color: #f5f3ec; 
+  z-index: -2; 
   height: 100vh;
-  position: relative; 
-
+  box-sizing: border-box;  
+  position: relative;
 }
+
 .MainElectricMotors__title {
   position: absolute;
-  left: 2%;
-  top: 2%;
-  width: 10%;
-  color: #ffdd93;
-  font-size: 5vw;
-  font-weight: 700;
-}
-.MainElectricMotors__module {
-  position: absolute;
-  left: 3%;
-  top: 10%;
-  width: 50%;
-  height: 80%;
-  border-radius: 20%;
-}
-.module__pic {
-  position: absolute;
-  left: 3%;
-  top: 3%;
+  height: 10%;
   width: 100%;
-  height: 100%;
-  opacity: 80%;
-  border-radius: 20%;
-}
-.drag {
-  position: absolute;
-  left: 63%;
-  top: 10%;
-  width: 9%;
-  height: 25%;
-  text-align: center;
-  color: #ffdd93;
+  font-size: 5vmax;
   font-weight: 700;
-  font-size: 1vw;
+  color: #ffdd93;
+  text-shadow: 0.1vw 0.1vw 0 black;
 }
-.drag__magnet {
+
+.MainElectricMotors__rotatingMotor1{
   position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: red;
+  top: 25%;
+  left: 10%;
+  transform: perspective(1000px) rotateY(5deg);
+  width: 25%;
+  height: 50%;
+  transform-style: preserve-3d;  
 }
-.magnet__spolar {
+.MainElectricMotors__rotatingMotor1:before{
+  content: '';
   position: absolute;
+  top: 100%;
   width: 100%;
   height: 50%;
+  background: #000;
+  filter:blur(40px);
+  opacity: 0.3;
+  transform: rotateX(40deg);
+}
+.rotatingMotor1-wrapper{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: rotating 40s linear infinite;
+}
+
+.rotatingMotor1-wrapper__wing{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, #f1f1f1, #bbb, #f1f1f1);
+  border-radius: 20px;
+}
+.rotatingMotor1-wrapper__wing:nth-child(1){
+  transform: rotateX(0deg);
+}
+.wing__img1{
+  position: absolute;
+  top: 65%;
+  width: 80%;
+  left: 10%;
+  height: 30%;
+}
+.wing__img5{
+  position: absolute;
+  top: 5%;
+  width: 80%;
+  left: 10%;
+  height: 30%;
+}
+.rotatingMotor1-wrapper__wing:nth-child(2){
+  transform: rotateX(45deg);
+}
+.wing__img2{
+  position: absolute;
+  top: 65%;
+  width: 80%;
+  left: 10%;
+  height: 30%;
+}
+.wing__img6{
+  position: absolute;
+  top: 5%;
+  width: 80%;
+  left: 10%;
+  height: 30%;
+}
+.rotatingMotor1-wrapper__wing:nth-child(3){
+  transform: rotateX(-45deg);
+}
+.wing__img3{
+  position: absolute;
+  top: 65%;
+  width: 80%;
+  left: 10%;
+  height: 30%;
+}
+.wing__img7{
+  position: absolute;
+  top: 5%;
+  width: 80%;
+  left: 10%;
+  height: 30%;
+}
+.rotatingMotor1-wrapper__wing:nth-child(4){
+  transform: rotateX(90deg);
+}
+.wing__img4{
+  position: absolute;
+  top: 65%;
+  width: 80%;
+  left: 10%;
+  height: 30%;
+}
+.wing__img8{
+  position: absolute;
+  top: 5%;
+  width: 80%;
+  left: 10%;
+  height: 30%;
+}
+
+@keyframes rotating
+{
+  0%
+  {
+    transform: perspective(1000px) rotateX(0deg);
+  }
+  100%
+  {
+    transform: perspective(1000px) rotateX(359deg);
+  }
+}
+
+
+.MainElectricMotors__module{ 
+  position: absolute; 
+  left: 50%;
+  top: 10%;
+  width: 30%;  
+  height: 50%;    
+  border-radius: 20%;
+}
+.module__guide{
+  position: absolute; 
+  width: 25%;
+  height: 10%;
+  left: 37%;
+  top: 13%;
+  font-size: 1.5vmax;
+}
+.module__pic{
+  position: absolute;
+  left:3%;
+  top:3%;    
+  width: 100%;  
+  height:100%;    
+  opacity:80%;
+  border-radius: 20%;       
+}
+.drag{
+  position:absolute;
+  left:63%;
+  top:10%;
+  width:9%;
+  height:25%;     
+  text-align: center; 
+  color:#ffdd93;
+  font-weight: 700;
+  font-size: 0.5vmax;
+}
+.drag__magnet{
+  position:absolute;  
+  width:100%;
+  height:100%;
+  background-color:red;  
+}
+.magnet__spolar{
+  position:absolute;  
+  width:100%;
+  height:50%;
   background-color: blue;
   color: #ffdd93;
 }
-.magnet__handler {
-  position: absolute;
-  top: 37.5%;
-  left: 0%;
-  width: 100%;
-  height: 25%;
-  background-color: black;
-  color: #ffdd93;
-  cursor: move;
+.magnet__handler{
+  position:absolute;
+  top:37.5%;
+  left:0%;
+  width:100%;
+  height:25%;
+  background-color:black;
+  color:#ffdd93;  
+  cursor: move;  
 }
+
 
 .module__touch-line {
   position: absolute;
-  left: 61%;
-  top: 53%;
+  left:61%;
+  top:53%;
   width: 13%;
-  height: 2%;
-  background-color: transparent;
+  height: 2%;  
+  background-color:transparent;
 }
 
-.module__lightBulb-off {
+.module__lightBulb-off{
   position: absolute;
   left: 13%;
-  top: 52%;
+  top:52%;
   width: 12%;
-  height: 12%;
+  height: 12%;      
   opacity: 0;
-  border-radius: 70%;
+  border-radius: 70%;         
 }
-.module__lightBulb-on {
+.module__lightBulb-on{
   position: absolute;
   left: 13%;
-  top: 52%;
+  top:52%;
   width: 12%;
-  height: 12%;
+  height: 12%;      
   border-radius: 70%;
-  opacity: 1;
-  background-color: rgb(255, 251, 0);
+  opacity: 1;   
+  background-color: rgb(255, 251, 0);  
   animation-name: flickering;
   animation-duration: 1s;
-  animation-fill-mode: forwards;
+  animation-fill-mode:forwards;
 }
-@keyframes flickering {
-  from {
-    opacity: 1;
+@keyframes flickering{
+  from{
+    opacity:1;
   }
-  to {
+  to{
+    opacity:0;
+  }
+}
+
+
+.MainElectricMotors__text{
+  position:absolute;
+  left: 55%;
+  top: 62%;
+  color:rgb(90, 90, 90);
+  font-size: 1.9vw;
+  font-weight: 700;
+  font-family: "Cormorant Garamond", serif;   
+}
+
+.text__link-wrapper-ElectricMotor {  
+  position:absolute;
+  width: 100%;
+  height: 20%;
+  top: 120%; 
+  font-size: 1.9vw;
+  font-weight: 700;
+  font-family: "Cormorant Garamond", serif;  
+  cursor: pointer;
+}
+.text__link-ElectricMotor{
+  position: absolute;  
+  color: rgb(224, 116, 116);
+  text-decoration: none;  
+  font-size: 1.8vmax;
+  font-weight: 900;
+  background: linear-gradient(to right, rgb(230, 35, 93), rgb(240, 17, 110) 50%, rgb(5, 5, 5) 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 1000ms ease;
+  overflow: hidden;
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.1vmax;  
+}
+.text__link-ElectricMotor:hover {
+  background-position: 0 100%;
+}
+@keyframes link {
+  0% {
     opacity: 0;
   }
+  100% {
+    opacity: 1;
+  }
 }
 
-.MainElectricMotors__text {
-  position: absolute;
-  left: 60%;
-  top: 20%;
-  color: #ffdd93;
-  font-size: 1.9vw;
-  font-weight: 700;
-}
 
-.MainElectricMotors__link {
-  position: absolute;
-  left: 60%;
-  top: 50%;
-  font-size: 1.9vw;
-  font-weight: 700;
-  cursor: pointer;
-}
-.MainElectricMotors__link-text {
-  color: #ffdd93;
-  cursor: pointer;
-}
-
-.slick{
-  position:absolute;  
-  width: 50%;
-  height: 50%;  
-}
-.slide-test{
-  position:absolute;  
-  width: 50%;
-  height: 50%;  
+@media screen and (max-width: 479px) {  
+  .text__desc-ElectricMotor{
+    font-size: 16px;    
+  }
+  .module__guide{
+    font-size: 16px; 
+    left: 20%;
+    color:red;
+  }
+  .drag{
+    left: 58%;
+    width: 20%;
+  }
+  .module__touch-line{
+    width: 20%;
+  }
 }

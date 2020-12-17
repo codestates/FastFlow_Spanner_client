@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { useState} from "react";
+import Fade from "react-reveal/Fade";
 import battery_item1 from "./../images/Battery/battery_item1.jpg";
 import battery_item2 from "./../images/Battery/battery_item2.jpg";
 import battery_item3 from "./../images/Battery/battery_item3.jpg";
 import battery_item4 from "./../images/Battery/battery_item4.gif";
+
 
 const MainBattery = () => {
 
@@ -30,52 +32,58 @@ const MainBattery = () => {
 
   return (
     <div className="MainBatterys">
-      <div className="MainBatterys__title">Battery</div>
-      <div className="MainBatterys__body">
+      <Fade top fraction={0.5} duration={1000}>
+      <div className="MainBatterys__title">      
+        Battery                
+      </div>
+      <Link to="/battery" className="MainBatterys__link">
+        Click Me
+      </Link>
+      </Fade>
+      <div className="MainBatterys__body">      
         <div className="body__contentsArea">
           <div className="contentsArea__grid">
             <div className="grid__item1">
+              <img className="item1__pics" src={battery_item1} alt=""></img>
               <div className="item1__title">
-                배터리는 에너지의 상징!
+                The symbol of energy!
               </div>
               <div className="item1__text">
-                여러분의 배터리는 오늘도 무사하신가요ㅠㅠ
+                How about your battery today...?
               </div>
-              <img className="item1__pics" src={battery_item1} alt=""></img>
             </div>
             <div className="grid__item2">
+              <img className="item2__pics" src={battery_item2} alt=""></img>
               <div className="item2__title">
-                현대 사회의 에너지 저장고
+                Storage for our society
               </div>
               <div className="item2__text">
-                언제 어디서나 에너지원을 공급받을 수 있게
-                해주는 현대인들의 필수품
+                The necessity of modern people
               </div>
-              <img className="item2__pics" src={battery_item2} alt=""></img>
             </div>
             <div className="grid__item3">
+              <img className="item3__pics" src={battery_item3} alt=""></img>
               <div className="item3__title">
-                미래가 배터리에 달려있다!
+                Battery for our future!
               </div>
               <div className="item3__text">
-                로봇 잘 만들려면 일단 배터리 용량부터
-                확보가 되야된대요
+                Battery tech. is essential for robots
               </div>
-              <img className="item3__pics" src={battery_item3} alt=""></img>
             </div>
             <div className="grid__item4">
+              <img className="item4__pics" src={battery_item4} alt=""></img>
               <div className="item4__title">
-                배터리에 대한 질문들
+                Questions with battery
               </div>
               <div className="item4__text">
-                왜 리튬 이온 배터리를 쓸까요?<br></br>
-                왜 "2차" 전지라고 할까요?
+                Why "Litium" for battery?<br></br>
+                Why "secondary" battery?
               </div>
-              <img className="item4__pics" src={battery_item4} alt=""></img>
             </div>
           </div>
-        </div>
-        <div className="body__videoArea">
+        </div>        
+        <Fade right fraction={0.5} duration={3000}>
+        <div className="body__videoArea">          
           <div className="videoArea__partitionLine"></div>
           <div className="videoArea__outline">
             <div className="outline__upper1"></div>
@@ -87,10 +95,26 @@ const MainBattery = () => {
             <div className="outline__lower"></div>
           </div>
           <div className="videoArea__contents">
-            <div className="contents__text"></div>
-            <div className="contents__video"></div>
+            <div className="contents__text">
+              <div className="text__title">
+                Song for recharging you!
+              </div>
+              <div className="text__desc">
+                (Crazy from 1min)
+              </div>
+            </div>
+            <div className="contents__video-wrapper">
+              <iframe className="contents__video"           
+              src="https://www.youtube.com/embed/tRJxnxVu3C8" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen>              
+              </iframe>
+            </div>
+            
           </div>
         </div>
+        </Fade>
       </div>
     </div>
   );
