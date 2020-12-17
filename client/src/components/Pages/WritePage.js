@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import basicPostPic from "../images/InputPic.jpg";
+import basicPostPic from "../images/downloadPic.jpg";
 import { ip, port } from "../../url";
 import pleaseLogInPic from "../images/pleaseLogin.gif";
+import { useHistory } from "react-router-dom";
 
 axios.defaults.withCredentials = true;
 
 const WritePage = ({ inventionId }) => {
+  const history = useHistory();
   //const [username, setUsername] = useState('');
   //const [email, setEmail] = useState('');
   const [text, setText] = useState("");
@@ -50,6 +52,13 @@ const WritePage = ({ inventionId }) => {
         //append 형태로 붙여주면 된다.
         .then((res) => {
           console.log("사진을 업로드 합니다.", res.data);
+          // const img = new File([blob], basicPostPic, { type: "image/jpeg" });
+          const file = srcToFile("client/src/components/images/SpannerLogo.png", "SpannerLogo.png", "image/png");
+          file.then((result) => {
+            setPostPic(result);
+          });
+
+          console.log("포스트 사진에 무엇이 있는지 확인", postPic);
           const formData = new FormData();
           formData.append("image", postPic);
           formData.append("postId", res.data.id);
@@ -59,16 +68,25 @@ const WritePage = ({ inventionId }) => {
               "Content-Type": "multipart/form-data",
             },
           });
+          history.go();
         });
     }
   };
-
+  const srcToFile = (src, fileName, mimeType) => {
+    return fetch(src)
+      .then(function (res) {
+        return res.arrayBuffer();
+      })
+      .then(function (buf) {
+        return new File([buf], fileName, { type: mimeType });
+      });
+  };
   // const onInventionChange = (e) => {
   //   setSelectedInvention(e.target.value);
   // };
 
   const onChangeFile = (e) => {
-    console.log("!!!!!!!!!!!!!!!!!!!!!!");
+    console.log("!!!!!!!!!!!!!!!!!!!!!!", e);
     e.preventDefault();
     let reader = new FileReader();
     let file = e.target.files[0];
@@ -76,6 +94,7 @@ const WritePage = ({ inventionId }) => {
       setPostPicView(reader.result);
     };
     reader.readAsDataURL(file);
+    console.log("1234123!!!!!!!!!!!!!!!!!!!!!!", file);
     setPostPic(file);
   };
 
@@ -94,7 +113,7 @@ const WritePage = ({ inventionId }) => {
           {/* inventionArea */}
           <div className="submitArea__inventionArea">
             {/* <사진노출> */}
-            <div>
+            <div className="WritePages__PicArea">
               <div className="WritePagesPicView">
                 <img className="WritePagesPicView__pic" src={postPicView} alt=""></img>
               </div>
