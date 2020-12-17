@@ -18,7 +18,7 @@ import MainInternet from "../Inventions/MainInternet";
 
 // 아래는 별 사진
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { ip, port, port_client } from "./../../url";
 import Fade from "react-reveal/Fade";
@@ -26,6 +26,9 @@ import Fade from "react-reveal/Fade";
 const MainPage = () => {
   const refreshToken = localStorage.getItem("refreshToken");
   const accessToken = localStorage.getItem("token");
+
+  // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  //const [mousePosition, setMousePosition] = useState("");
 
   useEffect(() => {
     console.log(accessToken);
@@ -37,9 +40,20 @@ const MainPage = () => {
     }
   });
 
+  const updateMousePosition = (e) => {
+    let w = window.innerWidth / 2;
+    let h = window.innerHeight / 2;
+    let mouseX = e.clientX;
+    let mouseY = e.clientY;
+    let depth3 = `${50 - (w - mouseX) * 0.03}% ${50 - (h - mouseY) * 0.03}%`;
+    let x = `${depth3}`;
+    const elem = document.querySelector(".MainPages__welcomePoint");
+    elem.style.backgroundPosition = x;
+  };
+
   return (
     <div className="MainPages">
-      <div className="MainPages__welcomePoint">
+      <div className="MainPages__welcomePoint" onMouseMove={updateMousePosition}>
         <div className="MainPages__welcomePointTextArea">
           <div className="MainPages__welcomePointText">Invention History</div>
           <div className="MainPages__welcomePointSubText">Experience the footsteps of an invention over time</div>
