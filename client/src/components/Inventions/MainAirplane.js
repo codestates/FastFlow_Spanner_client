@@ -15,8 +15,8 @@ const settings = {
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 3000
+  // autoplay: true,
+  // autoplaySpeed: 3000
 };
 
 const MainAirplane = () => {
@@ -49,8 +49,7 @@ const MainAirplane = () => {
               <a className="body__link" href="https://github.com/ryhyn123">One-arm Guy</a>  
             </ul>            
           </li>                    
-        </div>        
-        <Fade top fraction={1} duration={1000}>          
+        </div>                
           <div className="body__slider">
             <Slider {...settings} >
               <div className="slider-wrapper">
@@ -69,8 +68,7 @@ const MainAirplane = () => {
                 <img className="slider__img4" src={airplane_item4} alt=""></img>
               </div>              
             </Slider>
-          </div>        
-        </Fade>        
+          </div>                      
       </div>              
     </div>    
   );
