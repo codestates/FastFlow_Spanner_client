@@ -28,7 +28,7 @@ const MainPage = () => {
   const accessToken = localStorage.getItem("token");
 
   // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  //const [mousePosition, setMousePosition] = useState("");
+
 
   useEffect(() => {
     console.log(accessToken);
@@ -40,6 +40,7 @@ const MainPage = () => {
     }
   });
 
+
   const updateMousePosition = (e) => {
     let w = window.innerWidth / 2;
     let h = window.innerHeight / 2;
@@ -50,6 +51,7 @@ const MainPage = () => {
     const elem = document.querySelector(".MainPages__welcomePoint");
     elem.style.backgroundPosition = x;
   };
+
 
   return (
     <div className="MainPages">

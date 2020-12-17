@@ -89,7 +89,7 @@
     transform: translateZ(0) translateY(0);
   }
 }
-@media screen and (max-width: 385px) {
+@media screen and (max-width: 479px) {
   .MainWheels__text {
     top: 0;
   }

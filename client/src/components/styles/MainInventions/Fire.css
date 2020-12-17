@@ -92,7 +92,7 @@
   font-family: "Cormorant Garamond", serif;
 }
 
-@media screen and (max-width: 385px) {
+@media screen and (max-width: 479px) {
   .MainFires__interFirePic {
     height: 25%;
     width: 60%;

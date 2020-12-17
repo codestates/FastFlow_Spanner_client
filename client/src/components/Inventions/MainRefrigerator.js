@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
+import Fade from "react-reveal/Fade";
 import bananaImg from "./../images/Refrigerator/refrigerator_banana.png";
 import squishImg from "./../images/Refrigerator/refrigerator_squish.png";
 import verticalImg from "./../images/Refrigerator/refrigerator_vertical.gif";
@@ -21,23 +22,27 @@ const MainRefrigerator = () => {
   return (
     <div className="MainRefrigerators">
       <img className="MainRefrigerators__background" src={refrigerator_background}></img>
+      <Fade top fraction={0.5} duration={1000}>
       <div className="MainRefrigerators__title">Refrigerator</div>
+      </Fade>
       <div className="MainRefrigerators__body">
+      <Fade right fraction={0.5} duration={3000}>
         <div className="MainRefrigerator__guide">
-          <p>냉장고 속에 상세페이지 링크 있어요!</p>
-          <Link to="/Refrigerator" className="guide__text">
-            바로 가실려면 클릭
-        </Link>
+          <p>"TRY to find link in the fridge"</p>
+          <Link to="/Refrigerator" className="guide__link">
+            Click Me
+          </Link>
         </div>
+        </Fade>
         <div className="MainRefrigerators__grid">
           <div className="MainRefrigerators__grid__item">
             <div className="item1__indoor">
               <div className="item1__indoor_img-wrapper">
                 <img className="item1__indoor__img" src={bananaImg} alt=""></img>
-                <div className="item1__indoor__text"> 바나나 발견!</div>
+                <div className="item1__indoor__text"> Banana!</div>
               </div>
               <div className={isOpenDoor1 ? "doorOpen1" : "item1__outdoor"} onClick={() => { setIsOpenDoor1(!isOpenDoor1) }}>
-                <div className="outDoor1__text">냉장고 페이지입니다. <br></br>문 열어 보실래요?</div>
+                <div className="outDoor1__text">TRY <br></br>to open doors</div>
               </div>
             </div>
           </div>
@@ -45,7 +50,7 @@ const MainRefrigerator = () => {
             <div className="item2__indoor">
               <div className="item2__indoor_img-wrapper">
               <img className="item2__indoor__img" src={squishImg} alt=""></img>
-                <div className="item2__indoor__text"> 오징어를 언제 샀었지...</div>
+                <div className="item2__indoor__text"> Who bought this squish?</div>
               </div>
               <div className={isOpenDoor2 ? "doorOpen2" : "item2__outdoor"} onClick={() => { setIsOpenDoor2(!isOpenDoor2) }}>
                 <div className="outDoor2__text"></div>
@@ -81,7 +86,7 @@ const MainRefrigerator = () => {
             <div className="item6__indoor">
               <div className="item6__indoor_img-wrapper">
                 <Link to="/Refrigerator" className="img-wrapper__link-text">
-                  상세페이지
+                  Click Me
               </Link>
               </div>
               <div className={isOpenDoor6 ? "doorOpen6" : "item6__outdoor"} onClick={() => { setIsOpenDoor6(!isOpenDoor6) }}>

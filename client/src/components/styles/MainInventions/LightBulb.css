@@ -12,13 +12,14 @@
 }
 .body__title {
   position: absolute;
-  width: 100%;
   height: 10%;
-  top: 6%;
+  width: 100%;
   left: 10%;
-  z-index: 1;
-  color: #ffdd93;
-  font-size: 5vw;
+  top: 10%;
+  font-weight: 700;
+  font-size: 5vmax;
+  color: #ffdd93;  
+  z-index:1;
 }
 .title__switchBtn {
   position: absolute;
@@ -27,20 +28,51 @@
   left: -9%;
   top: -70%;
   cursor: pointer;
+  z-index:1;
 }
 .title__link {
   position: absolute;
-  top: 20%;
-  left: 25%;
-  color: #ffdd93;
-  font-size: 3vw;
+  left: 30%;
+  top: 50%;  
+  color: rgb(224, 116, 116);
+  text-decoration: none;  
+  font-size: 1.8vmax;
+  font-weight: 900;
+  background: linear-gradient(to right, rgb(230, 35, 93), rgb(240, 17, 110) 50%, rgb(255, 255, 255) 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 1000ms ease;
+  overflow: hidden;
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.1vmax;   
 }
-.title_icon-guide {
+.title__link:hover {
+  background-position: 0 100%;
+}
+@keyframes link {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.title__bulbClick__msg{
   position: absolute;
-  top: 100%;
-  left: -8%;
+  top: 0%;
+  left: -6%;
   color: red;
-  font-size: 2vw;
+  font-size: 1.8vmax;
+  font-weight: 700;
+  font-family: "Cormorant Garamond", serif;    
+  animation-name: blink-on;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 .body__background {
@@ -58,14 +90,7 @@
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
-@keyframes blink-off {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 0.2;
-  }
-}
+
 .background__texts-on {
   position: absolute;
   width: 100%;
@@ -77,19 +102,23 @@
 
 .text1 {
   position: absolute;
-  width: 25%;
+  width: 40%;
   top: 30%;
-  left: 10%;
+  left: 8%;
   color: #ffdd93;
-  font-size: 2vw;
+  font-size: 2vmax;
+  font-weight: 700;
+  font-family: "Cormorant Garamond", serif;  
 }
 .text2 {
   position: absolute;
   width: 25%;
   top: 65%;
-  left: 15%;
+  left: 20%;
   color: #ffdd93;
-  font-size: 2vw;
+  font-size: 2vmax;
+  font-weight: 700;
+  font-family: "Cormorant Garamond", serif;  
 }
 .text3-img {
   position: absolute;
@@ -106,8 +135,58 @@
   width: 35%;
   height: 25%;
   top: 55%;
-  left: 68%;
+  left: 71%;
   border-radius: 10%;
   color: #ffdd93;
-  font-size: 2vw;
+  font-size: 1.4vmax;
+  font-weight: 700;  
+}
+@keyframes blink-off {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.2;
+  }
+}
+@keyframes blink-on {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+@media screen and (max-width: 479px) {  
+  .title__switchBtn{
+    width: 20%;
+  }
+  .title__bulbClick__msg{
+    font-size: 22px;
+    left: -3%;
+  }
+  .title__text{
+    position:absolute;
+    left: 10%;
+  }
+  .title__link{
+    left: 70%;
+  }
+
+  .text1{
+    left: 4%;
+    font-size: 24px;
+  }
+  .text2{
+    width: 40%;
+    left: 6%;
+    font-size: 24px;
+  }
+  .text3{    
+    left: 70%;
+    width: 25%;
+    font-size: 16px;
+  }
 }

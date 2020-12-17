@@ -24,7 +24,7 @@ const Internet = () => {
     // inventionId 보내기
     setInventionId(1);
     // 댓글 작성
-    axios.get(ip + port + `/post/read/1`).then((res) => {
+    axios.get(ip + port + `/post/read/17`).then((res) => {
       console.log(res.data);
       let result = res.data;
       let newCommentData = [];

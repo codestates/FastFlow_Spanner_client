@@ -15,9 +15,9 @@
   position: absolute;
   top: 2%;
   left: 2%;
-  font-size: 5vw;
+  font-size: 5vmax;
   font-weight: 700;
-  color: #ff98f1;
+  color: #ff98f1;  
 }
 .MainInternets__desc {
   position: absolute;
@@ -25,25 +25,57 @@
   left: 4%;
   font-size: 2vw;
   font-weight: 700;
+  font-family: "Cormorant Garamond", serif;    
   color: #ff98f1;
+}
+.MainInternets__link {
+  position: absolute;
+  width: 30%;
+  height: 5%;
+  bottom: 85%;
+  left: 45%;
+  color: rgb(224, 116, 116);
+  text-decoration: none;  
+  font-size: 1.8vmax;
+  font-weight: 900;
+  background: linear-gradient(to right, rgb(230, 35, 93), rgb(240, 17, 110) 50%, rgb(255, 255, 255) 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 1000ms ease;
+  overflow: hidden;
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.1vmax; 
+}
+.MainInternets__link:hover {
+  background-position: 0 100%;
+}
+@keyframes link {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .MainInternets__game {
-  position: absolute;
-  width: 50%;
-  height: 50%;
+  position: absolute;  
+  width: 70%;
+  height: 42vh;
   top: 30%;
-  left: 25%;
-  border: #ff98f1 solid 10px;
+  left: 15%;
+  border: #ff98f1 solid 5px;
 }
 
-.MainInternets__link {
-  position: absolute;
-  width: 50%;
-  height: 10%;
-  top: 38%;
-  left: 25%;
-  font-size: 2vw;
-  font-weight: 700;
-  color: #ff98f1;
+@media screen and (max-width: 479px) {
+  .MainInternets__desc{
+    font-size: 5vw;
+  }
+  .MainInternets__game{
+    left: 0%;
+    width: 100%;
+  }
 }

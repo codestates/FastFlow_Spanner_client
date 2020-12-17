@@ -1,51 +1,71 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import bluesky from "./../images/Airplane/airplane-bluesky.jpg";
-import earth from "./../images/Airplane/airplane-earth.jpg";
-import rocket from "./../images/Airplane/airplane-rocket.png";
-import airplaneImg1 from "./../images/Airplane/airplane1.png";
-import airplaneImg2 from "./../images/Airplane/airplane2.png";
-import airplaneImg3 from "./../images/Airplane/airplane3.png";
-import airplaneImg4 from "./../images/Airplane/airplane4.png";
+import Slider from "react-slick";
+import Fade from "react-reveal/Fade";
+import airplane_background from "./../images/Airplane/airplane_background.jpeg";
+import airplane_item1 from "./../images/Airplane/airplane_item1.JPG";
+import airplane_item2 from "./../images/Airplane/airplane_item2.JPG";
+import airplane_item3 from "./../images/Airplane/airplane_item3.png";
+import airplane_item4 from "./../images/Airplane/airplane_item4.JPG";
+import airplane_item5 from "./../images/Airplane/airplane_item5.JPG";
 
+
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 3000
+};
 
 const MainAirplane = () => {
-  const [img1, setImg1] = useState(false);
-  const [img2, setImg2] = useState(false);
-  const [img3, setImg3] = useState(false);
-  const [img4, setImg4] = useState(false);
-
-
-  const aniTrigger = () => {
-    // console.log(window.scrollY);
-    if (window.scrollY >= 15500 && window.scrollY <= 16000) {
-      setImg1(true);
-      setImg2(true);
-      setImg3(true);
-      setImg4(true);
-    }
-  }
-
-  window.addEventListener("scroll", aniTrigger);
 
   return (
     <div className="MainAirplanes">
-      <div className="MainAirplanes__title">
-        Airplane
-      </div>
-      <div className="MainAirplanes__body">
-        <img className={img1 ? "body__img1" : null} src= {img1 ? airplaneImg1 : null} alt=""></img>
-        <img className={img2 ? "body__img2" : null} src= {img2 ? airplaneImg2 : null} alt=""></img>
-        <img className={img3 ? "body__img3-background" : null} src= {img3 ? bluesky : null}></img>
-        <img className={img3 ? "body__img3-airliner" : null} src= {img3 ? airplaneImg3 : null}></img>
-        <img className={img3 ? "body__img3-jet" : null} src= {img3 ? airplaneImg4 : null}></img>
-        <img className={img4 ? "body__img4-background" : null} src= {img4 ? earth : null}></img>
-        <img className={img4 ? "body__img4-rocket" : null} src= {img4 ? rocket : null}></img>
-          <Link to="/Airplane" className={img4 ? "rocket__link" : null}>
-            종이비행기부터 로켓까지, <br></br>
-            인류를 날려보낸 이야기!<br></br>
-          </Link>
-      </div>
+      <Fade top fraction={0.5} duration={1000}>
+        <div className="MainAirplanes__title">
+          Airplane
+        </div>        
+      </Fade>      
+      <div className="MainAirplanes__body">      
+        <img className="body__background" src={airplane_background} alt=""></img>
+        <Link to="/Airplane" className="Airplanes__link">
+          Click Me
+        </Link>
+        <div className="body__links">
+          Links
+          <li>
+            <ul>
+              <a className="body__link" href="https://github.com/yumboy8747">Effel Tower Guy</a>
+            </ul>
+            <ul>
+              <a className="body__link" href="https://github.com/CJ0823">Running Guy</a>  
+            </ul>
+            <ul>
+              <a className="body__link" href="https://github.com/doi-h">One-leg Guy</a>  
+            </ul>
+            <ul>
+              <a className="body__link" href="https://github.com/ryhyn123">One-arm Guy</a>  
+            </ul>
+            
+          </li>          
+          
+        </div>
+        
+
+        <Fade top fraction={1} duration={1000}>          
+          <div className="body__slider">
+            <Slider {...settings} >        
+                <img className="slider__img1" src={airplane_item1} alt=""></img>              
+                <img className="slider__img2" src={airplane_item2} alt=""></img>
+                <img className="slider__img3" src={airplane_item3} alt=""></img>
+                <img className="slider__img4" src={airplane_item4} alt=""></img>
+                <img className="slider__img5" src={airplane_item5} alt=""></img>
+            </Slider>
+          </div>        
+        </Fade>        
+      </div>              
     </div>    
   );
 };
