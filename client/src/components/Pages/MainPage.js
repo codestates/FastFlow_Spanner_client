@@ -18,7 +18,7 @@ import MainInternet from "../Inventions/MainInternet";
 
 // 아래는 별 사진
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { ip, port, port_client } from "./../../url";
 import Fade from "react-reveal/Fade";
@@ -26,6 +26,8 @@ import Fade from "react-reveal/Fade";
 const MainPage = () => {
   const refreshToken = localStorage.getItem("refreshToken");
   const accessToken = localStorage.getItem("token");
+
+  // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     console.log(accessToken);
@@ -37,6 +39,12 @@ const MainPage = () => {
     }
   });
 
+  // const updateMousePosition = (e) => {
+  //   e.persist();
+  //   setMousePosition((mousePosition) => ({ ...mousePosition, x: e.clientX, y: e.clientY }));
+  // };
+
+  // onMouseMove={updateMousePosition} style={{ backgroundPositionX: `${mousePosition.x}px`, backgroundPositionY: `${mousePosition.y}px` }}
   return (
     <div className="MainPages">
       <div className="MainPages__welcomePoint">
