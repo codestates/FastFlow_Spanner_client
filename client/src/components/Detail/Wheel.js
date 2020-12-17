@@ -92,6 +92,7 @@ const Wheel = () => {
     axios.delete(ip + port + `/post/delete`, {
       data: {
         postId: val,
+        inventionId: inventionId,
       },
     });
   };
@@ -139,7 +140,6 @@ const Wheel = () => {
           ></iframe>
         </div>
         <div className="Details__textArea">
-          <div className="Details__textTitle">Detail</div>
           <div className="Details__text">
             <div className="Details__text__birth">탄생 배경</div>
             <p>

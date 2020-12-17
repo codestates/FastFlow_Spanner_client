@@ -2,16 +2,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(
-    to right,
-    rgba(20,20,20,0) 10%,
-    rgba(20,20,20,0.2) 30%,
-    rgba(20,20,20,0.4) 60%,
-    rgba(20,20,20,0.6) 100%
-  ), url("../../../TestPic/glassesBG_blur.jpg");
+  background: linear-gradient(to right, rgba(20, 20, 20, 0) 10%, rgba(20, 20, 20, 0.2) 30%, rgba(20, 20, 20, 0.4) 60%, rgba(20, 20, 20, 0.6) 100%), url("../../../TestPic/glassesBG_blur.jpg");
   background-repeat: no-repeat;
   background-size: 1835px;
-  min-height: 1000px;
+  width: 100%;
+  height: 100%;
   position: relative;
 }
 
@@ -38,7 +33,7 @@
   left: 123px;
   width: 670px;
   background: url("../../../TestPic/glassesBG.jpg") no-repeat;
-  background-size: 277%;  
+  background-size: 277%;
   background-position: -128px -190px;
   border: 5px solid rgb(212, 203, 146);
   height: 670px;
@@ -56,7 +51,7 @@
   left: 123px;
   width: 670px;
   background: url("../../../TestPic/glassesBG.jpg") no-repeat;
-  background-size: 277%;  
+  background-size: 277%;
   background-position: -128px -900px;
   border: 5px solid rgb(212, 203, 146);
   min-height: 670px;
@@ -74,7 +69,7 @@
   left: 1040px;
   width: 670px;
   background: url("../../../TestPic/glassesBG.jpg") no-repeat;
-  background-size: 277%;  
+  background-size: 277%;
   background-position: -1035px -190px;
   border: 5px solid rgb(212, 203, 146);
   height: 670px;
@@ -92,7 +87,7 @@
   left: 1040px;
   width: 670px;
   background: url("../../../TestPic/glassesBG.jpg") no-repeat;
-  background-size: 277%;  
+  background-size: 277%;
   background-position: -1035px -900px;
   border: 5px solid rgb(212, 203, 146);
   min-height: 670px;
@@ -144,14 +139,12 @@
   font-size: 50px;
 }
 
-a
-{
-	color: black;
-	
-	transition: color 0.25s ease;
+a {
+  color: black;
+
+  transition: color 0.25s ease;
 }
 
-a:hover
-{
-	color: #fff;
+a:hover {
+  color: #fff;
 }

@@ -92,6 +92,7 @@ const Glasses = () => {
     axios.delete(ip + port + `/post/delete`, {
       data: {
         postId: val,
+        inventionId: inventionId,
       },
     });
   };
@@ -129,7 +130,6 @@ const Glasses = () => {
         </div>
         <div className="Details__video"></div>
         <div className="Details__textArea">
-          <div className="Details__textTitle">Detail</div>
           <div className="Details__text">
             <p>안경은 눈의 굴절 이상을 보정하거나, 눈을 보호하거나, 몸을 치장하기 위한 기구이다. 안경은 안경테, 안경알로 구성되어 있다. 안경테의 경우는 사람마다 기호에 따른 차이가 있고 안경알은 사람의 시력이나 눈의 이상 정도에 따라서 다르다. 안경은 안경테가 없는 소프트렌즈와 비교될 수 있는데 안경테가 없이 눈알에 직접 착용한다는 점만 다르고 시력을 교정한다는 큰 의미로서는 같다.
 

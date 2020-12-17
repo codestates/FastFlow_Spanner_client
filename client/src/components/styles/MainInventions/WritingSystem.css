@@ -1,29 +1,41 @@
 .MainWritingSystemss {
-  background-color: black;
+  background-color: #f5f3ec;
   width: 100%;
-}
-.MainWritingSystems {
-  background-image: url("../../images/MainBackGound/WritingSystemBackGround.jpg");
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover;
-  min-height: 1000px;
+  height: 100%;
   position: relative;
-  opacity: 0;
-  z-index: 1;
+}
+.MainWritingSystems__mesopotamia {
+  top: 10%;
+  position: absolute;
+  height: 76%;
   width: 100%;
+  left: 0;
 }
 
-@keyframes appearBack {
-  0% {
-    opacity: 0;
+.MainWritingSystems__uruk {
+  position: absolute;
+  top: 78%;
+  width: 25.6%;
+  height: 60%;
+  right: 20%;
+  z-index: 1;
+}
+
+@media screen and (max-width: 479px) {
+  .MainWritingSystems__mesopotamia {
+    height: 40%;
+    width: 100%;
+    top: 0;
   }
-  100% {
-    opacity: 1;
+  .MainWritingSystems__uruk {
+    height: 48%;
+    width: 62%;
+    top: 37%;
+    right: 4%;
   }
 }
 
-.MainWritingSystems__text {
+/* .MainWritingSystems__text {
   color: rgb(29, 20, 5);
   font-size: 59px;
   font-weight: 800;
@@ -36,16 +48,7 @@
   z-index: 1;
 }
 
-.MainWritingSystems__textBodyPic {
-  position: absolute;
-  width: 65%;
-  right: 7%;
-  background-image: url("../../images/WritingSystem/AcientPaper.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 100%;
-  animation: revealBack 2s 1s forwards;
-}
+
 
 .MainWritingSystems__BCtext {
   position: absolute;
@@ -59,18 +62,7 @@
   font-family: "Homemade Apple", cursive;
 }
 
-.MainWritingSystems__BCtext::before {
-  content: "B.C 3,500";
-  white-space: pre;
-  top: 0;
-  left: 0;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  color: rgb(29, 20, 5);
-  text-shadow: 1px 1px 10px rgb(44, 42, 38);
-  overflow: hidden;
-}
+
 
 .MainWritingSystems__textBody {
   position: absolute;
@@ -86,30 +78,8 @@
   width: 100%;
 }
 
-.MainWritingSystems__textBody::before {
-  content: "문자의 발명과 함께 인류의 지식을 \A형태가 있는 방식으로 전할 수 있게 \A되었다.";
-  white-space: pre;
-  top: 0;
-  left: 0;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  color: rgb(29, 20, 5);
-  text-shadow: 1px 1px 10px rgb(44, 42, 38);
-  overflow: hidden;
-}
 
-@keyframes typing {
-  0% {
-    width: 0%;
-  }
-  50% {
-    width: 50%;
-  }
-  100% {
-    width: 100%;
-  }
-}
+
 
 .MainWritingSystems__link {
   position: absolute;
@@ -145,4 +115,4 @@
 
 .MainWritingSystems__link:hover {
   background-position: 0 100%;
-}
+} */

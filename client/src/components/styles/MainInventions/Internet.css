@@ -1,49 +1,49 @@
 .MainInternets {
-  background-color:rgb(0, 0, 0);  
+  background-color: rgb(0, 0, 0);
   background-size: cover;
-  min-height: 1000px;
+  width: 100%;
+  height: 100%;
   position: relative;
 }
-.MainInternets__background{
+.MainInternets__background {
   position: absolute;
   width: 100%;
   height: 100%;
   opacity: 50%;
 }
-.MainInternets__title{
-  position:absolute;
+.MainInternets__title {
+  position: absolute;
   top: 2%;
   left: 2%;
-  font-size:5vw;
-  font-weight:700;
-  color:#ff98f1;  
+  font-size: 5vw;
+  font-weight: 700;
+  color: #ff98f1;
 }
-.MainInternets__desc{
-  position:absolute;
+.MainInternets__desc {
+  position: absolute;
   top: 16%;
-  left: 4%;   
-  font-size:2vw;
-  font-weight:700;
-  color:#ff98f1; 
+  left: 4%;
+  font-size: 2vw;
+  font-weight: 700;
+  color: #ff98f1;
 }
 
 .MainInternets__game {
-  position: absolute;    
+  position: absolute;
   width: 50%;
   height: 50%;
   top: 30%;
-  left:25%;
-  border: #ff98f1 solid 10px;  
+  left: 25%;
+  border: #ff98f1 solid 10px;
 }
 
-
-.MainInternets__link{ 
+.MainInternets__link {
   position: absolute;
   width: 50%;
   height: 10%;
   top: 38%;
   left: 25%;
   font-size: 2vw;
-  font-weight:700;
-  color:#ff98f1; 
+  font-weight: 700;
+  color: #ff98f1;
 }

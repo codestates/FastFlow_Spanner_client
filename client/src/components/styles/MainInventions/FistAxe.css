@@ -1,103 +1,48 @@
 .MainFistAxess {
-  background-color: black;
+  background-color: #f5f3ec;
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
 .MainFistAxes {
-  background-image: url("../../images/MainBackGound/FistAxeBackGround.jpg");
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover;
-  min-height: 1000px;
-  position: relative;
+  width: 100%;
+  height: 100%;
   transition-property: opacity;
   transition-duration: 2s;
   transition-timing-function: ease-in;
+  position: absolute;
 }
 
 .MainFistAxes__text {
-  color: rgb(62, 156, 82);
-  text-shadow: 1px 1px 15px black;
-  font-size: 80px;
-  font-weight: 800;
+  color: rgb(0, 0, 0);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 5vmax;
+  font-weight: 400;
   position: absolute;
-  width: 100%;
-  text-align: center;
-  margin-top: 130px;
-  font-family: "Ranchers", cursive;
-  letter-spacing: 10px;
+  width: 17%;
+  left: 26%;
+  margin-top: 7%;
 }
 
-.MainFistAxes__FistAxePic {
-  height: 350px;
+.MainFistAxes__homoAcientPic {
   position: absolute;
-  margin-top: 340px;
-  left: 0%;
-}
-
-@keyframes attack {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  10% {
-    transform: translate3d(50px, -130px, 0);
-  }
-  20% {
-    transform: translate3d(100px, 70px, 0);
-  }
-  30% {
-    transform: translate3d(150px, -130px, 0);
-  }
-  40% {
-    transform: translate3d(200px, 70px, 0);
-  }
-  50% {
-    transform: translate3d(250px, -130px, 0);
-  }
-  60% {
-    transform: translate3d(300px, 70px, 0);
-  }
-  70% {
-    transform: translate3d(350px, -130px, 0);
-  }
-  80% {
-    transform: translate3d(380px, 70px, 0);
-  }
-  90% {
-    transform: translate3d(420px, -130px, 0);
-  }
-  100% {
-    transform: translate3d(450px, -30px, 0);
-  }
-}
-
-.MainFistAxes__RunManPic {
-  height: 220px;
-  position: absolute;
-  margin-top: 500px;
-  margin-left: 500px;
-}
-
-@keyframes runMan {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(300%, 0, 0);
-    visibility: hidden;
-  }
+  height: 50%;
+  width: 14.5%;
+  top: 22%;
+  left: 8.3%;
 }
 
 .MainFistAxes__link {
   position: absolute;
   bottom: 0;
-  margin-bottom: 400px;
+  top: 55%;
   color: rgb(224, 116, 116);
   text-decoration: none;
-  right: 20.5%;
-  font-size: 30px;
+  left: 28.3%;
+  font-size: 1.8vmax;
   font-weight: 900;
-  text-shadow: 1px 1px 7px rgb(219, 206, 133);
-  background: linear-gradient(to right, rgb(230, 35, 93), rgb(240, 17, 110) 50%, rgb(250, 250, 250) 50%);
+  background: linear-gradient(to right, rgb(230, 35, 93), rgb(240, 17, 110) 50%, rgb(5, 5, 5) 50%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -105,8 +50,8 @@
   background-position: 100%;
   transition: background-position 1000ms ease;
   overflow: hidden;
-  font-family: "Ranchers", cursive;
-  letter-spacing: 4px;
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.1vmax;
 }
 
 .MainFistAxes__link:hover {
@@ -124,35 +69,76 @@
 
 .MainFistAxes__BCtext {
   position: absolute;
-  right: 29.8%;
-  top: 330px;
-  font-size: 50px;
-  font-weight: 700;
-  color: rgb(102, 189, 80);
-  text-shadow: 1px 1px 10px black;
-  font-family: "Ranchers", cursive;
-  letter-spacing: 4px;
-}
+  left: 26.2%;
+  top: 28%;
+  font-size: 2.3vmax;
+  font-weight: 500;
+  color: rgb(0, 0, 0);
 
-@keyframes DownText {
-  0% {
-    transform: translate3d(0, -100px, 0);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
+  font-family: "Cormorant Garamond", serif;
 }
 
 .MainFistAxes__textBody {
   position: absolute;
-  color: rgb(210, 226, 192);
-  text-shadow: 1px 1px 10px black;
-  font-weight: 600;
-  font-size: 29px;
-  right: 16.8%;
-  top: 395px;
-  font-family: "Yeon Sung", cursive;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  font-size: 1.4vmax;
+  left: 26.5%;
+  top: 36%;
+  font-family: "Cormorant Garamond", serif;
+  line-height: 2.1vmax;
+}
+
+.MainFistAxes__FistAxePicOne {
+  position: absolute;
+  width: 17%;
+  height: 43%;
+
+  z-index: 1;
+  bottom: 5%;
+  right: 17.8%;
+}
+.MainFistAxes__FistAxePicTwo {
+  position: absolute;
+  height: 43%;
+  width: 17%;
+  bottom: 31%;
+  right: 5%;
+}
+
+@media screen and (max-width: 479px) {
+  .MainFistAxes__homoAcientPic {
+    display: none;
+  }
+
+  .MainFistAxes__text {
+    width: 40%;
+    left: 7%;
+    top: 7%;
+  }
+
+  .MainFistAxes__BCtext {
+    left: 9%;
+  }
+
+  .MainFistAxes__textBody {
+    left: 9%;
+    width: 50%;
+  }
+
+  .MainFistAxes__FistAxePicOne,
+  .MainFistAxes__FistAxePicTwo {
+    height: 30%;
+    width: 30%;
+  }
+  .MainFistAxes__FistAxePicOne {
+    top: 51%;
+  }
+  .MainFistAxes__FistAxePicTwo {
+    top: 30%;
+  }
+
+  .MainFistAxes__link {
+    top: 60%;
+  }
 }

@@ -92,6 +92,7 @@ const SteamEngine = () => {
     axios.delete(ip + port + `/post/delete`, {
       data: {
         postId: val,
+        inventionId: inventionId,
       },
     });
   };
@@ -129,7 +130,6 @@ const SteamEngine = () => {
         </div>
         <div className="Details__video"></div>
         <div className="Details__textArea">
-          <div className="Details__textTitle">Detail</div>
           <div className="Details__text">
             <p>증기기관은 외연 열기관으로, 수증기의 열에너지를 기계적인 일로 바꾸는 장치이다. 1705년 영국의 발명가 토머스 뉴커먼이 발명했고, 1769년에 제임스 와트가 개량했다.
 

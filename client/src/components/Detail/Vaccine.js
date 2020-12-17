@@ -92,6 +92,7 @@ const Vaccine = () => {
     axios.delete(ip + port + `/post/delete`, {
       data: {
         postId: val,
+        inventionId: inventionId,
       },
     });
   };
@@ -129,7 +130,6 @@ const Vaccine = () => {
         </div>
         <div className="Details__video"></div>
         <div className="Details__textArea">
-          <div className="Details__textTitle">Detail</div>
           <div className="Details__text">
             <p>백신 또는 예방주사 는 항원, 즉 병원체를 약하게 만들어 인체에 주입하여 항체를 형성하게 하여 그 질병에 저항하는 후천 면역이 생기도록 하는 의약품이다. 병을 예방하는 목적으로 백신을 주사하는 것을 예방 접종 이라고 한다.
 

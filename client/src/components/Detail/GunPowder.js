@@ -92,6 +92,7 @@ const GunPowder = () => {
     axios.delete(ip + port + `/post/delete`, {
       data: {
         postId: val,
+        inventionId: inventionId,
       },
     });
   };
@@ -129,7 +130,6 @@ const GunPowder = () => {
         </div>
         <div className="Details__video"></div>
         <div className="Details__textArea">
-          <div className="Details__textTitle">Detail</div>
           <div className="Details__text">
             <p>화약은 황, 숯과 초석이라 불리는 질산칼륨의 혼합물이다. 연소될 때 많은 양의 기체가 발생하며 급격히 팽창하여 화기의 탄두를 발사하는 추진체로 사용된다. 불꽃놀이의 폭발에도 사용된다. 중국에서 개발 되었다. 9세기부터 중국인들은 초석, 유황, 숯가루 등을 가지고 화약을 만들었다. 마찬가지로 최초의 화기 역시 중국인들이 11세기에 만들었지만, 다만 연대가 명확한 최초의 중국 화기는 1356년에 나타났다.
             </p>

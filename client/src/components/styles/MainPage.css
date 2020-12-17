@@ -1,29 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+
+.MainPages {
+  height: 100%;
+  width: 100%;
+  display: block;
+  padding-top: 100px;
+}
+
 .MainPages__welcomePoint {
-  background-image: url("../images/MainPage/WelcomePoint.gif");
+  background-image: url("../images/MainPage/Museum.jpg");
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
-  min-height: 1000px;
   position: relative;
+  width: 100%;
+  height: 100%;
+  transform: scale(1);
+  transition: background-position 0.25s;
 }
 
 .MainPages__welcomePointText {
-  color: #f3ede1;
-  font-size: 50px;
+  color: #000000;
+  font-size: 3.5vmax;
   font-weight: 900;
   position: absolute;
   width: 100%;
   text-align: center;
-  margin-top: 450px;
+  margin-top: 11%;
   text-shadow: 0px 0px 20px white;
-  animation: appearTitle 3s cubic-bezier(0.215, 0.61, 0.355, 1) both, DisappearTitle 0.3s 5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: appearTitle 3s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.1em;
+}
+
+.MainPages__welcomePointSubText {
+  color: #000000;
+  font-size: 1.7vmax;
+  font-weight: 500;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  margin-top: 17%;
+  margin-left: 0.8%;
+  text-shadow: 0px 0px 20px white;
+  letter-spacing: 0.1em;
+  font-family: "Cormorant Garamond", serif;
+  animation: appearTitle 3s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
 }
 
 @keyframes appearTitle {
   0% {
-    letter-spacing: 1em;
-    -webkit-transform: translateZ(400px);
-    transform: translateZ(400px);
+    letter-spacing: 0.7em;
+    -webkit-transform: translateZ(300px);
+    transform: translateZ(300px);
     opacity: 0;
   }
   40% {
@@ -36,20 +67,19 @@
   }
 }
 
-@keyframes DisappearTitle {
+@keyframes appearTitleM {
   0% {
+    -webkit-transform: translateZ(300px);
+    transform: translateZ(300px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     opacity: 1;
-  }
-  60% {
-    opacity: 1;
-  }
-  100% {
-    letter-spacing: -0.5em;
-    -webkit-transform: translateZ(-500px);
-    transform: translateZ(-500px);
-    opacity: 0;
   }
 }
 
@@ -70,134 +100,37 @@
   margin-top: 430px;
 }
 
-.MainPages__starPic {
-  position: absolute;
-  top: 490px;
-  left: 48.8%;
-  opacity: 0;
-  animation: appearStar 3s 5.5s forwards;
-}
-
-@keyframes appearStar {
-  0% {
-    opacity: 1;
-    transform: rotate(720deg);
-  }
-  100% {
-    opacity: 0;
-    transform: rotate(1440deg) scale(-2, -2);
-  }
-}
-
 .MainPages__ScrollSign {
   position: absolute;
-  color: white;
-  bottom: 20%;
-  font-size: 60px;
-  font-weight: 900;
-  left: 45%;
-  animation: ChangeColor 1s infinite;
-  text-shadow: 0px 0px 20px white;
-}
-
-@keyframes ChangeColor {
-  0% {
-    background: linear-gradient(to right, #ee4542, #5182ca);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  20% {
-    background: linear-gradient(to right, #920be0, #e718c5);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  40% {
-    background: linear-gradient(to right, #0ed186, #b8e70e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  60% {
-    background: linear-gradient(to right, #e49492, #683f79);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  80% {
-    background: linear-gradient(to right, #79f029, #b10808);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  100% {
-    background: linear-gradient(to right, #ee6f06, #e2ba08);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-}
-
-.MainPages__underArrow {
-  position: absolute;
-  padding: 12px;
-  margin-bottom: 6px;
-  height: 24px;
-  width: 100px;
-  left: 47.1%;
-  bottom: 14.3%;
-}
-.MainPages__underArrow:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 51%;
-  background: rgb(66, 66, 66);
-  transform: skew(0deg, 30deg);
-}
-.MainPages__underArrow:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 50%;
-  background: rgb(66, 66, 66);
-  transform: skew(0deg, -30deg);
-}
-
-.MainPages__secondUnderArrow {
-  position: absolute;
-  padding: 12px;
-  margin-bottom: 6px;
-  height: 24px;
-  width: 100px;
-  left: 47.1%;
+  color: rgb(78, 76, 76);
   bottom: 11%;
-}
-.MainPages__secondUnderArrow:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 51%;
-  background: rgb(46, 45, 45);
-  transform: skew(0deg, 30deg);
-}
-.MainPages__secondUnderArrow:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 50%;
-  background: rgb(46, 45, 45);
-  transform: skew(0deg, -30deg);
+  font-size: 2.3vmax;
+  font-weight: 700;
+  left: 45.6%;
+  text-shadow: 0px 0px 20px white;
+  font-family: "Cormorant Garamond", serif;
+  background-color: rgba(255, 255, 247, 0.479);
+  border-radius: 5px;
+  width: 9%;
+  height: 6.2%;
+  text-align: center;
 }
 
-@keyframes twinkle {
-  0% {
-    visibility: hidden;
+@media screen and (max-width: 479px) {
+  .MainPages__welcomePointText {
+    top: 13%;
+    animation: appearTitleM 3s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
   }
-  100% {
-    visibility: visible;
+
+  .MainPages__welcomePointSubText {
+    top: 20%;
+    animation: appearTitleM 3s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  }
+
+  .MainPages__ScrollSign {
+    width: 15%;
+    height: 4%;
+    margin-left: -12px;
+    bottom: 27%;
   }
 }

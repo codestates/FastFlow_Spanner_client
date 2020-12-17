@@ -92,6 +92,7 @@ const Compass = () => {
     axios.delete(ip + port + `/post/delete`, {
       data: {
         postId: val,
+        inventionId: inventionId,
       },
     });
   };
@@ -129,7 +130,6 @@ const Compass = () => {
         </div>
         <div className="Details__video"></div>
         <div className="Details__textArea">
-          <div className="Details__textTitle">Detail</div>
           <div className="Details__text">
             <p>나침반은 항공이나 항해 등에서 방향을 알기 위해 쓰는 기구이다. 지남침이라고도 한다. 자석이 지구의 자기장에 정렬되는 것을 이용한 자기나침반과 지구의 자전축을 검출하는 자이로스코프를 이용한 전륜나침반, 그리고 인공위성의 무선전파를 이용하는 GPS 나침반 3종류가 있다.
             </p>

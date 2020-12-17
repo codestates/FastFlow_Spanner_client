@@ -92,6 +92,7 @@ const Clock = () => {
     axios.delete(ip + port + `/post/delete`, {
       data: {
         postId: val,
+        inventionId: inventionId,
       },
     });
   };
@@ -129,7 +130,6 @@ const Clock = () => {
         </div>
         <div className="Details__video"></div>
         <div className="Details__textArea">
-          <div className="Details__textTitle">Detail</div>
           <div className="Details__text">
             <p>
             시계는 시간을 나타내거나 시간을 재는 기계나 장치이다. 시계에는 자연적이나 기계로 움직이는 것과 건전지 등을 넣어서 움직이는 시계 등이 있으며, 일상적으로는 벽걸이시계, 손목시계, 탁상시계 등이 많이 사용된다. 이외에도 시계에는 괘종시계, 모래시계, 물시계, 해시계, 알람시계 등이 있다. 현재 가장 많이 사용되고 있는 시계는 디지털 시계이다.

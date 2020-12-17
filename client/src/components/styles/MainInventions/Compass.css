@@ -3,7 +3,7 @@
   background-repeat: no-repeat;
   background-position: top center;
   background-size: 1835px;
-  min-height: 1000px;
+  visibility: hidden;
   position: relative;
 }
 
@@ -56,9 +56,15 @@
 }
 
 @keyframes twinkle {
-  0% {opacity:0;}
-  50% {opacity:1;}
-  100% {opacity:0;}
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .mainCompass__container {
