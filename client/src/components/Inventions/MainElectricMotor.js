@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Fade from "react-reveal/Fade";
 import Draggable from "react-draggable";
 import experimentImg from "./../images/ElectricMotor/electricmotor-module-changed.jpg";
+
 import electricmotor_usage1 from "./../images/ElectricMotor/electricmotor_usage1.png";
 import electricmotor_usage2 from "./../images/ElectricMotor/electricmotor_usage2.png";
 import electricmotor_usage3 from "./../images/ElectricMotor/electricmotor_usage3.png";
@@ -11,6 +12,7 @@ import electricmotor_usage5 from "./../images/ElectricMotor/electricmotor_usage5
 import electricmotor_usage6 from "./../images/ElectricMotor/electricmotor_usage6.png";
 import electricmotor_usage7 from "./../images/ElectricMotor/electricmotor_usage7.png";
 import electricmotor_usage8 from "./../images/ElectricMotor/electricmotor_usage8.png";
+
 
 const MainElectricMotor = () => {
   const [isDragHovered, setIsDragHovered] = useState(false);
@@ -21,22 +23,22 @@ const MainElectricMotor = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
   };
 
   useEffect(() => {
     // console.log(`------------`)
     // console.log(`linetouch===${isLineTouched}`)
     // console.log(`draghover===${isDragHovered}`)
-    // console.log(`lightcondition===${lightCondition}`)    
+    // console.log(`lightcondition===${lightCondition}`)
     if (isLineTouched && !isDragHovered) {
-      setLightCondition(true)
+      setLightCondition(true);
     } else {
       setTimeout(() => {
-        setLightCondition(false)
-      }, 500)
+        setLightCondition(false);
+      }, 500);
     }
-  }, [isLineTouched, isDragHovered])
+  }, [isLineTouched, isDragHovered]);
 
   return (
     <div className="MainElectricMotors">
@@ -99,6 +101,7 @@ const MainElectricMotor = () => {
         </div>
       </div>  
       </Fade>    
+
     </div>
   );
 };

@@ -92,6 +92,7 @@ const Condom = () => {
     axios.delete(ip + port + `/post/delete`, {
       data: {
         postId: val,
+        inventionId: inventionId,
       },
     });
   };
@@ -133,13 +134,10 @@ const Condom = () => {
             width="1280"
             height="720"
             src="https://www.youtube.com/embed/qbbY6PE8W5g"
-            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
           ></iframe>
         </div>
         <div className="Details__textArea">
-          <div className="Details__textTitle">Detail</div>
           <div className="Details__text">
             <div className="Details__text__birth">탄생 배경</div>
             <p>

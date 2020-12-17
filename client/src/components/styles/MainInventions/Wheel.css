@@ -89,3 +89,24 @@
     transform: translateZ(0) translateY(0);
   }
 }
+@media screen and (max-width: 479px) {
+  .MainWheels__text {
+    top: 0;
+  }
+  .MainWheels__BCtext {
+    top: 9.4%;
+    left: 23%;
+  }
+  .MainWheels__textBody {
+    top: 16%;
+  }
+  .MainWheels__link {
+    top: 30%;
+    left: 60%;
+  }
+  .MainWheels__WheelPic {
+    height: 33%;
+    top: 34%;
+    left: 3%;
+  }
+}
