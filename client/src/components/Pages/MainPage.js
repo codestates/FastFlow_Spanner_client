@@ -16,7 +16,8 @@ import MainLightBulb from "../Inventions/MainLightBulb";
 import MainAirplane from "../Inventions/MainAirplane";
 import MainInternet from "../Inventions/MainInternet";
 
-// 아래는 별 사진
+// 아래는 마우스 사진
+import ScrollMouse from "../images/MainPage/Scroll.gif";
 
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -29,7 +30,6 @@ const MainPage = () => {
 
   // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-
   useEffect(() => {
     console.log(accessToken);
     if (refreshToken && !accessToken) {
@@ -39,7 +39,6 @@ const MainPage = () => {
       });
     }
   });
-
 
   const updateMousePosition = (e) => {
     let w = window.innerWidth / 2;
@@ -52,7 +51,6 @@ const MainPage = () => {
     elem.style.backgroundPosition = x;
   };
 
-
   return (
     <div className="MainPages">
       <div className="MainPages__welcomePoint" onMouseMove={updateMousePosition}>
@@ -62,7 +60,7 @@ const MainPage = () => {
         </div>
         <div className="MainPages__ScrollSignArea">
           <Fade top fraction={0.2} duration={3000}>
-            <span className="MainPages__ScrollSign">Scroll</span>
+            <img className="MainPages__ScrollMouse" src={ScrollMouse} />
           </Fade>
         </div>
       </div>

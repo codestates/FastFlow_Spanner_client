@@ -101,20 +101,18 @@
   margin-top: 430px;
 }
 
-.MainPages__ScrollSign {
+/* .MainPages__ScrollSign {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+} */
+
+.MainPages__ScrollMouse {
   position: absolute;
-  color: rgb(78, 76, 76);
-  bottom: 11%;
-  font-size: 2.3vmax;
-  font-weight: 700;
-  left: 45.6%;
-  text-shadow: 0px 0px 20px white;
-  font-family: "Cormorant Garamond", serif;
-  background-color: rgba(255, 255, 247, 0.479);
-  border-radius: 5px;
-  width: 9%;
-  height: 6.2%;
-  text-align: center;
+  box-sizing: border-box;
+  bottom: 7%;
+  height: 13%;
+  left: 47%;
 }
 
 @media screen and (max-width: 479px) {
@@ -128,10 +126,7 @@
     animation: appearTitleM 3s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
   }
 
-  .MainPages__ScrollSign {
-    width: 15%;
-    height: 4%;
-    margin-left: -12px;
-    bottom: 27%;
+  .MainPages__ScrollMouse {
+    left: 40%;
   }
 }
