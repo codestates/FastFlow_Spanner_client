@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import Fade from "react-reveal/Fade";
 import airplane_background from "./../images/Airplane/airplane_background.jpeg";
+import airplane_item0 from "./../images/Airplane/airplane_item0.JPG";
 import airplane_item1 from "./../images/Airplane/airplane_item1.JPG";
 import airplane_item2 from "./../images/Airplane/airplane_item2.JPG";
 import airplane_item3 from "./../images/Airplane/airplane_item3.png";
 import airplane_item4 from "./../images/Airplane/airplane_item4.JPG";
-import airplane_item5 from "./../images/Airplane/airplane_item5.JPG";
 
 
 const settings = {
@@ -52,12 +52,22 @@ const MainAirplane = () => {
         </div>        
         <Fade top fraction={1} duration={1000}>          
           <div className="body__slider">
-            <Slider {...settings} >        
+            <Slider {...settings} >
+              <div className="slider-wrapper">
+                <img className="slider__img0" src={airplane_item0} alt=""></img>
+              </div>                
+              <div className="slider-wrapper">
                 <img className="slider__img1" src={airplane_item1} alt=""></img>              
+              </div>
+              <div className="slider-wrapper">
                 <img className="slider__img2" src={airplane_item2} alt=""></img>
+              </div>
+              <div className="slider-wrapper">
                 <img className="slider__img3" src={airplane_item3} alt=""></img>
+              </div>
+              <div className="slider-wrapper">
                 <img className="slider__img4" src={airplane_item4} alt=""></img>
-                <img className="slider__img5" src={airplane_item5} alt=""></img>
+              </div>              
             </Slider>
           </div>        
         </Fade>        
