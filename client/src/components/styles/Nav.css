@@ -1,75 +1,147 @@
 .navs {
-  margin: 0;
-  padding: 0;
-  background-color: #ffdd93;
-  box-sizing: content-box;
+  background-color: #ffffff;
   width: 100%;
-  border-bottom: 2px solid #ece9e5;
+  height: 12vh;
+  border-bottom: 2px solid black;
   position: fixed;
   display: flex;
   flex-direction: column;
-  z-index: 8;
-  font-family: "Bebas Neue", cursive;
+  z-index: 5;
 }
 
 .nav__main {
   display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
 }
 
 .nav__hamburgerBtn {
   display: flex;
+  color:#ffdd93;
 }
 
-.nav__logInBtn {
-  font-size: x-large;
-  font-weight: 600;
-  margin-left: 10px;
+.nav__Btn1 {
+  position: absolute;
+  top: 3.3vh;
+  left: 1vh;
 }
 
-.nav__signUpBtn {
-  font-size: x-large;
+.nav__Btn1:hover {
+  color: #ffdd93;
+}
+
+.nav__Btn2 {
+  font-size: 3vh;
   font-weight: 800;
-  margin-left: 10px;
-}
-
-.nav__myPageBtn {
-  font-size: x-large;
-  font-weight: 800;
-  margin-left: 10px;
-}
-
-.nav__signInBtn {
-  font-size: x-large;
-  font-weight: 800;
-  margin-left: 10px;
-}
-
-.nav__writePageBtn {
-  font-size: x-large;
-  font-weight: 800;
-  margin-left: 10px;
+  position: absolute;
+  top: 3.3vh;
+  left: 15vh;
 }
 
 .nav__logoBtn {
-  font-size: x-large;
-  font-weight: 800;
-  margin-right: 10px;
+  position: absolute;
   display: flex;
-  justify-content: flex-end;
+  right: 1.5vw;
+  top: 2vh;
+  background-image: url(../images/SpannerLogo.png);
+  width: 5vh;
+  height: 5vh;
+  background-size: 5vh 5vh;
+  border-radius: 8px;
 }
 
-.nav__year {
-  display: flex;
+.nav__scrollYearContainer {
+  margin-top: 3vh;
 }
 
 .nav__scrollTrackerContainer {
   display: flex;
   justify-content: center;
-  margin-top: 15px;
+  margin-top: 2vh;
   background-color: white;
-  height: 60px;
-  border-bottom-style: solid;
-  border-bottom-color: rgb(148, 35, 0);
+  height: 12vh;
 }
+
+.nav__hamburgerBtn1 {
+  display: none;
+}
+
+.nav__hamburgerBtn2 {
+  visibility: hidden;
+}
+
+.nav__hamSignUp {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+  .nav__Btn1 {
+    display:none;
+  }
+
+  .nav__Btn2 {
+    display:none;
+  }
+
+  .nav__hamburgerBtn {
+    visibility: visible;
+    position: absolute;
+    top: 2vh;
+    left: 2vh;
+    z-index: 10;
+    width: 7vh;
+    height: 7vh;
+    background-image: url(../images/Hamburger_icon.png);
+    background-size: 7vh 7vh;
+  }
+
+  .nav__hamburgerBtn:hover, .nav__hamburgerBtn:active {
+    cursor: pointer;
+  }  
+
+  .nav__hamburgerBtn1 {
+    background-color: white;
+    position: absolute;
+    display: flex;
+    padding-top: 0.5vh;
+    padding-left: 7vw;
+    top: 8vh;
+    width: 30vw;
+    min-width: 140px;
+    height: 5vh;
+    border-bottom: 2px solid;
+    border-bottom-color: rgb(211, 211, 211);
+    visibility: visible;
+    z-index:20;
+  }
+
+  .nav__hamburgerBtn2 {
+    background-color: white;
+    position: absolute;
+    top: 13vh;
+    left: 0vh;
+    width: 30vw;
+    min-width: 140px;
+    height: 5vh;
+    border-bottom: 2px solid;
+    border-bottom-color: rgb(179, 179, 179);
+    font-size: 3.1vh;
+    font-weight: 800;
+    visibility: visible;
+    z-index:20;
+  } 
+
+  .nav__hamburgerBtn1:hover {
+    color: #ffdd93
+  } 
+
+  .nav__hamSignUp {
+    position: absolute;
+    top: 0.5vh;
+    left: 8vw;
+  }
+
+  .nav__hamSignUp:hover {
+    color: #ffdd93
+  }
+}
+

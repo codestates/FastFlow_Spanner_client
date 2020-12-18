@@ -1,10 +1,31 @@
 .MainCompasss {
-  background-image: url(../../../TestPic/bigdipperpolaris_cut.jpg);
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: 1835px;
-  visibility: hidden;
+  background-color: #f5f3ec;
+  height: 100%;
+  width: 100%;
   position: relative;
+}
+
+.mainCompass__title{
+  font-family: "Cormorant Garamond", serif;
+  font-size: 5vmax;
+  font-weight: 400;
+  position: absolute;
+  top: 1vh;
+  left: 6vw;
+}
+
+.mainCompass__polarisPic {
+  position: relative;
+}
+
+.mainCompass__polaris {
+  position: absolute;
+  left: 3vw;
+  top: 10vh;
+}
+
+.mainCompass__starLight {
+  position: absolute;
 }
 
 .MainCompasss__text {
@@ -25,14 +46,8 @@
   width: 100px;
 }
 
-.mainCompass__starLight {
-  position: relative;
-  top: 279px;
-}
-
 .starlight1 {
   position: relative;
-  left: 141px;
   width: 180px;
   animation-name: twinkle;
   animation-duration: 1.6s;
@@ -65,7 +80,7 @@
 
 .mainCompass__container {
   position: absolute;
-  left: 500px;
+  left: 80px;
 }
 
 .compass {
@@ -79,6 +94,7 @@
   transition-property: transform;
   transition-duration: 1s;
   transition-timing-function: ease;
+  border: 2px solid red;
   border-radius: 50%;
 }
 
@@ -91,4 +107,18 @@
   transition-duration: 1s;
   transition-timing-function: ease;
   border-radius: 50%;
+}
+
+.mainCompass__linkContainer {
+  display: flex;
+  width: 100px;
+  position: relative;
+  left: 100px;
+  top: 100px;
+  color: white;
+}
+
+.mainCompass__link {
+  width: 100px;
+  font-size: 10px;
 }

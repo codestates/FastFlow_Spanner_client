@@ -5,7 +5,7 @@ import qs from 'qs';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 
-function SocialLogin({location}) {    
+function SocialLogin({location, handleResponseSuccess}) {    
     const history = useHistory();
 
     useEffect(() => {
@@ -39,6 +39,7 @@ function SocialLogin({location}) {
                         localStorage.setItem("token", accessToken);
                         localStorage.setItem("refreshToken", refreshToken);
                     })
+                handleResponseSuccess();
                 history.push('/');
                 console.log('소셜 로그인 성공')
             } catch (error) {

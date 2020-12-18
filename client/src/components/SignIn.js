@@ -58,6 +58,7 @@ const SignIn = (props) => (
     <center>
       <div className="signIns" style={{ display: `${props.modal}` }}>
         <div className="signIn__modal">
+          <div className="signIn__title">로그인</div>
           <div className="signIn__email">
             <input className="signIn__emailInput" type="email" placeholder="이메일" onChange={props.onChangeEmail}></input>
           </div>
@@ -68,24 +69,22 @@ const SignIn = (props) => (
             <Link to="/signup">아직 아이디가 없으신가요?</Link>
           </div>
           <div className="signIn__social">
-            <div className="signIn__gitHub" onClick={props.modalClose}>
-            <a href={`https://github.com/login/oauth/authorize?client_id=0604c124c075b9bc4925&redirect_uri=${ip}${port_client}/sociallogin`}>
-              <img className="github__icon" src={github_icon} alt="" width="40%"/>
-            </a>
-            </div>
-            <div className="signIn__kakao" onClick={props.modalClose}>              
-            <a href={`${ip}${port_client}/SocialLogInKakao`}>
-              <img className="signIn__kakaoIcon" src={kakaotalk_icon} alt="" width="20%"/>
+            <a href={`https://github.com/login/oauth/authorize?client_id=0604c124c075b9bc4925&redirect_uri=${ip}${port_client}/sociallogin`} className="signIn__gitHub" onClick={props.modalClose}>
             </a>              
-            </div>
+            <a href={`${ip}${port_client}/SocialLogInKakao`} className="signIn__kakao" onClick={props.modalClose}>
+            </a>
           </div>
+          <div>
           <button className="signIn__btn" type="submit" onClick={props.handleSignIn}>
             로그인
           </button>
-          <div className="signIn__errMessage">{props.errMessage}</div>
+          </div>
+          <div>
           <button type="button" className="signIn__closeBtn" onClick={props.modalClose}>
             창 닫기
           </button>
+          </div>
+          <div className="signIn__errMessage">{props.errMessage}</div>
         </div>
         <div className="signIn__modalLayer"></div>
       </div>
