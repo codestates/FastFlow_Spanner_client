@@ -61,7 +61,7 @@
   display: inline-block;
   padding: 0.5em 0.75em;
   color: rgb(88, 88, 88);
-  font-size: inherit;
+  font-size: 1.3vmax;
   line-height: normal;
   vertical-align: middle;
   background-color: #fdfdfd;

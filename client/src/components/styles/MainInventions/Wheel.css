@@ -89,23 +89,55 @@
     transform: translateZ(0) translateY(0);
   }
 }
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 767px) {
   .MainWheels__text {
     top: 0;
+    font-size: 5.4vmax;
   }
   .MainWheels__BCtext {
     top: 9.4%;
     left: 23%;
+    font-size: 3.2vmax;
   }
   .MainWheels__textBody {
     top: 16%;
+    font-size: 2.3vmax;
+    width: 78%;
   }
   .MainWheels__link {
     top: 30%;
     left: 60%;
+    font-size: 3vmax;
   }
   .MainWheels__WheelPic {
-    height: 33%;
+    height: 38%;
+    top: 34%;
+    left: 3%;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1023px) {
+  .MainWheels__text {
+    top: 0;
+    font-size: 6vmax;
+  }
+  .MainWheels__BCtext {
+    top: 9.4%;
+    left: 23%;
+    font-size: 3.6vmax;
+  }
+  .MainWheels__textBody {
+    top: 16%;
+    font-size: 3vmax;
+    width: 80%;
+  }
+  .MainWheels__link {
+    top: 30%;
+    left: 60%;
+    font-size: 3.2vmax;
+  }
+  .MainWheels__WheelPic {
+    height: 43%;
     top: 34%;
     left: 3%;
   }

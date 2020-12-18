@@ -15,6 +15,7 @@ import MainRefrigerator from "../Inventions/MainRefrigerator";
 import MainLightBulb from "../Inventions/MainLightBulb";
 import MainAirplane from "../Inventions/MainAirplane";
 import MainInternet from "../Inventions/MainInternet";
+import Footer from "../Footer";
 
 // 아래는 마우스 사진
 import ScrollMouse from "../images/MainPage/Scroll.gif";
@@ -83,6 +84,7 @@ const MainPage = () => {
       <MainLightBulb />
       <MainAirplane />
       <MainInternet />
+      <Footer />
     </div>
   );
 };

@@ -12,8 +12,6 @@ const LogOut = (props) => {
       <div className="LogOuts__modal" style={{ display: props.switchLogOut }}>
         <div className="LogOuts__content">
           <img className="LogOuts__content__pic" src={GoodbyePic} />
-          {/* <span className="logOut__closeButton" onClick={props.modalClose}>&times;</span> */}
-          <p className="LogOuts__message">{`Good Bye, See ya`}</p>
         </div>
       </div>
     </div>

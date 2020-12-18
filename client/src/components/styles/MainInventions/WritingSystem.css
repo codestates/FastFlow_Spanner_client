@@ -21,17 +21,31 @@
   z-index: 1;
 }
 
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 767px) {
   .MainWritingSystems__mesopotamia {
-    height: 40%;
+    height: 37%;
+    width: 100%;
+    top: 0;
+  }
+  .MainWritingSystems__uruk {
+    height: 44%;
+    width: 52%;
+    top: 33%;
+    right: 6%;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1023px) {
+  .MainWritingSystems__mesopotamia {
+    height: 45%;
     width: 100%;
     top: 0;
   }
   .MainWritingSystems__uruk {
     height: 48%;
-    width: 62%;
+    width: 40%;
     top: 37%;
-    right: 4%;
+    right: 12%;
   }
 }
 
