@@ -45,6 +45,11 @@ const MainElectricMotor = () => {
       <Fade top fraction={0.5} duration={1000}>
       <div className="MainElectricMotors__title">
         ElectricMotor
+      </div>
+      <div className="text__link-wrapper-ElectricMotor">
+        <Link to="/ElectricMotor" className="text__link-ElectricMotor">
+          Click Me            
+        </Link>
       </div>      
       </Fade>
       <div className="MainElectricMotors__rotatingMotor1">
@@ -94,11 +99,7 @@ const MainElectricMotor = () => {
           Moving magnet can make current<br></br>
           <p>"TRY to drag magnet along Y-axis"</p>
         </div>        
-        <div className="text__link-wrapper-ElectricMotor">
-          <Link to="/ElectricMotor" className="text__link-ElectricMotor">
-            Click Me            
-          </Link>
-        </div>
+        
       </div>  
       </Fade>    
 

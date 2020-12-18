@@ -13,11 +13,12 @@
 }
 .MainInternets__title {
   position: absolute;
-  top: 2%;
-  left: 2%;
+  top: 1vh;
+  left: 1vw;
   font-size: 5vmax;
+  color: white;    
+  font-family: "Cormorant Garamond", serif;  
   font-weight: 700;
-  color: #ff98f1;  
 }
 .MainInternets__desc {
   position: absolute;
@@ -32,8 +33,8 @@
   position: absolute;
   width: 30%;
   height: 5%;
-  bottom: 85%;
-  left: 45%;
+  top: 8%;  
+  left: 32%;
   color: rgb(224, 116, 116);
   text-decoration: none;  
   font-size: 1.8vmax;
@@ -77,5 +78,9 @@
   .MainInternets__game{
     left: 0%;
     width: 100%;
+  }
+  .MainInternets__link{
+    left: 60%;
+    font-size: 3vmax;
   }
 }
