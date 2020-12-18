@@ -7,7 +7,7 @@ import ScrollYear from './ScrollYear';
 import LogOut from "./LogOut";
 
 export default function Nav(props) {
-  const [hamburgerBtn, setHamburgerBtn] = useState(true)
+  const [hamburgerBtn, setHamburgerBtn] = useState(false)
 
   const onChangeHamburgerBtn = async () => {
     if (hamburgerBtn) {
