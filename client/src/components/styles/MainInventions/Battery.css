@@ -13,10 +13,12 @@
   position: absolute;
   height: 10%;
   width: 100%;
+  top: 1vh;
+  left: 1vw;
   font-size: 5vmax;
-  color: #ffdd93;
+  color: black;    
+  font-family: "Cormorant Garamond", serif;  
   font-weight: 700;
-  text-shadow: 0.1vw 0.1vw 0 black;
 }
 
 
@@ -218,7 +220,7 @@
 }
 .MainBatterys__link{
   position: absolute;
-  left: 30%;
+  left: 35%;
   top: 5%;
   color: rgb(224, 116, 116);
   text-decoration: none;  
@@ -385,6 +387,10 @@
   .MainBatterys__body {
     height: 40%;
     left: 20%;   
+  }
+  .MainBatterys__link{    
+    left: 60%;
+    font-size: 3vmax;
   }
   .body__contentsArea{
     width: 80%;

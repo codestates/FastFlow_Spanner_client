@@ -12,10 +12,12 @@
   position: absolute;
   height: 10%;
   width: 100%;
-  font-weight: 700;
+  top: 1vh;
+  left: 1vw;
   font-size: 5vmax;
-  color: #ffdd93;
-  text-shadow: 0.1vw 0.1vw 0 black;
+  color: black;    
+  font-family: "Cormorant Garamond", serif;  
+  font-weight: 700; 
 }
 
 .MainRefrigerators__body {
@@ -34,7 +36,9 @@
   font-family: "Cormorant Garamond", serif;  
 }
 .guide__link {
-  position: absolute;  
+  position: absolute;
+  left: 34%;
+  top: 60%;
   color: rgb(224, 116, 116);
   text-decoration: none;  
   font-size: 1.8vmax;
@@ -562,5 +566,7 @@
   }
   .guide__link{
     top: 70%;
+    left: 60%;
+    font-size: 3vmax;
   }
 }

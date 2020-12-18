@@ -60,7 +60,9 @@ const MainPage = () => {
         </div>
         <div className="MainPages__ScrollSignArea">
           <Fade top fraction={0.2} duration={3000}>
-            <img className="MainPages__ScrollMouse" src={ScrollMouse} />
+            <div className="MainPages__ScrollSign">
+              <img className="MainPages__ScrollMouse" src={ScrollMouse} />
+            </div>
           </Fade>
         </div>
       </div>
