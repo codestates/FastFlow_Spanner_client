@@ -170,6 +170,7 @@
   .title__text{
     position:absolute;
     left: 10%;
+    width: 20%;
   }
   .title__link{
     left: 70%;
