@@ -9,35 +9,13 @@
 }
 
 .SignUps {
-  margin-top: 5%;
+  margin-top: 8%;
   border: 1px solid #dbdbdb;
   width: 320px;
   height: 500px;
   background-color: #ffffff;
   border-radius: 15px;
   text-align: center;
-}
-
-@media screen and (max-width: 510px) {
-  .SignUps {
-    margin-top: 33%;
-    border: 1px solid #dbdbdb;
-
-    background-color: #ffffff;
-    border-radius: 15px;
-    text-align: center;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .SignUps {
-    margin-top: 32%;
-    border: 1px solid #dbdbdb;
-
-    background-color: #ffffff;
-    border-radius: 15px;
-    text-align: center;
-  }
 }
 
 .SignUp {
@@ -110,4 +88,31 @@
   margin-top: 2.4%;
   font-size: 0.9vmax;
   font-family: "Jua", sans-serif;
+}
+
+@media screen and (max-width: 767px) {
+  .SignUps {
+    margin-top: 43%;
+    border: 1px solid #dbdbdb;
+    background-color: #ffffff;
+    border-radius: 15px;
+    text-align: center;
+  }
+
+  .SignUps__title {
+    font-size: 3.2vmax;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1023px) {
+  .SignUps {
+    margin-top: 28%;
+    border: 1px solid #dbdbdb;
+    background-color: #ffffff;
+    border-radius: 15px;
+    text-align: center;
+  }
+  .SignUps__title {
+    font-size: 3.2vmax;
+  }
 }
