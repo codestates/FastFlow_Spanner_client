@@ -5,6 +5,7 @@ import Writepage from "../Pages/WritePage";
 import axios from "axios";
 import basicPostPic from "../images/InputPic.jpg";
 import { ip, port } from "../../url";
+import nullPic from "../images/downloadPic.jpg";
 
 const Compass = () => {
   const [commentList, setCommentList] = useState([]);
@@ -159,7 +160,7 @@ const Compass = () => {
               <li className="Details__comment" key={comment.id}>
                 <div className="Details__commentTextAreas__title">{comment.title}</div>
                 <div className="Details__commentPicArea">
-                  <img className="Details__commentPic" src={ip + port + `/${comment.postPhoto}`} alt="" />
+                  <img className="Details__commentPic" src={comment.postPhoto ? ip + port + `/${comment.postPhoto}` : nullPic} alt="" />
                 </div>
                 <div className="Details__commentTextAreas">
                   <div className="Details__commentTextAreas__username">{comment.user.username}</div>

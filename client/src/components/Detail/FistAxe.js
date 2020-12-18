@@ -5,6 +5,7 @@ import Writepage from "../Pages/WritePage";
 import axios from "axios";
 import basicPostPic from "../images/InputPic.jpg";
 import { ip, port } from "../../url";
+import nullPic from "../images/downloadPic.jpg";
 
 const FistAxe = () => {
   const [commentList, setCommentList] = useState([]);
@@ -63,7 +64,6 @@ const FistAxe = () => {
         inventionId: inventionId,
       })
       .then((res) => {
-        console.log("사진을 수정합니다.", res.data);
         const formData = new FormData();
         formData.append("image", postPic);
         formData.append("postId", editId);
@@ -174,12 +174,12 @@ const FistAxe = () => {
           {commentList.map((comment) => {
             return (
               <li className="Details__comment" key={comment.id}>
-                <div className="Details__commentTextAreas__title">{comment.title}</div>
+                <div className="Details__commentTextAreas__title">{`TITLE : ${comment.title}`}</div>
                 <div className="Details__commentPicArea">
-                  <img className="Details__commentPic" src={ip + port + `/${comment.postPhoto}`} alt="" />
+                  <img className="Details__commentPic" src={comment.postPhoto ? ip + port + `/${comment.postPhoto}` : nullPic} alt="" />
                 </div>
                 <div className="Details__commentTextAreas">
-                  <div className="Details__commentTextAreas__username">{comment.user.username}</div>
+                  <div className="Details__commentTextAreas__username">{`USER : ${comment.user.username}`}</div>
                   <div className="Details__commentTextAreas__text">{comment.text}</div>
                 </div>
 

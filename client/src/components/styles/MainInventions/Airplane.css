@@ -1,219 +1,145 @@
 .MainAirplanes {  
   height: 100vh;
-
   position: relative;
 }
 .MainAirplanes__title {
   position: absolute;
   height: 10%;
-  width: 100%;
+  width: 22%;
   top: 2%;
   left: 2%;
   z-index: 1;
   color: #ffdd93;
   font-weight: 700;
-  font-size: 5vw;
+  font-size: 5vmax;  
 }
 
 .MainAirplanes__body {
-  position: absolute;
-  height: 90%;
-  width: 100%;
-}
-.body__img1 {
-  position: absolute;
-  width: 10%;
-  height: 10%;
-  left: 10%;
-  top: 10%;
-  border: none;
-  /* transform-origin은 해당 엘리먼트에 차후
-  transform이 일어났을 때 기준점을 설정해줌 */
-  animation-name: paperplane;
-  animation-duration: 4s;
-  animation-duration: leaner;
-  animation-direction: alternate;
-  animation-fill-mode: forwards;
-}
-@keyframes paperplane {
-  from {
-    margin-left: 0%;
-    transform-origin: right;
-    transform: rotateX(0deg) rotateY(0deg) rotateZ(40deg);
-    animation-timing-function: cubic-bezier(1, 1, 1, 1);
-  }
-  50% {
-    margin-left: 30%;
-    margin-top: 10%;
-    transform-origin: right;
-    transform: rotateX(0deg) rotateY(0deg) rotateZ(45deg);
-    animation-timing-function: cubic-bezier(1, 1, 1, 1);
-  }
-
-  to {
-    margin-left: 60%;
-    transform-origin: right;
-    transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg);
-  }
-}
-
-.body__img2 {
-  position: absolute;
-  width: 20%;
-  height: 20%;
-  left: 40%;
-  top: 40%;
-  opacity: 0;
-  animation: oldplane;
-  animation-delay: 4s;
-  animation-duration: 2s;
-}
-@keyframes oldplane {
-  from {
-    transform: scale(0);
-    opacity: 0;
-  }
-  to {
-    transform: scale(4);
-    opacity: 1;
-  }
-}
-
-.body__img3-background {
-  position: absolute;
-  width: 100%;
-  height: 90%;
-  opacity: 0;
-  transition-property: opacity;
-  animation: img3;
-  animation-delay: 6s;
-  animation-duration: 4s;
-}
-@keyframes img3 {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.body__img3-airliner {
-  position: absolute;
-  width: 20%;
-  height: 20%;
-  top: 50%;
-  left: 70%;
-  z-index: 1;
-  opacity: 0;
-  animation: img3-airliner;
-  animation-delay: 7s;
-  animation-duration: 3s;
-}
-@keyframes img3-airliner {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 1;
-    top: 10%;
-    left: 10%;
-  }
-}
-.body__img3-jet {
-  position: absolute;
-  width: 15%;
-  height: 15%;
-  top: 50%;
-  left: 10%;
-  z-index: 1;
-  opacity: 0;
-  animation: img3-jet;
-  animation-delay: 7s;
-  animation-duration: 3s;
-}
-@keyframes img3-jet {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 1;
-    top: 10%;
-    left: 70%;
-  }
-}
-
-.body__img4-background {
-  position: absolute;
-  width: 100%;
-  height: 60%;
-  top: 51%;
-  opacity: 0;
-  animation: img4;
-  animation-delay: 10s;
-  animation-duration: 5s;
-  animation-fill-mode: forwards;
-}
-@keyframes img4 {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 1;
-  }
-}
-.body__img4-rocket {
-  position: absolute;
-  width: 10%;
-  height: 10%;
-  top: 65%;
-  left: 35%;
-  transform: rotate(-80deg) scale(0.1);
-  opacity: 0;
-  animation-name: img4-rocket;
-  animation-delay: 10s;
-  animation-duration: 5s;
-  animation-fill-mode: forwards;
-}
-@keyframes img4-rocket {
-  from {
-    opacity: 0;
-    transform: rotate(-40deg);
-  }
-  to {
-    opacity: 1;
-    transform: rotate(-25deg) scale(1.5);
-    top: 30%;
-    left: 60%;
-  }
-}
-
-.rocket__link {
-  position: absolute;
-  width: 25%;
+  position: absolute;  
   height: 100%;
-  top: 40%;
-  left: 72%;
-  z-index: -1;
-  font-size: 2vw;
-  font-weight: 700;
-  color: #ffdd93;
-  opacity: 0;
-  transform: rotate(-25deg);
-  transition: all 2s ease-in;
-  animation-name: img4-rocket-link;
-  animation-delay: 12s;
-  animation-duration: 3s;
-  animation-fill-mode: forwards;
+  width: 100%;  
 }
 
-@keyframes img4-rocket-link {
-  from {
+.Airplanes__link {
+  position: absolute;
+  left: 25%;
+  top:8%;
+  color: rgb(224, 116, 116);
+  text-decoration: none;  
+  font-size: 1.8vmax;
+  font-weight: 900;
+  background: linear-gradient(to right, rgb(230, 35, 93), rgb(240, 17, 110) 50%, rgb(255, 255, 255) 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 1000ms ease;
+  overflow: hidden;
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.1vmax;    
+}
+.Airplanes__link:hover {
+  background-position: 0 100%;
+}
+@keyframes link {
+  0% {
     opacity: 0;
-    z-index: -1;
   }
-  to {
+  100% {
     opacity: 1;
-    z-index: 0;
+  }
+}
+
+.body__background{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #f5f3ec; 
+  z-index: -1;
+}
+.body__links{
+  position:absolute;
+  top: 30%;
+  left: 10%;
+  width: 30%;
+  height: 30%;  
+  font-size: 1.8vmax;
+  font-weight: 900;
+  color:rgb(230, 35, 93);
+  font-family: "Cormorant Garamond", serif;
+  text-decoration: none;
+  display: block;
+}
+.body__link:link{  
+  font-size: 1.8vmax;
+  font-weight: 900;
+  color:rgb(230, 35, 93);
+  font-family: "Cormorant Garamond", serif;
+  text-decoration: none;
+}
+.body__link:visited{
+  color:rgb(230, 35, 93);
+  text-decoration: none;
+}
+
+.body__slider{  
+  position:absolute;
+  left: 33%;
+  top: 11%;  
+  width: 34.5%;
+  height: 73%;        
+  border-radius: 32% 32% 36% 37%;    
+}
+.slider-wrapper{
+  height: 72.5vh;    
+  border-radius: 32% 32% 38% 37%;
+}
+.slider__img0{   
+  width: 100%;
+  height: 100%;  
+  border-radius: 32% 32% 38% 37%;   
+}
+.slider__img1{  
+  width: 100%;
+  height: 100%;  
+  border-radius: 32% 32% 38% 37%;  
+}
+.slider__img2{  
+  width: 100%;
+  height: 100%;  
+  border-radius: 32% 32% 38% 37%;  
+}
+.slider__img3{
+  width: 100%;
+  height: 100%;  
+  border-radius: 32% 32% 38% 37%;  
+}
+.slider__img4{ 
+  width: 100%;
+  height: 100%;  
+  border-radius: 32% 32% 38% 37%;  
+}
+
+
+
+@media screen and (max-width: 479px) {    
+  .Airplanes__link {
+    left: 60%;
+    top: 5%;
+    font-size: 3vmax;
+  }
+  .body__background{    
+    transform: scaleX(1.5)
+  }
+  .body__slider{
+    left: 25%;
+    width: 52vw;
+  } 
+  .body__links{
+    margin:0;
+    padding:0;
+    top: 8%;
+    left: -5%;
   }
 }

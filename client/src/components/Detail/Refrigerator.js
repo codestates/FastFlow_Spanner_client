@@ -5,6 +5,7 @@ import Writepage from "../Pages/WritePage";
 import axios from "axios";
 import basicPostPic from "../images/InputPic.jpg";
 import { ip, port } from "../../url";
+import nullPic from "../images/downloadPic.jpg";
 
 const Refrigerator = () => {
   const [commentList, setCommentList] = useState([]);
@@ -23,7 +24,7 @@ const Refrigerator = () => {
     // inventionId 보내기
     setInventionId(1);
     // 댓글 작성
-    axios.get(ip + port + `/post/read/1`).then((res) => {
+    axios.get(ip + port + `/post/read/14`).then((res) => {
       console.log(res.data);
       let result = res.data;
       let newCommentData = [];
@@ -178,7 +179,7 @@ const Refrigerator = () => {
               <li className="Details__comment" key={comment.id}>
                 <div className="Details__commentTextAreas__title">{comment.title}</div>
                 <div className="Details__commentPicArea">
-                  <img className="Details__commentPic" src={ip + port + `/${comment.postPhoto}`} alt="" />
+                  <img className="Details__commentPic" src={comment.postPhoto ? ip + port + `/${comment.postPhoto}` : nullPic} alt="" />
                 </div>
                 <div className="Details__commentTextAreas">
                   <div className="Details__commentTextAreas__username">{comment.user.username}</div>

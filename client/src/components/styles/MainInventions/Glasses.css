@@ -147,12 +147,3 @@ left: 6vw;
   font-size: 50px;
 }
 
-a {
-  color: black;
-
-  transition: color 0.25s ease;
-}
-
-a:hover {
-  color: #fff;
-}

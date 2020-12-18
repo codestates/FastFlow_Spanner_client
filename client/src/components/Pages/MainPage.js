@@ -16,7 +16,8 @@ import MainLightBulb from "../Inventions/MainLightBulb";
 import MainAirplane from "../Inventions/MainAirplane";
 import MainInternet from "../Inventions/MainInternet";
 
-// 아래는 별 사진
+// 아래는 마우스 사진
+import ScrollMouse from "../images/MainPage/Scroll.gif";
 
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -39,22 +40,27 @@ const MainPage = () => {
     }
   });
 
-  // const updateMousePosition = (e) => {
-  //   e.persist();
-  //   setMousePosition((mousePosition) => ({ ...mousePosition, x: e.clientX, y: e.clientY }));
-  // };
+  const updateMousePosition = (e) => {
+    let w = window.innerWidth / 2;
+    let h = window.innerHeight / 2;
+    let mouseX = e.clientX;
+    let mouseY = e.clientY;
+    let depth3 = `${50 - (w - mouseX) * 0.03}% ${50 - (h - mouseY) * 0.03}%`;
+    let x = `${depth3}`;
+    const elem = document.querySelector(".MainPages__welcomePoint");
+    elem.style.backgroundPosition = x;
+  };
 
-  // onMouseMove={updateMousePosition} style={{ backgroundPositionX: `${mousePosition.x}px`, backgroundPositionY: `${mousePosition.y}px` }}
   return (
     <div className="MainPages">
-      <div className="MainPages__welcomePoint">
+      <div className="MainPages__welcomePoint" onMouseMove={updateMousePosition}>
         <div className="MainPages__welcomePointTextArea">
           <div className="MainPages__welcomePointText">Invention History</div>
           <div className="MainPages__welcomePointSubText">Experience the footsteps of an invention over time</div>
         </div>
         <div className="MainPages__ScrollSignArea">
           <Fade top fraction={0.2} duration={3000}>
-            <span className="MainPages__ScrollSign">Scroll</span>
+            <img className="MainPages__ScrollMouse" src={ScrollMouse} />
           </Fade>
         </div>
       </div>
