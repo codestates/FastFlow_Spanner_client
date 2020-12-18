@@ -3,6 +3,7 @@ import { Switch, Route, withRouter } from "react-router-dom";
 import axios from "axios";
 import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
 
 import MainPage from "./components/Pages/MainPage";
 import Mypage from "./components/Pages/Mypage";
@@ -40,11 +41,15 @@ const App = () => {
   const [password, setPassword] = useState("");
   const [errMessage, setErrMessage] = useState("");
   const [switchLogOut, setSwitchLogOut] = useState("none");
+  const [userName, setUserName] = useState("");
+  const [isLogIn, setIsLogIn] = useState(false);
 
-  const modalOpen = () => {
-    setModal("block");
+  const history = useHistory();
+
+  const modalOpen = async () => {
+    await setModal("block");
   };
-  const modalClose = () => {
+  const modalClose = async () => {
     setBackErrMessage();
     setModal("none");
   };
@@ -78,18 +83,21 @@ const App = () => {
           //refresh 토큰도 저장
           localStorage.setItem("refreshToken", res.data.refreshToken);
           modalClose();
-          // return this.PaymentResponse.handleResponseSuccess(res.data.id);
+          setIsLogIn(true);
+          handleResponseSuccess(res.data.id);
         });
     }
   };
   const handleResponseSuccess = async (login) => {
-    let successInfo = await axios.get(ip + port + "/user");
+    let successInfo = await axios.get(ip + port + "/profile/read");
     console.log(successInfo);
     if (!successInfo) {
-      //setUserInfo("")
+      setUserName("");
     } else {
-      //setIsLogIn(true)
-      //history.push('/')
+      const { username } =successInfo.data;
+      setIsLogIn(true);
+      setUserName(username);
+      history.go(0);
     }
   };
 
@@ -100,7 +108,9 @@ const App = () => {
     if(localStorage.getItem("token") || localStorage.getItem("refreshToken")) {
       axios.delete(ip + port + "/user/signout");
       localStorage.removeItem("token");
-      localStorage.removeItem("refreshToken");          
+      localStorage.removeItem("refreshToken");
+      setIsLogIn(false);
+      setUserName("");
     setTimeout(() => {
       autoLogOutClose();
     }, 2000);            
@@ -129,7 +139,9 @@ const App = () => {
         onChangeEmail={onChangeEmail}
         onChangePassword={onChangePassword}
         errMessage={errMessage}
+        isLogIn={isLogIn}
         handleSignIn={handleSignIn}
+        userName={userName}
         handleResponseSuccess={handleResponseSuccess}
         onLogOut={onLogOut}
         switchLogOut={switchLogOut}
@@ -163,8 +175,8 @@ const App = () => {
         <Route exact path="/mypage" render={() => <Mypage />} />
 
 
-        <Route exact path="/sociallogin" render={() => <SocialLogInGitHub location={window.location} hisotry={window.history}/>} />
-        <Route exact path="/SocialLogInKakao" render={() => <SocialLogInKakao />} />
+        <Route exact path="/sociallogin" render={() => <SocialLogInGitHub handleResponseSuccess={handleResponseSuccess} location={window.location} hisotry={window.history}/>} />
+        <Route exact path="/SocialLogInKakao" render={() => <SocialLogInKakao handleResponseSuccess={handleResponseSuccess} />} />
 
 
       </Switch>

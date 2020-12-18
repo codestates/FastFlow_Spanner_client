@@ -1,12 +1,24 @@
 .MainSteamEngines {
-  background-image: url("../../../TestPic/railroad_BLmod.png");
-  background-color: rgb(143, 23, 23);
-  background-repeat: no-repeat;
-  background-position: 0px -159px;
-  background-size: 1840px;
-  width: 100%;
+  background-color: #f5f3ec;
   height: 100%;
+  width: 100%;
   position: relative;
+}
+
+.mainSteamEngine__title{
+  font-family: "Cormorant Garamond", serif;
+  font-size: 5vmax;
+  font-weight: 400;
+  position: absolute;
+  top: 1vh;
+  left: 6vw;
+}
+
+.mainSteamEngine__railRoad {
+  position: absolute;
+  top: 7%;
+  width: 60%;
+  height: 100%;
 }
 
 .MainSteamEngines__text {
@@ -30,9 +42,9 @@
 
 .mainSteamEngine__img_2 {
   position: absolute;
-  bottom: 70px;
-  left: 0px;
-  width: 1090px;
+  bottom: 0%;
+  left: 0%;
+  width: 60%;
   transition-property: width, bottom, left;
   transition-duration: 0.25s;
 }

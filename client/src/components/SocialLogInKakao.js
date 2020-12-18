@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 const { Kakao } = window;
 
-const SocialLogInKakao = () => {
+const SocialLogInKakao = (props) => {
   const [isLogin, setIsLogIn] = useState("false");  
   const history = useHistory();
 
@@ -68,6 +68,7 @@ const SocialLogInKakao = () => {
       })    
     console.log('정상적으로 로그인 되었습니다.')
     setIsLogIn("true")
+    props.handleResponseSuccess();
     history.push('/');
   }
   // 그냥 App.js에서 Logout 시에 Kakao.Auth.logout(); 메서드로 처리---------------

@@ -1,18 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import SignIn from "./SignIn";
 import ScrollTracker from './ScrollTracker';
 import useScrollStatus from './hooks/useScrollStatus';
+import ScrollYear from './ScrollYear';
 import LogOut from "./LogOut";
 
 export default function Nav(props) {
+  const [hamburgerBtn, setHamburgerBtn] = useState(true)
+
+  const onChangeHamburgerBtn = async () => {
+    if (hamburgerBtn) {
+      await setHamburgerBtn(false)
+      console.log('yes')
+    } else {
+      setHamburgerBtn(true)
+      console.log('no')
+    }
+  };
   const scrollState = useScrollStatus();
+  const hamdis = () => {
+    if (hamburgerBtn) {
+      return {visibility: 'visible'};
+    } else {
+      return {visibility: 'hidden'}};
+  }
+  const hamdis2 = () => {
+    if (hamburgerBtn) {
+      return {display: 'block'};
+    } else {
+      return {display: 'none'}};
+  }
 
   return (
     <header className="navs">
       <div className="nav__main">
-        <div className="nav__hamburgerBtn">
-          <SignIn
+        <div className="nav__Btn1">
+        {props.isLogIn ? 
+        <LogOut  onLogOut={props.onLogOut} switchLogOut={props.switchLogOut} />:
+        <SignIn 
+          modalOpen={props.modalOpen}
+          modalClose={props.modalClose}
+          modal={props.modal}
+          onChangeEmail={props.onChangeEmail}
+          onChangePassword={props.onChangePassword}
+          errMessage={props.errMessage}
+          handleSignIn={props.handleSignIn}
+          handleResponseSuccess={props.handleResponseSuccess}
+        />}
+        </div>
+        <div>
+        {props.isLogIn ?
+        <Link to="/Mypage" className="nav__Btn2">
+          My page
+        </Link> : 
+        <Link to="/SignUp" className="nav__Btn2">
+          <div>Sign up</div>
+        </Link>}
+        </div>
+        <div className="nav__hamburgerBtn" onClick={onChangeHamburgerBtn} ></div>
+        <div>
+          <div  className="nav__hamburgerBtn1" style={hamdis()}>
+          {props.isLogIn ? 
+          <LogOut className="nav__logOutHam" onLogOut={props.onLogOut} switchLogOut={props.switchLogOut} />:
+          <SignIn className="nav__signInHam"
             modalOpen={props.modalOpen}
             modalClose={props.modalClose}
             modal={props.modal}
@@ -21,19 +72,27 @@ export default function Nav(props) {
             errMessage={props.errMessage}
             handleSignIn={props.handleSignIn}
             handleResponseSuccess={props.handleResponseSuccess}
-          />
-          <LogOut onLogOut={props.onLogOut} switchLogOut={props.switchLogOut} />
-          <Link to="/SignUp" className="nav__signUpBtn">
-            Sign up
-          </Link>
-          <Link to="/Mypage" className="nav__myPageBtn">
-            My page
-          </Link>          
+          />}
+          </div>
+          <div>
+          {props.isLogIn ?
+          <Link to="/Mypage" className="nav__hamburgerBtn2" style={hamdis2()}>
+            <div className="nav__hamSignUp" style={hamdis2()}>
+              My page
+            </div>
+          </Link> : 
+          <Link to="/SignUp" className="nav__hamburgerBtn2" style={hamdis2()}>
+            <div className="nav__hamSignUp" style={hamdis2()}>
+              Sign up
+            </div>
+          </Link>}
+          </div>
         </div>
-        <div className="nav__year">여기에 년도 입력</div>
+        <div className="nav__scrollYearContainer">
+          <ScrollYear userName={props.userName} />
+        </div>
         <div>
           <Link to="/" className="nav__logoBtn">
-            Main
           </Link>
         </div>
 			</div>
