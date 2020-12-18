@@ -23,15 +23,17 @@ const MainRefrigerator = () => {
     <div className="MainRefrigerators">
       <img className="MainRefrigerators__background" src={refrigerator_background}></img>
       <Fade top fraction={0.5} duration={1000}>
-      <div className="MainRefrigerators__title">Refrigerator</div>
+      <div className="MainRefrigerators__title">Refrigerator
+        <Link to="/Refrigerator" className="guide__link">
+          Click Me
+        </Link>
+      </div>
       </Fade>
       <div className="MainRefrigerators__body">
       <Fade right fraction={0.5} duration={3000}>
         <div className="MainRefrigerator__guide">
           <p>"TRY to find link in the fridge"</p>
-          <Link to="/Refrigerator" className="guide__link">
-            Click Me
-          </Link>
+          
         </div>
         </Fade>
         <div className="MainRefrigerators__grid">

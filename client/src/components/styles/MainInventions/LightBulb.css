@@ -13,26 +13,27 @@
 .body__title {
   position: absolute;
   height: 10%;
-  width: 100%;
-  left: 10%;
-  top: 10%;
-  font-weight: 700;
+  width: 90%;
+  top: 1vh;
+  left: 1vw;
   font-size: 5vmax;
-  color: #ffdd93;  
+  color: white;    
+  font-family: "Cormorant Garamond", serif;  
+  font-weight: 700;   
   z-index:1;
 }
 .title__switchBtn {
   position: absolute;
-  width: 9%;
+  width: 10%;
   height: 180%;
-  left: -9%;
-  top: -70%;
+  left: 23%;
+  top: -10%;
   cursor: pointer;
   z-index:1;
 }
 .title__link {
   position: absolute;
-  left: 30%;
+  left: 37%;
   top: 50%;  
   color: rgb(224, 116, 116);
   text-decoration: none;  
@@ -63,8 +64,8 @@
 
 .title__bulbClick__msg{
   position: absolute;
-  top: 0%;
-  left: -6%;
+  top: 60%;
+  left: 26%;
   color: red;
   font-size: 1.8vmax;
   font-weight: 700;
@@ -132,10 +133,10 @@
 }
 .text3 {
   position: absolute;
-  width: 35%;
+  width: 25%;
   height: 25%;
   top: 55%;
-  left: 71%;
+  left: 70%;
   border-radius: 10%;
   color: #ffdd93;
   font-size: 1.4vmax;
@@ -161,18 +162,19 @@
 
 @media screen and (max-width: 479px) {  
   .title__switchBtn{
+    top: -25%;
+    left: 45%;
     width: 20%;
-  }
+  }  
   .title__bulbClick__msg{
     font-size: 22px;
-    left: -3%;
+    top:40%;
+    left: 50%;
   }
-  .title__text{
-    position:absolute;
-    left: 10%;
-  }
+  
   .title__link{
     left: 70%;
+    font-size: 3vmax;
   }
 
   .text1{

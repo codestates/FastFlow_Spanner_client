@@ -10,10 +10,12 @@
   position: absolute;
   height: 10%;
   width: 100%;
+  top: 1vh;
+  left: 1vw;
   font-size: 5vmax;
-  font-weight: 700;
-  color: #ffdd93;
-  text-shadow: 0.1vw 0.1vw 0 black;
+  color: black;    
+  font-family: "Cormorant Garamond", serif;  
+  font-weight: 700;  
 }
 
 .MainElectricMotors__rotatingMotor1{
@@ -252,9 +254,10 @@
 
 .text__link-wrapper-ElectricMotor {  
   position:absolute;
-  width: 100%;
-  height: 20%;
-  top: 120%; 
+  top: 8%; 
+  left: 35%;
+  width: 20vw;
+  height: 5%;  
   font-size: 1.9vw;
   font-weight: 700;
   font-family: "Cormorant Garamond", serif;  
@@ -293,6 +296,13 @@
 @media screen and (max-width: 479px) {  
   .text__desc-ElectricMotor{
     font-size: 16px;    
+  }
+  .text__link-wrapper-ElectricMotor{    
+    top: 5%;
+    left: 60%;    
+  }
+  .text__link-ElectricMotor{
+    font-size: 3vmax;
   }
   .module__guide{
     font-size: 16px; 

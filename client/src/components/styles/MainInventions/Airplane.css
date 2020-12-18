@@ -1,17 +1,17 @@
 .MainAirplanes {  
   height: 100vh;
-  position: relative;
+  position: relative;  
 }
 .MainAirplanes__title {
   position: absolute;
   height: 10%;
   width: 22%;
-  top: 2%;
-  left: 2%;
-  z-index: 1;
-  color: #ffdd93;
-  font-weight: 700;
-  font-size: 5vmax;  
+  top: 1vh;
+  left: 1vw;
+  font-size: 5vmax;
+  color: white;    
+  font-family: "Cormorant Garamond", serif;  
+  font-weight: 700; 
 }
 
 .MainAirplanes__body {
@@ -130,7 +130,7 @@
     font-size: 3vmax;
   }
   .body__background{    
-    transform: scaleX(1.5)
+    transform: scaleX(1.5);      
   }
   .body__slider{
     left: 25%;
