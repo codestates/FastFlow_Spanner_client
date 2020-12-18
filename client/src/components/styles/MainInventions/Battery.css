@@ -396,29 +396,51 @@
     width: 80%;
     left: -12%;
   }
-  .item1__title{
-    font-size: 16px;
+  .item1__pics{
+    width:30vw;
+    height:15vh;
+  }
+  .item2__pics{
+    width:30vw;
+    height:15vh;
+  }
+  .item3__pics{
+    top: 5vh;
+    width:30vw;
+    height:15vh;
+  }
+  .item4__pics{
+    top: 5vh;
+    width:30vw;
+    height:15vh;
+  }
+  .item1__title{    
+    font-size: 18px;
+    top: 17vh;
   }
   .item2__title{
-    font-size: 16px;
+    font-size: 18px;
+    top: 17vh;
   }
   .item3__title{
-    font-size: 16px;
+    font-size: 18px;
+    top: 20vh;
   }
   .item4__title{
-    font-size: 16px;
+    font-size: 18px;
+    top: 20vh;
   }
   .item1__text{
-    font-size: 12px;
+    display:none;
   }
   .item2__text{
-    font-size: 12px;
+    display:none;
   }
   .item3__text{
-    font-size: 12px;
+    display:none;
   }
   .item4__text{
-    font-size: 12px;
+    display:none;
   }
 
   .body__videoArea{
