@@ -22,7 +22,7 @@ const Mypage = () => {
     axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;        
     axios.get(ip + port + "/profile/read")
     .then((res) => {
-      console.log(res)
+      // console.log(res)
       const { username, email, userPhoto } = res.data;
       setUsername(username);
       setEmail(email);
@@ -42,7 +42,7 @@ const Mypage = () => {
     // 서버 코드 : profileController, uploadDelete 철자 수정 요청 
     // profile.js, uploadDelete 철자 수정 요청
     // Restful API로 작성 요청
-    return axios.put(`${ip}${port}/profile/upload/delete`, {
+    axios.put(`${ip}${port}/profile/upload/delete`, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -65,9 +65,9 @@ const Mypage = () => {
     // }
     //FormData 내용 확인 2: formData.get('key값') 메서드 사용하기!
     //MDN : get 메서드는 'key값'의 첫 번째 value만 반환한다.
-    // console.log("pair", formData.get('image'));
+    console.log("pair", formData.get('image'));
         
-    return axios.put(`${ip}${port}/profile/upload`, formData, {
+    axios.put(`${ip}${port}/profile/upload`, formData, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -149,7 +149,7 @@ const Mypage = () => {
                       <input type="file" id="ex-file" name="image" onChange={onChangeFile} />
                     </div>
                     <div className="profilePicBtns__etc">
-                      <button className="changeBtn" type="submit" onClick={onChangeProfilePic}>
+                      <button className="changeBtn" type="submit">
                         사진변경
                       </button>
                       <button className="deleteBtn" type="submit" onClick={onDeleteProfilePic}>
