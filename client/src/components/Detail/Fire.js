@@ -6,6 +6,7 @@ import axios from "axios";
 import basicPostPic from "../images/InputPic.jpg";
 import { ip, port } from "../../url";
 import nullPic from "../images/downloadPic.jpg";
+import { useHistory } from "react-router-dom";
 
 const Fire = () => {
   const [commentList, setCommentList] = useState([]);
@@ -18,6 +19,7 @@ const Fire = () => {
   const [inventionId, setInventionId] = useState("asdf");
   const [userName, setUserName] = useState("");
 
+  const history = useHistory();
   useEffect(() => {
     // 토큰 유지
     let accessToken = localStorage.getItem("token");
@@ -80,6 +82,7 @@ const Fire = () => {
         });
       });
     setModalCommentEditView("none");
+    history.go();
   };
   // 사진 파일 적용 및 보여주기
   const onChangeFile = (e) => {
@@ -101,6 +104,7 @@ const Fire = () => {
         inventionId: inventionId,
       },
     });
+    history.go();
   };
   // 댓글 수정 삭제 창 내부 컨텐츠
   const onEditComment = () => {

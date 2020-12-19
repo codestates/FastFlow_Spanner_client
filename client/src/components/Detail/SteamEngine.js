@@ -6,6 +6,7 @@ import axios from "axios";
 import basicPostPic from "../images/InputPic.jpg";
 import { ip, port } from "../../url";
 import nullPic from "../images/downloadPic.jpg";
+import { useHistory } from "react-router-dom";
 
 const SteamEngine = () => {
   const [commentList, setCommentList] = useState([]);
@@ -17,6 +18,7 @@ const SteamEngine = () => {
   const [modalCommentEditView, setModalCommentEditView] = useState("none");
   const [inventionId, setInventionId] = useState("");
 
+  const history = useHistory();
   useEffect(() => {
     // 토큰 유지
     let accessToken = localStorage.getItem("token");
@@ -75,6 +77,7 @@ const SteamEngine = () => {
         });
       });
     setModalCommentEditView("none");
+    history.go();
   };
   // 사진 파일 적용 및 보여주기
   const onChangeFile = (e) => {
@@ -96,6 +99,7 @@ const SteamEngine = () => {
         inventionId: inventionId,
       },
     });
+    history.go();
   };
   // 댓글 수정 삭제 창 내부 컨텐츠
   const onEditComment = () => {
@@ -132,13 +136,15 @@ const SteamEngine = () => {
         <div className="Details__video"></div>
         <div className="Details__textArea">
           <div className="Details__text">
-            <p>증기기관은 외연 열기관으로, 수증기의 열에너지를 기계적인 일로 바꾸는 장치이다. 1705년 영국의 발명가 토머스 뉴커먼이 발명했고, 1769년에 제임스 와트가 개량했다.
-
-기계작동을 위해 끓는 물을 이용하는 아이디어는 2,000년의 오랜 역사를 가지고 있다. 초기 장치들은 실용적인 동력 발생로들이 아니었지만 설계가 진보함에 따라 유용한 동력을 발생시킬 수 있게 되어 지난 300년동안 기계 동력의 주요한 근원이 되었는데, 최초의 응용 예는 진공 엔진을 이용한 갱내 배수였다. 이후의 발전형에서는 가압 증기를 사용하고, 회전 운동으로 변환하여 이전에 수차나 풍차 위치의 제한으로부터 풀려나 물과 석탄 또는 나무 연료를 얻을 수 있는 곳이면 어디든지 제조 기계장치의 광범위한 동력 사용을 가능케 하였다. 주목할 점은, 이 동력원이 증기견인차, 철도 기관차 같은 증기견인차들과 같은 기동 원동기에 훗날 사용 된 것이다. 현대 증기터빈들은 여러가지 열원들을 사용하여 세계에 전력의 대략 80%을 생산한다 .
-
-증기기관들은 비록 태양 에너지, 원자력 또는 지열 에너지와 같은 열의 다른 외부 근원이 사용될지라도 일반적으로 외연기관이다. 동력 싸이클은 Rankine 사이클로 알려져 있다.
-
-일반적으로, '증기기관'이라는 용어는 통합 증기 플랜트, 즉, 철도 증기기관차와 이동형 증기기관을 가리킬 수도 있고, 단독 기계류, 즉, 보 엔진과 고정증기기관을 가리킬 수도 있다. 증기해머와 증기 파일 드라이버들과 같은 전문화된 장치들은 독립된 보일러로부터 공급된 증기를 사용한다.
+            <p>
+              증기기관은 외연 열기관으로, 수증기의 열에너지를 기계적인 일로 바꾸는 장치이다. 1705년 영국의 발명가 토머스 뉴커먼이 발명했고, 1769년에 제임스 와트가 개량했다. 기계작동을 위해 끓는 물을
+              이용하는 아이디어는 2,000년의 오랜 역사를 가지고 있다. 초기 장치들은 실용적인 동력 발생로들이 아니었지만 설계가 진보함에 따라 유용한 동력을 발생시킬 수 있게 되어 지난 300년동안 기계
+              동력의 주요한 근원이 되었는데, 최초의 응용 예는 진공 엔진을 이용한 갱내 배수였다. 이후의 발전형에서는 가압 증기를 사용하고, 회전 운동으로 변환하여 이전에 수차나 풍차 위치의 제한으로부터
+              풀려나 물과 석탄 또는 나무 연료를 얻을 수 있는 곳이면 어디든지 제조 기계장치의 광범위한 동력 사용을 가능케 하였다. 주목할 점은, 이 동력원이 증기견인차, 철도 기관차 같은 증기견인차들과
+              같은 기동 원동기에 훗날 사용 된 것이다. 현대 증기터빈들은 여러가지 열원들을 사용하여 세계에 전력의 대략 80%을 생산한다 . 증기기관들은 비록 태양 에너지, 원자력 또는 지열 에너지와 같은
+              열의 다른 외부 근원이 사용될지라도 일반적으로 외연기관이다. 동력 싸이클은 Rankine 사이클로 알려져 있다. 일반적으로, '증기기관'이라는 용어는 통합 증기 플랜트, 즉, 철도 증기기관차와 이동형
+              증기기관을 가리킬 수도 있고, 단독 기계류, 즉, 보 엔진과 고정증기기관을 가리킬 수도 있다. 증기해머와 증기 파일 드라이버들과 같은 전문화된 장치들은 독립된 보일러로부터 공급된 증기를
+              사용한다.
             </p>
           </div>
         </div>

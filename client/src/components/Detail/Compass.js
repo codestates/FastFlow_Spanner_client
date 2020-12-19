@@ -6,6 +6,7 @@ import axios from "axios";
 import basicPostPic from "../images/InputPic.jpg";
 import { ip, port } from "../../url";
 import nullPic from "../images/downloadPic.jpg";
+import { useHistory } from "react-router-dom";
 
 const Compass = () => {
   const [commentList, setCommentList] = useState([]);
@@ -17,6 +18,7 @@ const Compass = () => {
   const [modalCommentEditView, setModalCommentEditView] = useState("none");
   const [inventionId, setInventionId] = useState("");
 
+  const history = useHistory();
   useEffect(() => {
     // 토큰 유지
     let accessToken = localStorage.getItem("token");
@@ -75,6 +77,7 @@ const Compass = () => {
         });
       });
     setModalCommentEditView("none");
+    history.go();
   };
   // 사진 파일 적용 및 보여주기
   const onChangeFile = (e) => {
@@ -96,6 +99,7 @@ const Compass = () => {
         inventionId: inventionId,
       },
     });
+    history.go();
   };
   // 댓글 수정 삭제 창 내부 컨텐츠
   const onEditComment = () => {
@@ -132,14 +136,17 @@ const Compass = () => {
         <div className="Details__video"></div>
         <div className="Details__textArea">
           <div className="Details__text">
-            <p>나침반은 항공이나 항해 등에서 방향을 알기 위해 쓰는 기구이다. 지남침이라고도 한다. 자석이 지구의 자기장에 정렬되는 것을 이용한 자기나침반과 지구의 자전축을 검출하는 자이로스코프를 이용한 전륜나침반, 그리고 인공위성의 무선전파를 이용하는 GPS 나침반 3종류가 있다.
+            <p>
+              나침반은 항공이나 항해 등에서 방향을 알기 위해 쓰는 기구이다. 지남침이라고도 한다. 자석이 지구의 자기장에 정렬되는 것을 이용한 자기나침반과 지구의 자전축을 검출하는 자이로스코프를 이용한
+              전륜나침반, 그리고 인공위성의 무선전파를 이용하는 GPS 나침반 3종류가 있다.
             </p>
             <div className="Details__text__birth">역사</div>
             <p>
-            최초의 나침반은 천연 자석-철의 자연 자성 광석-으로 제작되었다. 고대 중국인들은 천연 자석이 자유롭게 움직일 수 있도록 놓였을 때 항상 같은 방향을 가리키는 것을 발견했다. 초기 나침반은 보석을 찾거나 집터를 선택하는 데에만 사용되었지만, 이후 11 세기 송나라 때 항해를 위해 사용되기 시작했다. 이후의 나침반은 천연 자석으로 자화된 철 바늘로 만들어졌다.
-
-나침반 이전의 항해술
-나침반 도입 이전, 바다 위에서 현재 위치, 목적지의 방향은 주로 천체의 위치를 관찰하거나 특징적인 구조물을 통해 결정되었다. 흐린 날에, 바이킹들은 근청석이나 복굴절결정을 이용하여 태양의 방향과 고도를 알아냈다. 그들의 천문학적 지식은 이 정보를 통해 그들의 방향을 알아내기 충분했다. 바이킹들보다 남쪽에 살던 유럽인들은 이러한 기술을 몰랐으므로 나침반이 발명되고야 악천후에서 방향을 알 수 있게 되었다. 이것이 뱃사람들이 육지로부터 멀리 떨어진 곳 까지 안전하게 이동할 수 있게 해 주었고, 바다를 통한 교역이 늘어나 대항해시대로 이어지게 된다.
+              최초의 나침반은 천연 자석-철의 자연 자성 광석-으로 제작되었다. 고대 중국인들은 천연 자석이 자유롭게 움직일 수 있도록 놓였을 때 항상 같은 방향을 가리키는 것을 발견했다. 초기 나침반은
+              보석을 찾거나 집터를 선택하는 데에만 사용되었지만, 이후 11 세기 송나라 때 항해를 위해 사용되기 시작했다. 이후의 나침반은 천연 자석으로 자화된 철 바늘로 만들어졌다. 나침반 이전의 항해술
+              나침반 도입 이전, 바다 위에서 현재 위치, 목적지의 방향은 주로 천체의 위치를 관찰하거나 특징적인 구조물을 통해 결정되었다. 흐린 날에, 바이킹들은 근청석이나 복굴절결정을 이용하여 태양의
+              방향과 고도를 알아냈다. 그들의 천문학적 지식은 이 정보를 통해 그들의 방향을 알아내기 충분했다. 바이킹들보다 남쪽에 살던 유럽인들은 이러한 기술을 몰랐으므로 나침반이 발명되고야 악천후에서
+              방향을 알 수 있게 되었다. 이것이 뱃사람들이 육지로부터 멀리 떨어진 곳 까지 안전하게 이동할 수 있게 해 주었고, 바다를 통한 교역이 늘어나 대항해시대로 이어지게 된다.
             </p>
           </div>
         </div>

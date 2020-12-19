@@ -6,6 +6,7 @@ import axios from "axios";
 import basicPostPic from "../images/InputPic.jpg";
 import { ip, port } from "../../url";
 import nullPic from "../images/downloadPic.jpg";
+import { useHistory } from "react-router-dom";
 
 const Glasses = () => {
   const [commentList, setCommentList] = useState([]);
@@ -17,6 +18,7 @@ const Glasses = () => {
   const [modalCommentEditView, setModalCommentEditView] = useState("none");
   const [inventionId, setInventionId] = useState("");
 
+  const history = useHistory();
   useEffect(() => {
     // 토큰 유지
     let accessToken = localStorage.getItem("token");
@@ -75,6 +77,7 @@ const Glasses = () => {
         });
       });
     setModalCommentEditView("none");
+    history.go();
   };
   // 사진 파일 적용 및 보여주기
   const onChangeFile = (e) => {
@@ -96,6 +99,7 @@ const Glasses = () => {
         inventionId: inventionId,
       },
     });
+    history.go();
   };
   // 댓글 수정 삭제 창 내부 컨텐츠
   const onEditComment = () => {
@@ -132,9 +136,14 @@ const Glasses = () => {
         <div className="Details__video"></div>
         <div className="Details__textArea">
           <div className="Details__text">
-            <p>안경은 눈의 굴절 이상을 보정하거나, 눈을 보호하거나, 몸을 치장하기 위한 기구이다. 안경은 안경테, 안경알로 구성되어 있다. 안경테의 경우는 사람마다 기호에 따른 차이가 있고 안경알은 사람의 시력이나 눈의 이상 정도에 따라서 다르다. 안경은 안경테가 없는 소프트렌즈와 비교될 수 있는데 안경테가 없이 눈알에 직접 착용한다는 점만 다르고 시력을 교정한다는 큰 의미로서는 같다.
-
-안경 사용자가 근시인가 난시인가 혹은 시력에 따라서도 안경알이 달라지는데 근시인 경우 오목 렌즈를 사용하고 원시인 경우 볼록렌즈를 사용하게 된다. 안경은 테의 유무에 따라서 일반적인 안경테, 반무테, 무테로 나눌 수 있다. 안경테는 연령대에 따라서 착용하는 종류가 다르고, 사람의 기호에 따라 패션을 위해서 착용하는 종류가 다르다. 주로 젊은 세대는 안경테로 두꺼운 뿔테를 사용하고, 알이 큰 것을 착용하기도 한다. 좀 나이가 있는 직장인들은 흔히 반무테나 무테를 사용하고, 일반적인 안경테를 사용하더라도 테가 얇은 것을 사용한다. 시력에 이상이 있는 노인분들은 안경을 시력 교정의 용도말고도 돋보기의 용도로 사용하기도 한다. 근래에 안경은 패션의 일부분이 되기도 해서, 시력이 나쁘지 않더라도 도수가 없는 알을 사용하여 안경을 쓰고 다니는 사람들도 있으며, 알이 존재하지 않는 패션안경, 또는 선글라스를 이용하는 사람들도 많다.
+            <p>
+              안경은 눈의 굴절 이상을 보정하거나, 눈을 보호하거나, 몸을 치장하기 위한 기구이다. 안경은 안경테, 안경알로 구성되어 있다. 안경테의 경우는 사람마다 기호에 따른 차이가 있고 안경알은 사람의
+              시력이나 눈의 이상 정도에 따라서 다르다. 안경은 안경테가 없는 소프트렌즈와 비교될 수 있는데 안경테가 없이 눈알에 직접 착용한다는 점만 다르고 시력을 교정한다는 큰 의미로서는 같다. 안경
+              사용자가 근시인가 난시인가 혹은 시력에 따라서도 안경알이 달라지는데 근시인 경우 오목 렌즈를 사용하고 원시인 경우 볼록렌즈를 사용하게 된다. 안경은 테의 유무에 따라서 일반적인 안경테,
+              반무테, 무테로 나눌 수 있다. 안경테는 연령대에 따라서 착용하는 종류가 다르고, 사람의 기호에 따라 패션을 위해서 착용하는 종류가 다르다. 주로 젊은 세대는 안경테로 두꺼운 뿔테를 사용하고,
+              알이 큰 것을 착용하기도 한다. 좀 나이가 있는 직장인들은 흔히 반무테나 무테를 사용하고, 일반적인 안경테를 사용하더라도 테가 얇은 것을 사용한다. 시력에 이상이 있는 노인분들은 안경을 시력
+              교정의 용도말고도 돋보기의 용도로 사용하기도 한다. 근래에 안경은 패션의 일부분이 되기도 해서, 시력이 나쁘지 않더라도 도수가 없는 알을 사용하여 안경을 쓰고 다니는 사람들도 있으며, 알이
+              존재하지 않는 패션안경, 또는 선글라스를 이용하는 사람들도 많다.
             </p>
           </div>
         </div>
