@@ -117,6 +117,7 @@ const App = () => {
       } else {
         const { username } =successInfo.data;
         setUserName(username);
+        console.log('logInSuccess')
       }
     }
   }
@@ -162,6 +163,7 @@ const App = () => {
         isLogIn={isLogIn}
         handleSignIn={handleSignIn}
         userName={userName}
+        setIsLogIn={setIsLogIn}
         handleResponseSuccess={handleResponseSuccess}
         onLogOut={onLogOut}
         switchLogOut={switchLogOut}

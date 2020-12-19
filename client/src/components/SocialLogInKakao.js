@@ -68,6 +68,7 @@ const SocialLogInKakao = () => {
       })    
     console.log('정상적으로 로그인 되었습니다.')
     setIsLogIn(true)
+    history.push('/');
     history.go(0);
   }
   // 그냥 App.js에서 Logout 시에 Kakao.Auth.logout(); 메서드로 처리---------------

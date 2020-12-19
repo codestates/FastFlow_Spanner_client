@@ -71,6 +71,7 @@ export default function Nav(props) {
             onChangePassword={props.onChangePassword}
             errMessage={props.errMessage}
             handleSignIn={props.handleSignIn}
+            setIsLogIn={props.setIsLogIn}
             handleResponseSuccess={props.handleResponseSuccess}
           />}
           </div>
