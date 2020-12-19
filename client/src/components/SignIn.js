@@ -50,7 +50,11 @@ import kakaotalk_icon from './images/kakaotalk_icon.png';
 // }
 
 
-const SignIn = (props) => (
+const SignIn = (props) =>{
+  const logInTrue = () => [
+    props.setIsLogIn(true)
+  ]
+  return (
   <div>
     <div className="signIn__navBtn" onClick={props.modalOpen}>
       Log In
@@ -68,10 +72,10 @@ const SignIn = (props) => (
           <div className="signIn__noId" onClick={props.modalClose}>
             <Link to="/signup">아직 아이디가 없으신가요?</Link>
           </div>
-          <div className="signIn__social">
-            <a href={`https://github.com/login/oauth/authorize?client_id=0604c124c075b9bc4925&redirect_uri=${ip}${port_client}/sociallogin`} className="signIn__gitHub" onClick={props.modalClose}>
+          <div className="signIn__social" onClick={logInTrue} >
+            <a href={`https://github.com/login/oauth/authorize?client_id=0604c124c075b9bc4925&redirect_uri=${ip}${port_client}/sociallogin`} className="signIn__gitHub">
             </a>              
-            <a href={`${ip}${port_client}/SocialLogInKakao`} className="signIn__kakao" onClick={props.modalClose}>
+            <a href={`${ip}${port_client}/SocialLogInKakao`} className="signIn__kakao">
             </a>
           </div>
           <div>
@@ -91,5 +95,6 @@ const SignIn = (props) => (
     </center>
   </div>
 );
+  };
 
 export default SignIn;
