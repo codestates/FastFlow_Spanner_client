@@ -136,12 +136,6 @@ const App = () => {
       autoLogOutClose();
     }, 2000);            
     }
-    if(Kakao.Auth.getAccessToken()){
-      Kakao.Auth.logout();
-      setTimeout(() => {
-        autoLogOutClose();
-      }, 2000);            
-    }  
     setTimeout(() => {
       autoLogOutClose();
     }, 2000); 

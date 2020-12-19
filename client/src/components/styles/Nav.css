@@ -127,7 +127,6 @@
     font-size: 3.1vh;
     font-weight: 800;
     visibility: visible;
-    z-index:20;
   } 
 
   .nav__hamburgerBtn1:hover {

@@ -12,12 +12,15 @@ export default function Nav(props) {
   const onChangeHamburgerBtn = async () => {
     if (hamburgerBtn) {
       await setHamburgerBtn(false)
-      console.log('yes')
     } else {
       setHamburgerBtn(true)
-      console.log('no')
     }
   };
+
+  const hamburgerBtnFalse = async () => {
+    await setHamburgerBtn(false)
+  }
+
   const scrollState = useScrollStatus();
   const hamdis = () => {
     if (hamburgerBtn) {
@@ -47,6 +50,7 @@ export default function Nav(props) {
           errMessage={props.errMessage}
           handleSignIn={props.handleSignIn}
           handleResponseSuccess={props.handleResponseSuccess}
+          hamburgerBtnFalse={hamburgerBtnFalse}
         />}
         </div>
         <div>
@@ -62,7 +66,7 @@ export default function Nav(props) {
         <div>
           <div  className="nav__hamburgerBtn1" style={hamdis()}>
           {props.isLogIn ? 
-          <LogOut className="nav__logOutHam" onLogOut={props.onLogOut} switchLogOut={props.switchLogOut} />:
+          <LogOut className="nav__logOutHam" hamburgerBtnFalse={hamburgerBtnFalse} onLogOut={props.onLogOut} switchLogOut={props.switchLogOut} />:
           <SignIn className="nav__signInHam"
             modalOpen={props.modalOpen}
             modalClose={props.modalClose}
@@ -73,16 +77,17 @@ export default function Nav(props) {
             handleSignIn={props.handleSignIn}
             setIsLogIn={props.setIsLogIn}
             handleResponseSuccess={props.handleResponseSuccess}
+            hamburgerBtnFalse={hamburgerBtnFalse}
           />}
           </div>
           <div>
           {props.isLogIn ?
-          <Link to="/Mypage" className="nav__hamburgerBtn2" style={hamdis2()}>
+          <Link to="/Mypage" className="nav__hamburgerBtn2" onClick={hamburgerBtnFalse} style={hamdis2()}>
             <div className="nav__hamSignUp" style={hamdis2()}>
               My page
             </div>
           </Link> : 
-          <Link to="/SignUp" className="nav__hamburgerBtn2" style={hamdis2()}>
+          <Link to="/SignUp" className="nav__hamburgerBtn2" onClick={hamburgerBtnFalse} style={hamdis2()}>
             <div className="nav__hamSignUp" style={hamdis2()}>
               Sign up
             </div>
@@ -93,7 +98,7 @@ export default function Nav(props) {
           <ScrollYear userName={props.userName} />
         </div>
         <div>
-          <Link to="/" className="nav__logoBtn">
+          <Link to="/" onClick={hamburgerBtnFalse} className="nav__logoBtn">
           </Link>
         </div>
 			</div>
