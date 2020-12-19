@@ -18,8 +18,8 @@
   position: relative;
   width: 100%;
   height: 100%;
-  transform: scale(1);
-  transition: background-position 0.25s;
+  /* transform: scale(1);
+  transition: background-position 0.25s; */
 }
 
 .MainPages__welcomePointText {
@@ -101,18 +101,12 @@
   margin-top: 430px;
 }
 
-/* .MainPages__ScrollSign {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-} */
-
 .MainPages__ScrollMouse {
   position: absolute;
   box-sizing: border-box;
   bottom: 7%;
   height: 10%;
-  left: 48%;
+  left: 47.6%;
 }
 
 @media screen and (max-width: 767px) {
@@ -129,7 +123,7 @@
   }
 
   .MainPages__ScrollMouse {
-    left: 40%;
+    left: 41%;
   }
 }
 
@@ -141,5 +135,8 @@
   .MainPages__welcomePointSubText {
     top: 12%;
     font-size: 2.7vmax;
+  }
+  .MainPages__ScrollMouse {
+    left: 45%;
   }
 }

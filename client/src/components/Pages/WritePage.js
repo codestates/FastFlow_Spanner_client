@@ -51,14 +51,11 @@ const WritePage = ({ inventionId }) => {
         //사진과 다른 데이터를 같이 업로드하고 싶을 때는, formdata 내부에 다른 데이터들도
         //append 형태로 붙여주면 된다.
         .then((res) => {
-          console.log("사진을 업로드 합니다.", res.data);
-          // const img = new File([blob], basicPostPic, { type: "image/jpeg" });
           const file = srcToFile("client/src/components/images/SpannerLogo.png", "SpannerLogo.png", "image/png");
           file.then((result) => {
             setPostPic(result);
           });
 
-          console.log("포스트 사진에 무엇이 있는지 확인", postPic);
           const formData = new FormData();
           formData.append("image", postPic);
           formData.append("postId", res.data.id);
@@ -86,7 +83,6 @@ const WritePage = ({ inventionId }) => {
   // };
 
   const onChangeFile = (e) => {
-    console.log("!!!!!!!!!!!!!!!!!!!!!!", e);
     e.preventDefault();
     let reader = new FileReader();
     let file = e.target.files[0];
@@ -94,7 +90,7 @@ const WritePage = ({ inventionId }) => {
       setPostPicView(reader.result);
     };
     reader.readAsDataURL(file);
-    console.log("1234123!!!!!!!!!!!!!!!!!!!!!!", file);
+
     setPostPic(file);
   };
 

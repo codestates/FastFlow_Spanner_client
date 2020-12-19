@@ -40,20 +40,9 @@ const MainPage = () => {
     }
   });
 
-  const updateMousePosition = (e) => {
-    let w = window.innerWidth / 2;
-    let h = window.innerHeight / 2;
-    let mouseX = e.clientX;
-    let mouseY = e.clientY;
-    let depth3 = `${50 - (w - mouseX) * 0.03}% ${50 - (h - mouseY) * 0.03}%`;
-    let x = `${depth3}`;
-    const elem = document.querySelector(".MainPages__welcomePoint");
-    elem.style.backgroundPosition = x;
-  };
-
   return (
     <div className="MainPages">
-      <div className="MainPages__welcomePoint" onMouseMove={updateMousePosition}>
+      <div className="MainPages__welcomePoint">
         <div className="MainPages__welcomePointTextArea">
           <div className="MainPages__welcomePointText">Invention History</div>
           <div className="MainPages__welcomePointSubText">Experience the footsteps of an invention over time</div>
