@@ -3,7 +3,7 @@ import { Switch, Route, withRouter } from "react-router-dom";
 import axios from "axios";
 import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 import MainPage from "./components/Pages/MainPage";
 import Mypage from "./components/Pages/Mypage";
@@ -79,7 +79,7 @@ const App = () => {
           const { accessToken } = res.data;
           axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
           localStorage.setItem("token", res.data.accessToken);
-          console.log(res.data)
+          console.log(res.data);
           //refresh 토큰도 저장
           localStorage.setItem("refreshToken", res.data.refreshToken);
           modalClose();
@@ -94,7 +94,7 @@ const App = () => {
     if (!successInfo) {
       setUserName("");
     } else {
-      const { username } =successInfo.data;
+      const { username } = successInfo.data;
       setIsLogIn(true);
       setUserName(username);
       history.go(0);
@@ -104,26 +104,27 @@ const App = () => {
   const onLogOut = () => {
     setSwitchLogOut("block");
     // await axios.post("http://localhost:3000/user/signout")
-    
-    if(localStorage.getItem("token") || localStorage.getItem("refreshToken")) {
+
+    if (localStorage.getItem("token") || localStorage.getItem("refreshToken")) {
       axios.delete(ip + port + "/user/signout");
       localStorage.removeItem("token");
       localStorage.removeItem("refreshToken");
       setIsLogIn(false);
       setUserName("");
-    setTimeout(() => {
-      autoLogOutClose();
-    }, 2000);            
+      setTimeout(() => {
+        autoLogOutClose();
+      }, 2000);
     }
-    if(Kakao.Auth.getAccessToken()){
+
+    if (Kakao.Auth.getAccessToken()) {
       Kakao.Auth.logout();
       setTimeout(() => {
         autoLogOutClose();
-      }, 2000);            
-    }  
+      }, 2000);
+    }
     setTimeout(() => {
       autoLogOutClose();
-    }, 2000); 
+    }, 2000);
   };
 
   const autoLogOutClose = () => {
@@ -174,11 +175,8 @@ const App = () => {
         <Route exact path="/writingSystem" render={() => <WritingSystem />} />
         <Route exact path="/mypage" render={() => <Mypage />} />
 
-
-        <Route exact path="/sociallogin" render={() => <SocialLogInGitHub handleResponseSuccess={handleResponseSuccess} location={window.location} hisotry={window.history}/>} />
+        <Route exact path="/sociallogin" render={() => <SocialLogInGitHub handleResponseSuccess={handleResponseSuccess} location={window.location} hisotry={window.history} />} />
         <Route exact path="/SocialLogInKakao" render={() => <SocialLogInKakao handleResponseSuccess={handleResponseSuccess} />} />
-
-
       </Switch>
     </div>
   );
