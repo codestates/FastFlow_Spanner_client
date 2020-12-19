@@ -6,7 +6,7 @@
 
 .Mypages {
   width: 100%;
-  height: 1000px;
+  height: 100vh;
   padding-top: 130px;
   background-color: #fff9f7;
   padding-left: 50px;
@@ -23,6 +23,7 @@
 }
 .profileTitle__username {
   font-size: 32px;
+  font-weight: 700;
   color: #d87a5e;
 }
 .profileTitle__desc {
@@ -35,19 +36,20 @@
   width: 95%;
   height: 300px;
   margin-top: 10px;
+  font-size: 24px;
 }
 .table th,
 .table td {
   border: 0;
-  border-top: 1px solid #ebe6e5;
+  border-top: 1px solid #ebe6e5;  
 }
 .table th {
   color: rgb(255, 255, 255);
-  background-color: #d87a5e;
+  background-color: #d87a5e;    
 }
 .table td {
-  color: #d87a5e;
-  font-size: 18px;
+  color: #d87a5e;  
+  font-weight: 700;  
 }
 .profilePicView {
   width: 180px;
@@ -68,11 +70,16 @@
 .profilePicBtns__fileSearch {
   margin-top: 20px;
 }
+.profilePicBtns__fileSearch label:hover{
+  background-color: rgb(253, 244, 241);
+  transition: all 1s ease;
+}
+
 .profilePicBtns__fileSearch label {
   display: inline-block;
   padding: 0.5em 0.75em;
   color: rgb(88, 88, 88);
-  font-size: inherit;
+  font-size: inherit;  
   line-height: normal;
   vertical-align: middle;
   background-color: #fdfdfd;
@@ -97,11 +104,13 @@
   margin-bottom: 10px;
 }
 .changeBtn,
-.deleteBtn {
+.deleteBtn,
+.pwdEditBtn {
   display: inline-block;
   padding: 0.5em 0.75em;
   color: rgb(88, 88, 88);
   font-size: inherit;
+  font-weight: inherit;
   line-height: normal;
   vertical-align: middle;
   background-color: #fdfdfd;
@@ -109,10 +118,72 @@
   border: 1px solid #b9763f;
   border-radius: 0.25em;
 }
+.changeBtn:hover,
+.deleteBtn:hover,
+.pwdEditBtn:hover{
+  background-color: rgb(253, 244, 241);
+  transition: all 1s ease;
+}
+
 
 .deleteBtn {
   margin-left: 20px;
 }
 .profileInfo {
   margin-left: 20px;
+}
+
+.pwdEditBtn{
+  width: 272px;
+  margin-left: 20px;
+  margin-bottom: 20px;  
+}
+.pwdEditMod__close{
+  display:none;
+}
+
+.pwdEditMod__open{
+  margin-left: 20px;
+}
+.pwdEditMod__input1{
+  height: 40px;
+  width: 272px;
+}
+.input1__inputBox{
+  height: 40px;
+  width: 272px;
+}
+.pwdEditMod__input2{
+  margin-top: 5px;
+  height: 40px;
+  width: 272px;
+}
+.input2__inputBox{
+  height: 40px;
+  width: 272px;
+}
+
+.pwdSubmitCheckBtn,
+.pwdSubmitCancelBtn {
+  height: 40px;
+  width: 100px;
+  margin: 10px 0;  
+  display: inline-block;  
+  color: rgb(88, 88, 88);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  vertical-align: middle;
+  background-color: #fdfdfd;
+  cursor: pointer;  
+  border-radius: 0.25em;
+}
+.pwdSubmitCheckBtn:hover,
+.pwdSubmitCancelBtn:hover{
+  background-color: rgb(253, 244, 241);
+  transition: all 1s ease;
+}
+
+.pwdSubmitCancelBtn{
+  margin-left: 10px;
 }

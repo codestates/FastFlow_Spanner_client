@@ -24,7 +24,7 @@ const MainLightBulb = () => {
             <div className="title__bulbClick__msg">click</div>          
         </div>
       </Fade>
-        <img className="body__background" src={isLightOn ? backgroundImg : backgroundBlackImg} alt=""></img>
+        <img className="MainLightBulbs__body__background" src={isLightOn ? backgroundImg : backgroundBlackImg} alt=""></img>
         <div className={isLightOn ? "background__texts-on" : "background__texts-off"}>
           <div className="text1">More than 90% of electric-energy <br></br>are consumed as heat-energy</div>
           <div className="text2">You know that <br></br>the very first lightbulb has been installed in GyeongBokGung?</div>

@@ -31,7 +31,6 @@ import Vaccine from "./components/Detail/Vaccine";
 import Wheel from "./components/Detail/Wheel";
 import WritingSystem from "./components/Detail/WritingSystem";
 
-const { Kakao } = window;
 
 axios.defaults.withCredentials = true;
 
@@ -136,13 +135,6 @@ const App = () => {
         autoLogOutClose();
       }, 2000);
     }
-
-    if (Kakao.Auth.getAccessToken()) {
-      Kakao.Auth.logout();
-      setTimeout(() => {
-        autoLogOutClose();
-      }, 2000);
-    }
     setTimeout(() => {
       autoLogOutClose();
     }, 2000);
@@ -170,8 +162,7 @@ const App = () => {
         switchLogOut={switchLogOut}
       />
       <Switch>
-        <Route exact path="/signup" render={() => <SignUp />} />
-        <Route exact path="/signin" render={() => <SignIn handleResponseSuccess={handleResponseSuccess.bind(this)} />} />
+        <Route exact path="/signup" render={() => <SignUp />} />        
         <Route exact path="/" render={() => <MainPage />} />
 
         <Route exact path="/airplane" render={() => <Airplane />} />

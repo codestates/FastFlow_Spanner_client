@@ -13,110 +13,114 @@ const Mypage = () => {
   const [profilePicView, setProfilePicView] = useState(basicProfilePic);
   const [profilePic, setProfilePic] = useState("");
 
-  useEffect(() => {
-    //for signin
-    let accessToken = localStorage.getItem("token");
-    axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
-    //console.log("로컬 스토리지 토큰입니다.", accessToken);
-    axios
-      .get(ip + port + `/user`)
-      .then((res) => {
-        console.log(res);
-        //     //jwt test start (1/2   2/2는 app의 로그아웃)
-        //     // const { accessToken } = res.data;
-        //     // axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
-        //     // //    sessionStorage.setItem('token', res.data.accessToken)
-        //     // localStorage.setItem("token", accessToken);
+  const [isPwdBtnClicked, setIsPwdBtnClicked] = useState(false);
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");  
 
-        //     //jwt test end
-      })
-      .then(() => {
-        axios.get(ip + port + "/profile/read").then((res) => {
-          const { username, email, userPhoto } = res.data;
-          setUsername(username);
-          setEmail(email);
-          if (userPhoto) {
-            setProfilePicView(ip + port + "/" + userPhoto);
-          }
-        });
-      })
-      // , {
-      // 	headers: {
-      // 		"Authorization": `Bearer ${localStorage.getItem('token')}`
-      // 	}
-      // })
-      .catch((err) => {
-        console.log("err");
-      });
-    // 뒤쪽의 배열은 Hook의 componentDidupdate 같은 부분인데, state 값을 넣는 것이 아니라,
-    // state 값을 변경하는 메서드를 넣어주어야 적용이 된다.
-  }, [setProfilePicView]);
+  useEffect(() => {   
+    const accessToken = localStorage.getItem("token");
+    axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;        
+    axios.get(ip + port + "/profile/read")
+    .then((res) => {
+      // console.log(res)
+      const { username, email, userPhoto } = res.data;
+      setUsername(username);
+      setEmail(email);
+      if (userPhoto) {
+        setProfilePicView(ip + port + "/" + userPhoto);
+      }
+    })
+    .catch((err) => {
+      console.log("err");
+    });              
+  }, []);
 
-  const onDeleteprofilePic = (e) => {
-    setProfilePicView(basicProfilePic);
-    setProfilePic(e.target.value);
-  };
-
-  useEffect(() => {
-    //for signin
-    axios
-      .post(`${ip}${port}/user/signin`, {
-        email: "test999",
-        password: "test999",
-      })
-      .then((res) => {
-        // console.log(res);
-        //jwt test start (1/2   2/2는 app의 로그아웃)
-        const { accessToken } = res.data;
-        axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
-        //    sessionStorage.setItem('token', res.data.accessToken)
-        localStorage.setItem("token", accessToken);
-
-        //jwt test end
-      })
-      .then(() => {
-        axios.get(`${ip}${port}/profile/read`).then((res) => {
-          const { username, email, userPhoto } = res.data;
-          setUsername(username);
-          setEmail(email);
-          if (userPhoto) {
-            setProfilePicView(`${ip}${port}/${userPhoto}`);
-          }
-        });
-      })
-      // , {
-      // 	headers: {
-      // 		"Authorization": `Bearer ${localStorage.getItem('token')}`
-      // 	}
-      // })
-      .catch((err) => {
-        console.log("err");
-      });
-    // 뒤쪽의 배열은 Hook의 componentDidupdate 같은 부분인데, state 값을 넣는 것이 아니라,
-    // state 값을 변경하는 메서드를 넣어주어야 적용이 된다.
-  }, [setProfilePicView]);
-
-  const onChangeProfilePic = (e) => {
+  const onDeleteProfilePic = (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append("image", profilePic);
-
-    return axios.put(`${ip}${port}/profile/upload`, formData, {
+    // console.log('basicProfilePic', basicProfilePic);
+    setProfilePicView(basicProfilePic);   
+    // 서버 코드 : profileController, uploadDelete 철자 수정 요청 
+    // profile.js, uploadDelete 철자 수정 요청
+    // Restful API로 작성 요청
+    axios.put(`${ip}${port}/profile/upload/delete`, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
-    });
+    })
   };
-  // File reader 공부하기
+
+  const onChangeProfilePic = (e) => {
+    e.preventDefault();
+
+  }
+
+  const onSubmitProfilePic = (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("image", profilePic);
+    //FormData 객체 내용 확인을 위해서 entries 메서드 사용,
+    //반복문을 통해서 출력함
+    // for(let pair of formData.entries()) {
+    //   console.log(pair[0]+ ', ' + pair[1]);
+    // }
+    //FormData 내용 확인 2: formData.get('key값') 메서드 사용하기!
+    //MDN : get 메서드는 'key값'의 첫 번째 value만 반환한다.
+    console.log("pair", formData.get('image'));
+        
+    axios.put(`${ip}${port}/profile/upload`, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    })
+  };
+  // File reader는 파일의 내용을 읽고 컴퓨터에 저장하는 것을 가능하게 한다.
+
   const onChangeFile = (e) => {
     e.preventDefault();
     let reader = new FileReader();
     let file = e.target.files[0];
+    console.log(file)    
+    // load 이벤트의 핸들러. 읽기 동작이 성공적으로 완료되었을 때마다
+    // 발생한다. 비동기 이므로 CALLBACK 함수를 사용하는 것이 좋다.
     reader.onloadend = () => {
       setProfilePicView(reader.result);
     };
+    //readAsDataURL 메서드는 읽어들인 Data의 URL을 얻어온다.
     reader.readAsDataURL(file);
     setProfilePic(file);
+  };
+  
+  const onSubmitPwd = (e) => {
+    e.preventDefault();
+    if(!doesPasswordMatch()) {
+      return ;
+    }
+    else if(!password) {
+      alert("변경할 비밀번호를 입력해주세요.")
+    } 
+    else {
+      axios.put(ip + port + '/profile/edit/password', {password: password})    
+      .then((res) => {
+        setIsPwdBtnClicked(!isPwdBtnClicked);
+        alert(res.data);
+      })
+    }
+    
+  }  
+  
+  // 비밀번호 매칭 검사
+  const doesPasswordMatch = () => {    
+    return password === confirmPassword;    
+  };
+  
+  const renderFeedbackMessage = () => {
+    if (confirmPassword) {
+      if (!doesPasswordMatch()) {
+        return <div className="chkPwdMatch__passwordInvalid">패스워드가 일치하지 않습니다</div>;
+      } else if (doesPasswordMatch()) {
+        return <div className="chkPwdMatch__passwordValid">패스워드가 일치합니다</div>;
+      }
+    }
   };
 
   return (
@@ -135,7 +139,7 @@ const Mypage = () => {
             <tr>
               <th scope="row">프로필 사진</th>
               <td>
-                <form onSubmit={onChangeProfilePic}>
+                <form onSubmit={onSubmitProfilePic}>
                   <div className="profilePicView">
                     <img className="profilePicView__pic" src={profilePicView} alt=""></img>
                   </div>
@@ -148,12 +152,28 @@ const Mypage = () => {
                       <button className="changeBtn" type="submit">
                         사진변경
                       </button>
-                      <button className="deleteBtn" type="submit" onClick={onDeleteprofilePic}>
+                      <button className="deleteBtn" type="submit" onClick={onDeleteProfilePic}>
                         사진삭제
-                      </button>
+                      </button>                      
                     </div>
                   </div>
                 </form>
+                <button className="pwdEditBtn" type="submit" onClick={()=>{setIsPwdBtnClicked(!isPwdBtnClicked)}}>
+                  비밀번호 변경
+                </button>
+                <div className={isPwdBtnClicked ? "pwdEditMod__open" : "pwdEditMod__close"} >
+                  <div className="pwdEditMod__input1">
+                    <input className="input1__inputBox" type="password" placeholder="새 비밀번호 입력" onChange={(e) => {setPassword(e.target.value)}}></input>
+                  </div>
+                  <div className="pwdEditMod__input2">
+                    <input className="input2__inputBox" type="password" placeholder="새 비밀번호 재입력" onChange={(e) => {setConfirmPassword(e.target.value)}}></input>
+                  </div>
+                  <div className="pwdEditMod__chkPwdMatch">
+                    {renderFeedbackMessage()}
+                  </div>
+                  <button className="pwdSubmitCheckBtn" onClick={onSubmitPwd}>확인</button>
+                  <button className="pwdSubmitCancelBtn" onClick={()=>setIsPwdBtnClicked(!isPwdBtnClicked)}>취소</button>
+                </div>
               </td>
             </tr>
             <tr>
