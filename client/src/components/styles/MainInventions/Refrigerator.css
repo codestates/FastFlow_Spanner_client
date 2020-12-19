@@ -404,12 +404,15 @@
 .img-wrapper__link-text {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 20%;
   left: 50%;
   top: 80%;
   color: black;
   font-size: 1.2vmax;
   font-weight: 700;
+}
+.img-wrapper__link-text:hover {  
+  color: rgb(230, 35, 93);  
 }
 .item6__outdoor {
   position: absolute;
