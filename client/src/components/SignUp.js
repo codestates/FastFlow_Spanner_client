@@ -2,7 +2,7 @@ import axios from "axios";
 import { withRouter, useHistory } from "react-router-dom";
 import { useState } from "react";
 import { ip, port } from "../url";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 
 axios.defaults.withCredentials = true;
 
@@ -89,7 +89,7 @@ const SignUp = () => {
           <div className="SignUp__error">{errorMessage}</div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </center>
   );
 };

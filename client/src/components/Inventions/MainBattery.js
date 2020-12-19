@@ -111,7 +111,6 @@ const MainBattery = () => {
               allowFullScreen>              
               </iframe>
             </div>
-            
           </div>
         </div>
         </Fade>

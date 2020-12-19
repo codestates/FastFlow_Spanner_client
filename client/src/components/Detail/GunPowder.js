@@ -6,6 +6,7 @@ import axios from "axios";
 import basicPostPic from "../images/InputPic.jpg";
 import { ip, port } from "../../url";
 import nullPic from "../images/downloadPic.jpg";
+import { useHistory } from "react-router-dom";
 
 const GunPowder = () => {
   const [commentList, setCommentList] = useState([]);
@@ -17,6 +18,7 @@ const GunPowder = () => {
   const [modalCommentEditView, setModalCommentEditView] = useState("none");
   const [inventionId, setInventionId] = useState("");
 
+  const history = useHistory();
   useEffect(() => {
     // 토큰 유지
     let accessToken = localStorage.getItem("token");
@@ -75,6 +77,7 @@ const GunPowder = () => {
         });
       });
     setModalCommentEditView("none");
+    history.go();
   };
   // 사진 파일 적용 및 보여주기
   const onChangeFile = (e) => {
@@ -96,6 +99,7 @@ const GunPowder = () => {
         inventionId: inventionId,
       },
     });
+    history.go();
   };
   // 댓글 수정 삭제 창 내부 컨텐츠
   const onEditComment = () => {
@@ -132,17 +136,19 @@ const GunPowder = () => {
         <div className="Details__video"></div>
         <div className="Details__textArea">
           <div className="Details__text">
-            <p>화약은 황, 숯과 초석이라 불리는 질산칼륨의 혼합물이다. 연소될 때 많은 양의 기체가 발생하며 급격히 팽창하여 화기의 탄두를 발사하는 추진체로 사용된다. 불꽃놀이의 폭발에도 사용된다. 중국에서 개발 되었다. 9세기부터 중국인들은 초석, 유황, 숯가루 등을 가지고 화약을 만들었다. 마찬가지로 최초의 화기 역시 중국인들이 11세기에 만들었지만, 다만 연대가 명확한 최초의 중국 화기는 1356년에 나타났다.
+            <p>
+              화약은 황, 숯과 초석이라 불리는 질산칼륨의 혼합물이다. 연소될 때 많은 양의 기체가 발생하며 급격히 팽창하여 화기의 탄두를 발사하는 추진체로 사용된다. 불꽃놀이의 폭발에도 사용된다.
+              중국에서 개발 되었다. 9세기부터 중국인들은 초석, 유황, 숯가루 등을 가지고 화약을 만들었다. 마찬가지로 최초의 화기 역시 중국인들이 11세기에 만들었지만, 다만 연대가 명확한 최초의 중국
+              화기는 1356년에 나타났다.
             </p>
             <div className="Details__text__use">화학 반응</div>
             <p>
-            화약폭발은 다음과 같은 화학반응식으로 간단히 표현할 수 있다.<br/>
-2 KNO<sub>3</sub> + S + 3 C → K<sub>2</sub>S + N<sub>2</sub> + 3 CO<sub>2</sub>
-<br/>
-보다 정확한 화학반응식은 다음과 같다.(그러나 이 반응식도 여전히 간단히 표현한 것이다.)
-<br/>
-10 KNO<sub>3</sub> + 3 S + 8 C → 2 K<sub>2</sub>CO<sub>3</sub> + 3 K<sub>2</sub>SO<sub>4</sub> + 6 CO<sub>2</sub> + 5 N<sub>2</sub>
-
+              화약폭발은 다음과 같은 화학반응식으로 간단히 표현할 수 있다.
+              <br />2 KNO<sub>3</sub> + S + 3 C → K<sub>2</sub>S + N<sub>2</sub> + 3 CO<sub>2</sub>
+              <br />
+              보다 정확한 화학반응식은 다음과 같다.(그러나 이 반응식도 여전히 간단히 표현한 것이다.)
+              <br />
+              10 KNO<sub>3</sub> + 3 S + 8 C → 2 K<sub>2</sub>CO<sub>3</sub> + 3 K<sub>2</sub>SO<sub>4</sub> + 6 CO<sub>2</sub> + 5 N<sub>2</sub>
             </p>
           </div>
         </div>

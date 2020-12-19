@@ -27,16 +27,6 @@
   border-radius: 30px;
 }
 
-.LogOuts__message {
-  font-weight: 800;
-  font-size: 23px;
-  color: #3a3938;
-  width: 70%;
-  letter-spacing: 2px;
-  font-family: "Single Day", cursive;
-  margin-left: 4%;
-}
-
 .LogOuts__content__pic {
   border-radius: 100px;
   border: 5px solid #caaa89;

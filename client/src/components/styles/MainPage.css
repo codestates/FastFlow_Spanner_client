@@ -111,22 +111,35 @@
   position: absolute;
   box-sizing: border-box;
   bottom: 7%;
-  height: 13%;
-  left: 47%;
+  height: 10%;
+  left: 48%;
 }
 
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 767px) {
   .MainPages__welcomePointText {
+    font-size: 4.3vmax;
     top: 13%;
     animation: appearTitleM 3s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
   }
 
   .MainPages__welcomePointSubText {
+    font-size: 2.2vmax;
     top: 20%;
     animation: appearTitleM 3s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
   }
 
   .MainPages__ScrollMouse {
     left: 40%;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1023px) {
+  .MainPages__welcomePointText {
+    top: 10%;
+    font-size: 5.3vmax;
+  }
+  .MainPages__welcomePointSubText {
+    top: 12%;
+    font-size: 2.7vmax;
   }
 }

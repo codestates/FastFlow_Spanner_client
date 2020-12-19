@@ -173,7 +173,7 @@ li {
 .Details__editAreas__fileSearch label {
   padding: 0.5em 0.75em;
   color: rgb(88, 88, 88);
-  font-size: inherit;
+  font-size: 1.3vmax;
   line-height: normal;
   vertical-align: middle;
   background-color: #fdfdfd;
@@ -220,7 +220,7 @@ li {
 .Details__editAreas__submitBtnClose {
   padding: 0.5em 0.75em;
   color: rgb(88, 88, 88);
-  font-size: inherit;
+  font-size: 1.3vmax;
   line-height: normal;
   vertical-align: middle;
   background-color: #fdfdfd;
@@ -277,12 +277,12 @@ li {
   border: 1px solid #b9763f;
   border-radius: 0.25em;
   font-family: "Cormorant Garamond", serif;
-  font-size: 1vmax;
+  font-size: 1.3vmax;
   min-width: 10px;
   height: 2%;
 }
 
-@media screen and (max-width: 860px) {
+@media all and (min-width: 768px) and (max-width: 1023px) {
   .Details__pic {
     position: relative;
 
@@ -304,9 +304,37 @@ li {
     font-size: 60px;
     margin-left: 44px;
   }
+
+  .Details__editAreas {
+    width: 100%;
+    height: 60%;
+  }
+
+  .Details__editAreas__PicView {
+    width: 270px;
+    height: 40%;
+    left: 34%;
+  }
+
+  .Details__editAreas__fileSearch {
+    top: 56%;
+    left: 34%;
+    width: 100px;
+  }
+
+  .Details__editAreas__input {
+    top: 63%;
+    left: 17%;
+  }
+
+  .Details__editAreas__btn {
+    bottom: 10%;
+
+    left: 44.8%;
+  }
 }
 
-@media screen and (max-width: 385px) {
+@media screen and (max-width: 767px) {
   .Details__pic {
     position: relative;
     width: 160%;
@@ -322,5 +350,37 @@ li {
     position: unset;
     width: 384px;
     height: 218px;
+  }
+  .Details__editAreas {
+    width: 100%;
+    height: 60%;
+  }
+  .Details__editAreas__PicView {
+    width: 250px;
+    height: 40%;
+    left: 27%;
+  }
+  .Details__editAreas__fileSearch {
+    top: 56%;
+    left: 27%;
+    width: 100px;
+  }
+  .Details__editAreas__input {
+    top: 63%;
+    left: 17%;
+  }
+  .Details__editAreas__btn {
+    bottom: 10%;
+    left: 44.8%;
+  }
+
+  .Details__editAreas__titleInput,
+  .Details__editAreas__textInput {
+    width: 90%;
+  }
+
+  .Details__editAreas__submitBtn,
+  .Details__editAreas__submitBtnClose {
+    font-size: 1vmax;
   }
 }

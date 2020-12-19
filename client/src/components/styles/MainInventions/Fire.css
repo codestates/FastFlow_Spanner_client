@@ -92,12 +92,16 @@
   font-family: "Cormorant Garamond", serif;
 }
 
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 767px) {
   .MainFires__interFirePic {
-    height: 25%;
+    height: 28%;
     width: 60%;
     top: -10%;
     left: 3%;
+  }
+
+  .MainFire__BCtext {
+    width: 26%;
   }
 
   .MainFires__danceFirePic {
@@ -111,7 +115,51 @@
   }
 
   .MainFires__readyFirePic {
-    height: 20%;
+    height: 24%;
+    width: 40%;
+    top: 64%;
+  }
+
+  .MainFires__link {
+    top: 42%;
+    right: 10%;
+    font-size: 2.2vmax;
+  }
+
+  .MainFire__textBody {
+    right: 2.7%;
+    top: 33%;
+    font-size: 1.8vmax;
+    width: 38%;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1023px) {
+  .MainFires__interFirePic {
+    height: 35%;
+    width: 58%;
+    top: -10%;
+    left: 3%;
+  }
+  .MainFires__text {
+    right: 24%;
+    font-size: 6vmax;
+  }
+
+  .MainFires__danceFirePic {
+    height: 27%;
+    top: 30%;
+  }
+
+  .MainFire__textBody {
+    right: 2.7%;
+    top: 33%;
+    font-size: 1.8vmax;
+    width: 37%;
+  }
+
+  .MainFires__readyFirePic {
+    height: 32%;
     width: 40%;
     top: 64%;
   }
@@ -119,5 +167,6 @@
   .MainFires__link {
     top: 40%;
     right: 10%;
+    font-size: 2.6vmax;
   }
 }

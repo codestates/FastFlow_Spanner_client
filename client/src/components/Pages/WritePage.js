@@ -146,7 +146,7 @@ const WritePage = ({ inventionId }) => {
           <div className="WritePages__getOutContents">
             {/* <span className="logOut__closeButton" onClick={props.modalClose}>&times;</span> */}
             <img className="WritePages__getOutContents__Pic" src={pleaseLogInPic} alt="" />
-            <p className="WritePages__getOutContents__Massage">{`로그인하고 다시 와라`}</p>
+            <p className="WritePages__getOutContents__Massage">{`로그인을 필요로 합니다.`}</p>
           </div>
         </div>
       </div>
