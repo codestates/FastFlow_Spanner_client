@@ -116,3 +116,7 @@
 .profileInfo {
   margin-left: 20px;
 }
+
+.pwdEditMod__close{
+  display:none;
+}
