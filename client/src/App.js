@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Switch, Route, withRouter } from "react-router-dom";
 import axios from "axios";
 import SignUp from "./components/SignUp";
@@ -65,6 +65,13 @@ const App = () => {
   const setBackErrMessage = () => {
     onChangeErrMessage("");
   };
+
+  useEffect(() => {
+    let accessToken = localStorage.getItem("token");
+    axios.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;    
+    checkToken();
+  },[])
+
   const handleSignIn = async () => {
     if (!email || !password) {
       onChangeErrMessage("이메일과 비밀번호를 입력해주세요");
@@ -83,11 +90,11 @@ const App = () => {
           //refresh 토큰도 저장
           localStorage.setItem("refreshToken", res.data.refreshToken);
           modalClose();
-          setIsLogIn(true);
           handleResponseSuccess(res.data.id);
         });
     }
   };
+
   const handleResponseSuccess = async (login) => {
     let successInfo = await axios.get(ip + port + "/profile/read");
     console.log(successInfo);
@@ -97,9 +104,22 @@ const App = () => {
       const { username } =successInfo.data;
       setIsLogIn(true);
       setUserName(username);
-      history.go(0);
     }
   };
+
+  const checkToken = async () => {
+    if (localStorage.getItem("token") || localStorage.getItem("refreshToken")) {
+      setIsLogIn(true);
+      let successInfo = await axios.get(ip + port + "/profile/read");
+      console.log(successInfo);
+      if (!successInfo) {
+        setUserName("");
+      } else {
+        const { username } =successInfo.data;
+        setUserName(username);
+      }
+    }
+  }
 
   const onLogOut = () => {
     setSwitchLogOut("block");
@@ -175,8 +195,8 @@ const App = () => {
         <Route exact path="/mypage" render={() => <Mypage />} />
 
 
-        <Route exact path="/sociallogin" render={() => <SocialLogInGitHub handleResponseSuccess={handleResponseSuccess} location={window.location} hisotry={window.history}/>} />
-        <Route exact path="/SocialLogInKakao" render={() => <SocialLogInKakao handleResponseSuccess={handleResponseSuccess} />} />
+        <Route exact path="/sociallogin" render={() => <SocialLogInGitHub location={window.location} hisotry={window.history}/>} />
+        <Route exact path="/SocialLogInKakao" render={() => <SocialLogInKakao />} />
 
 
       </Switch>

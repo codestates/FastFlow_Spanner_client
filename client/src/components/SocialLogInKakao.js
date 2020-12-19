@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 const { Kakao } = window;
 
-const SocialLogInKakao = (props) => {
+const SocialLogInKakao = () => {
   const [isLogin, setIsLogIn] = useState(false);  
   const history = useHistory();
 
@@ -67,9 +67,8 @@ const SocialLogInKakao = (props) => {
         localStorage.setItem("refreshToken", refreshToken);
       })    
     console.log('정상적으로 로그인 되었습니다.')
-    props.handleResponseSuccess();
     setIsLogIn(true)
-    history.push('/');
+    history.go(0);
   }
   // 그냥 App.js에서 Logout 시에 Kakao.Auth.logout(); 메서드로 처리---------------
 
