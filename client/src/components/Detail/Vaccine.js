@@ -6,6 +6,7 @@ import axios from "axios";
 import basicPostPic from "../images/InputPic.jpg";
 import { ip, port } from "../../url";
 import nullPic from "../images/downloadPic.jpg";
+import { useHistory } from "react-router-dom";
 
 const Vaccine = () => {
   const [commentList, setCommentList] = useState([]);
@@ -17,6 +18,7 @@ const Vaccine = () => {
   const [modalCommentEditView, setModalCommentEditView] = useState("none");
   const [inventionId, setInventionId] = useState("");
 
+  const history = useHistory();
   useEffect(() => {
     // 토큰 유지
     let accessToken = localStorage.getItem("token");
@@ -75,6 +77,7 @@ const Vaccine = () => {
         });
       });
     setModalCommentEditView("none");
+    history.go();
   };
   // 사진 파일 적용 및 보여주기
   const onChangeFile = (e) => {
@@ -96,6 +99,7 @@ const Vaccine = () => {
         inventionId: inventionId,
       },
     });
+    history.go();
   };
   // 댓글 수정 삭제 창 내부 컨텐츠
   const onEditComment = () => {
@@ -132,22 +136,20 @@ const Vaccine = () => {
         <div className="Details__video"></div>
         <div className="Details__textArea">
           <div className="Details__text">
-            <p>백신 또는 예방주사 는 항원, 즉 병원체를 약하게 만들어 인체에 주입하여 항체를 형성하게 하여 그 질병에 저항하는 후천 면역이 생기도록 하는 의약품이다. 병을 예방하는 목적으로 백신을 주사하는 것을 예방 접종 이라고 한다.
-
-백신은 병원체의 상태에 따라 완전히 병원체를 죽여 만드는 사백신과 약독화시켜 만드는 생백신으로 구별할 수 있다. 약독화한 생백신은 대부분 바이러스이지만 간혹 세균도 있다. 사백신은 바이러스 또는 세균 전체를 죽여 사용하기도 하고 일부만을 분획하여 사용하기도 한다. 분획화한 사백신은 분리한 물질에 따라 단백 기반 백신과 다당 기반 백신으로 나뉜다.
-
-백신의 투여 후에 일어나는 면역 반응은 백혈구와 체액이 관여한다. 백혈구가 관여하는 것을 세포 면역, 체액이 관여하는 면역을 체액 면역이라고 한다.
+            <p>
+              백신 또는 예방주사 는 항원, 즉 병원체를 약하게 만들어 인체에 주입하여 항체를 형성하게 하여 그 질병에 저항하는 후천 면역이 생기도록 하는 의약품이다. 병을 예방하는 목적으로 백신을 주사하는
+              것을 예방 접종 이라고 한다. 백신은 병원체의 상태에 따라 완전히 병원체를 죽여 만드는 사백신과 약독화시켜 만드는 생백신으로 구별할 수 있다. 약독화한 생백신은 대부분 바이러스이지만 간혹
+              세균도 있다. 사백신은 바이러스 또는 세균 전체를 죽여 사용하기도 하고 일부만을 분획하여 사용하기도 한다. 분획화한 사백신은 분리한 물질에 따라 단백 기반 백신과 다당 기반 백신으로 나뉜다.
+              백신의 투여 후에 일어나는 면역 반응은 백혈구와 체액이 관여한다. 백혈구가 관여하는 것을 세포 면역, 체액이 관여하는 면역을 체액 면역이라고 한다.
             </p>
             <div className="Details__text__birth">역사</div>
-<p>
-근대적 백신 접종은 에드워드 제너의 우두법을 시작으로 개발되었다.
-</p>
+            <p>근대적 백신 접종은 에드워드 제너의 우두법을 시작으로 개발되었다.</p>
             <div className="Details__text__make">원리</div>
             <p>
-            인체의 면역계는 병원체에 대응하여 항체를 만든다. 한 번 항체가 형성되면 같은 병원체에 대해서는 면역이 형성되게 된다. 백신은 독성을 약화시킨 병원체를 체내에 주입하여 항체가 형성되도록 하는 것이다. 이렇게 항체가 형성되면 실제 독성을 지닌 병원체가 침입하였을 때 신속하게 격퇴할 수 있게 된다.
-
-면역계는 출생 전부터 모체로부터 전달받은 선천 면역과 생활하면서 침입해 오는 병원체에 대항하여 형성되는 후천 면역으로 나눌 수 있다. 백신은 후천 면역을 증강하기 위한 방법이다. 항체의 형성은 백혈구인 식세포 또는 림프구의 일종인 T세포에 의해 이루어지는데 병원체의 종류에 따라 각기 다른 방법으로 항체를 형성한다.
-
+              인체의 면역계는 병원체에 대응하여 항체를 만든다. 한 번 항체가 형성되면 같은 병원체에 대해서는 면역이 형성되게 된다. 백신은 독성을 약화시킨 병원체를 체내에 주입하여 항체가 형성되도록 하는
+              것이다. 이렇게 항체가 형성되면 실제 독성을 지닌 병원체가 침입하였을 때 신속하게 격퇴할 수 있게 된다. 면역계는 출생 전부터 모체로부터 전달받은 선천 면역과 생활하면서 침입해 오는 병원체에
+              대항하여 형성되는 후천 면역으로 나눌 수 있다. 백신은 후천 면역을 증강하기 위한 방법이다. 항체의 형성은 백혈구인 식세포 또는 림프구의 일종인 T세포에 의해 이루어지는데 병원체의 종류에 따라
+              각기 다른 방법으로 항체를 형성한다.
             </p>
           </div>
         </div>
