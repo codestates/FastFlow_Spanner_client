@@ -44,7 +44,7 @@
   width: 100%;
   text-align: center;
   margin-top: 17%;
-  margin-left: 0.8%;
+  margin-left: 0%;
   text-shadow: 0px 0px 20px white;
   letter-spacing: 0.1em;
   font-family: "Cormorant Garamond", serif;
@@ -120,6 +120,7 @@
     font-size: 2.2vmax;
     top: 20%;
     animation: appearTitleM 3s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+    width: 100%;
   }
 
   .MainPages__ScrollMouse {
