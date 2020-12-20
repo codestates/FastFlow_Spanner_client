@@ -156,14 +156,14 @@
 
   .mainCompass__polarisPic {
     position: absolute;
-    width: 100%;
+    width: 70%;
     top: 15%;
     left: 20%;
   }
 
   .mainCompass__polaris {
     position: absolute;
-    width: 70%;
+    width: 100%;
   }
 
   .mainCompass__container {
