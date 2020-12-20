@@ -36,9 +36,9 @@
   font-family: "Cormorant Garamond", serif;  
 }
 .guide__link {
-  position: absolute;
-  left: 34%;
-  top: 60%;
+  position: absolute;  
+  left: 10%;
+  top: 5%;
   color: rgb(224, 116, 116);
   text-decoration: none;  
   font-size: 1.8vmax;
@@ -52,7 +52,7 @@
   transition: background-position 1000ms ease;
   overflow: hidden;
   font-family: "Cormorant Garamond", serif;
-  letter-spacing: 0.1vmax;    
+  letter-spacing: 0.1vmax;   
 }
 .guide__link:hover {
   background-position: 0 100%;
@@ -563,6 +563,9 @@
     width: 90%;
     left: 5%;
   }
+  .MainRefrigerators__title{
+    width:99vw;
+  }
   .MainRefrigerator__guide{
     left: 5%;
     top: 6%;
@@ -570,7 +573,7 @@
   }
   .guide__link{
     top: 70%;
-    left: 60%;
+    left: 80%;
     font-size: 3vmax;
   }
 }
