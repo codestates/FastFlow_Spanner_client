@@ -11,9 +11,9 @@ const ScrollYear = props => {
       <div className={`${position}`>=`${invenHeight}`*1?( `${position}`<`${invenHeight}`*2?"scrollYear_on":"scrollYear_out"):( `${position}`<`${invenHeight}`*2?"scrollYear_in":"")}>BC 1.6M</div>
       <div className={`${position}`>=`${invenHeight}`*2?( `${position}`<`${invenHeight}`*3?"scrollYear_on":"scrollYear_out"):( `${position}`<`${invenHeight}`*3?"scrollYear_in":"")}>BC 0.6M</div>
       <div className={`${position}`>=`${invenHeight}`*3?( `${position}`<`${invenHeight}`*4?"scrollYear_on":"scrollYear_out"):( `${position}`<`${invenHeight}`*4?"scrollYear_in":"")}>BC 3.5k</div>
-      <div className={`${position}`>=`${invenHeight}`*4?( `${position}`<`${invenHeight}`*5?"scrollYear_on":"scrollYear_out"):( `${position}`<`${invenHeight}`*5?"scrollYear_in":"")}>BC 3.5k</div>
-      <div className={`${position}`>=`${invenHeight}`*5?( `${position}`<`${invenHeight}`*6?"scrollYear_on":"scrollYear_out"):( `${position}`<`${invenHeight}`*6?"scrollYear_in":"")}>BC 3.0k</div>
-      <div className={`${position}`>=`${invenHeight}`*6?( `${position}`<`${invenHeight}`*7?"scrollYear_on":"scrollYear_out"):( `${position}`<`${invenHeight}`*7?"scrollYear_in":"")}>BC 1.6k</div>
+      <div className={`${position}`>=`${invenHeight}`*4?( `${position}`<`${invenHeight}`*5-1?"scrollYear_on":"scrollYear_out"):( `${position}`<`${invenHeight}`*5-1?"scrollYear_in":"")}>BC 3.5k</div>
+      <div className={`${position}`>=`${invenHeight}`*5-1?( `${position}`<`${invenHeight}`*6-1?"scrollYear_on":"scrollYear_out"):( `${position}`<`${invenHeight}`*6-1?"scrollYear_in":"")}>BC 3.0k</div>
+      <div className={`${position}`>=`${invenHeight}`*6-1?( `${position}`<`${invenHeight}`*7?"scrollYear_on":"scrollYear_out"):( `${position}`<`${invenHeight}`*7?"scrollYear_in":"")}>BC 1.6k</div>
       <div className={`${position}`>=`${invenHeight}`*7?( `${position}`<`${invenHeight}`*8?"scrollYear_on":"scrollYear_out"):( `${position}`<`${invenHeight}`*8?"scrollYear_in":"")}>BC 850</div>
       <div className={`${position}`>=`${invenHeight}`*8?( `${position}`<`${invenHeight}`*9?"scrollYear_on":"scrollYear_out"):( `${position}`<`${invenHeight}`*9?"scrollYear_in":"")}>BC 100</div>
       <div className={`${position}`>=`${invenHeight}`*9?( `${position}`<`${invenHeight}`*10?"scrollYear_on":"scrollYear_out"):( `${position}`<`${invenHeight}`*10?"scrollYear_in":"")}>1286</div>

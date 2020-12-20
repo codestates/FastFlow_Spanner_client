@@ -139,6 +139,7 @@ const App = () => {
       setIsLogIn(false);
       setUserName("");
       setHamburgerBtn(false);
+      history.push('/');
     setTimeout(() => {
       autoLogOutClose();
     }, 2000);            

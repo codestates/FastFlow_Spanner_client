@@ -11,7 +11,7 @@
   font-weight: 400;
   position: absolute;
   top: 1vh;
-  left: 6vw;
+  left: 70vw;
 }
 
 .mainCompass__polarisPic {
@@ -21,21 +21,24 @@
 .mainCompass__polaris {
   position: absolute;
   left: 3vw;
-  top: 10vh;
+  top: 20vh;
+  width: 45%;
 }
 
 .mainCompass__starLight {
   position: absolute;
+  display:none;
 }
 
 .MainCompasss__text {
-  color: white;
-  font-size: 50px;
-  font-weight: 700;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: 1.8vmax;
+  line-height: 2.1vmax;
   position: absolute;
-  width: 100%;
-  text-align: center;
-  margin-top: 350px;
+  margin-top: 22vh;
+  left: 55.5vw;
+  width: 40%;
 }
 
 .mainCompass__container {
@@ -80,28 +83,28 @@
 
 .mainCompass__container {
   position: absolute;
-  left: 80px;
+  top: 50%;
+  left: 28%;
+  width: 25%;
 }
 
 .compass {
+  position:absolute;
+  width: 100%;
 }
 
 .compass_ {
-  position: relative;
-  left: -650px;
-  top: 55px;
-  transform: rotate(-24.4deg);
+  position: absolute;
+  margin-top: 15%;
+  width: 100%;
+  transform: rotate(-26.4deg);
   transition-property: transform;
   transition-duration: 1s;
   transition-timing-function: ease;
-  border: 2px solid red;
   border-radius: 50%;
 }
 
 .compass_:hover {
-  position: relative;
-  left: -650px;
-  top: 55px;
   transform: rotate(1055.6deg);
   transition-property: transform;
   transition-duration: 1s;
@@ -109,16 +112,27 @@
   border-radius: 50%;
 }
 
-.mainCompass__linkContainer {
-  display: flex;
-  width: 100px;
-  position: relative;
-  left: 100px;
-  top: 100px;
-  color: white;
+.mainCompass__link {
+  position: absolute;
+  bottom: 0;
+  top: 43%;
+  color: rgb(224, 116, 116);
+  text-decoration: none;
+  left: 88.3%;
+  font-size: 1.8vmax;
+  font-weight: 900;
+  background: linear-gradient(to right, rgba(0, 0, 255, 0.63), rgba(0, 0, 255, 0.63) 50%, rgb(5, 5, 5) 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 1000ms ease;
+  overflow: hidden;
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.1vmax;
 }
 
-.mainCompass__link {
-  width: 100px;
-  font-size: 10px;
+.mainCompass__link:hover {
+  background-position: 0 100%;
 }

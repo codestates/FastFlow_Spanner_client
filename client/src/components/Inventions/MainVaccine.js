@@ -22,10 +22,10 @@ const MainVaccine = () => {
           </div>
         </div>
       </Draggable>
-      <div className="MainVaccines__text">백신 페이지입니다.</div>
+      <div className="MainVaccines__text">A vaccine typically contains an agent that resembles a disease-causing microorganism and is often made from weakened or killed forms of the microbe, its toxins, or one of its surface proteins.</div>
       <div className="mainVaccine__linkContainer">
         <Link to="/Vaccine" className="mainVaccine__link">
-          클릭 시 상세 페이지로 이동합니다
+          Click Me
         </Link>
       </div>
     </div>

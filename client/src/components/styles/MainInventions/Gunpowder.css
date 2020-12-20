@@ -10,21 +10,50 @@
   font-size: 5vmax;
   font-weight: 400;
   position: absolute;
-  top: 1vh;
+  top: 3vh;
   left: 6vw;
 }
 
-.MainGunpowders__text {
-  color: white;
-  font-size: 50px;
-  font-weight: 700;
+.mainGunpowder__img1 {
   position: absolute;
-  width: 100%;
-  text-align: center;
-  margin-top: 350px;
+  top: 50%;
+  left: 5%;
+  width: 60%;
+  height: 60%;
+}
+
+.MainGunpowders__text {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: 1.8vmax;
+  line-height: 2.1vmax;
+  position: absolute;
+  margin-top: 22vh;
+  left: 5.5vw;
+  width: 60%;
 }
 
 .mainGunpowder__link {
   position: absolute;
-  font-size: 3vmax;
+  bottom: 0;
+  top: 39%;
+  color: rgb(224, 116, 116);
+  text-decoration: none;
+  left: 48.3%;
+  font-size: 1.8vmax;
+  font-weight: 900;
+  background: linear-gradient(to right, red, red 50%, rgb(5, 5, 5) 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 1000ms ease;
+  overflow: hidden;
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.1vmax;
+}
+
+.mainGunpowder__link:hover {
+  background-position: 0 100%;
 }

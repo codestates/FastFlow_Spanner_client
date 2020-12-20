@@ -14,16 +14,16 @@ const MainSteamEngine = () => {
       <Fade top fraction={1} duration={3000}>
         <div className="mainSteamEngine__title">Steam Engine</div>
       </Fade>
-      <Fade>
+      <Fade left>
+      <div className="mainSteamEngine__train">
         <img className="mainSteamEngine__railRoad" src={railRoad} alt="" />
-      </Fade>
-      <div>
-        <img className={`${position}`<56.3||`${position}`>61.5?"mainSteamEngine__img":"mainSteamEngine__img_2"} src={train} alt="" />
-        <img className={`${position}`<56.3||`${position}`>61.5?"mainSteamEngine__smoke":"mainSteamEngine__smoke_2"} src={smoke} alt="" />
+        <img className="mainSteamEngine__img" src={train} alt="" />
+        <img className="mainSteamEngine__smoke" src={smoke} alt="" />
       </div>
-      <div className="MainSteamEngines__text">증기 기관 페이지입니다.</div>
-      <Link to="/SteamEngine" className={`MainSteamEngines__link LinkedDetail`}>
-        클릭 시 상세 페이지로 이동합니다
+      </Fade>
+      <div className="MainSteamEngines__text">A steam engine is a heat engine that performs mechanical work using steam as its working fluid. The steam engine uses the force produced by steam pressure to push a piston back and forth inside a cylinder.</div>
+      <Link to="/SteamEngine" className="mainSteamEngine__link">
+        Click Me
       </Link>
     </div>
   );

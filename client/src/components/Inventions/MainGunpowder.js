@@ -10,10 +10,11 @@ const MainGunpowder = () => {
       <Fade>
         <img className="mainGunpowder__img1" src={img} alt="" />
       </Fade>
-      <img alt="" className="static"/>
-      <div className="MainGunpowders__text">화약 페이지입니다.</div>
+      <Fade right>
+      <div className="MainGunpowders__text">Gunpowder, also known as the retronym black powder to distinguish it from modern smokeless powder, is the earliest known chemical explosive.</div>
+      </Fade>
       <Link to="/GunPowder" className="mainGunpowder__link">
-        클릭 시 상세 페이지로 이동합니다
+        Click Me
       </Link>
     </div>
   );
