@@ -57,3 +57,12 @@
 .mainGunpowder__link:hover {
   background-position: 0 100%;
 }
+
+@media screen and (max-width: 479px) {
+  .mainGunpowder__img1 {
+    position: absolute;
+    top: 60%;
+    width: 60%;
+    height: 30%;
+  }
+}

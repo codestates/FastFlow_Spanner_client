@@ -159,3 +159,26 @@ left: 6vw;
   background-position: 0 100%;
 }
 
+@media screen and (max-width: 479px) {
+  .MainGlassess {
+    width: 100%;
+    height: 100%;
+  }
+
+  .MainGlassess__text {
+    position: absolute;
+    top: 0%;
+  }
+
+  .mainGlasses__link {
+    position: absolute;
+    top: 40%;
+  }
+
+  .mainGlasses__glassesContainer {
+    position: absolute;
+    top: 80%;
+    width: 80%;
+  }
+}
+

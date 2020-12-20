@@ -129,3 +129,46 @@
 .mainCompass__link:hover {
   background-position: 0 100%;
 }
+
+@media screen and (max-width: 479px) {
+  .MainCompasss {
+    width: 100%;
+    height: 100%;
+  }
+
+  .mainCompass__title {
+    position: absolute;
+    left: 60%;
+  }
+
+  .MainCompasss__text {
+    position: absolute;
+    left: 30%;
+    width: 65%;
+    top: -5%;
+  }
+
+  .mainCompass__link {
+    position: absolute;
+    top: 30%;
+    left: 80%;
+  }
+
+  .mainCompass__polarisPic {
+    position: absolute;
+    width: 100%;
+    top: 15%;
+    left: 20%;
+  }
+
+  .mainCompass__polaris {
+    position: absolute;
+    width: 70%;
+  }
+
+  .mainCompass__container {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+  }
+}
