@@ -56,12 +56,6 @@ const SignIn = (props) =>{
     props.modalClose()
   }
 
-  const modalSignIn = () => {
-    props.hamburgerBtnFalse()
-    props.handleSignIn()
-  }
-  
-
   return (
   <div>
     <div className="signIn__navBtn" onClick={props.modalOpen}>
@@ -87,7 +81,7 @@ const SignIn = (props) =>{
             </a>
           </div>
           <div>
-          <button className="signIn__btn" type="submit" onClick={modalSignIn}>
+          <button className="signIn__btn" type="submit" onClick={props.handleSignIn}>
             로그인
           </button>
           </div>

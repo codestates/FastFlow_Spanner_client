@@ -7,29 +7,28 @@ import ScrollYear from './ScrollYear';
 import LogOut from "./LogOut";
 
 export default function Nav(props) {
-  const [hamburgerBtn, setHamburgerBtn] = useState(false)
 
   const onChangeHamburgerBtn = async () => {
-    if (hamburgerBtn) {
-      await setHamburgerBtn(false)
+    if (props.hamburgerBtn) {
+      await props.setHamburgerBtn(false)
     } else {
-      setHamburgerBtn(true)
+      props.setHamburgerBtn(true)
     }
   };
 
   const hamburgerBtnFalse = async () => {
-    await setHamburgerBtn(false)
+    await props.setHamburgerBtn(false)
   }
 
   const scrollState = useScrollStatus();
   const hamdis = () => {
-    if (hamburgerBtn) {
+    if (props.hamburgerBtn) {
       return {visibility: 'visible'};
     } else {
       return {visibility: 'hidden'}};
   }
   const hamdis2 = () => {
-    if (hamburgerBtn) {
+    if (props.hamburgerBtn) {
       return {display: 'block'};
     } else {
       return {display: 'none'}};
@@ -40,7 +39,7 @@ export default function Nav(props) {
       <div className="nav__main">
         <div className="nav__Btn1">
         {props.isLogIn ? 
-        <LogOut  onLogOut={props.onLogOut} switchLogOut={props.switchLogOut} />:
+        <LogOut  onLogOut={props.onLogOut} hamburgerBtnFalse={hamburgerBtnFalse}  switchLogOut={props.switchLogOut} />:
         <SignIn 
           modalOpen={props.modalOpen}
           modalClose={props.modalClose}
@@ -98,7 +97,7 @@ export default function Nav(props) {
           <ScrollYear userName={props.userName} />
         </div>
         <div>
-          <Link to="/" onClick={hamburgerBtnFalse} className="nav__logoBtn">
+          <Link to="/" onClick={hamburgerBtnFalse} className="nav__logoBtn">Main
           </Link>
         </div>
 			</div>
