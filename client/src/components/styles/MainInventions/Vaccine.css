@@ -26,29 +26,27 @@
 }
 
 .mainVaccine_armContainer {
-  display: flex;
-  position: absolute;
-  left: 0%;
-  top: 0%;
 }
 
 .mainVaccine_arm {
   transform: rotate(-40deg);
   position: absolute;
-  width: 60%;
+  width: 10%;
+  height: 80%;
+  top: 10%;
 }
 
 .mainVaccine_arm_mod {
   display: none;
   position: relative;
-  left: -10%;
-  width: 10%;
   transform: rotate(-40deg);
 }
 
 .mainVaccine_syringe {
   position: absolute;
-  width: 30%;
+  width: 7%;
+  top: 30vh;
+  left: 60%;
   transition-property: width height top left;
   transition-duration: 0.15s;
 }

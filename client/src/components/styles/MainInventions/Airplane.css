@@ -123,19 +123,30 @@
 
 
 
-@media screen and (max-width: 479px) {    
+@media screen and (max-width: 479px) {
+  .MainAirplanes{
+    background-color: black;
+    z-index:-1;
+  }   
   .Airplanes__link {
     left: 60%;
     top: 5%;
     font-size: 3vmax;
   }
-  .body__background{    
-    transform: scaleX(1.5);      
+  .body__background{ 
+    top: 10%;
+    height: 80%;   
+    width: 100%;      
   }
   .body__slider{
-    left: 25%;
-    width: 52vw;
+    top: 18%;
+    left: 32%;
+    width: 36vw;    
   } 
+  .slider-wrapper{
+    top: 18%;
+    height: 60vh;
+  }
   .body__links{
     margin:0;
     padding:0;

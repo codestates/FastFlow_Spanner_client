@@ -173,7 +173,7 @@ li {
 .Details__editAreas__fileSearch label {
   padding: 0.5em 0.75em;
   color: rgb(88, 88, 88);
-  font-size: 1.3vmax;
+  font-size: 1vmax;
   line-height: normal;
   vertical-align: middle;
   background-color: #fdfdfd;
@@ -220,7 +220,7 @@ li {
 .Details__editAreas__submitBtnClose {
   padding: 0.5em 0.75em;
   color: rgb(88, 88, 88);
-  font-size: 1.3vmax;
+  font-size: 1vmax;
   line-height: normal;
   vertical-align: middle;
   background-color: #fdfdfd;
@@ -332,8 +332,14 @@ li {
 
   .Details__editAreas__btn {
     bottom: 10%;
-
     left: 44.8%;
+  }
+  .Details__editAreas__submitBtn,
+  .Details__editAreas__submitBtnClose {
+    font-size: 1.3vmax;
+  }
+  .Details__editAreas__fileSearch label {
+    font-size: 1.3vmax;
   }
 }
 
@@ -376,7 +382,7 @@ li {
     left: 17%;
   }
   .Details__editAreas__btn {
-    bottom: 10%;
+    bottom: 4.7%;
     left: 44.8%;
   }
 
@@ -387,6 +393,10 @@ li {
 
   .Details__editAreas__submitBtn,
   .Details__editAreas__submitBtnClose {
-    font-size: 1vmax;
+    font-size: 1.3vmax;
+  }
+
+  .Details__editAreas__fileSearch label {
+    font-size: 1.3vmax;
   }
 }

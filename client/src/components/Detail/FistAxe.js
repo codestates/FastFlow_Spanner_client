@@ -76,9 +76,9 @@ const FistAxe = () => {
             "Content-Type": "multipart/form-data",
           },
         });
+        history.go();
       });
     setModalCommentEditView("none");
-    history.go();
   };
   // 사진 파일 적용 및 보여주기
   const onChangeFile = (e) => {

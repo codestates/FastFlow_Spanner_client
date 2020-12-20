@@ -27,20 +27,32 @@
 
 .mainSteamEngine__train {
   position: absolute;
-  top: 40%;
+  top: 0%;
+  height: 100%;
+  width: 80%;
 }
 
 .mainSteamEngine__railRoad {
   position: absolute;
-  top: 250%;
+  top: 24%;
+  width: 80%;
+  height: 80%;
 }
 
 .mainSteamEngine__img {
   position: absolute;
+  width: 55%;
+  height: 55%;
+  top: 40%;
+  left: 10%;
 }
 
 .mainSteamEngine__smoke {
   position: absolute;
+  width: 30%;
+  height: 30%;
+  left: 17%;
+  top: 11%;
 }
 
 .mainSteamEngine__link {
@@ -66,3 +78,6 @@
 .mainSteamEngine__link:hover {
   background-position: 0 100%;
 }
+
+
+@media screen and (max-width: 479px) {}

@@ -25,7 +25,7 @@
 .MainBatterys__body {
   position: absolute;
   height: 90%;
-  width: 100%;  
+  width: 100vw;  
   top: 10%;
 }
 
@@ -385,8 +385,7 @@
 @media screen and (max-width: 479px) {        
 
   .MainBatterys__body {
-    height: 40%;
-    left: 20%;   
+    height: 40%;    
   }
   .MainBatterys__link{    
     left: 60%;
@@ -394,7 +393,7 @@
   }
   .body__contentsArea{
     width: 80%;
-    left: -12%;
+    left: 5%;
   }
   .item1__pics{
     width:30vw;
@@ -447,7 +446,7 @@
     position: absolute;
     height: 100%;
     width: 70%;
-    left: -5%; 
+    left: 10%; 
     top: 110%;    
   }
   .videoArea__partitionLine{

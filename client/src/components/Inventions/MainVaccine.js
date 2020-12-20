@@ -15,14 +15,16 @@ const MainVaccine = () => {
         <img className="mainVaccine_arm" src={arm} alt="" />
         <img className="mainVaccine_arm_mod" src={arm_mod} alt="" />
       </div>
-      <Draggable>
+      <Draggable handle="strong" axis="x">
         <div>
           <div className="handle">
             <img className="mainVaccine_syringe" src={syringe} alt="" />
           </div>
         </div>
       </Draggable>
+      <Fade>
       <div className="MainVaccines__text">A vaccine typically contains an agent that resembles a disease-causing microorganism and is often made from weakened or killed forms of the microbe, its toxins, or one of its surface proteins.</div>
+      </Fade>
       <div className="mainVaccine__linkContainer">
         <Link to="/Vaccine" className="mainVaccine__link">
           Click Me

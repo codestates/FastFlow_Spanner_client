@@ -21,7 +21,9 @@ const MainSteamEngine = () => {
         <img className="mainSteamEngine__smoke" src={smoke} alt="" />
       </div>
       </Fade>
+      <Fade>
       <div className="MainSteamEngines__text">A steam engine is a heat engine that performs mechanical work using steam as its working fluid. The steam engine uses the force produced by steam pressure to push a piston back and forth inside a cylinder.</div>
+      </Fade>
       <Link to="/SteamEngine" className="mainSteamEngine__link">
         Click Me
       </Link>

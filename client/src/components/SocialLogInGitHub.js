@@ -40,6 +40,7 @@ function SocialLogin({location}) {
                         localStorage.setItem("refreshToken", refreshToken);
                     })
                 history.push('/');
+                history.go();
                 console.log('소셜 로그인 성공')
             } catch (error) {
             }

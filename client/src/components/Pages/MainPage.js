@@ -31,8 +31,7 @@ const MainPage = () => {
 
   // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  useEffect(() => {
-    console.log(accessToken);
+  useEffect(() => {    
     if (refreshToken && !accessToken) {
       axios.post(`${ip}${port}/refreshToken`, { refreshToken: refreshToken }).then((res) => {
         console.log("refreshToken 받아옴!");
