@@ -11,7 +11,7 @@ const Mypage = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [profilePicView, setProfilePicView] = useState(basicProfilePic);
-  const [profilePic, setProfilePic] = useState("");
+  const [profilePic, setProfilePic] = useState("");  
 
   const [isPwdBtnClicked, setIsPwdBtnClicked] = useState(false);
   const [password, setPassword] = useState("");
@@ -79,7 +79,7 @@ const Mypage = () => {
     e.preventDefault();
     let reader = new FileReader();
     let file = e.target.files[0];
-    console.log(file)    
+    // console.log(file)    
     // load 이벤트의 핸들러. 읽기 동작이 성공적으로 완료되었을 때마다
     // 발생한다. 비동기 이므로 CALLBACK 함수를 사용하는 것이 좋다.
     reader.onloadend = () => {
@@ -202,8 +202,7 @@ const Mypage = () => {
 						<button className="profileDetermine__cancelBtn" >취소</button>
 					</form>
 				</div> */}
-      </div>
-      <Footer />
+      </div>      
     </div>
   );
 };
