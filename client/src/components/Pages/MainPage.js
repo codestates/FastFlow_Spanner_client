@@ -60,12 +60,12 @@ const MainPage = () => {
       <MainWritingSystem />
       <MainWheel />
       <MainCondom />
-      <MainClock />
+      {/* <MainClock />
       <MainGunpowder />
       <MainCompass />
       <MainGlasses />
       <MainSteamEngine />
-      <MainVaccine />
+      <MainVaccine /> */}
       <MainBattery />
       <MainElectricMotor />
       <MainRefrigerator />
