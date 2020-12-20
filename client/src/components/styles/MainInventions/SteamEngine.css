@@ -79,5 +79,25 @@
   background-position: 0 100%;
 }
 
+@media screen and (max-width: 479px) {
+  .mainSteamEngine__train {
+    width: 100%;
+    height: 80%;
+  }
 
-@media screen and (max-width: 479px) {}
+  .mainSteamEngine__railRoad {
+    width: 100%;
+    height: 100%;
+  }
+
+  .mainSteamEngine__img {
+    width: 90%;
+    height: 55%;
+    top: 60%;
+  }
+
+  .mainSteamEngine__smoke {
+    top: 31%;
+    left: 38%;
+  }
+}
