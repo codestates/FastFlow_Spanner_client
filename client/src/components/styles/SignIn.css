@@ -123,6 +123,10 @@
   z-index: -1;
 }
 
+.signIn__errMessage {
+  color: rgb(230, 0, 0);
+}
+
 @media screen and (max-width: 768px) {
   .signIns {
     top: 6vh;

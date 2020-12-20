@@ -51,6 +51,11 @@ import kakaotalk_icon from './images/kakaotalk_icon.png';
 
 
 const SignIn = (props) =>{
+  const modalAndHamburgerClose = () => {
+    props.hamburgerBtnFalse()
+    props.modalClose()
+  }
+
   return (
   <div>
     <div className="signIn__navBtn" onClick={props.modalOpen}>
@@ -69,7 +74,7 @@ const SignIn = (props) =>{
           <div className="signIn__noId" onClick={props.modalClose}>
             <Link to="/signup">아직 아이디가 없으신가요?</Link>
           </div>
-          <div className="signIn__social" >
+          <div className="signIn__social">
             <a href={`https://github.com/login/oauth/authorize?client_id=0604c124c075b9bc4925&redirect_uri=${ip}${port_client}/sociallogin`} className="signIn__gitHub">
             </a>              
             <a href={`${ip}${port_client}/SocialLogInKakao`} className="signIn__kakao">
@@ -81,7 +86,7 @@ const SignIn = (props) =>{
           </button>
           </div>
           <div>
-          <button type="button" className="signIn__closeBtn" onClick={props.modalClose}>
+          <button type="button" className="signIn__closeBtn" onClick={modalAndHamburgerClose}>
             창 닫기
           </button>
           </div>

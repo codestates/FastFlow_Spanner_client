@@ -42,6 +42,7 @@ const App = () => {
   const [switchLogOut, setSwitchLogOut] = useState("none");
   const [userName, setUserName] = useState("");
   const [isLogIn, setIsLogIn] = useState(false);
+  const [hamburgerBtn, setHamburgerBtn] = useState(false)
 
   const history = useHistory();
 
@@ -76,6 +77,7 @@ const App = () => {
       onChangeErrMessage("이메일과 비밀번호를 입력해주세요");
     } else {
       setBackErrMessage();
+      try {
       await axios
         .post(ip + port + "/user/signin", {
           email: email,
@@ -89,8 +91,12 @@ const App = () => {
           //refresh 토큰도 저장
           localStorage.setItem("refreshToken", res.data.refreshToken);
           modalClose();
+          setHamburgerBtn(false);
           handleResponseSuccess(res.data.id);
         });
+      } catch (err) {
+        setErrMessage("잘못된 이메일 혹은 비밀번호입니다")
+      }
     }
   };
 
@@ -131,9 +137,11 @@ const App = () => {
       localStorage.removeItem("refreshToken");
       setIsLogIn(false);
       setUserName("");
-      setTimeout(() => {
-        autoLogOutClose();
-      }, 2000);
+      setHamburgerBtn(false);
+      history.push('/');
+    setTimeout(() => {
+      autoLogOutClose();
+    }, 2000);            
     }
     setTimeout(() => {
       autoLogOutClose();
@@ -160,6 +168,8 @@ const App = () => {
         handleResponseSuccess={handleResponseSuccess}
         onLogOut={onLogOut}
         switchLogOut={switchLogOut}
+        hamburgerBtn={hamburgerBtn}
+        setHamburgerBtn={setHamburgerBtn}
       />
       <Switch>
         <Route exact path="/signup" render={() => <SignUp />} />        

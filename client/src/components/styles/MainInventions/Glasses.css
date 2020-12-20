@@ -1,11 +1,7 @@
 .MainGlassess {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(to right, rgba(20, 20, 20, 0) 10%, rgba(20, 20, 20, 0.2) 30%, rgba(20, 20, 20, 0.4) 60%, rgba(20, 20, 20, 0.6) 100%), url("../../../TestPic/glassesBG_blur.jpg");
-  background-repeat: no-repeat;
-  width: 100%;
+  background-color: #f5f3ec;
   height: 100%;
+  width: 100%;
   position: relative;
 }
 
@@ -19,13 +15,14 @@ left: 6vw;
 }
 
 .MainGlassess__text {
-  color: white;
-  font-size: 50px;
-  font-weight: 700;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: 1.8vmax;
+  line-height: 2.1vmax;
   position: absolute;
-  width: 100%;
-  text-align: center;
-  margin-top: 150px;
+  margin-top: 20vh;
+  left: 5vw;
+  width: 80%;
 }
 
 .mainGlasses__glassesContainer {
@@ -34,7 +31,7 @@ left: 6vw;
 }
 
 .mainGlasses__temp_L {
-  display: flex;
+  display: none;
   justify-content: center;
   padding: 40px;
   position: absolute;
@@ -107,8 +104,8 @@ left: 6vw;
 
 .mainGlasses__linkContainer {
   position: absolute;
-  left: 80%;
-  top: 230px;
+  left: 69%;
+  top: 45%;
   transition-property: top;
   transition-duration: 1.25s;
 }
@@ -125,25 +122,40 @@ left: 6vw;
   display: flex;
   width: 80%;
   position: absolute;
-  left: 15px;
-  top: -200px;
-  transition-property: top;
-  transition-duration: 1.25s;
-}
-
-.mainGlasses__glasses_2 {
-  display: flex;
-  width: 80%;
-  position: absolute;
-  left: 15px;
-  top: 500px;
-  transition-property: top;
-  transition-duration: 1.25s;
+  left: 8vw;
+  bottom: 5%;
 }
 
 .wrapper h1 span {
   position: absolute;
-  top: 30px;
   font-size: 50px;
+}
+
+.wrapper {
+  display:none;
+}
+
+.mainGlasses__link {
+  position: absolute;
+  right: 15%;
+  top: 35%;
+  color: rgb(224, 116, 116);
+  text-decoration: none;
+  font-size: 1.8vmax;
+  font-weight: 900;
+  background: linear-gradient(to right, rgb(85, 230, 150), rgb(85, 230, 150) 50%, rgb(5, 5, 5) 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 1000ms ease;
+  overflow: hidden;
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.1vmax;
+}
+
+.mainGlasses__link:hover {
+  background-position: 0 100%;
 }
 

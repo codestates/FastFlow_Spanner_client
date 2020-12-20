@@ -13,17 +13,21 @@ const MainGlasses = () => {
         <div className="mainGlasses__title">Glasses</div>
       </Fade>
       <div className="mainGlasses__glassesContainer">
-        <div className={`${position}` < 50.3 || `${position}` > 54.4 ? "mainGlasses__temp_2_L" : "mainGlasses__temp_L"}></div>
-        <img className={`${position}` < 50.3 || `${position}` > 54.4 ? "mainGlasses__glasses_2" : "mainGlasses__glasses"} src={img} alt="" />
-        <div className={`${position}` < 50.3 || `${position}` > 54.4 ? "mainGlasses__linkContainer_2" : "mainGlasses__linkContainer"}>
+      <Fade bottom fraction={0.3} duration={2000}>
+        <img className="mainGlasses__glasses" src={img} alt="" />
+      </Fade>
+        <div className="mainGlasses__linkContainer">
           <div className="wrapper">
             <Link to="/Glasses">
-              <Heading text="click me!" arc={130} radius={260} />
+              <Heading text="click me!" arc={130} radius={160} />
             </Link>
           </div>
         </div>
       </div>
-      <div className="MainGlassess__text">안경</div>
+      <Link to="/Glasses" className="mainGlasses__link">Click Me</Link>
+      <Fade duration={1500}>
+      <div className="MainGlassess__text">Glasses are typically used for vision correction, such as with reading glasses and glasses used for nearsightedness, however, without the specialized lenses, they are sometimes used for cosmetic purposes.</div>
+      </Fade>
     </div>
   );
 };

@@ -22,12 +22,16 @@ const MainCompass = () => {
             </div>
           </div>
       </Fade>
+      <Fade >
       <div className="mainCompass__container">
         <img className="compass" src={compass} alt="" />
         <img className="compass_" src={compass_} alt="" />
       </div>
-      <div className="MainCompasss__text">나침반 페이지입니다.</div>
-      <Link to="/Compass" className={`MainCompasss__link LinkedDetail`}>
+      </Fade>
+      <Fade left>
+      <div className="MainCompasss__text">This article is about the direction finding instrument used in navigation. For other uses, see Compass.</div>
+      </Fade>
+      <Link to="/Compass" className="mainCompass__link">
         Click Me
       </Link>
     </div>

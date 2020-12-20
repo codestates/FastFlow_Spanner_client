@@ -14,56 +14,70 @@
   left: 6vw;
 }
 
-.mainSteamEngine__railRoad {
+.MainSteamEngines__text {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: 1.8vmax;
+  line-height: 2.1vmax;
   position: absolute;
-  top: 7%;
-  width: 60%;
-  height: 100%;
+  margin-top: 20vh;
+  left: 5vw;
+  width: 80%;
 }
 
-.MainSteamEngines__text {
-  color: white;
-  font-size: 50px;
-  font-weight: 700;
+.mainSteamEngine__train {
   position: absolute;
-  width: 100%;
-  text-align: center;
-  margin-top: 350px;
+  top: 0%;
+  height: 100%;
+  width: 80%;
+}
+
+.mainSteamEngine__railRoad {
+  position: absolute;
+  top: 24%;
+  width: 80%;
+  height: 80%;
 }
 
 .mainSteamEngine__img {
   position: absolute;
-  bottom: 175px;
-  left: -100px;
-  width: 380px;
-  transition-property: width, bottom, left;
-  transition-duration: 1.25s;
-}
-
-.mainSteamEngine__img_2 {
-  position: absolute;
-  bottom: 0%;
-  left: 0%;
-  width: 60%;
-  transition-property: width, bottom, left;
-  transition-duration: 0.25s;
+  width: 55%;
+  height: 55%;
+  top: 40%;
+  left: 10%;
 }
 
 .mainSteamEngine__smoke {
   position: absolute;
-  bottom: 780px;
-  left: 245px;
-  width: 25%;
-  opacity: 0;
+  width: 30%;
+  height: 30%;
+  left: 17%;
+  top: 11%;
 }
 
-.mainSteamEngine__smoke_2 {
+.mainSteamEngine__link {
   position: absolute;
-  bottom: 780px;
-  left: 245px;
-  width: 465px;
-  opacity: 1;
-  transition-property: opacity;
-  transition-duration: 0.5s;
-  transition-delay: 0.3s;
+  right: 15%;
+  top: 35%;
+  color: rgb(224, 116, 116);
+  text-decoration: none;
+  font-size: 1.8vmax;
+  font-weight: 900;
+  background: linear-gradient(to right, rgb(151, 151, 151), rgb(151, 151, 151) 50%, rgb(5, 5, 5) 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 1000ms ease;
+  overflow: hidden;
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.1vmax;
 }
+
+.mainSteamEngine__link:hover {
+  background-position: 0 100%;
+}
+
+
+@media screen and (max-width: 479px) {}

@@ -1,5 +1,4 @@
 .MainVaccines {
-  background-image: url("../../../TestPic/vaccine_BG2.jpg");
   background-color: #f5f3ec;
   height: 100%;
   width: 100%;
@@ -16,52 +15,70 @@
 }
 
 .MainVaccines__text {
-  color: white;
-  font-size: 50px;
-  font-weight: 700;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: 1.8vmax;
+  line-height: 2.1vmax;
   position: absolute;
-  width: 100%;
-  text-align: center;
-  margin-top: 350px;
+  margin-top: 20vh;
+  left: 5vw;
+  width: 80%;
 }
 
 .mainVaccine_armContainer {
-  display: flex;
-  position: relative;
-  left: 0%;
-  top: 0%;
-  width: 5%;
 }
 
 .mainVaccine_arm {
-  width: 300px;
   transform: rotate(-40deg);
+  position: absolute;
+  width: 10%;
+  height: 80%;
+  top: 10%;
 }
 
 .mainVaccine_arm_mod {
+  display: none;
   position: relative;
-  left: -300px;
-  width: 300px;
   transform: rotate(-40deg);
 }
 
 .mainVaccine_syringe {
-  position: relative;
-  left: 700px;
-  top: 100px;
-  width: 210px;
-  height: 500px;
+  position: absolute;
+  width: 7%;
+  top: 30vh;
+  left: 60%;
   transition-property: width height top left;
   transition-duration: 0.15s;
 }
 
 .mainVaccine_syringe:hover {
-  position: relative;
-  left: 695px;
-  top: 95px;
-  width: 220.5px;
-  height: 525px;
   transition-property: width height top left;
   transition-duration: 0.15s;
   cursor: pointer;
+}
+
+
+
+.mainVaccine__link {
+  position: absolute;
+  right: 15%;
+  top: 35%;
+  color: rgb(224, 116, 116);
+  text-decoration: none;
+  font-size: 1.8vmax;
+  font-weight: 900;
+  background: linear-gradient(to right, rgb(64, 131, 255), rgb(64, 131, 255) 50%, rgb(5, 5, 5) 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 1000ms ease;
+  overflow: hidden;
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.1vmax;
+}
+
+.mainVaccine__link:hover {
+  background-position: 0 100%;
 }

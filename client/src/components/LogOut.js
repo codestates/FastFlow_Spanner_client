@@ -4,9 +4,13 @@
 import GoodbyePic from "./images/GoodBye.gif";
 
 const LogOut = (props) => {
+  const logOutAndHamburgerClose = () => {
+    props.onLogOut()
+    props.hamburgerBtnFalse()
+  }
   return (
     <div className="LogOuts">
-      <div className="LogOuts__navBtn" onClick={props.onLogOut}>
+      <div className="LogOuts__navBtn" onClick={logOutAndHamburgerClose}>
         Log out
       </div>
       <div className="LogOuts__modal" style={{ display: props.switchLogOut }}>
