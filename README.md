@@ -40,6 +40,9 @@ B.C 1만 6천년 전 부터 현재까지 라이프 스타일에
 ## Front Side
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/67395798/102729859-cd53fc00-4375-11eb-8f08-eb924c3a3c7d.gif)
 
+## Server Side
+![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/67395798/102730197-296b5000-4377-11eb-906c-020a654e22fb.gif)
+
 # :construction_worker:우리를 소개합니다
 
 | [이정환](https://github.com/doi-h) | Backend |
