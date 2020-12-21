@@ -14,7 +14,7 @@ B.C 1만 6천년 전 부터 현재까지 라이프 스타일에
 발명품의 역사를 **Spanner**와 함께 하세요.
 
 # :speech_balloon:어떤 기술이 사용되었나요?
-
+![spanner 기술 스택](https://user-images.githubusercontent.com/68806834/102728503-b14d5c00-436f-11eb-9afc-24de50abf580.png)
 
 
 # :wrench:Architecture
