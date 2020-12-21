@@ -18,7 +18,9 @@ B.C 1만 6천년 전 부터 현재까지 라이프 스타일에
 
 
 # :wrench:Architecture
+![Spanner Client 기능 플로우](https://user-images.githubusercontent.com/68806834/102728733-d9898a80-4370-11eb-8a51-0906fada9cb6.png)
 
+![Spanner Server 기능 플로우](https://user-images.githubusercontent.com/68806834/102728735-da222100-4370-11eb-9345-1991668f100e.png)
 
 
 # :busts_in_silhouette:우리를 소개합니다
