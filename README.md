@@ -13,7 +13,7 @@ B.C 1만 6천년 전 부터 현재까지 라이프 스타일에
 
 발명품의 역사를 _**Spanner**_ 와 함께 하세요.
 
-# 💻 어떤 기술이 사용되었나요?
+# :mag:어떤 기술이 사용되었나요?
 
 ## FRONT
 ![](https://img.shields.io/badge/FRONT-REACT-blue?style=for-the-badge&logo=React)
@@ -33,10 +33,19 @@ B.C 1만 6천년 전 부터 현재까지 라이프 스타일에
 
 ![](http://img.shields.io/badge/BACK-J.W.T-black?style=for-the-badge&logo=JSON%20Web%20Tokens)
 
-![stack (1)](https://user-images.githubusercontent.com/67395798/102729236-3c7c2100-4373-11eb-8f50-721403c885d3.jpg)
+![spanner 기술 스택](https://user-images.githubusercontent.com/68806834/102728503-b14d5c00-436f-11eb-9afc-24de50abf580.png)
 
 # 🧑🏻‍💻Working Flow
 
 ## Front Side
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/67395798/102729859-cd53fc00-4375-11eb-8f08-eb924c3a3c7d.gif)
 
+# :construction_worker:우리를 소개합니다
+
+| [이정환](https://github.com/doi-h) | Backend |
+| ----------- | ----------- |
+| [류종현](https://github.com/ryhyn123) | Frontend |
+| [염정헌](https://github.com/yumboy8747) | Frontend |
+| [최창준](https://github.com/CJ0823) | Frontend |
+# 🔖For project details
+## [**checkout WIKI**](https://github.com/codestates/FastFlow_Spanner_client/wiki)
