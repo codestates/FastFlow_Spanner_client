@@ -33,6 +33,10 @@ B.C 1만 6천년 전 부터 현재까지 라이프 스타일에
 
 ![](http://img.shields.io/badge/BACK-J.W.T-black?style=for-the-badge&logo=JSON%20Web%20Tokens)
 
+![](http://img.shields.io/badge/BACK-SEQUELIZE-black?style=for-the-badge&logo=JSON%20Web%20Tokens)
+
+![](http://img.shields.io/badge/BACK-MYSQL-black?style=for-the-badge&logo=JSON%20Web%20Tokens)
+
 ![spanner 기술 스택](https://user-images.githubusercontent.com/68806834/102728503-b14d5c00-436f-11eb-9afc-24de50abf580.png)
 
 # 🧑🏻‍💻Working Flow
